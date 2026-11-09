@@ -498,6 +498,233 @@ footer{background:#151412}
  .header,.builder-tab,.builder-visual::before{transition:none}
 }
 
+
+/* ━━━ ÉDITION 04 / SCALE SYSTEM — laptop-first, compact and readable ━━━ */
+/* 1. Navigation and above-the-fold: fit comfortably in a standard laptop viewport. */
+.wrap{max-width:1300px;padding-inline:clamp(24px,4.7vw,72px)}
+.header .nav{min-height:70px}
+.header.is-scrolled .nav{min-height:60px}
+.identity svg{width:47px}
+.identity .name{font-size:11px;letter-spacing:.12em}
+.identity .sub{font-size:7px}
+.links{gap:22px}
+.links a:not(.button){font-size:10px}
+.nav-cta{min-height:37px;padding:8px 14px;font-size:10px}
+.hero{height:100svh;min-height:635px;max-height:940px;display:flex;align-items:center}
+.hero-content{padding-top:105px;padding-bottom:65px}
+.hero .hero-badge{padding:7px 11px 7px 9px;font-size:9px}
+.hero .hero-badge i{width:6px;height:6px}
+.hero h1{
+  font-size:clamp(46px,5.25vw,75px);
+  letter-spacing:-.061em;line-height:1.06;max-width:980px;
+  margin:18px 0 18px
+}
+.hero h1 em{letter-spacing:-.052em}
+.hero-lead{font-size:clamp(14px,1.1vw,16px);line-height:1.62;max-width:535px;margin-bottom:0}
+.hero-ctas{margin-top:24px;gap:10px}
+.hero-ctas .button{font-size:11px;min-height:45px;padding:11px 18px;gap:12px;border-radius:7px}
+.hero .proof{margin-top:31px;padding-top:17px;max-width:930px}
+.proof-item{font-size:10px;min-width:0;padding-right:20px;margin-right:20px}
+.proof strong{font-size:13px;margin-bottom:4px}
+.hero-side{font-size:9px;bottom:22px}
+.scroll-cue{bottom:22px;left:clamp(24px,4.7vw,72px)}
+/* 2. Editorial system — reduce type and whitespace without losing hierarchy. */
+body{font-size:14px;line-height:1.65}
+p{line-height:1.68}
+.section{padding-block:86px}
+.section .eyebrow,.experience-focus .eyebrow,.landscapes .eyebrow,.faq .eyebrow{font-size:10px;margin-bottom:14px}
+.about h2,.section h2,.landscapes h2,.faq h2{
+ font-size:clamp(32px,3.25vw,49px);line-height:1.17;letter-spacing:-.055em
+}
+h3{font-size:clamp(22px,2.2vw,29px)}
+.section-lead{font-size:14px;line-height:1.7}
+.split{grid-template-columns:44% 1fr;gap:clamp(32px,5.2vw,72px)}
+.portrait-placeholder{min-height:435px}
+.about h2{font-size:clamp(32px,3.1vw,46px);margin-bottom:20px}
+.about p{font-size:14px;line-height:1.7}
+.stats{margin-top:24px;padding-top:19px}
+.stat strong{font-size:clamp(24px,2.2vw,30px)}
+.stat span{font-size:10px}
+.experience-focus{padding:82px 0}
+.experience-focus .focus-grid{gap:clamp(35px,5vw,72px)}
+.experience-focus h2{font-size:clamp(34px,3.5vw,52px);margin-bottom:18px}
+.experience-focus p{font-size:14px;line-height:1.7}
+.experience-focus .focus-link{font-size:10px;margin-top:6px}
+.experience-focus .focus-photo{min-height:410px;box-shadow:12px 12px 0 #d9d2c9}
+.experience-focus .focus-index{margin-top:22px;font-size:10px}
+.philosophy-inner{padding-block:61px;gap:21px}
+.philosophy h2{font-size:clamp(28px,2.6vw,37px)}
+.principle{padding-left:19px}
+.principle strong{margin-top:9px;font-size:12px}
+.principle p{font-size:12px;line-height:1.6;margin-top:7px}
+.principle .symbol{font-size:23px}
+.service-grid{margin-top:36px;gap:15px}
+.service .photo{height:clamp(185px,18vw,240px)}
+.service .copy{padding:21px 22px 24px}
+.service .number{font-size:9px}
+.service h3{font-size:clamp(21px,2vw,28px);margin:8px 0 9px}
+.service p{font-size:13px;line-height:1.62;margin:0 0 16px}
+.service .tag{font-size:10px}
+.landscapes{padding-block:83px}
+.locations{margin-top:28px;gap:14px}
+.location{min-height:245px;padding:23px}
+.location strong{font-size:clamp(25px,2.5vw,34px)}
+.location span{font-size:11px}
+.area-note{margin-top:15px;font-size:11px}
+.testimonials{padding-block:65px}
+.reviews{gap:58px}
+.reviews h2{font-size:clamp(31px,3.3vw,46px)}
+.reviews p{font-size:14px}
+.faq{padding:77px 0}
+.faq-wrap{gap:clamp(34px,6vw,78px)}
+.faq h2{font-size:clamp(32px,3.4vw,48px)}
+.faq-intro{font-size:14px}
+.faq details{padding:17px 0}
+.faq summary{font-size:13px}
+.faq details p{font-size:13px;margin:10px 20px 0 0}
+.cta{padding-block:87px}
+.cta h2{font-size:clamp(36px,4.4vw,61px)}
+.cta p{font-size:14px}
+.cta .button.disabled{margin-top:13px;font-size:11px;min-height:44px}
+footer{padding-block:29px}
+footer .legal{margin-top:14px}
+/* 3. Interactive day selector — compact enough to browse without excessive scrolling. */
+.day-builder{padding:80px 0}
+.builder-head{gap:35px;margin-bottom:27px}
+.builder-head h2{font-size:clamp(32px,3.7vw,52px);line-height:1.17}
+.builder-head p{font-size:14px}
+.builder-shell{min-height:325px}
+.builder-control{padding:27px 26px 25px}
+.builder-caption{margin-bottom:15px;font-size:9px}
+.builder-tabs{gap:7px}
+.builder-tab{padding:11px 13px;font-size:12px;border-radius:8px}
+.builder-tab span{font-size:10px}
+.builder-note{padding-top:16px;font-size:11px}
+.builder-visual{min-height:325px}
+.builder-visual-content{padding:25px 30px}
+.builder-visual .mini-pill{font-size:9px;padding:5px 10px;margin-bottom:11px}
+.builder-visual h3{font-size:clamp(23px,2.4vw,32px);margin-bottom:10px}
+.builder-visual p{font-size:13px;line-height:1.55;margin-bottom:14px;max-width:490px}
+.builder-visual .mode-tags{margin-bottom:17px;gap:6px}
+.builder-visual .mode-tags span{font-size:9px;padding:6px 10px}
+.builder-visual .discover-link{font-size:11px;padding:10px 13px}
+.builder-smallprint{font-size:10px;margin-top:10px}
+/* 4. Smaller laptops: avoid oversized hero in 1280x720 and similar viewports. */
+@media (min-width:701px) and (max-height:760px){
+ .hero{min-height:600px}
+ .hero-content{padding-top:91px;padding-bottom:48px}
+ .hero h1{font-size:clamp(43px,4.7vw,66px);margin:12px 0 12px}
+ .hero-lead{font-size:14px;line-height:1.5}
+ .hero .proof{margin-top:22px;padding-top:13px}
+ .hero-ctas{margin-top:17px}
+ .hero-ctas .button{min-height:42px;padding:9px 15px}
+}
+@media(max-width:950px){
+ .section{padding-block:74px}
+ .split{gap:28px}
+ .portrait-placeholder{min-height:360px}
+ .experience-focus{padding:73px 0}
+ .experience-focus .focus-photo{min-height:360px}
+ .builder-shell{grid-template-columns:1fr}
+ .builder-control{padding:24px}
+ .builder-tabs{flex-direction:row;gap:8px}
+ .builder-tab{font-size:12px;min-width:0}
+ .builder-note{padding-top:10px}
+ .builder-visual{min-height:310px}
+ .philosophy-inner{padding-block:55px}
+ .service .photo{height:200px}
+ .landscapes{padding-block:74px}
+ .location{min-height:210px}
+}
+/* 5. Mobile: retain all essential information within a compact, scannable flow. */
+@media(max-width:700px){
+ .wrap{padding-inline:20px}
+ .header .nav{min-height:64px}
+ .header.is-scrolled .nav{min-height:58px}
+ .identity svg{width:35px}
+ .identity .name{font-size:10px}
+ .identity .sub{font-size:6px}
+ .mobile-menu-toggle{min-height:34px;padding:7px 10px;font-size:10px}
+ .header .links{left:-20px;right:-20px;padding:0 20px}
+ .hero{min-height:600px;max-height:none;height:100svh}
+ .hero-content{padding-top:78px;padding-bottom:42px}
+ .hero .hero-badge{font-size:8px;padding:6px 9px}
+ .hero h1{font-size:clamp(35px,9.2vw,49px);line-height:1.075;margin:15px 0 12px;letter-spacing:-.065em}
+ .hero-lead{font-size:13px;line-height:1.55;max-width:360px}
+ .hero-ctas{margin-top:17px;gap:8px}
+ .hero .hero-ctas .button{font-size:10px;min-height:42px;padding:9px 12px}
+ .hero .proof{margin-top:22px;padding-top:14px;gap:11px 13px}
+ .proof strong{font-size:11px;margin-bottom:2px}
+ .proof-item{font-size:9px;line-height:1.35}
+ .scroll-cue{bottom:12px;left:20px;font-size:8px}
+ .section{padding-block:60px}
+ .section .eyebrow,.experience-focus .eyebrow,.landscapes .eyebrow,.faq .eyebrow{font-size:9px;margin-bottom:11px}
+ .about h2,.section h2,.landscapes h2,.faq h2{font-size:clamp(29px,8vw,38px)}
+ .about h2{margin-bottom:15px}
+ .about p{font-size:13px}
+ .about .split{gap:24px}
+ .portrait-placeholder{min-height:275px}
+ .stats{margin-top:17px;padding-top:15px}
+ .stat strong{font-size:22px}
+ .stat span{font-size:9px}
+ .experience-focus{padding:60px 0}
+ .experience-focus h2{font-size:clamp(31px,8.2vw,42px);margin-bottom:15px}
+ .experience-focus p{font-size:13px}
+ .experience-focus .focus-photo{min-height:280px;box-shadow:8px 8px 0 #d9d2c9}
+ .experience-focus .focus-index{font-size:9px;margin-top:12px}
+ .philosophy-inner{padding-block:52px;gap:17px}
+ .philosophy h2{font-size:30px}
+ .principle p{font-size:12px}
+ .service-grid{gap:14px;margin-top:26px}
+ .service .photo{height:180px}
+ .service .copy{padding:18px}
+ .service h3{font-size:23px}
+ .service p{font-size:12px}
+ .landscapes{padding-block:60px}
+ .locations{margin-top:22px;gap:12px}
+ .location{min-height:185px;padding:19px}
+ .location strong{font-size:28px}
+ .testimonials{padding-block:57px}
+ .reviews{gap:15px}
+ .reviews h2{font-size:33px}
+ .reviews p{font-size:13px}
+ .faq{padding:58px 0}
+ .faq h2{font-size:34px}
+ .faq-intro{font-size:13px}
+ .faq summary{font-size:12px}
+ .faq details p{font-size:12px}
+ .cta{padding-block:65px}
+ .cta h2{font-size:clamp(33px,8.5vw,43px)}
+ .cta p{font-size:13px}
+ .day-builder{padding:57px 0}
+ .builder-head{gap:13px;margin-bottom:20px}
+ .builder-head h2{font-size:clamp(32px,8.4vw,42px)}
+ .builder-head p{font-size:13px}
+ .builder-control{padding:18px 16px}
+ .builder-caption{font-size:9px;margin-bottom:10px}
+ .builder-tabs{display:grid;grid-template-columns:1fr;gap:6px}
+ .builder-tab{padding:10px 12px;font-size:12px}
+ .builder-tab span{font-size:10px;display:inline}
+ .builder-visual{min-height:330px}
+ .builder-visual-content{padding:20px}
+ .builder-visual h3{font-size:26px}
+ .builder-visual p{font-size:12px}
+ .builder-visual .mode-tags{margin-bottom:12px}
+ .builder-visual .mode-tags span{font-size:8px}
+ .builder-visual .discover-link{font-size:10px}
+}
+@media(max-width:700px) and (max-height:720px){
+ .hero{min-height:570px}
+ .hero-content{padding-top:67px;padding-bottom:30px}
+ .hero .hero-badge{font-size:8px}
+ .hero h1{font-size:clamp(33px,8.5vw,41px);margin:11px 0 10px}
+ .hero-lead{font-size:12px;line-height:1.45}
+ .hero-ctas{margin-top:11px}
+ .hero .hero-ctas .button{min-height:37px;padding:7px 10px}
+ .hero .proof{margin-top:13px;padding-top:10px;gap:9px}
+ .scroll-cue{display:none}
+}
+
 </style>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;display=swap" rel="stylesheet">
 </head>
