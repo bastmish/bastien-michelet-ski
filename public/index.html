@@ -246,19 +246,121 @@ footer a{color:#ede5d9}
 }
 @media(prefers-reduced-motion:reduce){.service,.service .photo,.button{transition:none}}
 
+
+/* === ÉDITION 02 — PARCOURS ET FONCTIONS === */
+.skip-link{position:absolute;top:-70px;left:20px;z-index:100;padding:12px 20px;background:#f2eadf;color:#1b1a18;text-decoration:none}
+.skip-link:focus{top:15px}
+.mobile-menu-toggle{display:none;background:transparent;border:1px solid #ffffff80;color:white;padding:9px 13px;min-height:40px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.experience-focus{background:#ece7df;padding:clamp(90px,10vw,140px) 0;position:relative;overflow:hidden}
+.experience-focus .focus-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(40px,8vw,115px);align-items:center}
+.experience-focus .eyebrow{color:#7b313d;margin-bottom:22px}
+.experience-focus h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(44px,5.2vw,78px);line-height:1.09;max-width:640px;margin-bottom:28px}
+.experience-focus h2 em{font-weight:500;color:#804353}
+.experience-focus p{font-size:17px;max-width:570px;color:#5e5952;line-height:1.87}
+.experience-focus .focus-link{font-family:'Manrope',sans-serif;color:#60303a;display:inline-flex;gap:15px;align-items:center;text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid #7b313d;margin-top:13px}
+.experience-focus .focus-link:hover{color:#111;border-bottom-color:#111}
+.experience-focus .focus-photo{min-height:610px;position:relative;background:linear-gradient(0deg,#14141480,transparent 48%),url('https://images.pexels.com/photos/6849149/pexels-photo-6849149.jpeg?auto=compress&cs=tinysrgb&w=1300') center 48%/cover;filter:grayscale(.65);box-shadow:22px 22px 0 #d6cfc5}
+.experience-focus .photo-note{position:absolute;left:34px;bottom:34px;color:#fff;letter-spacing:.15em;font:700 10px 'Manrope',sans-serif;text-transform:uppercase}
+.experience-focus .focus-index{font:700 11px 'Manrope',sans-serif;letter-spacing:.18em;color:#8b8175;margin-top:33px}
+.faq{background:#f5f2ed;padding:clamp(84px,10vw,132px) 0}
+.faq-wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(38px,8vw,110px)}
+.faq .eyebrow{color:#7b313d}
+.faq h2{font-size:clamp(42px,4.6vw,68px);margin-top:18px}
+.faq-intro{max-width:330px;font-size:15px;color:#655e56}
+.faq-list{border-top:1px solid #bcb5ac}
+.faq details{border-bottom:1px solid #bcb5ac;padding:25px 0}
+.faq summary{display:flex;justify-content:space-between;align-items:center;cursor:pointer;list-style:none;gap:20px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;color:#23211e}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:23px;color:#7b313d;line-height:1;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:15px 35px 2px 0;font-size:14px;color:#69635d;line-height:1.85}
+.footer-social{display:flex;gap:18px;align-items:center}
+.footer-social a{text-decoration:underline;text-underline-offset:4px}
+.section-num{font-size:10px;letter-spacing:.2em;color:#7b313d;font-family:'Manrope',sans-serif;font-weight:800;display:inline-block;margin-bottom:18px}
+.availability-note{margin-top:30px;font-size:12px;color:#e6dfd5;letter-spacing:.03em}
+@media (max-width:950px){
+.experience-focus .focus-grid{grid-template-columns:1fr;gap:42px}
+.experience-focus .focus-photo{min-height:500px;box-shadow:14px 14px 0 #d6cfc5}
+.faq-wrap{grid-template-columns:1fr;gap:28px}
+}
+@media (max-width:700px){
+.mobile-menu-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto}
+.header .nav{position:relative}
+.header .links{position:absolute;top:100%;left:-25px;right:-25px;background:#201f1b;padding:0 25px;display:none;flex-direction:column;align-items:stretch;gap:0;border-bottom:1px solid #ffffff3a;box-shadow:0 30px 35px #08080845}
+.header .links.is-open{display:flex}
+.header .links a,.header .links a:nth-child(3),.header .links a:nth-child(4){display:block;padding:16px 4px;border-bottom:1px solid #ffffff28;font-size:11px}
+.header .links a.nav-cta{margin:16px 0;text-align:center;padding:13px 12px}
+.experience-focus{padding:78px 0}
+.experience-focus h2{font-size:clamp(42px,11vw,56px)}
+.experience-focus p{font-size:15px}
+.experience-focus .focus-photo{min-height:360px;box-shadow:10px 10px 0 #d6cfc5}
+.experience-focus .photo-note{left:18px;bottom:20px;font-size:9px}
+.faq{padding:80px 0}
+.faq h2{font-size:45px}
+.faq summary{font-size:14px}
+.faq details{padding:21px 0}
+.faq-intro{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){.faq summary::after{transition:none}}
+
 </style>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="header"><div class="wrap"><nav class="nav" aria-label="Navigation principale"><a class="identity" href="#accueil"><svg viewBox="0 0 122 74" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M4 35 34 13 45 22 64 4 85 24 96 16 119 37" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="square" stroke-linejoin="miter"/><path d="M10 64h102" stroke="#81bf8d" stroke-width="3"/><text x="61" y="61" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-style="italic" font-size="31" text-anchor="middle" fill="currentColor">BM</text></svg><span><span class="name">BASTIEN MICHELET</span><span class="sub">SKI & SNOWBOARD PRIVÉ</span></span></a><div class="links"><a href="#apropos">À propos</a><a href="#prestations">Prestations</a><a href="#destinations">Stations</a><a href="#avis">Avis</a><a href="#contact" class="button nav-cta">Nous contacter ↗</a></div></nav></div></header>
-<main>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="header"><div class="wrap"><nav class="nav" aria-label="Navigation principale"><a class="identity" href="#accueil"><svg viewBox="0 0 122 74" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M4 35 34 13 45 22 64 4 85 24 96 16 119 37" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="square" stroke-linejoin="miter"/><path d="M10 64h102" stroke="#81bf8d" stroke-width="3"/><text x="61" y="61" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-style="italic" font-size="31" text-anchor="middle" fill="currentColor">BM</text></svg><span><span class="name">BASTIEN MICHELET</span><span class="sub">SKI & SNOWBOARD PRIVÉ</span></span></a><button class="mobile-menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links">Menu ☰</button><div class="links" id="nav-links"><a href="#apropos">À propos</a><a href="#prestations">Prestations</a><a href="#destinations">Stations</a><a href="#avis">Avis</a><a href="#contact" class="button nav-cta">Nous contacter ↗</a></div></nav></div></header>
+<main id="contenu">
 <section class="hero" id="accueil"><div class="wrap hero-content"><div class="eyebrow">Moniteur privé de ski & snowboard</div><h1>Des journées de ski<br><em>inoubliables, ensemble.</em></h1><p class="hero-lead">Je suis Bastien. Vous voulez progresser, découvrir une station ou simplement profiter de la montagne ? On construit la journée autour de vous.</p><div class="hero-ctas"><a class="button" href="#prestations">Découvrir les expériences <span aria-hidden="true">↗</span></a><a class="button secondary" href="#apropos">Rencontrer votre moniteur</a></div><div class="proof"><div class="proof-item"><strong>15 ans</strong>Compétition de haut niveau</div><div class="proof-item"><strong>National & international</strong>Compétitions de ski</div><div class="proof-item"><strong>7 ans</strong>Enseignement à l’ESF</div><div class="proof-item"><strong>Diplômé d’État</strong>Moniteur de ski</div></div></div><div class="hero-side">Hiver 2026–2027 · Ouverture prochaine</div></section>
 <section class="section about" id="apropos"><div class="wrap split"><div class="portrait-placeholder" role="img" aria-label="Paysage alpin temporaire, en attendant une photographie personnelle"><span>La montagne comme terrain d’expression · Photographie d’ambiance</span></div><div><div class="eyebrow">À propos</div><h2>Bastien Michelet.<br>L'exigence du ski, le plaisir de partager.</h2><p>J’ai passé 15 ans dans le ski de haut niveau, en compétition nationale et internationale, puis 7 ans à enseigner à l’ESF. Aujourd’hui, j’ai surtout envie de partager avec vous ce que j’aime dans la montagne.</p><p>Que vous souhaitiez prendre confiance, perfectionner votre technique ou découvrir de nouveaux itinéraires, je construis l'expérience avec vous.</p><div class="stats"><div class="stat"><strong>15 ans</strong><span>Compétition de haut niveau</span></div><div class="stat"><strong>7 ans</strong><span>Enseignement à l’ESF</span></div><div class="stat"><strong>DE</strong><span>Moniteur diplômé d’État</span></div></div></div></div></section>
+
+<section class="experience-focus" aria-labelledby="focus-title">
+  <div class="wrap focus-grid">
+    <div>
+      <div class="eyebrow">01 / L'EXPÉRIENCE</div>
+      <h2 id="focus-title">La technique du haut niveau.<br><em>Le plaisir de skier.</em></h2>
+      <p>J'ai grandi avec le ski de compétition. Aujourd'hui, je mets cette expérience au service de votre journée. Pas de programme imposé : on prend le temps de comprendre ce dont vous avez envie, puis on profite de la montagne.</p>
+      <p>Un conseil précis, un nouvel itinéraire ou simplement le plaisir de skier ensemble : à chacun sa façon de vivre les Alpes.</p>
+      <a class="focus-link" href="#prestations">Voir les expériences <span aria-hidden="true">↗</span></a>
+      <div class="focus-index">15 ANS DE COMPÉTITION · 7 ANS À L'ESF</div>
+    </div>
+    <div class="focus-photo" role="img" aria-label="Photographie d'ambiance temporaire : pratique du ski dans un paysage enneigé"><span class="photo-note">Image d'ambiance · À remplacer par une photo personnelle</span></div>
+  </div>
+</section>
 <section class="philosophy" id="philosophie"><div class="wrap philosophy-inner"><div><div class="eyebrow">Ma philosophie</div><h2>Bien plus qu’un cours de ski.</h2></div><div class="principle"><div class="symbol" aria-hidden="true">⌁</div><strong>Progresser</strong><p>Des conseils précis, une pédagogie adaptée.</p></div><div class="principle"><div class="symbol" aria-hidden="true">△</div><strong>Explorer</strong><p>Une découverte des domaines à votre rythme.</p></div><div class="principle"><div class="symbol" aria-hidden="true">✳</div><strong>Partager</strong><p>Une vraie journée de montagne, ensemble.</p></div></div></section>
 <section class="section services" id="prestations"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Prestations</div><h2>Votre journée, votre programme.</h2></div><p class="section-lead">Du premier virage à la découverte de nouveaux terrains, nous construisons la journée autour de vos envies.</p></div><div class="service-grid"><article class="service"><div class="photo" role="img" aria-label="Skieur en action sur neige"></div><div class="copy"><div class="number">01 / COACHING</div><h3>Cours privés</h3><p>Progression technique, confiance et plaisir de la glisse, en ski ou snowboard.</p><span class="tag">Demi-journée ou journée →</span></div></article><article class="service"><div class="photo" role="img" aria-label="Montagne enneigée"></div><div class="copy"><div class="number">02 / PARTAGE</div><h3>Ski en famille</h3><p>Une journée adaptée à tous les âges et aux envies de chacun, des premières glisses aux belles pistes.</p><span class="tag">Sur mesure →</span></div></article><article class="service"><div class="photo" role="img" aria-label="Paysage de montagne"></div><div class="copy"><div class="number">03 / JOURNÉE</div><h3>Journées sur mesure</h3><p>Une journée pensée pour vous : belles pistes, conseils et découvertes, à votre rythme.</p><span class="tag">Journée complète →</span></div></article><article class="service"><div class="photo" role="img" aria-label="Grand paysage alpin"></div><div class="copy"><div class="number">04 / DÉCOUVERTE</div><h3>Expérience montagne</h3><p>Pour skieurs expérimentés, exploration de terrains variés dans les limites réglementaires et les conditions de sécurité applicables.</p><span class="tag">Programme sur demande →</span></div></article></div></div></section>
 <section class="landscapes section" id="destinations"><div class="wrap"><div class="eyebrow">Terrains de jeu</div><h2>Au cœur des Alpes.</h2><p class="section-lead">Principalement à Megève, Chamonix et dans toute la Haute-Savoie.</p><div class="locations"><div class="location"><div><strong>Megève</strong><span>Évasion et ski privé</span></div></div><div class="location"><div><strong>Chamonix</strong><span>Au pied du Mont-Blanc</span></div></div><div class="location"><div><strong>Haute-Savoie</strong><span>Selon votre projet</span></div></div></div><p class="area-note">Savoie et Suisse possibles sur demande, sous réserve des conditions de déplacement, d'hébergement et des autorisations professionnelles applicables. Photographies d'ambiance non contractuelles.</p></div></section>
 <section class="testimonials" id="avis"><div class="wrap reviews"><div><div class="eyebrow">Avis clients</div><h2>Ils m’ont déjà fait confiance.</h2></div><div><p>Après sept années d'enseignement à l'ESF, la relation avec les clients reste au centre de mon approche. Les avis vérifiés seront intégrés ici dès que l'accès à mon ancien profil sera rétabli.</p><p class="note"><a class="review-link" href="https://fr.trustpilot.com/review/bastienmichelet.fr" target="_blank" rel="noopener noreferrer">Lire les avis sur Trustpilot ↗</a></p></div></div></section>
-<section class="cta" id="contact"><div class="wrap"><div class="eyebrow">Parlons de votre prochaine journée</div><h2>Et si on allait skier ensemble ?</h2><p>Les demandes de journées privées ouvriront prochainement. Pour le moment, le site est une préversion de présentation : aucune réservation n'est confirmée en ligne.</p><span class="button disabled" aria-disabled="true">Contact WhatsApp · bientôt disponible</span></div></section>
+
+<section class="faq" id="questions" aria-labelledby="faq-title">
+  <div class="wrap faq-wrap">
+    <div>
+      <div class="eyebrow">EN PRATIQUE</div>
+      <h2 id="faq-title">Quelques réponses,<br>avant les pistes.</h2>
+      <p class="faq-intro">Chaque journée est différente. Voici les premiers repères avant de préparer la vôtre.</p>
+    </div>
+    <div class="faq-list">
+      <details><summary>À quels niveaux s'adressent les cours ?</summary><p>Des premières descentes au perfectionnement technique, l'accompagnement est adapté à votre niveau et à vos objectifs. Le programme se construit avec vous.</p></details>
+      <details><summary>Peut-on réserver une demi-journée ?</summary><p>Le format prévu est la demi-journée ou la journée complète. Les disponibilités seront précisées lors de l'ouverture des demandes.</p></details>
+      <details><summary>Dans quelles stations peut-on skier ?</summary><p>Principalement Megève, Chamonix et la Haute-Savoie. D'autres stations de Savoie ou de Suisse sont envisageables sur demande, sous réserve des conditions de déplacement, d'hébergement et des autorisations nécessaires.</p></details>
+      <details><summary>Comment organiser notre journée ?</summary><p>Le contact par WhatsApp sera proposé prochainement. Aucune réservation ni paiement n'est actuellement disponible sur cette préversion.</p></details>
+    </div>
+  </div>
+</section>
+<section class="cta" id="contact"><div class="wrap"><div class="eyebrow">Parlons de votre prochaine journée</div><h2>Et si on allait skier ensemble ?</h2><p>Les demandes de journées privées ouvriront prochainement. Pour le moment, le site est une préversion de présentation : aucune réservation n'est confirmée en ligne.</p><span class="button disabled" aria-disabled="true">Contact WhatsApp · bientôt disponible</span><p class="availability-note">Disponibilités prévues les week-ends · demi-journées et journées complètes</p></div></section>
 </main>
 <footer><div class="wrap"><div class="foot"><strong>BASTIEN MICHELET — SKI & SNOWBOARD PRIVÉ</strong><span>Megève · Chamonix · Haute-Savoie</span><a href="#accueil">Retour en haut ↑</a></div><div class="legal">Préversion — ouverture commerciale à confirmer après régularisation administrative. Pas de formulaire, pas de paiement, pas de cookies de mesure. Photographies d'illustration sous licences des plateformes sources, non représentatives du moniteur ni des stations indiquées. Mentions légales définitives à compléter avant ouverture.</div></div></footer>
+
+<script>
+(function(){
+  const toggle=document.querySelector('.mobile-menu-toggle');
+  const nav=document.getElementById('nav-links');
+  if(!toggle||!nav)return;
+  function closeMenu(){nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Ouvrir le menu');}
+  toggle.addEventListener('click',function(){const open=nav.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');});
+  nav.addEventListener('click',function(event){if(event.target.closest('a'))closeMenu();});
+  document.addEventListener('keydown',function(event){if(event.key==='Escape')closeMenu();});
+  document.addEventListener('click',function(event){if(!nav.contains(event.target)&&!toggle.contains(event.target))closeMenu();});
+  window.addEventListener('resize',function(){if(window.innerWidth>700)closeMenu();});
+})();
+</script>
 </body></html>
