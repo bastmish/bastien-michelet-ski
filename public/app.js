@@ -74,9 +74,9 @@
 
  // WhatsApp click-to-chat: the visitor starts navigation, reviews the drafted message,
  // and must tap Send in WhatsApp. No website-side storage or automatic message sending.
- // Configure Bastien's verified WhatsApp number in international format, digits only.
- // Without a number, WhatsApp opens its contact picker with the message prefilled.
- const WHATSAPP_RECIPIENT = '';
+ // Professional WhatsApp recipient configured with the number supplied by the founder.
+ // This site opens Bastien's chat directly with the request text prefilled.
+ const WHATSAPP_RECIPIENT = '33763532601';
  const inquiryForm=document.getElementById('ski-request-form');
  const requestStatus=document.getElementById('request-notice');
  const destinationSelect=document.getElementById('request-destination');
