@@ -1,0 +1,100 @@
+/* V14 — Ski Society, four-territory concierge map.
+   4 French territories, 15 iconic destinations, simplified IGN outlines.
+   Separate namespace preserves the existing page/approach styling. */
+.society-map{position:relative;isolation:isolate;padding:82px 0 86px;background:#f7faf7;border-block:1px solid #e2eae0;overflow:hidden}
+.society-map:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 82% 40%,#eaf1e84d,transparent 50%)}
+.society-map-grid{display:grid;grid-template-columns:minmax(320px,.84fr) minmax(0,1.16fr);gap:clamp(26px,4vw,65px);align-items:center;position:relative}
+.society-map-copy{min-width:0;padding-block:10px}
+.society-map-eyebrow{text-transform:uppercase;letter-spacing:.15em}
+.society-map-title{font:800 clamp(41px,4.5vw,67px)/1.04 var(--display,Manrope,sans-serif);letter-spacing:-.075em;color:#1c3127;margin:18px 0 17px;text-wrap:balance}
+.society-map-title em{font-style:normal;color:#b83f32}
+.society-map-promise{max-width:450px;font:800 clamp(17px,1.62vw,23px)/1.35 var(--display,Manrope,sans-serif);color:#1e3229;letter-spacing:-.035em;margin:0 0 18px}
+.society-map-description{font-size:13px;line-height:1.75;color:#52685a;max-width:465px;margin:0 0 10px}
+.society-map-description-secondary{color:#365143;font-weight:600;margin-bottom:0}
+.society-territories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:25px 0 15px}
+.society-territory{display:flex;align-items:center;gap:12px;text-align:left;min-height:55px;padding:13px 13px;border:1px solid #d8e3d9;border-radius:10px;color:#274236;background:#fff;font:800 12px/1.2 var(--display,Manrope,sans-serif);cursor:pointer;transition:background .2s,color .2s,transform .2s,border-color .2s}
+.society-territory:hover{border-color:#aabfb0;transform:translateY(-1px)}
+.society-territory.is-active{background:#1d3429;color:#fff;border-color:#1d3429}
+.society-territory:focus-visible,.society-station:focus-visible,.society-selected-action:focus-visible{outline:3px solid #bc5546;outline-offset:3px}
+.society-territory-index{font:800 9px var(--display,Manrope,sans-serif);letter-spacing:.04em;color:#b6887f;flex:none}
+.society-territory-arrow{color:#b7867c;margin-left:auto;font-size:14px}
+.society-map-selected{border:1px solid #dfe8de;border-radius:13px;background:#fff;padding:16px 18px;max-width:520px;box-shadow:0 12px 25px #1d38250b}
+.society-selected-top{display:flex;justify-content:space-between;gap:10px;font:800 9px var(--display,Manrope,sans-serif);letter-spacing:.12em;text-transform:uppercase;color:#a33d33}
+.society-selected-top>span:last-child{color:#8a9a8e;font-size:8px}
+.society-selected-row{display:flex;align-items:center;gap:10px;justify-content:space-between;margin:8px 0 5px}
+.society-selected-row strong{font:800 clamp(21px,2.25vw,29px)/1.2 var(--display,Manrope,sans-serif);color:#20392d;letter-spacing:-.045em}
+.society-selected-action{color:#a5372e;background:transparent;border:0;border-bottom:1px solid #d6a8a2;font:800 11px var(--display,Manrope,sans-serif);padding:5px 0;cursor:pointer;white-space:nowrap}
+.society-map-selected p{font-size:11px;line-height:1.55;color:#627767;margin:0}
+.society-map-main-cta{display:inline-flex!important;gap:10px;align-items:center;margin-top:18px;white-space:normal;text-align:center}
+.society-map-note{font-size:10px;line-height:1.55;color:#788c7d;max-width:475px;margin-top:16px}
+.society-map-visual{min-width:0}
+.society-map-visual-head,.society-map-visual-foot{display:flex;gap:14px;justify-content:space-between;align-items:center;font:800 9px/1.4 var(--display,Manrope,sans-serif);letter-spacing:.1em;color:#718577}
+.society-map-visual-head{margin-bottom:11px;padding:0 2px}
+.society-map-scroll{border-radius:17px;overflow:hidden;border:1px solid #d5e4d7;box-shadow:0 21px 43px #172f231c;scrollbar-color:#99b1a0 #e8eee8;scrollbar-width:thin;background:#f7faf5}
+.society-map-scroll:focus-visible{outline:3px solid #bd4b3f;outline-offset:3px}
+.society-map-art{position:relative;aspect-ratio:800 / 820;min-width:0;width:100%;isolation:isolate;overflow:hidden}
+.society-map-svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.society-map-topography{pointer-events:none}
+.society-department{stroke:#a6b9aa;stroke-width:1.7;fill:#e7eee7;transition:fill .3s,stroke .3s,filter .3s}
+.society-department[data-society-zone=jura]{fill:#dfeadd}
+.society-department[data-society-zone=haute-savoie]{fill:#e5efe6}
+.society-department[data-society-zone=savoie]{fill:#e7eae1}
+.society-department[data-society-zone=hautes-alpes]{fill:#e9e5dc}
+.society-department.is-active{fill:#d3e5d5;stroke:#688d77;stroke-width:2;filter:drop-shadow(0 4px 9px #8ba99143)}
+.society-map-region-titles{fill:#4b6557;font:800 10px Manrope,system-ui,sans-serif;letter-spacing:2.8px;paint-order:stroke;stroke:#f5faf3;stroke-width:3px;stroke-linejoin:round}
+.society-map-north{fill:#67806d;font:800 12px Manrope,system-ui,sans-serif}
+.society-map-stations{position:absolute;inset:0}
+.society-station{position:absolute;transform:translate(-50%,-50%);width:25px;height:25px;padding:0;border:0;border-radius:50%;background:transparent;cursor:pointer;z-index:2;transition:opacity .25s}
+.society-station-ring{position:absolute;inset:0;border-radius:50%;background:#b83f3219;border:1px solid #b83f3230;transform:scale(.65);opacity:0;transition:opacity .2s,transform .2s}
+.society-station-dot{position:absolute;left:50%;top:50%;width:9px;height:9px;border-radius:50%;background:#a54236;border:2px solid white;transform:translate(-50%,-50%);box-shadow:0 1px 8px #7a322a45;transition:width .2s,height .2s}
+.society-station:hover,.society-station:focus-visible,.society-station.is-selected{z-index:15}
+.society-station.is-selected .society-station-dot,.society-station:hover .society-station-dot{width:14px;height:14px}
+.society-station.is-selected .society-station-ring,.society-station:hover .society-station-ring,.society-station:focus-visible .society-station-ring{opacity:1;transform:scale(1.5)}
+.society-station.is-muted{opacity:.52}
+.society-station.is-selected{opacity:1}
+.society-station-label{position:absolute;top:2px;left:23px;z-index:3;white-space:nowrap;max-width:230px;border:1px solid #e2e8df;background:#fffffff0;backdrop-filter:blur(7px);box-shadow:0 3px 10px #233f2d14;border-radius:5px;padding:5px 8px;color:#263d30;font:800 10px/1.15 var(--display,Manrope,sans-serif);pointer-events:none;opacity:0;visibility:hidden;transition:opacity .15s}
+.society-station.is-featured .society-station-label,.society-station.is-selected .society-station-label,.society-station:hover .society-station-label,.society-station:focus-visible .society-station-label{opacity:1;visibility:visible}
+.society-station.is-selected .society-station-label{background:#fff5f1;border-color:#c69187;color:#933429}
+.society-map-floating-label{position:absolute;right:21px;bottom:18px;z-index:1;font:800 9px Manrope,system-ui,sans-serif;letter-spacing:.17em;color:#738a7a}
+.society-map-visual-foot{margin-top:11px;letter-spacing:0;font-size:9px}
+.society-map-visual-foot>span:last-child{display:none}
+.society-map-legend-dot{display:inline-block;margin-right:5px;width:7px;height:7px;background:#ac4336;border:1px solid white;border-radius:50%}
+.society-map-attribution{font:400 9px/1.5 var(--font,'DM Sans',sans-serif);color:#819385;margin:9px 2px 0}
+.society-map-attribution a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:1120px){
+ .society-map-grid{grid-template-columns:minmax(265px,.86fr) minmax(0,1.14fr);gap:26px}
+ .society-map-title{font-size:clamp(40px,4.6vw,54px)}
+ .society-territory{font-size:11px;padding:11px 9px;gap:8px;min-height:47px}
+ .society-map-promise{font-size:19px}
+ .society-map-description{font-size:12px}
+ .society-station-label{font-size:9px;padding:4px 6px}
+}
+@media(max-width:850px){
+ .society-map{padding:62px 0 72px}
+ .society-map-grid{grid-template-columns:1fr;gap:30px}
+ .society-map-copy{padding:0}
+ .society-map-title{font-size:clamp(43px,7vw,63px)}
+ .society-map-promise{font-size:clamp(18px,3.6vw,22px)}
+ .society-map-description{max-width:690px;font-size:13px}
+ .society-territories{max-width:680px}
+ .society-map-selected{max-width:680px}
+ .society-map-scroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain}
+ .society-map-art{width:660px;min-width:660px}
+ .society-map-visual-foot>span:last-child{display:inline}
+}
+@media(max-width:520px){
+ .society-map{padding:52px 0 62px}
+ .society-map-title{font-size:44px;margin:12px 0 13px}
+ .society-map-promise{font-size:19px;margin-bottom:12px}
+ .society-territories{margin-top:19px;gap:7px}
+ .society-territory{min-height:47px;font-size:11px}
+ .society-map-selected{padding:14px 15px}
+ .society-selected-row strong{font-size:23px}
+ .society-map-main-cta{width:100%;justify-content:center}
+ .society-map-art{width:640px;min-width:640px}
+ .society-map-visual-head,.society-map-visual-foot{font-size:8px}
+ .society-station-label{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ .society-department,.society-territory,.society-station,.society-station-ring,.society-station-dot,.society-station-label{transition:none!important}
+}
