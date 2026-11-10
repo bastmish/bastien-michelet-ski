@@ -1,0 +1,13 @@
+/* Compact static territories, no map tiles, WebGL or JavaScript dependency. */
+.territories-section{background:#f6f3ec;padding:52px 0 56px}
+.territories-layout{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(24px,4vw,58px);align-items:center}
+.territories-copy .kicker{margin-bottom:12px}
+.territories-copy h2{font:800 clamp(31px,3.3vw,48px)/1.13 var(--display,Manrope,sans-serif);letter-spacing:-.06em;color:#26392f;margin:0 0 20px}
+.territories-copy p{max-width:475px;color:#52685a;font-size:13px;line-height:1.82;margin-bottom:10px}
+.territories-copy .territories-note{font-size:11px;color:#7c887d}
+.territories-link{display:inline-flex;gap:10px;align-items:center;font:800 12px var(--display,Manrope,sans-serif);color:#b83f32;text-underline-offset:6px;margin-top:20px}
+.territories-visual{margin:0;overflow:hidden;border-radius:16px;border:1px solid #d7dfd5;background:#e5ebe2;box-shadow:0 14px 34px #30402d12}
+.territories-visual img{width:100%;height:auto;aspect-ratio:900/510;object-fit:contain;display:block}
+.territories-visual figcaption{font:700 10px var(--display,Manrope,sans-serif);letter-spacing:.07em;color:#6a766e;background:#fffdf8;padding:11px 17px}
+@media(max-width:800px){.territories-section{padding:37px 0}.territories-layout{grid-template-columns:1fr;gap:20px}.territories-copy h2{font-size:clamp(29px,6vw,41px)}.territories-copy p{max-width:630px}}
+@media(max-width:480px){.territories-section{padding:32px 0}.territories-visual figcaption{font-size:9px;padding:10px}}
