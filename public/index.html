@@ -304,40 +304,122 @@ footer{background:#101e1d;color:#d5ded8;padding:27px 0 21px}
  .hero-actions{margin-top:13px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-slide,.snapshot img,.experience-item img,.button-link{transition:none}.snapshot:hover img,.experience-item:hover img,.button-link:hover{transform:none}}
+
+/* V9 — Original V5 snow photograph; V8 immersive structure remains */
+.hero.hero-v9{height:min(830px,100svh);min-height:630px;background:#f6f9f8;color:var(--ink);isolation:isolate}
+.hero-v9 .hero-snow{position:absolute;inset:0 0 0 36%;z-index:-3;overflow:hidden;background:#eff3ef}
+.hero-v9 .hero-snow img{position:absolute;inset:0;object-position:center 49%;filter:brightness(1.08) contrast(1.055) saturate(.83)}
+.hero-v9 .hero-snow:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#f6f9f8 0%,#f6f9f8f6 13%,#f6f9f8d2 29%,#f6f9f865 48%,transparent 68%),linear-gradient(0deg,#f6f9f8bb,transparent 28%),linear-gradient(180deg,#f6f9f8ad,transparent 20%)}
+.hero.hero-v9:after{background:none}
+.hero-v9 .header-inner{height:73px;border-bottom-color:#d9e4dc}
+.hero-v9 .brand-name{color:var(--ink)}
+.hero-v9 .brand-tag{color:#6c7b73}
+.hero-v9 .nav-list a{color:#2d3c37}
+.hero-v9 .nav-list a:hover{color:var(--red);opacity:1}
+.hero-v9 .nav-list .nav-contact{background:var(--red);color:white}
+.hero-v9 .nav-list .nav-contact:hover{background:var(--red-dark);color:white}
+.hero-v9 .nav-toggle{color:var(--ink);background:#fff;border-color:#c3cfc5}
+.hero-v9 .hero-content{position:absolute;inset:73px 0 25px;display:flex;align-items:center;bottom:25px}
+.hero-v9 .hero-content>.wrap{width:100%}
+.hero-v9 .hero-copy{max-width:660px}
+.hero-v9 .hero-kicker{color:#50645b;letter-spacing:.17em;margin-bottom:19px}
+.hero-v9 .hero-kicker:before{background:var(--red)}
+.hero-v9 h1{font-size:clamp(47px,5.4vw,76px);line-height:1.08;font-weight:800;letter-spacing:-.07em;color:#182223;max-width:700px}
+.hero-v9 h1 em{color:var(--red)}
+.hero-v9 .hero-text{font-size:clamp(14px,1.25vw,17px);line-height:1.68;margin-top:20px;color:#40544c;max-width:510px}
+.hero-v9 .hero-actions{gap:21px;margin-top:22px}
+.hero-v9 .hero-primary{background:var(--red);border-color:var(--red);color:white}
+.hero-v9 .hero-primary:hover{background:var(--red-dark)}
+.hero-v9 .hero-actions .secondary{color:#233931;border-bottom-color:#9caca1}
+.hero-v9 .hero-actions .secondary:hover{color:var(--red)}
+.hero-v9 .hero-trust{display:flex;align-items:center;flex-wrap:wrap;gap:22px;margin-top:28px;font:650 11px var(--display);color:#52645b}
+.hero-v9 .hero-trust a{text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+.hero-v9 .hero-trust a:hover{text-decoration:underline;text-underline-offset:4px}
+.hero-v9 .hero-trust strong{color:var(--ink);font-size:13px}
+.hero-v9 .hero-stars{color:var(--red);font-size:13px;white-space:nowrap}
+.hero-v9 .hero-foot{position:absolute;bottom:19px;left:var(--gutter);right:var(--gutter);display:flex;justify-content:space-between;gap:16px;color:#63746a;font:600 10px var(--display)}
+.hero-v9 .hero-foot span:last-child{font-size:9px;font-weight:400}
+.snapshot img{filter:saturate(.83) brightness(1.08)}
+.fullscene{background:#f3f6f3;color:var(--ink)}
+.fullscene img{filter:brightness(1.12) saturate(.82)}
+.fullscene:after{background:linear-gradient(90deg,#f8faf5f2 0%,#f8faf5d0 36%,#f8faf579 60%,transparent 89%)}
+.fullscene .section-label{color:var(--red)}
+.fullscene p{color:#435950}
+.fullscene small{color:#66776b}
+.contact{background:#f7faf8;color:var(--ink)}
+.contact-image img{filter:brightness(1.16) saturate(.75)}
+.contact:after{background:linear-gradient(90deg,#f7faf8f8,#f7faf8ed 33%,#f7faf8a2 66%,#f7faf824)}
+.contact .section-label{color:var(--red)}
+.contact h2 em{color:var(--red)}
+.contact p{color:#53655c}
+.contact .contact-disabled{border-color:#a6b8ab;color:#64736a}
+.contact small{color:#66786d}
+@media(min-width:761px) and (max-height:740px){
+ .hero.hero-v9{min-height:590px}
+ .hero-v9 h1{font-size:clamp(43px,4.8vw,66px)}
+ .hero-v9 .hero-text{margin-top:14px}
+ .hero-v9 .hero-actions{margin-top:17px}
+ .hero-v9 .hero-trust{margin-top:17px}
+}
+@media(max-width:760px){
+ .hero.hero-v9{height:auto;min-height:740px}
+ .hero-v9 .header-inner{height:64px}
+ .hero-v9 .nav-list{background:#fff;border-bottom:1px solid #dce6df}
+ .hero-v9 .nav-list a{color:#2d4038;border-bottom-color:#e0e7e2}
+ .hero-v9 .nav-list .nav-contact{color:white}
+ .hero-v9 .hero-snow{inset:64px 0 auto;height:54%}
+ .hero-v9 .hero-snow img{object-position:59% 48%}
+ .hero-v9 .hero-snow:after{background:linear-gradient(0deg,#f6f9f8 0%,#f6f9f8f7 18%,#f6f9f8aa 50%,transparent 81%),linear-gradient(180deg,#f6f9f8a8,transparent 26%)}
+ .hero-v9 .hero-content{position:relative;inset:auto;min-height:740px;padding-top:300px;padding-bottom:62px;align-items:flex-end}
+ .hero-v9 .hero-content>.wrap{width:100%}
+ .hero-v9 h1{font-size:clamp(39px,8.5vw,56px)}
+ .hero-v9 .hero-text{font-size:14px;line-height:1.58;margin-top:13px}
+ .hero-v9 .hero-kicker{margin-bottom:11px}
+ .hero-v9 .hero-actions{margin-top:18px}
+ .hero-v9 .hero-trust{margin-top:18px;gap:10px}
+ .hero-v9 .hero-foot span:last-child{display:none}
+ .fullscene:after{background:linear-gradient(0deg,#f8faf5f6,#f8faf5af 57%,transparent)}
+}
+@media(max-width:480px){
+ .hero.hero-v9{min-height:710px}
+ .hero-v9 .hero-snow{height:49%}
+ .hero-v9 .hero-content{min-height:710px;padding-top:255px;padding-bottom:47px}
+ .hero-v9 h1{font-size:clamp(37px,9.3vw,45px)}
+ .hero-v9 .hero-text{font-size:13px;line-height:1.5}
+ .hero-v9 .hero-actions{gap:12px;margin-top:14px}
+ .hero-v9 .hero-trust{margin-top:14px;gap:8px;font-size:10px}
+ .hero-v9 .hero-foot{bottom:10px;font-size:9px}
+}
+@media(max-width:390px) and (max-height:720px){
+ .hero.hero-v9{min-height:665px}
+ .hero-v9 .hero-content{min-height:665px;padding-top:225px;padding-bottom:40px}
+ .hero-v9 h1{font-size:36px}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
-<section class="hero" id="accueil" aria-labelledby="hero-title">
- <div class="hero-slide" aria-hidden="false" data-slide="0"><img src="https://images.pexels.com/photos/36638158/pexels-photo-36638158.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2100" fetchpriority="high" alt="Skieur en action dans une pente enneigée, illustrant la technique de ski"></div>
- <div class="hero-slide" aria-hidden="true" data-slide="1"><img src="https://images.pexels.com/photos/14095585/pexels-photo-14095585.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2100" loading="lazy" alt="Skieur exécutant un virage dynamique sur la neige"></div>
- <div class="hero-slide" aria-hidden="true" data-slide="2"><img src="https://images.pexels.com/photos/31112554/pexels-photo-31112554.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1900" loading="lazy" alt="Skieur en virage dans la poudreuse"></div>
- <header class="header">
-  <div class="wrap header-inner">
+<section class="hero hero-v9" id="accueil" aria-labelledby="hero-title">
+ <div class="hero-snow"><img src="https://images.pexels.com/photos/31112554/pexels-photo-31112554/free-photo-of-dynamic-skier-on-powder-snow-in-winter-landscape.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2100" fetchpriority="high" alt="Skieur engagé dans un virage de poudreuse, photographie d'illustration"></div>
+ <header class="header"><div class="wrap header-inner">
    <a class="brand" href="#accueil" aria-label="Bastien Michelet, accueil">
-    <svg viewBox="0 0 75 56" fill="none" aria-hidden="true"><path d="M3 30L20 14l8 6L41 3l14 17 7-6 10 16" stroke="#fff" stroke-width="3.5"/><path d="M4 48h67" stroke="#efb6a8" stroke-width="3"/></svg>
+    <svg viewBox="0 0 75 56" fill="none" aria-hidden="true"><path d="M3 30L20 14l8 6L41 3l14 17 7-6 10 16" stroke="#182223" stroke-width="3.5"/><path d="M4 48h67" stroke="#b83f32" stroke-width="3"/></svg>
     <span><span class="brand-name">BASTIEN MICHELET</span><span class="brand-tag">SKI &amp; SNOWBOARD PRIVÉ</span></span>
    </a>
    <button class="nav-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" aria-label="Ouvrir le menu">Menu</button>
    <nav class="nav-list" id="main-navigation" aria-label="Navigation principale">
     <a href="#approche">L'approche</a><a href="#experiences">Expériences</a><a href="#avis">Avis clients</a><a href="#bastien">Bastien</a><a class="nav-contact" href="#contact">Préparer ma journée ↗</a>
    </nav>
-  </div>
- </header>
- <div class="hero-content">
-  <div class="wrap">
-   <div class="hero-copy">
-    <div class="hero-kicker">Votre montagne, votre expérience</div>
-    <h1 id="hero-title">Le ski privé.<br><em>Sans itinéraire imposé.</em></h1>
-    <p class="hero-text">Vous avez un endroit en tête ? On y va. Vous préférez découvrir autre chose ? Je vous guide vers le terrain qui vous ressemble, avec votre famille ou vos amis.</p>
-    <div class="hero-actions"><a class="button-link inverse" href="#approche">Découvrir l'expérience <span class="arrow" aria-hidden="true">↗</span></a><a class="secondary" href="#experiences">Choisir ma journée ↗</a></div>
-   </div>
-  </div>
- </div>
- <span class="hero-side-note">Des journées pensées autour de vous · Images d'ambiance</span>
- <div class="hero-controls" aria-label="Changer de photographie">
-  <button class="hero-prev" type="button" aria-label="Photographie précédente">←</button><span class="hero-number" aria-live="polite">01 / 03</span><button class="hero-next" type="button" aria-label="Photographie suivante">→</button>
- </div>
+  </div></header>
+  <div class="hero-content"><div class="wrap"><div class="hero-copy">
+   <div class="hero-kicker">Moniteur privé · Ski &amp; snowboard</div>
+   <h1 id="hero-title">La montagne,<br><em>à votre mesure.</em></h1>
+   <p class="hero-text">Un projet précis ou simplement l’envie de skier ? Ensemble, nous choisissons le meilleur terrain selon votre niveau, votre famille ou vos amis, et les conditions du moment.</p>
+   <div class="hero-actions"><a class="button-link hero-primary" href="#approche">Imaginer ma journée <span class="arrow" aria-hidden="true">↗</span></a><a class="secondary" href="#experiences">Explorer les expériences ↗</a></div>
+   <div class="hero-trust"><a href="https://fr.trustpilot.com/review/bastienmichelet.fr" target="_blank" rel="noopener noreferrer" aria-label="Consulter la note Trustpilot relevée de 4,6 sur 5 pour 24 avis"><span class="hero-stars" aria-hidden="true">★★★★★</span> <strong>4,6 / 5</strong> · Trustpilot</a><span class="hero-trust-qual">15 ans de compétition · 7 ans à l’ESF</span></div>
+  </div></div></div>
+  <div class="hero-foot"><span>Votre projet. Notre terrain de jeu.</span><span>Photographie d'illustration © Vivika Stamolis / Pexels</span></div>
 </section>
 <main id="contenu">
  <section class="proof" aria-label="Références professionnelles et avis">
@@ -440,15 +522,6 @@ footer{background:#101e1d;color:#d5ded8;padding:27px 0 21px}
   document.addEventListener('click',e=>{if(!e.target.closest('.header'))setMenu(false)});
   window.addEventListener('resize',()=>{if(window.innerWidth>760)setMenu(false)},{passive:true});
  }
- const slides=[...document.querySelectorAll('.hero-slide')],num=document.querySelector('.hero-number');
- let selected=0;
- const show=(index)=>{
-  selected=(index+slides.length)%slides.length;
-  slides.forEach((slide,i)=>slide.setAttribute('aria-hidden',String(i!==selected)));
-  if(num)num.textContent=String(selected+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
- };
- document.querySelector('.hero-prev')?.addEventListener('click',()=>show(selected-1));
- document.querySelector('.hero-next')?.addEventListener('click',()=>show(selected+1));
  const reviewData=[];
  const grid=document.getElementById('authentic-reviews');
  if(grid){
