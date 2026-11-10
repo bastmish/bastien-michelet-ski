@@ -457,3 +457,15 @@ footer{background:#192821;color:#ecf2ee;padding:31px 0 24px}
  .timeline:after,.timeline-item,.enhanced-steps .step{transition:none}
  .timeline:not(.is-visible) .timeline-item{opacity:1;transform:none}
 }
+
+/* Compact Alpine region: no external maps, tiles, globe or map scripts. */
+.ski-map-section{padding:38px 0 42px}
+.map-layout-compact{grid-template-columns:minmax(0,.74fr) minmax(0,1.26fr);gap:28px;align-items:center}
+.map-layout-compact .map-editorial h2{font-size:clamp(25px,2.45vw,35px);margin:9px 0 11px;line-height:1.14}
+.map-layout-compact .map-editorial>p{font-size:12px;line-height:1.6;max-width:385px}
+.map-layout-compact .map-editorial .btn{margin-top:16px}
+.ski-map-compact{border-radius:14px;box-shadow:none}
+.ski-map-compact>svg{width:100%;height:auto;aspect-ratio:680/270}
+.ski-map-compact .map-legend{padding:9px 15px;font-size:10px}
+@media(max-width:800px){.ski-map-section{padding:34px 0}.map-layout-compact{grid-template-columns:1fr;gap:20px}.map-layout-compact .map-editorial h2{font-size:clamp(25px,6vw,33px)}.map-layout-compact .map-editorial .btn{margin-top:13px}}
+@media(max-width:480px){.ski-map-compact .map-legend{font-size:9px;padding:8px 10px}.ski-map-compact>svg{min-height:175px}}
