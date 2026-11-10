@@ -70,4 +70,94 @@
    trackWrap.hidden=false;if(empty)empty.hidden=true;
   }
  }
+
+ // Inquiry form: no backend, no data stored on this site. WhatsApp requires the visitor to press Send.
+ // Set this to Bastien's verified professional number with country code and digits only, e.g. "41XXXXXXXXX".
+ // Leave empty until the founder supplies the correct recipient.
+ const WHATSAPP_RECIPIENT = '';
+ const inquiryForm=document.getElementById('ski-request-form');
+ const preview=document.getElementById('request-preview');
+ const messageOutput=document.getElementById('request-message');
+ const copyButton=document.getElementById('copy-request');
+ const whatsappLink=document.getElementById('open-whatsapp');
+ const pendingNotice=document.getElementById('whatsapp-pending');
+ const requestStatus=document.getElementById('request-notice');
+ let preparedMessage='';
+ if(inquiryForm&&preview&&messageOutput){
+  const read=(field)=>String(inquiryForm.elements.namedItem(field)?.value??'').trim();
+  const formatMessage=()=>{
+   const name=read('firstName');
+   const experience=read('experience');
+   const level=read('level');
+   const participants=read('participants');
+   const format=read('format');
+   const period=read('period');
+   const destination=read('destination');
+   const station=read('station');
+   const notes=read('notes');
+   return [
+    'Bonjour Bastien,',
+    '',
+    'Je souhaite organiser une journée de ski avec vous.',
+    '',
+    '*Ma demande*',
+    'Prénom : '+name,
+    'Expérience : '+experience,
+    'Niveau : '+level,
+    'Nombre de skieurs : '+participants,
+    'Format : '+format,
+    'Période souhaitée : '+(period||'À définir ensemble'),
+    'Destination : '+destination+(station?' ('+station+')':''),
+    ...(notes?['','*Précisions*',notes]:[]),
+    '',
+    'Pouvons-nous échanger pour organiser cette journée ?'
+   ].join('\n');
+  };
+  inquiryForm.addEventListener('input',()=>{
+   preview.hidden=true;
+   if(requestStatus)requestStatus.textContent='';
+  });
+  inquiryForm.addEventListener('change',()=>{
+   preview.hidden=true;
+   if(requestStatus)requestStatus.textContent='';
+  });
+  inquiryForm.addEventListener('submit',e=>{
+   e.preventDefault();
+   if(!inquiryForm.reportValidity())return;
+   preparedMessage=formatMessage();
+   messageOutput.textContent=preparedMessage;
+   preview.hidden=false;
+   const number=WHATSAPP_RECIPIENT.replace(/\D/g,'');
+   const ready=/^\d{8,15}$/.test(number);
+   if(whatsappLink){
+    whatsappLink.hidden=!ready;
+    if(ready)whatsappLink.href='https://wa.me/'+number+'?text='+encodeURIComponent(preparedMessage);
+    else whatsappLink.removeAttribute('href');
+   }
+   if(pendingNotice)pendingNotice.hidden=ready;
+   if(requestStatus)requestStatus.textContent='';
+   preview.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'nearest'});
+  });
+  if(copyButton)copyButton.addEventListener('click',async()=>{
+   if(!preparedMessage)return;
+   try{
+    if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(preparedMessage);
+    else{
+     const field=document.createElement('textarea');
+     field.value=preparedMessage;
+     field.style.position='fixed';
+     field.style.opacity='0';
+     document.body.append(field);
+     field.select();
+     const copied=document.execCommand('copy');
+     field.remove();
+     if(!copied)throw new Error('copy rejected');
+    }
+    if(requestStatus)requestStatus.textContent='Message copié. Il peut être collé dans une conversation WhatsApp.';
+   }catch{
+    if(requestStatus)requestStatus.textContent='Copie automatique indisponible. Sélectionnez le texte ci-dessus pour le copier.';
+   }
+  });
+ }
+
 })();
