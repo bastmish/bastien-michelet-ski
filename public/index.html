@@ -5,9 +5,9 @@
 <title>Ski Society — Skier juste. Vivre pleinement.</title>
 <link rel="preconnect" href="https://images.pexels.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="ridgeline-footer.css">
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="ridgeline-footer.css"><link rel="stylesheet" href="scroll-story.css">
  <link rel="stylesheet" href="about-editorial.css"><link rel="stylesheet" href="territories.css"><link rel="stylesheet" href="manifesto.css"><script src="app.js" defer></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
-<script src="ridgeline-footer.js" defer></script></head><body>
+<script src="ridgeline-footer.js" defer></script><script src="scroll-story.js" defer></script></head><body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="site-header" id="header">
  <div class="nav-shell">
@@ -72,22 +72,26 @@
   </div>
  </section>
 
- <section class="section approach" id="approche" aria-labelledby="approche-title">
-  <div class="wrap">
-   <div class="approach-grid approach-centered">
-    <div class="kicker approach-side">Notre exigence</div>
-    <div class="approach-heading-block">
-     <h2 class="heading" id="approche-title">L’excellence du geste.<br><span>Le plaisir de transmettre.</span></h2>
-     <p class="approach-copy">Le haut niveau forge une lecture du terrain, une précision et une discipline. Ski Society veut transformer cet héritage en un enseignement attentif, pour chaque skieur, du débutant au passionné.</p>
-    </div>
-   </div>
-   <ol class="timeline" aria-label="Les quatre étapes de l'accompagnement"><li class="timeline-item"><span class="timeline-icon" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="12" r="6"/><path d="M6 32c1-8 5-12 12-12s11 4 12 12"/></svg></span><span class="timeline-number">01</span><h3>Votre projet</h3><p>Nous prenons le temps de comprendre votre niveau, vos attentes et votre groupe.</p></li>
-<li class="timeline-item"><span class="timeline-icon" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 33s11-12 11-21A11 11 0 0 0 7 12c0 9 11 21 11 21Z"/><circle cx="18" cy="12" r="4"/></svg></span><span class="timeline-number">02</span><h3>Le bon profil</h3><p>Nous étudions le moniteur et la station adaptés, puis confirmons les disponibilités.</p></li>
-<li class="timeline-item"><span class="timeline-icon" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 5h24v26H6zM12 12h12M12 18h12M12 24h7"/><path d="m26 25 2 2 4-5"/></svg></span><span class="timeline-number">03</span><h3>Les détails</h3><p>Matériel entretenu, préparation et ponctualité : les standards visés pour chaque partenaire.</p></li>
-<li class="timeline-item"><span class="timeline-icon" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 6c5 3 8 8 10 16M14 5c5 4 7 9 9 17M3 28c10 7 21 7 30-1M9 29l-2-6M26 29l4-7"/><circle cx="17" cy="9" r="2"/></svg></span><span class="timeline-number">04</span><h3>La transmission</h3><p>Des conseils précis, un rythme juste et le plaisir de skier ensemble.</p></li></ol>
+ <section class="section approach ss-scroll-story" id="approche" aria-labelledby="approche-title">
+ <div class="wrap ss-story-grid">
+  <div class="ss-story-intro">
+   <span class="kicker">Notre exigence · 01—04</span>
+   <h2 id="approche-title">L’excellence du geste.<br><em>Le plaisir de transmettre.</em></h2>
+   <p>Le haut niveau forge une lecture du terrain, une précision et une discipline. Ski Society veut transformer cet héritage en un enseignement attentif, pour chaque skieur, du débutant au passionné.</p>
+   <a href="#reservation" class="ss-story-link">Parlons de votre projet <span aria-hidden="true">↗</span></a>
   </div>
- </section>
- <section class="territories-section" id="zones" aria-labelledby="territories-title">
+  <div class="ss-story-track" aria-label="Les quatre étapes de l’accompagnement">
+   <div class="ss-story-rail" aria-hidden="true"><span class="ss-story-progress"></span></div>
+   <ol class="ss-story-list">
+    <li class="ss-story-step"><span class="ss-story-marker" aria-hidden="true"></span><div class="ss-story-step-body"><span class="ss-story-n">01 <i>—</i> Écouter</span><h3>Votre projet</h3><p>Nous prenons le temps de comprendre votre niveau, vos attentes et votre groupe.</p></div></li>
+    <li class="ss-story-step"><span class="ss-story-marker" aria-hidden="true"></span><div class="ss-story-step-body"><span class="ss-story-n">02 <i>—</i> Choisir</span><h3>Le bon profil</h3><p>Nous étudions le moniteur et la station adaptés, puis confirmons les disponibilités.</p></div></li>
+    <li class="ss-story-step"><span class="ss-story-marker" aria-hidden="true"></span><div class="ss-story-step-body"><span class="ss-story-n">03 <i>—</i> Préparer</span><h3>Les détails</h3><p>Matériel entretenu, préparation et ponctualité : les standards visés pour chaque partenaire.</p></div></li>
+    <li class="ss-story-step"><span class="ss-story-marker" aria-hidden="true"></span><div class="ss-story-step-body"><span class="ss-story-n">04 <i>—</i> Transmettre</span><h3>La transmission</h3><p>Des conseils précis, un rythme juste et le plaisir de skier ensemble.</p></div></li>
+   </ol>
+  </div>
+ </div>
+</section>
+<section class="territories-section" id="zones" aria-labelledby="territories-title">
   <div class="wrap alpine-reach">
     <div class="alpine-reach-copy">
       <span class="kicker">Notre terrain de jeu</span>
