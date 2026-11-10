@@ -3,582 +3,499 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#F9FAF8">
+<meta name="theme-color" content="#FBFCFB">
 <meta name="robots" content="noindex,nofollow">
-<meta name="description" content="Bastien Michelet, moniteur diplômé d'État de ski et snowboard. Journées privées sur mesure, progression technique et expériences en famille ou entre amis.">
-<title>Bastien Michelet — Le ski, à votre mesure.</title>
+<meta name="description" content="Bastien Michelet, moniteur privé de ski et snowboard diplômé d'État. Des journées sur mesure, conçues selon votre niveau, vos envies et votre groupe.">
+<title>Bastien Michelet — Le ski, à votre manière</title>
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://images.unsplash.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--snow:#f9faf8;--white:#fff;--ice:#f1f4f3;--ink:#172021;--muted:#657070;--line:#e1e7e4;--red:#b83f32;--red-dark:#972e26;--dark:#1c2425;--radius:15px;--max:1220px}
+:root{
+  --snow:#fbfcfb;--ink:#172021;--muted:#5f6b68;--line:#dce2de;
+  --accent:#b83f32;--accent-dark:#8d3028;--paper:#f1f4f2;
+  --serif:Georgia,"Times New Roman",serif;--sans:"DM Sans",sans-serif;
+  --display:"Manrope",Arial,sans-serif;--gutter:clamp(22px,5.2vw,88px);
+}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:74px}
-body{margin:0;background:var(--snow);color:var(--ink);font:14px/1.65 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
-button,input{font:inherit}a{color:inherit}button,a{-webkit-tap-highlight-color:transparent}
-img{display:block;max-width:100%}h1,h2,h3,p{margin-top:0}
-:focus-visible{outline:3px solid var(--red);outline-offset:4px}
-::selection{background:#f0c3b8;color:#172021}
-.wrap{width:min(var(--max),calc(100% - 92px));margin:auto}
-.eyebrow{font:800 10px/1.4 'Manrope',sans-serif;letter-spacing:.20em;text-transform:uppercase;color:var(--red)}
-h1,h2,h3{font-family:'Manrope',sans-serif;letter-spacing:-.065em}
-h2{font-size:clamp(31px,3.3vw,47px);line-height:1.16;font-weight:800;margin-bottom:17px}
-p{line-height:1.7}
-.button{display:inline-flex;justify-content:center;align-items:center;gap:15px;min-height:47px;border-radius:8px;padding:12px 19px;text-decoration:none;font:800 11px/1.2 'Manrope',sans-serif;transition:transform .2s,background .2s,box-shadow .2s;cursor:pointer}
-.button:hover{transform:translateY(-2px)}
-.button.primary{background:var(--red);color:#fff;border:1px solid var(--red)}
-.button.primary:hover{background:var(--red-dark);box-shadow:0 9px 25px #b83f3231}
-.button.ghost{background:#fff;color:var(--ink);border:1px solid #cbd3ce}
-.button.ghost:hover{background:#f2f6f3}
-.skip{position:fixed;top:-70px;left:15px;z-index:200;padding:12px;background:var(--white);color:var(--ink)}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--snow);color:var(--ink);font:14px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+button{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+::selection{background:#edc4ba;color:var(--ink)}
+h1,h2,h3,p,figure{margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.057em}
+p{line-height:1.75}
+.wrap{width:100%;max-width:1450px;margin:auto;padding-inline:var(--gutter)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:fixed;left:15px;top:-100px;z-index:200;background:white;padding:11px 15px}
 .skip:focus{top:12px}
-.site-header{position:absolute;inset:0 0 auto;z-index:40;background:transparent}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:25px;height:73px;border-bottom:1px solid #d8dfda}
-.brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;white-space:nowrap}
-.brand-mark{width:37px;height:30px;flex:none}
-.brand-name{font:800 12px/1.25 'Manrope',sans-serif;letter-spacing:.095em}
-.brand-sub{font:650 7px/1.8 'Manrope',sans-serif;letter-spacing:.18em;color:#687473}
-.nav-links{display:flex;align-items:center;gap:28px}
-.nav-links>a:not(.button){text-decoration:none;font:700 11px 'Manrope',sans-serif;color:#354243}
-.nav-links>a:not(.button):hover{color:var(--red)}
-.nav-links .button{min-height:37px;padding:9px 15px;font-size:10px}
-.menu-toggle{display:none;border:1px solid #ced7d2;border-radius:7px;background:#fff;padding:9px 12px;font-weight:700;color:var(--ink)}
-/* HERO — neige et mouvement : photographie réelle d'ambiance, pas Bastien */
-.hero{position:relative;min-height:670px;height:min(830px,100svh);background:#f6f9f8;overflow:hidden}
-.hero-snow{position:absolute;inset:0 0 0 37%;overflow:hidden}
-.hero-snow img{position:absolute;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:contrast(1.06) saturate(.83)}
-.hero-snow:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#f6f9f8 0%,#f6f9f8db 13%,#f6f9f88c 29%,#f6f9f800 53%),linear-gradient(0deg,#f6f9f8bf,#fff0 33%)}
-.hero-snow:after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(0deg,#f6f9f880,transparent 14%),linear-gradient(180deg,#f6f9f8a1,transparent 18%)}
-.hero-inner{position:relative;z-index:5;display:flex;flex-direction:column;justify-content:center;height:100%;padding-top:85px;padding-bottom:30px}
-.hero-copy{max-width:700px}
-.hero-kicker{display:flex;align-items:center;gap:10px;margin-bottom:22px}
-.hero-kicker .dot{height:7px;width:7px;border-radius:50%;background:var(--red)}
-.hero-kicker span{font:800 10px 'Manrope',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#586464}
-.hero h1{font-size:clamp(48px,5.4vw,75px);line-height:1.065;font-weight:800;margin:0 0 19px;max-width:760px}
-.hero h1 em{color:var(--red);font-style:normal}
-.hero p{font-size:clamp(15px,1.3vw,17px);line-height:1.72;max-width:540px;color:#465657;margin-bottom:0}
-.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:27px}
-.hero-trust{margin-top:34px;display:flex;align-items:center;gap:17px;flex-wrap:wrap}
-.rating{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid #dce3df;border-radius:10px;padding:9px 14px;text-decoration:none;box-shadow:0 8px 26px #1a27290c}
-.rating-stars{color:var(--red);font-size:17px;letter-spacing:.05em;white-space:nowrap}
-.rating-content{display:flex;flex-direction:column;gap:0;font:700 12px/1.4 'Manrope',sans-serif}
-.rating-content small{font:500 10px/1.3 'DM Sans',sans-serif;color:#738080}
-.rating strong{font:800 18px/1 'Manrope',sans-serif;letter-spacing:-.04em}
-.rating-trustpilot{font:750 12px 'Manrope',sans-serif}
-.hero-fact{font:700 11px 'Manrope',sans-serif;color:#53605f;max-width:195px;line-height:1.55}
-.hero-fact b{color:#192526}
-.photo-credit{position:absolute;z-index:6;bottom:15px;right:24px;color:#1a272b;border-radius:99px;background:#fffdf8db;backdrop-filter:blur(9px);font-size:10px;padding:5px 11px}
-.hero-step{position:absolute;z-index:5;left:4.1vw;bottom:22px;font:700 10px 'Manrope',sans-serif;text-transform:uppercase;letter-spacing:.2em;color:#677272}
-/* TRUST STRIP — deuxième section */
-.trust-strip{background:white;border-top:1px solid #e4e8e4;border-bottom:1px solid #e4e8e4}
-.trust-grid{display:grid;grid-template-columns:1.12fr 1fr 1fr 1.35fr;gap:10px;padding-top:26px;padding-bottom:26px}
-.trust-item{display:flex;flex-direction:column;justify-content:center;min-height:54px;border-right:1px solid #e3e8e4;padding:0 20px}
-.trust-item:first-child{padding-left:0}
-.trust-item:last-child{border-right:0}
-.trust-item strong{font:800 clamp(18px,2vw,25px)/1.12 'Manrope',sans-serif;letter-spacing:-.05em;color:var(--ink)}
-.trust-item span{font-size:11px;color:#6b7976;margin-top:5px}
-.trust-item .small{font:800 12px 'Manrope',sans-serif;letter-spacing:-.01em}
-/* SHARED */
-.section{padding:89px 0}
-.section-header{display:flex;justify-content:space-between;align-items:end;gap:34px;margin-bottom:37px}
-.section-header h2{max-width:660px;margin:9px 0 0}
-.section-header .lead{margin:0;max-width:335px;color:var(--muted);font-size:14px}
-.mini-link{font:800 11px 'Manrope',sans-serif;color:var(--red);text-decoration:none;border-bottom:1px solid #bd766c;padding-bottom:6px}
-.mini-link:hover{color:var(--red-dark)}
-/* INTRO : HOW PERSONALIZATION WORKS */
-.process{background:var(--snow)}
-.process-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:70px;align-items:center}
-.process-copy p{max-width:500px;color:#65716f;font-size:15px}
-.process-copy h2{max-width:550px}
-.process-copy h2 em{font-style:normal;color:var(--red)}
-.process-points{margin:26px 0 0;display:grid;gap:0}
-.process-point{display:flex;gap:21px;padding:16px 0;border-top:1px solid #dce4df;align-items:flex-start}
-.process-point:last-child{border-bottom:1px solid #dce4df}
-.process-num{color:var(--red);font:800 11px 'Manrope',sans-serif;margin-top:3px}
-.process-point strong{display:block;font:800 13px 'Manrope',sans-serif}
-.process-point p{font-size:12px;margin:5px 0 0;color:#71807d}
-.process-photo{position:relative;aspect-ratio:1.16;border-radius:16px;overflow:hidden;background:#e7edf0}
-.process-photo img{height:100%;width:100%;object-fit:cover;object-position:center;filter:saturate(.72)}
-.process-photo .overlay-note{position:absolute;bottom:18px;left:20px;right:20px;padding:13px 17px;border:1px solid #ffffff90;background:#ffffffe8;backdrop-filter:blur(12px);border-radius:9px;font:750 12px 'Manrope',sans-serif}
-/* TESTIMONIALS — EARLY */
-.socialproof{background:#eff3f0;border-top:1px solid #e3e9e4;border-bottom:1px solid #e3e9e4;padding:72px 0}
-.social-head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:27px}
-.social-head h2{margin:7px 0 0}
-.social-note{font-size:12px;color:#78827e;max-width:320px}
-.social-content{display:grid;grid-template-columns:1fr .82fr;gap:18px}
-.testimonial-placeholder{background:#fff;border:1px solid #dfe6e0;border-radius:14px;padding:30px 31px;min-height:170px}
-.testimonial-placeholder .stars{font-size:17px;letter-spacing:.11em;color:var(--red)}
-.testimonial-placeholder h3{font:800 20px/1.3 'Manrope',sans-serif;letter-spacing:-.035em;margin:15px 0 8px}
-.testimonial-placeholder p{font-size:13px;color:#6a7872;margin:0;max-width:490px}
-.testimonial-aside{background:var(--red);border-radius:14px;color:#fff;padding:29px;display:flex;flex-direction:column;justify-content:space-between}
-.testimonial-aside .eyebrow{color:#f8d9d2}
-.testimonial-aside strong{font:800 clamp(23px,3vw,37px)/1.18 'Manrope',sans-serif;letter-spacing:-.05em}
-.testimonial-aside a{color:#fff;font:800 11px 'Manrope',sans-serif;text-decoration:underline;text-underline-offset:5px}
-.review-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:15px}
-.review-card{padding:24px;border:1px solid #dde5df;border-radius:12px;background:white}
-.review-card .stars{color:var(--red)}
-.review-card p{font-size:13px;color:#52605c}
-.review-card strong{font:750 12px 'Manrope',sans-serif}
-[hidden]{display:none!important}
-/* EXPERIENCES */
-.experiences{background:#fff}
-.experience-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.experience{display:flex;flex-direction:column;border:1px solid #e4e8e3;background:#fff;border-radius:14px;overflow:hidden;transition:transform .22s,box-shadow .22s}
-.experience:hover{transform:translateY(-4px);box-shadow:0 14px 36px #20302c11}
-.experience-image{height:205px;overflow:hidden;background:#f0f3ef}
-.experience-image img{width:100%;height:100%;object-fit:cover;filter:saturate(.78);transition:transform .35s}
-.experience:hover img{transform:scale(1.035)}
-.experience-copy{padding:22px;flex:1;display:flex;flex-direction:column}
-.experience-index{font:800 9px 'Manrope',sans-serif;letter-spacing:.14em;color:var(--red)}
-.experience h3{font:800 20px/1.25 'Manrope',sans-serif;letter-spacing:-.048em;margin:11px 0}
-.experience p{font-size:12px;color:#707e78;margin-bottom:18px}
-.experience .tag{font:800 10px 'Manrope',sans-serif;color:var(--red);margin-top:auto}
-/* THREE MOODS SELECTOR */
-.moods{background:#f7f9f7}
-.mood-shell{display:grid;grid-template-columns:.86fr 1.14fr;min-height:344px;background:#fff;border:1px solid #e0e7e1;border-radius:16px;overflow:hidden}
-.mood-select{padding:28px;display:flex;flex-direction:column;gap:9px}
-.mood-select .eyebrow{margin-bottom:10px}
-.mood-tab{display:flex;align-items:center;justify-content:space-between;width:100%;background:#f2f5f2;color:#3f4c48;border:1px solid #edf0ed;padding:15px 17px;border-radius:9px;text-align:left;cursor:pointer;font:750 13px 'Manrope',sans-serif;transition:background .2s,color .2s}
-.mood-tab:hover{background:#e9efea}
-.mood-tab[aria-pressed="true"]{background:var(--dark);color:#fff}
-.mood-select small{margin-top:auto;color:#77847f;font-size:11px;line-height:1.6}
-.mood-result{position:relative;isolation:isolate;background:#e6edf0;min-height:344px;overflow:hidden}
-.mood-result img{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.8)}
-.mood-result:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(0deg,#12201fdf,transparent 78%)}
-.mood-result-content{position:absolute;bottom:25px;left:29px;right:29px;color:#fff}
-.mood-result h3{font:800 clamp(24px,2.8vw,36px)/1.13 'Manrope',sans-serif;letter-spacing:-.052em;margin:6px 0 11px}
-.mood-result p{font-size:13px;color:#f0f5f2;max-width:520px;margin:0}
-.mood-result-label{font:800 10px 'Manrope',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#fff}
-.moods-small{color:#78857f;font-size:11px;margin-top:12px}
-/* ABOUT */
-.about{background:white}
-.about-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:center}
-.about-photo{height:390px;border-radius:16px;overflow:hidden;background:#e5e9e6}
-.about-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.75)}
-.about-copy h2{margin:14px 0 18px}
-.about-copy p{color:#66716e;font-size:14px;max-width:560px}
-.about-metrics{display:flex;flex-wrap:wrap;gap:32px;margin-top:23px;padding-top:20px;border-top:1px solid #dce5de}
-.about-metrics strong{display:block;font:800 24px 'Manrope',sans-serif;letter-spacing:-.06em}
-.about-metrics span{display:block;font-size:11px;color:#75807c}
-/* FAQ & CTA */
-.faq{background:#f4f7f4}
-.faq-layout{display:grid;grid-template-columns:.78fr 1.22fr;gap:76px}
-.faq-layout h2{margin:12px 0}
-.faq-list{border-top:1px solid #d5dfd7}
-.faq details{padding:16px 0;border-bottom:1px solid #d5dfd7}
-.faq summary{display:flex;justify-content:space-between;align-items:center;gap:15px;list-style:none;cursor:pointer;font:750 13px 'Manrope',sans-serif}
+.kicker{font:700 10px/1.5 var(--display);letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+.kicker-light{color:#c8cdc9}
+.section-index{display:inline-block;margin-right:20px;color:var(--accent);font:700 11px var(--display)}
+.text-link{display:inline-flex;gap:23px;align-items:center;justify-content:space-between;text-decoration:none;font:700 12px var(--display);padding:9px 0 8px;border-bottom:1px solid var(--ink)}
+.text-link:hover{border-color:var(--accent);color:var(--accent)}
+.text-link .arrow{font-size:17px;font-weight:400}
+/* Calm top navigation */
+.site-header{position:sticky;top:0;z-index:60;background:rgba(251,252,251,.97);border-bottom:1px solid var(--line)}
+.site-nav{height:75px;display:flex;justify-content:space-between;align-items:center;gap:28px}
+.wordmark{text-decoration:none;display:flex;align-items:center;gap:12px;white-space:nowrap}
+.wordmark-mark{width:40px;height:29px;flex:none}
+.wordmark-name{font:800 12px/1.12 var(--display);letter-spacing:.105em}
+.wordmark-sub{display:block;font:600 8px/1.9 var(--display);letter-spacing:.19em;color:#64716e}
+.nav-list{display:flex;align-items:center;gap:37px}
+.nav-list>a{font:600 11px var(--display);text-decoration:none;color:#394743}
+.nav-list>a:hover{color:var(--accent)}
+.nav-list .nav-final{padding-bottom:6px;border-bottom:1px solid var(--accent)}
+.nav-toggle{display:none;border:1px solid var(--line);background:none;color:var(--ink);padding:9px 11px}
+/* Hero: the action image is the visual anchor */
+.hero{position:relative;min-height:610px;height:clamp(610px,calc(100svh - 75px),780px);overflow:hidden;isolation:isolate;background:#f8faf8}
+.hero-image{position:absolute;inset:0 0 0 41%;z-index:-2;overflow:hidden}
+.hero-image img{object-position:51% 48%;filter:contrast(1.045) saturate(.91)}
+.hero-image:after{content:"";position:absolute;inset:0;background:
+ linear-gradient(90deg,#f8faf8 0%,#f8faf8e8 14%,#f8faf8b0 27%,#f8faf819 60%),
+ linear-gradient(0deg,#f8faf8b0,transparent 24%)}
+.hero-inner{display:flex;flex-direction:column;justify-content:center;height:100%;position:relative;padding-top:25px;padding-bottom:46px}
+.hero-copy{max-width:620px}
+.hero-intro{display:flex;align-items:center;gap:15px;margin-bottom:21px}
+.hero-intro:before{content:"";width:30px;height:1px;background:var(--accent)}
+.hero-intro span{font:700 10px var(--display);letter-spacing:.16em;text-transform:uppercase}
+.hero h1{font-size:clamp(48px,5.6vw,79px);line-height:1.08;font-weight:750;margin-bottom:24px}
+.hero h1 span{display:block;color:var(--accent)}
+.hero-copy>p{max-width:475px;font-size:15px;line-height:1.75;color:#35413e}
+.hero-cta{display:inline-flex;align-items:center;justify-content:space-between;min-width:215px;margin-top:28px;text-decoration:none;color:#fff;background:var(--accent);padding:15px 18px;font:700 12px var(--display)}
+.hero-cta:hover{background:var(--accent-dark)}
+.hero-cta span{font-size:18px;font-weight:400;margin-left:20px}
+.hero-bottom{position:absolute;bottom:25px;left:var(--gutter);right:var(--gutter);display:flex;justify-content:space-between;gap:18px;font:600 10px var(--display);letter-spacing:.08em;color:#54615c}
+.hero-bottom .photocredit{color:#58625d;font-weight:400;letter-spacing:0;background:#ffffffa8;padding:3px 8px}
+.hero-bottom .photocredit a{text-decoration:none}
+/* Line of evidence, not four cards */
+.credibility{background:#fff;border-bottom:1px solid var(--line)}
+.credibility-inner{min-height:112px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.credibility-head{font:700 11px var(--display);letter-spacing:.07em;white-space:nowrap;color:#4b5b55}
+.credibility-items{display:flex;justify-content:flex-end;align-items:center;gap:30px;flex-wrap:wrap}
+.credibility-items>span,.credibility-items>a{display:inline-flex;gap:9px;align-items:baseline;text-decoration:none;font:500 12px var(--sans);white-space:nowrap;color:#52605a}
+.credibility-items strong{font:800 15px var(--display);letter-spacing:-.045em;color:var(--ink)}
+.credibility-items a strong{color:var(--accent)}
+.credibility-items>a:hover{text-decoration:underline;text-underline-offset:4px}
+/* Editorial positioning */
+.intro{padding:108px 0 102px;border-bottom:1px solid var(--line)}
+.intro-top{display:grid;grid-template-columns:1fr 1.7fr;gap:55px;align-items:start}
+.intro h2{font-size:clamp(35px,4.2vw,62px);line-height:1.17;max-width:850px;margin-top:-9px}
+.intro h2 em{font-family:var(--serif);font-weight:400;letter-spacing:-.05em;color:var(--accent)}
+.intro-bottom{display:grid;grid-template-columns:1fr 1.7fr;gap:55px;padding-top:38px}
+.intro-bottom p{font-size:16px;line-height:1.72;color:#4f5d57;max-width:640px}
+.intro-bottom .text-link{justify-self:start;align-self:end}
+/* Imagery editorial diptych — deliberately not cards */
+.mountain-essay{background:#fff;padding:80px 0 90px}
+.mountain-essay-grid{display:grid;grid-template-columns:1.26fr .74fr;gap:22px;align-items:end}
+.mountain-essay figure:first-child{height:510px}
+.mountain-essay figure:last-child{height:330px}
+.mountain-essay figure{overflow:hidden}
+.mountain-essay img{transition:transform .6s ease}
+.mountain-essay img:hover{transform:scale(1.016)}
+.mountain-essay figcaption{font-size:10px;line-height:1.6;color:#7b8780;padding-top:10px;letter-spacing:.04em}
+.essay-bottom{display:flex;justify-content:space-between;gap:30px;align-items:center;border-top:1px solid var(--line);margin-top:35px;padding-top:22px}
+.essay-bottom strong{font:700 14px var(--display)}
+.essay-bottom span{font-size:11px;color:var(--muted)}
+/* Real social proof up front; no fake quote cards */
+.voices{background:var(--paper);padding:85px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.voices-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:80px}
+.voices h2{font-size:clamp(35px,3.7vw,52px);line-height:1.15;max-width:610px;margin:18px 0 24px}
+.voices h2 em{font-family:var(--serif);font-weight:400;color:var(--accent)}
+.voices-left>p{max-width:460px;font-size:13px;color:#69756e;margin:0}
+.voices-right{border-top:1px solid #bfcac2;padding-top:21px;display:flex;flex-direction:column;justify-content:space-between;gap:35px}
+.voices-mark{font:800 clamp(50px,6vw,88px)/1 var(--display);letter-spacing:-.075em}
+.voices-mark small{font:500 19px var(--display);color:#708078}
+.voices-right>p{font-size:14px;color:#4c5b53;max-width:380px}
+.voices-right .text-link{align-self:start}
+.authentic-reviews{border-top:1px solid #cbd4cd;margin-top:42px;padding-top:24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:35px}
+.authentic-reviews[hidden]{display:none}
+.authentic-review{padding-top:10px;border-top:2px solid var(--accent)}
+.authentic-review blockquote{margin:0 0 16px;font:400 15px/1.7 var(--serif)}
+.authentic-review cite{font:600 11px var(--display);font-style:normal}
+/* Service selector: typographic directory + ONE strong visual, not a bento grid */
+.experiences{padding:105px 0 110px;background:#fff}
+.experiences-head{display:grid;grid-template-columns:1fr 1.65fr;gap:65px;margin-bottom:48px}
+.experiences h2{font-size:clamp(36px,4vw,56px);line-height:1.14;max-width:700px}
+.experiences h2 em{color:var(--accent);font-family:var(--serif);font-weight:400}
+.experience-layout{display:grid;grid-template-columns:1.03fr .97fr;gap:56px;align-items:start}
+.experience-list{border-top:1px solid var(--ink)}
+.experience-choice{display:grid;grid-template-columns:38px 1fr 18px;gap:10px;align-items:center;text-align:left;width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;padding:26px 0;cursor:pointer;color:var(--ink)}
+.experience-choice .choice-index{font:600 11px var(--display);color:var(--accent);align-self:start;padding-top:6px}
+.experience-choice strong{display:block;font:700 clamp(21px,2.2vw,30px)/1.2 var(--display);letter-spacing:-.047em}
+.experience-choice .choice-description{display:block;color:#6a7770;font-size:12px;line-height:1.6;margin-top:7px;max-width:370px}
+.experience-choice .choice-arrow{font-size:21px;color:#8a968e;transition:transform .2s}
+.experience-choice:hover .choice-arrow{transform:translateX(5px);color:var(--accent)}
+.experience-choice[aria-pressed="true"] strong{color:var(--accent)}
+.experience-choice[aria-pressed="true"] .choice-arrow{color:var(--accent)}
+.experience-image{position:relative;height:540px;background:#e3e9e5;overflow:hidden}
+.experience-image img{object-position:center 45%}
+.experience-caption{display:flex;justify-content:space-between;gap:15px;padding-top:13px;font:600 10px var(--display);color:#77817b}
+.experience-caption strong{color:var(--accent);font:700 10px var(--display)}
+/* A simple service philosophy and the person behind it */
+.method{padding:105px 0;background:var(--snow);border-top:1px solid var(--line)}
+.method-header{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;margin-bottom:49px}
+.method h2{font-size:clamp(37px,4.2vw,59px);line-height:1.14;max-width:790px}
+.method h2 em{font-family:var(--serif);color:var(--accent);font-weight:400}
+.method-steps{border-top:1px solid var(--ink)}
+.method-step{display:grid;grid-template-columns:80px .9fr 1.1fr;gap:35px;align-items:baseline;border-bottom:1px solid var(--line);padding:27px 0}
+.method-step .number{font:700 13px var(--display);color:var(--accent)}
+.method-step h3{font:700 21px var(--display);letter-spacing:-.04em}
+.method-step p{color:#65716b;font-size:13px;max-width:570px}
+.about{background:#fff;padding:92px 0}
+.about-layout{display:grid;grid-template-columns:.81fr 1.19fr;gap:70px;align-items:center}
+.about-photo{height:455px}
+.about-photo img{object-position:center 57%}
+.about-copy{max-width:640px}
+.about h2{font-size:clamp(38px,4.5vw,62px);line-height:1.12;margin:17px 0 25px}
+.about p{font-size:14px;color:#56645d;margin-bottom:18px;max-width:560px}
+.about-proof{display:flex;gap:32px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:27px;padding-top:22px}
+.about-proof span{font-size:11px;color:#6f7974}
+.about-proof strong{display:block;font:700 22px var(--display);color:var(--ink)}
+/* Understated FAQ */
+.faq{padding:86px 0;background:var(--paper);border-top:1px solid var(--line)}
+.faq-layout{display:grid;grid-template-columns:.78fr 1.22fr;gap:80px}
+.faq h2{font-size:clamp(32px,3.6vw,50px);margin:16px 0}
+.faq-list{border-top:1px solid var(--ink)}
+.faq details{border-bottom:1px solid #cbd4cd;padding:20px 0}
+.faq summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:18px;cursor:pointer;font:700 14px var(--display)}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary:after{content:'+';color:var(--red);font-size:23px;font-weight:400}
-.faq details[open] summary:after{content:'−'}
-.faq details p{font-size:12px;color:#687670;margin:9px 25px 0 0}
-.cta{background:var(--dark);color:#fff;padding:76px 0}
-.cta .eyebrow{color:#f1bdb0}
-.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:45px}
-.cta h2{margin:11px 0;max-width:650px;font-size:clamp(31px,3.6vw,49px)}
-.cta p{color:#b6c1be;font-size:13px;max-width:550px;margin:0}
-.disabled-cta{background:#dde0da;color:#56605c;border:0;cursor:not-allowed;opacity:.74}
-.disabled-cta:hover{transform:none}
-.cta-action{display:flex;flex-direction:column;gap:9px;align-items:flex-start}
-.cta-action small{color:#b8c1bf;font-size:11px}
-footer{background:#151c1d;color:#d3dad5;padding:28px 0}
-.footer-top{display:flex;align-items:center;justify-content:space-between;gap:25px;font-size:11px}
-.footer-top strong{font:750 11px 'Manrope',sans-serif;letter-spacing:.1em}
-footer a{color:#e0e5de}
-.legal{padding-top:14px;margin-top:20px;border-top:1px solid #ffffff21;font-size:10px;color:#aeb8b1}
-@media(max-width:1050px){
- .experience-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .hero-snow{left:44%}
- .hero h1{font-size:clamp(48px,5.4vw,65px)}
- .process-grid,.about-layout{gap:35px}
- .trust-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
- .trust-item{padding-inline:12px}
+.faq summary:after{content:"+";color:var(--accent);font:400 22px var(--display);transition:transform .2s}
+.faq details[open] summary:after{content:"−"}
+.faq details p{font-size:13px;color:#58665e;max-width:680px;margin:12px 45px 0 0}
+/* Contact — confident not salesy */
+.contact{padding:90px 0 95px;background:#fff;border-top:1px solid var(--line)}
+.contact-layout{display:grid;grid-template-columns:1.4fr .6fr;gap:70px;align-items:end}
+.contact h2{font-size:clamp(44px,5.5vw,80px);line-height:1.09;max-width:980px;margin:18px 0 20px}
+.contact h2 em{font-family:var(--serif);font-weight:400;color:var(--accent)}
+.contact p{font-size:14px;color:#6d7870;max-width:550px}
+.contact-action{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.contact-action span{border-top:1px solid var(--line);padding-top:18px;font-size:11px;color:#737e77}
+.contact-action .disabled-link{font:700 13px var(--display);border-bottom:1px solid var(--accent);padding-bottom:13px;color:#7f8983;cursor:not-allowed}
+footer{background:#172021;color:#edf1ed;padding:34px 0 22px}
+.footer-line{display:flex;justify-content:space-between;gap:22px;align-items:center;font:600 11px var(--display)}
+.footer-line a{text-decoration:none;border-bottom:1px solid #6e7972}
+.footer-line a:hover{border-color:#fff}
+.legal{border-top:1px solid #ffffff2a;margin-top:27px;padding-top:17px;font-size:10px;color:#b5c0b8;line-height:1.7}
+@media(max-width:1060px){
+ .wrap{padding-inline:clamp(23px,4vw,50px)}
+ .hero{min-height:590px}
+ .hero-image{left:35%}
+ .hero h1{font-size:clamp(47px,6vw,65px)}
+ .nav-list{gap:22px}
+ .credibility-inner{gap:20px}
+ .credibility-items{gap:19px}
+ .mountain-essay figure:first-child{height:430px}
+ .mountain-essay figure:last-child{height:280px}
+ .experience-layout{gap:35px}
+ .experience-image{height:470px}
+ .about-layout{gap:45px}
 }
-@media(max-width:760px){
- .wrap{width:calc(100% - 38px)}
- .nav{height:62px}
- .brand-mark{width:30px}
- .brand-name{font-size:10px}
- .brand-sub{font-size:6px}
- .menu-toggle{display:block}
- .nav-links{display:none;position:absolute;top:62px;left:0;right:0;background:#fffffffa;padding:14px 19px 20px;flex-direction:column;align-items:stretch;gap:0;box-shadow:0 17px 24px #1c292912}
- .nav-links.open{display:flex}
- .nav-links>a:not(.button){padding:13px 0;border-bottom:1px solid #e5ebe7}
- .nav-links .button{margin-top:12px}
- .hero{height:auto;min-height:780px;padding-top:62px}
- .hero-snow{inset:62px 0 auto 0;height:58%;opacity:.93}
- .hero-snow:before{background:linear-gradient(0deg,#f6f9f8 0%,#f6f9f8e0 10%,#f6f9f86b 36%,transparent 60%)}
- .hero-snow:after{background:linear-gradient(180deg,#f6f9f8aa,transparent 24%)}
- .hero-snow img{object-position:center 45%}
- .hero-inner{justify-content:flex-end;min-height:775px;padding-top:260px;padding-bottom:37px}
- .hero-copy{max-width:100%}
- .hero h1{font-size:clamp(39px,10vw,55px);max-width:540px;line-height:1.08}
- .hero p{font-size:13px;max-width:490px}
- .hero-trust{margin-top:21px;gap:11px}
- .hero-kicker{margin-bottom:12px}
- .hero-kicker span{font-size:9px}
- .hero-step,.photo-credit{display:none}
- .trust-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0;padding:14px 0}
- .trust-item{padding:13px 10px;border:0;border-bottom:1px solid #edf0ed;min-height:64px}
- .trust-item:nth-child(odd){border-right:1px solid #edf0ed}
- .trust-item:nth-last-child(-n+2){border-bottom:0}
- .trust-item strong{font-size:19px}
- .section{padding:63px 0}
- .section-header{display:block;margin-bottom:26px}
- .section-header .lead{margin-top:16px;max-width:580px}
- .process-grid,.about-layout,.faq-layout{grid-template-columns:1fr;gap:28px}
- .process-photo{aspect-ratio:1.3}
- .process-grid .process-photo{order:2}
- .socialproof{padding:55px 0}
- .social-head{display:block}
- .social-note{margin-top:14px}
- .social-content{grid-template-columns:1fr}
- .testimonial-aside{min-height:150px;gap:20px}
- .review-list{grid-template-columns:1fr}
- .experience-image{height:170px}
- .mood-shell{grid-template-columns:1fr}
- .mood-select{padding:23px;gap:7px}
- .mood-select small{margin-top:13px}
- .mood-result{min-height:325px}
- .about-photo{height:310px}
- .cta-inner{display:block}
- .cta-action{margin-top:22px}
+@media(max-width:790px){
+ .site-nav{height:64px}
+ .nav-toggle{display:block}
+ .nav-list{position:absolute;display:none;top:64px;left:0;right:0;background:var(--snow);border-bottom:1px solid var(--line);padding:17px var(--gutter) 24px;flex-direction:column;align-items:flex-start;gap:0}
+ .nav-list.is-open{display:flex}
+ .nav-list>a{padding:13px 0}
+ .hero{height:auto;min-height:770px}
+ .hero-image{inset:0 0 auto;height:56%}
+ .hero-image img{object-position:center 45%}
+ .hero-image:after{background:linear-gradient(0deg,#f8faf8 4%,#f8faf8e8 18%,#f8faf850 50%,transparent 82%)}
+ .hero-inner{min-height:770px;justify-content:flex-end;padding-top:290px;padding-bottom:80px}
+ .hero-copy{max-width:600px}
+ .hero h1{font-size:clamp(42px,8.5vw,62px)}
+ .hero-bottom{bottom:20px}
+ .hero-bottom .photocredit{display:none}
+ .credibility-inner{display:block;padding-top:25px;padding-bottom:26px;min-height:0}
+ .credibility-head{margin-bottom:17px}
+ .credibility-items{justify-content:flex-start;gap:12px 27px}
+ .intro{padding:75px 0}
+ .intro-top,.intro-bottom{grid-template-columns:1fr;gap:24px}
+ .intro h2{font-size:clamp(35px,5.6vw,53px)}
+ .intro-bottom{padding-top:20px}
+ .mountain-essay{padding:50px 0 65px}
+ .mountain-essay-grid{gap:15px}
+ .mountain-essay figure:first-child{height:370px}
+ .mountain-essay figure:last-child{height:265px}
+ .voices{padding:70px 0}
+ .voices-layout{grid-template-columns:1fr;gap:32px}
+ .voices-right{gap:25px}
+ .authentic-reviews{grid-template-columns:1fr}
+ .experiences{padding:75px 0}
+ .experiences-head,.experience-layout{grid-template-columns:1fr;gap:25px}
+ .experiences-head{margin-bottom:27px}
+ .experience-image{height:390px}
+ .experience-choice{padding:21px 0}
+ .method{padding:77px 0}
+ .method-header{grid-template-columns:1fr;gap:20px;margin-bottom:32px}
+ .method-step{grid-template-columns:43px 1fr;gap:13px}
+ .method-step p{grid-column:2}
+ .about{padding:70px 0}
+ .about-layout{grid-template-columns:1fr;gap:37px}
+ .about-photo{height:320px}
+ .faq{padding:70px 0}
+ .faq-layout{grid-template-columns:1fr;gap:24px}
+ .contact{padding:76px 0}
+ .contact-layout{grid-template-columns:1fr;gap:30px}
 }
-@media(max-width:500px){
- .hero{min-height:775px}
- .hero-inner{min-height:770px;padding-bottom:27px;padding-top:230px}
- .hero h1{font-size:clamp(35px,9.4vw,47px);margin-bottom:13px}
- .hero-actions{margin-top:19px;gap:7px}
- .hero-actions .button{font-size:10px;min-height:43px;padding:10px 12px}
- .hero-trust{gap:10px}
- .rating{padding:7px 10px}
- .rating-stars{font-size:14px}
- .rating strong{font-size:16px}
- .rating-content{font-size:10px}
- .hero-fact{font-size:10px}
- .trust-item{padding:12px 8px}
- .experience-grid{grid-template-columns:1fr}
- .experience-image{height:170px}
- .experience-copy{padding:18px}
- .experience h3{margin:8px 0;font-size:20px}
- .mood-select{padding:20px}
- .mood-tab{padding:12px 13px}
- .mood-result{min-height:310px}
- .mood-result-content{left:20px;right:20px;bottom:18px}
- .mood-result h3{font-size:25px}
- .photo-credit{display:none}
- .footer-top{display:block}
- .footer-top span{display:block;margin-top:12px}
+@media(max-width:490px){
+ .hero{min-height:740px}
+ .hero-inner{min-height:740px;padding-top:290px;padding-bottom:62px}
+ .hero h1{font-size:clamp(37px,10vw,47px);margin-bottom:15px}
+ .hero-copy>p{font-size:13px;line-height:1.65}
+ .hero-cta{margin-top:18px}
+ .hero-intro{margin-bottom:14px}
+ .hero-intro span{font-size:9px}
+ .hero-bottom{font-size:9px}
+ .credibility-items>span,.credibility-items>a{font-size:11px}
+ .credibility-items strong{font-size:13px}
+ .intro h2{font-size:35px}
+ .intro-bottom p{font-size:14px}
+ .mountain-essay-grid{grid-template-columns:1fr;gap:24px}
+ .mountain-essay figure:first-child{height:290px}
+ .mountain-essay figure:last-child{height:185px;width:70%;margin-left:auto}
+ .essay-bottom{display:block}
+ .essay-bottom span{display:block;margin-top:7px}
+ .voices h2{font-size:35px}
+ .voices-mark{font-size:59px}
+ .experiences h2,.method h2{font-size:38px}
+ .experience-choice strong{font-size:21px}
+ .experience-choice .choice-description{font-size:11px}
+ .experience-image{height:300px}
+ .about h2{font-size:41px}
+ .contact h2{font-size:43px}
+ .footer-line{display:block}
+ .footer-line a{display:inline-block;margin-top:15px}
 }
 @media(max-width:390px) and (max-height:720px){
- .hero{min-height:730px}
- .hero-inner{min-height:730px;padding-top:210px}
+ .hero{min-height:720px}
+ .hero-inner{min-height:720px;padding-top:265px}
  .hero h1{font-size:36px}
- .hero-snow{height:53%}
 }
 @media(prefers-reduced-motion:reduce){
  html{scroll-behavior:auto}
- .button,.experience,.experience img,.mood-tab{transition:none}
+ .mountain-essay img,.experience-choice .choice-arrow,.faq summary:after{transition:none}
 }
-
-/* ── QUALITY PASS V6 — DA V5 INCHANGÉE (snow / #B83F32 / deep ink) ── */
-:root{--focus-ring:#a73329;--shadow-soft:0 14px 45px rgba(23,32,33,.065)}
-html{scroll-padding-top:86px}
-body{font-size:14px;line-height:1.66;text-rendering:optimizeLegibility}
-.page-progress{position:fixed;inset:0 0 auto;z-index:90;height:2px;pointer-events:none}
-.page-progress-fill{height:100%;background:var(--red);width:0;transition:width .09s linear}
-.site-header{position:fixed;top:0;left:0;right:0;transition:background .25s,box-shadow .25s,backdrop-filter .25s}
-.site-header.is-scrolled,.site-header.menu-open{background:rgba(255,255,255,.94);box-shadow:0 7px 25px rgba(22,35,32,.065);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-.site-header.is-scrolled .nav{border-color:#e3e8e5}
-.nav-links>a:not(.button){transition:color .2s}
-.nav-links>a:not(.button):focus-visible{color:var(--red)}
-.brand:focus-visible{border-radius:4px}
-.hero-edition{display:inline-flex;align-items:center;gap:16px;color:#65726d;font:700 10px/1.4 'Manrope',sans-serif;letter-spacing:.045em;margin:0 0 16px}
-.hero-edition span{color:var(--red);font-size:15px}
-.hero-kicker{margin-bottom:15px}
-.hero h1{line-height:1.08;margin-bottom:17px;letter-spacing:-.063em}
-.hero .hero-copy{position:relative}
-.hero-snow img{transition:transform 1.6s cubic-bezier(.15,.75,.28,1);transform:scale(1.012)}
-.hero .hero-actions .button{box-shadow:0 3px 9px rgba(11,32,29,.065)}
-.hero-trust{gap:12px}
-.rating{box-shadow:var(--shadow-soft);transition:box-shadow .2s,transform .2s;border-color:#e2e8e3;gap:12px}
-.rating:hover{transform:translateY(-2px);box-shadow:0 17px 40px rgba(23,32,33,.11)}
-.rating-content strong{font:800 13px/1.2 'Manrope',sans-serif;letter-spacing:-.04em}
-.rating-stars{font-size:14px;letter-spacing:.03em}
-.rating-content small{color:#65716d;font-size:10px}
-.hero-step{letter-spacing:.09em}
-.hero-step span{color:var(--red);padding-left:7px}
-.trust-strip{position:relative;z-index:8;background:#fff}
-.trust-grid{padding-top:28px;padding-bottom:28px}
-.trust-item{position:relative;gap:0}
-.trust-item:before{content:"";display:block;width:18px;height:2px;border-radius:9px;background:var(--red);margin-bottom:13px}
-.trust-item strong{font-size:clamp(18px,1.9vw,24px)}
-.eyebrow-separator{display:inline-block;vertical-align:middle;width:22px;height:1px;background:#c89a95;margin:0 9px}
-.section-header{margin-bottom:32px}
-.section-header h2{line-height:1.19}
-.process-point{transition:background .2s,padding .2s}
-.process-point:hover{padding-left:11px;background:rgba(255,255,255,.5)}
-.process-num{display:inline-grid;place-items:center;min-width:28px;height:28px;background:#fff0eb;border:1px solid #f0d9d3;border-radius:7px;font-size:10px;margin-top:0}
-.process-photo,.about-photo{box-shadow:var(--shadow-soft)}
-.process-photo img,.about-photo img{transition:transform .6s cubic-bezier(.21,.6,.25,1)}
-.process-photo:hover img,.about-photo:hover img{transform:scale(1.025)}
-.testimonial-placeholder{box-shadow:0 10px 35px rgba(23,32,33,.035)}
-.testimonial-kicker{font:800 9px/1.5 'Manrope',sans-serif;letter-spacing:.16em;color:var(--red)}
-.testimonial-placeholder h3{font-size:18px;margin:13px 0 9px}
-.testimonial-aside{position:relative;overflow:hidden}
-.testimonial-aside:after{content:"";position:absolute;right:-45px;bottom:-95px;width:225px;height:225px;border:1px solid rgba(255,255,255,.2);border-radius:50%;pointer-events:none}
-.experience{box-shadow:0 3px 14px rgba(23,32,33,.018)}
-.experience-copy{padding:23px;min-height:195px}
-.experience-image img{transition:transform .45s cubic-bezier(.21,.6,.25,1),filter .3s}
-.experience:hover .experience-image img{filter:saturate(.9);transform:scale(1.04)}
-.experience-link{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;align-self:stretch;padding:12px 0 0;border-top:1px solid #ebefeb;text-decoration:none;transition:color .2s}
-.experience-link:hover{color:#942d24;text-decoration:underline;text-underline-offset:4px}
-.experience-link span{font-size:14px}
-.mood-shell{box-shadow:0 20px 70px rgba(23,32,33,.06)}
-.mood-tab{transition:background .2s,color .2s,transform .2s,border .2s}
-.mood-tab:hover{transform:translateX(3px)}
-.mood-tab[aria-pressed="true"]{border-left:3px solid var(--red)}
-.mood-result img{transition:opacity .25s ease}
-.mood-result.is-changing img{opacity:.72}
-.social-head{align-items:center}
-.social-note{margin:0}
-.faq summary:after{width:27px;height:27px;display:grid;place-items:center;border-radius:50%;background:#fff1ed;font-size:20px;flex:none;transition:background .15s}
-.faq details[open] summary:after{background:#f5ded9}
-.faq details p{max-width:620px}
-.cta{position:relative;overflow:hidden}
-.cta:after{content:"";position:absolute;right:-140px;top:-250px;width:560px;height:560px;border:1px solid rgba(255,255,255,.085);border-radius:50%;pointer-events:none}
-.cta-inner{position:relative;z-index:2}
-.footer-top a:hover{color:#fff;text-decoration-thickness:2px}
-@media(max-width:1050px){
- .hero-snow img{object-position:54% center}
- .nav-links{gap:19px}
- .hero-edition{max-width:440px}
-}
-@media(max-width:760px){
- html{scroll-padding-top:65px}
- .site-header{background:rgba(255,255,255,.85);backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px)}
- .site-header .nav{height:62px}
- .hero-edition{font-size:9px;margin-bottom:12px}
- .hero h1{font-size:clamp(39px,10vw,53px)}
- .hero-trust{gap:10px}
- .hero-snow img{object-position:62% center}
- .trust-item:before{margin-bottom:8px;width:14px}
- .experience-copy{min-height:auto}
- .process-point:hover{padding-left:0;background:transparent}
- .cta:after{width:320px;height:320px;top:auto;bottom:-240px;right:-160px}
-}
-@media(max-width:500px){
- .hero-edition{max-width:300px}
- .hero h1{font-size:clamp(37px,9.6vw,46px)}
- .hero-trust{margin-top:17px}
- .rating-content strong{font-size:12px}
- .experience-link{font-size:11px}
-}
-@media(prefers-reduced-motion:reduce){
- .site-header,.hero-snow img,.rating,.process-point,.process-photo img,.about-photo img,.experience-image img,.mood-result img,.mood-tab{transition:none}
- .mood-tab:hover,.rating:hover{transform:none}
-}
-
 </style>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
-<div class="page-progress" aria-hidden="true"><div class="page-progress-fill"></div></div>
-<header class="site-header" id="site-header">
+<header class="site-header">
  <div class="wrap">
-  <nav class="nav" aria-label="Navigation principale">
-   <a class="brand" href="#accueil" aria-label="Bastien Michelet, accueil">
-    <svg class="brand-mark" viewBox="0 0 75 56" aria-hidden="true"><path d="M3 30L20 14l8 6L41 3l14 17 7-6 10 16" fill="none" stroke="#1b2829" stroke-width="3.8"/><path d="M4 48h67" stroke="#b83f32" stroke-width="3"/></svg>
-    <span><span class="brand-name">BASTIEN MICHELET</span><span class="brand-sub">SKI & SNOWBOARD PRIVÉ</span></span>
+  <nav class="site-nav" aria-label="Navigation principale">
+   <a class="wordmark" href="#accueil" aria-label="Bastien Michelet, accueil">
+    <svg class="wordmark-mark" viewBox="0 0 75 56" aria-hidden="true"><path d="M3 30L20 14l8 6L41 3l14 17 7-6 10 16" fill="none" stroke="#172021" stroke-width="3.7"/><path d="M4 48h67" stroke="#b83f32" stroke-width="3"/></svg>
+    <span><span class="wordmark-name">BASTIEN MICHELET</span><span class="wordmark-sub">SKI &amp; SNOWBOARD PRIVÉ</span></span>
    </a>
-   <button type="button" class="menu-toggle" aria-label="Ouvrir la navigation" aria-controls="site-links" aria-expanded="false">Menu ☰</button>
-   <div class="nav-links" id="site-links">
-    <a href="#approche">L'approche</a><a href="#avis">Avis</a><a href="#experiences">Expériences</a><a href="#bastien">Bastien</a>
-    <a class="button primary" href="#contact">Préparer une journée <span aria-hidden="true">↗</span></a>
+   <button class="nav-toggle" type="button" aria-controls="navigation" aria-expanded="false" aria-label="Ouvrir le menu">Menu</button>
+   <div class="nav-list" id="navigation">
+    <a href="#approche">L'approche</a><a href="#avis">Avis clients</a><a href="#experiences">Expériences</a><a href="#bastien">Bastien</a>
+    <a class="nav-final" href="#contact">Votre journée ↗</a>
    </div>
   </nav>
  </div>
 </header>
 <main id="contenu">
- <section class="hero" id="accueil">
-  <div class="hero-snow">
-   <img src="https://images.pexels.com/photos/31112554/pexels-photo-31112554/free-photo-of-dynamic-skier-on-powder-snow-in-winter-landscape.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" fetchpriority="high" alt="Skieur engagé dans un virage en neige profonde, soulevant un nuage de poudreuse. Photographie d'illustration.">
+<section class="hero" id="accueil" aria-labelledby="hero-title">
+ <div class="hero-image">
+  <img src="https://images.pexels.com/photos/31112554/pexels-photo-31112554/free-photo-of-dynamic-skier-on-powder-snow-in-winter-landscape.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" alt="Skieur dans un virage engagé en poudreuse, photographie d'illustration" fetchpriority="high">
+ </div>
+ <div class="wrap hero-inner">
+  <div class="hero-copy">
+   <div class="hero-intro"><span>Le ski privé, autrement</span></div>
+   <h1 id="hero-title">Le ski.<br>À votre <span>manière.</span></h1>
+   <p>Vous avez déjà une destination en tête ? Je vous y accompagne. Vous préférez me laisser vous guider ? Nous choisissons ensemble le bon terrain, selon votre niveau, vos envies et votre groupe.</p>
+   <a class="hero-cta" href="#approche">Découvrir l'approche <span aria-hidden="true">↗</span></a>
   </div>
-  <div class="wrap hero-inner">
-   <div class="hero-copy">
-    <span class="hero-edition">Une expérience de montagne, construite autour de vous <span aria-hidden="true">↗</span></span>
-    <div class="hero-kicker"><i class="dot" aria-hidden="true"></i><span>Moniteur privé · Ski & snowboard</span></div>
-    <h1>La montagne,<br><em>à votre mesure.</em></h1>
-    <p>Vous avez une station en tête ? On y va. Vous préférez être conseillé ? Je vous propose le terrain et la journée qui correspondent à votre niveau, à vos envies et à ceux qui vous accompagnent.</p>
-    <div class="hero-actions"><a class="button primary" href="#approche">Construire ma journée <span aria-hidden="true">↗</span></a><a class="button ghost" href="#experiences">Découvrir les expériences</a></div>
-    <div class="hero-trust">
-     <a class="rating" href="https://fr.trustpilot.com/review/bastienmichelet.fr" target="_blank" rel="noopener noreferrer" aria-label="Voir les 24 avis sur Trustpilot, note indiquée 4,6 sur 5 en novembre 2026">
-      <span class="rating-stars" aria-hidden="true">★★★★★</span>
-      <span class="rating-content"><span><strong>4,6 / 5</strong></span><small>24 avis · Trustpilot</small></span>
-     </a>
-     <div class="hero-fact"><b>15 ans de compétition</b><br>7 ans d’enseignement à l’ESF</div>
-    </div>
+  <div class="hero-bottom"><span>Des journées dessinées autour de vous.</span><span class="photocredit">Image d'ambiance © Vivika Stamolis / Pexels · Remplacée avant ouverture</span></div>
+ </div>
+</section>
+
+<section class="credibility" aria-label="Références et expérience">
+ <div class="wrap credibility-inner">
+  <div class="credibility-head">Quelques repères.</div>
+  <div class="credibility-items">
+   <span><strong>15 ans</strong> de compétition</span>
+   <span><strong>7 ans</strong> à l'ESF</span>
+   <span><strong>Diplômé d'État</strong></span>
+   <a href="https://fr.trustpilot.com/review/bastienmichelet.fr" target="_blank" rel="noopener noreferrer" aria-label="Consulter Trustpilot, note de 4,6 sur 5 pour 24 avis au 10 novembre 2026"><strong>4,6 / 5</strong> · 24 avis Trustpilot ↗</a>
+  </div>
+ </div>
+</section>
+
+<section class="intro" id="approche">
+ <div class="wrap">
+  <div class="intro-top">
+   <div class="kicker"><span class="section-index">01</span> L'esprit</div>
+   <h2>Il n'existe pas de journée de ski idéale.<br><em>Il existe la vôtre.</em></h2>
+  </div>
+  <div class="intro-bottom">
+   <a class="text-link" href="#methode">Comment ça fonctionne <span class="arrow" aria-hidden="true">↗</span></a>
+   <p>Un itinéraire à découvrir, une technique à affiner, une journée en famille ou entre amis. J'écoute ce que vous avez en tête, puis je vous propose un programme qui vous ressemble. Vous choisissez la montagne ; je vous aide à en profiter.</p>
+  </div>
+ </div>
+</section>
+
+<div class="mountain-essay" aria-label="L'atmosphère des journées en montagne">
+ <div class="wrap">
+  <div class="mountain-essay-grid">
+   <figure><img src="https://images.unsplash.com/photo-1535640368727-187c8a674b5c?auto=format&amp;fit=crop&amp;w=1450&amp;q=84" alt="Descente en ski dans la neige fraîche" loading="lazy"><figcaption>La montagne comme terrain de liberté · Image d'ambiance</figcaption></figure>
+   <figure><img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8607?auto=format&amp;fit=crop&amp;w=1000&amp;q=84" alt="Grand paysage alpin enneigé" loading="lazy"><figcaption>Choisir le bon endroit, pour chaque envie · Image d'ambiance</figcaption></figure>
+  </div>
+  <div class="essay-bottom"><strong>Un cadre. Vos envies. De la place pour l'imprévu.</strong><span>À la journée ou à la demi-journée · selon disponibilités</span></div>
+ </div>
+</div>
+
+<section class="voices" id="avis" aria-labelledby="voices-title">
+ <div class="wrap">
+  <div class="voices-layout">
+   <div class="voices-left">
+    <div class="kicker"><span class="section-index">02</span> La confiance</div>
+    <h2 id="voices-title">Ils m'ont déjà<br><em>fait confiance.</em></h2>
+    <p>Les avis de mes anciens clients sont consultables sur Trustpilot. Une sélection de témoignages authentiques sera ajoutée ici dès que les textes pourront être repris avec leur attribution.</p>
+   </div>
+   <div class="voices-right">
+    <div class="voices-mark">4,6<small> / 5</small></div>
+    <p>24 avis indiqués sur Trustpilot pour Bastien Michelet, moniteur de ski. La note peut évoluer.</p>
+    <a class="text-link" href="https://fr.trustpilot.com/review/bastienmichelet.fr" target="_blank" rel="noopener noreferrer">Lire les avis sur Trustpilot <span class="arrow" aria-hidden="true">↗</span></a>
    </div>
   </div>
-  <span class="photo-credit">Photographie d'ambiance · © Vivika Stamolis / Pexels</span>
-  <span class="hero-step">Une autre idée du ski privé <span aria-hidden="true">↓</span></span>
- </section>
- <!-- SECOND SECTION — proof before sales narrative -->
- <section class="trust-strip" aria-label="Les repères qui font la différence">
-  <div class="wrap trust-grid">
-   <div class="trust-item"><strong>15 ans</strong><span>De compétition de ski</span></div>
-   <div class="trust-item"><strong>7 ans</strong><span>D'enseignement à l'ESF</span></div>
-   <div class="trust-item"><strong>Diplômé d'État</strong><span>Moniteur de ski</span></div>
-   <div class="trust-item"><strong class="small">Une journée, votre projet</strong><span>Ski privé, du débutant au confirmé</span></div>
+  <div class="authentic-reviews" id="review-collection" aria-label="Témoignages authentiques" hidden></div>
+ </div>
+</section>
+
+<section class="experiences" id="experiences" aria-labelledby="experiences-title">
+ <div class="wrap">
+  <div class="experiences-head">
+   <div class="kicker"><span class="section-index">03</span> Les envies</div>
+   <h2 id="experiences-title">À chacun sa façon<br><em>de skier.</em></h2>
   </div>
- </section>
- <section class="section process" id="approche">
-  <div class="wrap process-grid">
-   <div class="process-copy">
-    <div class="eyebrow">Plus qu’un cours privé <span class="eyebrow-separator" aria-hidden="true"></span> 01 / 06</div>
-    <h2>Vous choisissez l'envie.<br><em>Je m'occupe du reste.</em></h2>
-    <p>Une belle journée de ski ne commence pas par le choix d'une station. Elle commence par une conversation : avec qui vous partez, ce que vous aimez, ce que vous souhaitez découvrir ou améliorer.</p>
-    <div class="process-points">
-     <div class="process-point"><span class="process-num">01</span><div><strong>On échange sur votre projet</strong><p>Votre niveau, le groupe, vos envies et le temps dont vous disposez.</p></div></div>
-     <div class="process-point"><span class="process-num">02</span><div><strong>Je vous oriente vers le bon terrain</strong><p>Vous avez un lieu en tête ? Très bien. Sinon, je vous conseille selon le projet, les conditions et les possibilités.</p></div></div>
-     <div class="process-point"><span class="process-num">03</span><div><strong>On skie, à votre rythme</strong><p>Une demi-journée ou une journée privée construite autour de vous.</p></div></div>
-    </div>
+  <div class="experience-layout">
+   <div class="experience-list" role="group" aria-label="Choisir une expérience de ski">
+    <button type="button" class="experience-choice" data-experience="technique" aria-pressed="true">
+     <span class="choice-index">01</span><span><strong>Progresser</strong><span class="choice-description">Trouver le geste juste, gagner en confiance, affiner son ski.</span></span><span class="choice-arrow" aria-hidden="true">↗</span>
+    </button>
+    <button type="button" class="experience-choice" data-experience="famille" aria-pressed="false">
+     <span class="choice-index">02</span><span><strong>En famille</strong><span class="choice-description">Partager des pistes et des moments qui conviennent à chacun.</span></span><span class="choice-arrow" aria-hidden="true">↗</span>
+    </button>
+    <button type="button" class="experience-choice" data-experience="amis" aria-pressed="false">
+     <span class="choice-index">03</span><span><strong>Entre amis</strong><span class="choice-description">Composer une journée autour du groupe, sans programme imposé.</span></span><span class="choice-arrow" aria-hidden="true">↗</span>
+    </button>
+    <button type="button" class="experience-choice" data-experience="explorer" aria-pressed="false">
+     <span class="choice-index">04</span><span><strong>Explorer</strong><span class="choice-description">Découvrir un autre terrain, selon le niveau et les conditions.</span></span><span class="choice-arrow" aria-hidden="true">↗</span>
+    </button>
    </div>
-   <div class="process-photo">
-    <img src="https://images.unsplash.com/photo-1535640368727-187c8a674b5c?auto=format&amp;fit=crop&amp;w=1100&amp;q=82" alt="Skieur dans la neige fraîche, image d'ambiance" loading="lazy">
-    <div class="overlay-note">Le bon endroit. Le bon rythme. Votre journée.</div>
-   </div>
-  </div>
- </section>
- <!-- Real reviews can be populated via reviewData below, never fabricate quotations -->
- <section class="socialproof" id="avis">
-  <div class="wrap">
-   <div class="social-head"><div><div class="eyebrow">La confiance d’abord <span class="eyebrow-separator" aria-hidden="true"></span> 02 / 06</div><h2>Ils m’ont déjà fait confiance.</h2></div><p class="social-note">La sélection des avis clients sera affichée ici lorsque leur texte et leur provenance auront été vérifiés.</p></div>
-   <div class="social-content">
-    <div class="testimonial-placeholder"><div class="testimonial-kicker">L’ESPRIT BASTIEN MICHELET</div><h3>Une relation qui compte autant que la technique.</h3><p>Après sept ans d'enseignement à l'ESF, je souhaite retrouver dans chaque journée privée ce qui me plaît le plus : la progression, l'échange et le plaisir de skier ensemble.</p></div>
-    <div class="testimonial-aside"><span class="eyebrow">Avis clients</span><strong>Un accompagnement personnel, du premier échange au dernier virage.</strong><a href="https://fr.trustpilot.com/review/bastienmichelet.fr" target="_blank" rel="noopener noreferrer">Consulter la page Trustpilot ↗</a></div>
-   </div>
-   <div class="review-list" id="verified-reviews" hidden aria-label="Témoignages clients vérifiés"></div>
-  </div>
- </section>
- <section class="section experiences" id="experiences">
-  <div class="wrap">
-   <div class="section-header"><div><div class="eyebrow">Vos envies, nos journées <span class="eyebrow-separator" aria-hidden="true"></span> 03 / 06</div><h2>Il n'y a pas une seule façon<br>de vivre la montagne.</h2></div><p class="lead">Vous arrivez avec une idée, une envie ou simplement l'envie de skier. Nous construisons le reste ensemble.</p></div>
-   <div class="experience-grid">
-    <article class="experience"><div class="experience-image"><img src="https://images.pexels.com/photos/31112554/pexels-photo-31112554/free-photo-of-dynamic-skier-on-powder-snow-in-winter-landscape.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="Virage précis dans la poudreuse" loading="lazy"></div><div class="experience-copy"><span class="experience-index">01 / PROGRESSION</span><h3>Affiner votre ski</h3><p>Un regard précis sur votre technique, avec des conseils utiles et un rythme qui vous convient.</p><a class="tag experience-link" href="#selection" data-select-mood="technique">Voir cette expérience <span aria-hidden="true">↗</span></a></div></article>
-    <article class="experience"><div class="experience-image"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Paysage de montagne enneigée" loading="lazy"></div><div class="experience-copy"><span class="experience-index">02 / EN FAMILLE</span><h3>Skier en famille</h3><p>Partager une journée adaptée aux envies, aux âges et aux niveaux de chacun.</p><a class="tag experience-link" href="#selection" data-select-mood="famille">Voir cette expérience <span aria-hidden="true">↗</span></a></div></article>
-    <article class="experience"><div class="experience-image"><img src="https://images.unsplash.com/photo-1535640368727-187c8a674b5c?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Descente de ski dans la neige fraîche" loading="lazy"></div><div class="experience-copy"><span class="experience-index">03 / ENTRE AMIS</span><h3>La journée qui vous ressemble</h3><p>Skier, explorer, profiter : je vous aide à trouver un terrain à la hauteur de votre groupe.</p><a class="tag experience-link" href="#selection" data-select-mood="amis">Voir cette expérience <span aria-hidden="true">↗</span></a></div></article>
-    <article class="experience"><div class="experience-image"><img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8607?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Grand panorama de montagne enneigée" loading="lazy"></div><div class="experience-copy"><span class="experience-index">04 / EXPLORATION</span><h3>Découvrir autrement</h3><p>Pour skieurs expérimentés, des itinéraires à choisir dans le respect des conditions et du cadre réglementaire.</p><a class="tag experience-link" href="#questions">En savoir plus <span aria-hidden="true">↗</span></a></div></article>
+   <div>
+    <figure class="experience-image"><img id="experience-photo" src="https://images.pexels.com/photos/31112554/pexels-photo-31112554/free-photo-of-dynamic-skier-on-powder-snow-in-winter-landscape.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Skieur technique en pleine poudreuse" loading="lazy"></figure>
+    <div class="experience-caption" aria-live="polite"><span id="experience-name">L'art du mouvement</span><strong id="experience-number">01 / 04</strong></div>
    </div>
   </div>
- </section>
- <section class="section moods" id="selection">
-  <div class="wrap">
-   <div class="section-header"><div><div class="eyebrow">Un premier aperçu <span class="eyebrow-separator" aria-hidden="true"></span> 04 / 06</div><h2>Quel genre de journée<br>vous ferait plaisir ?</h2></div><p class="lead">Trois envies à explorer, sans formulaire ni réservation. Le programme final se construit ensuite avec vous.</p></div>
-   <div class="mood-shell">
-    <div class="mood-select">
-     <div class="eyebrow">Choisir une envie</div>
-     <button type="button" class="mood-tab" data-mood="technique" aria-pressed="true">Progresser techniquement <span aria-hidden="true">↗</span></button>
-     <button type="button" class="mood-tab" data-mood="famille" aria-pressed="false">Partager en famille <span aria-hidden="true">↗</span></button>
-     <button type="button" class="mood-tab" data-mood="amis" aria-pressed="false">Partir entre amis <span aria-hidden="true">↗</span></button>
-     <small>Un exemple d'expérience, pas une promesse de réservation ou d'itinéraire.</small>
-    </div>
-    <div class="mood-result" aria-live="polite">
-     <img id="mood-image" src="https://images.pexels.com/photos/31112554/pexels-photo-31112554/free-photo-of-dynamic-skier-on-powder-snow-in-winter-landscape.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000" alt="Ski dans la poudreuse">
-     <div class="mood-result-content"><span class="mood-result-label" id="mood-label">Technique & sensations</span><h3 id="mood-title">Se faire plaisir en progressant.</h3><p id="mood-description">Une journée adaptée à votre niveau, entre précision technique, nouvelles sensations et plaisir de skier.</p></div>
-    </div>
-   </div>
-   <p class="moods-small">Images d'illustration provisoires. Le niveau, le terrain et les conditions sont évalués avant toute sortie.</p>
+ </div>
+</section>
+
+<section class="method" id="methode" aria-labelledby="method-title">
+ <div class="wrap">
+  <div class="method-header">
+   <div class="kicker"><span class="section-index">04</span> L'accompagnement</div>
+   <h2 id="method-title">Simple à organiser.<br><em>Singulier à vivre.</em></h2>
   </div>
- </section>
- <section class="section about" id="bastien">
-  <div class="wrap about-layout">
-   <div class="about-photo"><img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8607?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Montagne enneigée — photographie d'ambiance en attendant les photos personnelles de Bastien" loading="lazy"></div>
-   <div class="about-copy"><span class="eyebrow">Derrière les skis <span class="eyebrow-separator" aria-hidden="true"></span> 05 / 06</span><h2>Je suis Bastien.</h2><p>J'ai passé 15 ans dans le ski de compétition, au niveau national et international, puis sept ans à enseigner à l'ESF. Cette expérience m'a appris à regarder un geste, comprendre une difficulté et surtout m'adapter aux personnes.</p><p>Aujourd'hui, j'ai envie de partager la montagne autrement : des journées privées, sans programme figé, avec des conseils exigeants et une bonne dose de plaisir.</p><div class="about-metrics"><div><strong>15 ans</strong><span>Compétition</span></div><div><strong>7 ans</strong><span>ESF</span></div><div><strong>DE</strong><span>Moniteur de ski</span></div></div></div>
+  <div class="method-steps">
+   <div class="method-step"><span class="number">01</span><h3>Vous me racontez votre projet.</h3><p>Votre niveau, votre groupe, vos envies, un lieu que vous aimez déjà ou que vous souhaitez découvrir.</p></div>
+   <div class="method-step"><span class="number">02</span><h3>Je vous conseille le terrain.</h3><p>Nous choisissons ensemble une destination et une formule adaptées au programme, aux conditions et aux possibilités.</p></div>
+   <div class="method-step"><span class="number">03</span><h3>Nous profitons de la montagne.</h3><p>Une journée ou une demi-journée privée, avec le rythme, les conseils et l'attention qu'il vous faut.</p></div>
   </div>
- </section>
- <section class="section faq" id="questions">
-  <div class="wrap faq-layout">
-   <div><div class="eyebrow">En pratique <span class="eyebrow-separator" aria-hidden="true"></span> 06 / 06</div><h2>Avant de chausser<br>les skis.</h2><p style="color:#697570">Quelques repères pour imaginer votre expérience.</p></div>
-   <div class="faq-list">
-    <details><summary>Faut-il choisir une station à l'avance ?</summary><p>Non. Si vous avez un lieu précis en tête, nous en discutons. Sinon, je vous aide à choisir une destination adaptée à vos envies, votre niveau et aux conditions.</p></details>
-    <details><summary>Est-ce adapté aux familles et aux débutants ?</summary><p>Oui. Le contenu de la journée s'adapte à vos niveaux et aux besoins du groupe. Nous définissons ensemble ce qui est réaliste et agréable pour chacun.</p></details>
-    <details><summary>Peut-on partir pour une demi-journée ?</summary><p>La demi-journée et la journée complète sont les formats envisagés. Les disponibilités seront communiquées à l'ouverture des demandes.</p></details>
-    <details><summary>Et pour le hors-piste ?</summary><p>Les sorties sur terrain non balisé nécessitent une analyse spécifique, les équipements adaptés et le respect des conditions de sécurité et des autorisations professionnelles applicables.</p></details>
+ </div>
+</section>
+
+<section class="about" id="bastien" aria-labelledby="about-title">
+ <div class="wrap about-layout">
+  <figure class="about-photo"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=1000&amp;q=84" alt="Paysage de montagne enneigé. Image d'ambiance en attendant une photographie personnelle du moniteur" loading="lazy"></figure>
+  <div class="about-copy">
+   <div class="kicker"><span class="section-index">05</span> Bastien Michelet</div>
+   <h2 id="about-title">La technique.<br>Et surtout, <em style="font-family:var(--serif);font-weight:400;color:var(--accent)">le partage.</em></h2>
+   <p>J'ai passé quinze ans dans le ski de compétition au niveau national et international, puis sept ans à enseigner à l'ESF. J'ai appris à observer un geste, à comprendre les difficultés et à m'adapter à chaque personne.</p>
+   <p>Aujourd'hui, je mets cette expérience au service de journées de ski plus personnelles : attentives à votre niveau, à votre rythme et à vos envies.</p>
+   <div class="about-proof">
+    <span><strong>15 ans</strong> compétition</span><span><strong>7 ans</strong> ESF</span><span><strong>DE</strong> ski</span>
    </div>
   </div>
- </section>
- <section class="cta" id="contact">
-  <div class="wrap cta-inner">
-   <div><div class="eyebrow">Une journée à imaginer ensemble</div><h2>Alors, on va skier où ?</h2><p>Vous avez déjà une idée ou pas encore ? Dans les deux cas, nous construirons une journée autour de ce que vous aimez. Les demandes ouvriront prochainement.</p></div>
-   <div class="cta-action"><span class="button disabled-cta" aria-disabled="true">WhatsApp · bientôt disponible</span><small>Préversion — aucune réservation en ligne</small></div>
+ </div>
+</section>
+
+<section class="faq" id="questions" aria-labelledby="faq-title">
+ <div class="wrap faq-layout">
+  <div><div class="kicker"><span class="section-index">06</span> En pratique</div><h2 id="faq-title">Quelques<br>précisions.</h2></div>
+  <div class="faq-list">
+   <details><summary>Faut-il choisir une station ?</summary><p>Non. Si vous avez un lieu précis en tête, nous en discutons. Sinon, je vous conseille une destination en fonction de votre niveau, de vos envies, des conditions et du cadre professionnel applicable.</p></details>
+   <details><summary>Peut-on skier en famille, avec des niveaux différents ?</summary><p>Oui, le programme est construit autour du groupe. Nous vérifions ensemble ce qui est agréable et réaliste pour chacun, en tenant compte des niveaux de pratique.</p></details>
+   <details><summary>Journée ou demi-journée ?</summary><p>Les deux formats sont envisagés. Les modalités et disponibilités seront précisées à l'ouverture des demandes.</p></details>
+   <details><summary>Et le ski hors-piste ?</summary><p>Tout projet de hors-piste doit être étudié au cas par cas, en tenant compte de votre niveau, de la météo, de la neige, des équipements de sécurité, des conditions et des obligations professionnelles en vigueur.</p></details>
   </div>
- </section>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap contact-layout">
+  <div>
+   <div class="kicker">La prochaine journée</div>
+   <h2>On décide<br><em>où l'on skie ?</em></h2>
+   <p>Un projet précis ou seulement une envie de montagne ? On en discute et on compose votre journée ensemble. Les demandes privées ouvriront prochainement.</p>
+  </div>
+  <div class="contact-action">
+   <span class="disabled-link" aria-disabled="true">WhatsApp · prochainement ↗</span>
+   <span>Préversion : aucune réservation et aucun paiement en ligne actuellement.</span>
+  </div>
+ </div>
+</section>
 </main>
 <footer>
  <div class="wrap">
-  <div class="footer-top"><strong>BASTIEN MICHELET — SKI & SNOWBOARD PRIVÉ</strong><span>Vos envies d'abord. Le bon terrain ensuite.</span><a href="#accueil">Retour en haut ↑</a></div>
-  <div class="legal">Site de prévisualisation · Ouverture commerciale à confirmer après vérification des obligations administratives et d'assurance. Trustpilot : 4,6/5 pour 24 avis, relevés sur la page catégorie en novembre 2026 ; à recontrôler avant toute publication définitive. Aucune réservation, paiement ou mesure publicitaire. Photographies issues de Pexels et Unsplash : illustrations provisoires, elles ne montrent pas Bastien. Mentions légales définitives à compléter avant ouverture.</div>
+  <div class="footer-line"><strong>BASTIEN MICHELET — SKI &amp; SNOWBOARD PRIVÉ</strong><span>La montagne. À votre manière.</span><a href="#accueil">Retour en haut ↑</a></div>
+  <div class="legal">Préversion non référencée · Prestations et ouverture commerciale à confirmer après vérification des obligations professionnelles, administratives et d'assurance. Aucune réservation ni collecte de données. Visuels d'ambiance provenant de Pexels et Unsplash, ne représentant pas Bastien ; à remplacer par des photographies personnelles validées. Note Trustpilot affichée selon le classement public de la catégorie École de ski en France au 10 novembre 2026 : 4,6/5, 24 avis, à revérifier avant mise en production. Avis clients individuels non reproduits sans vérification de leur source. Mentions légales définitives à compléter.</div>
  </div>
 </footer>
 <script>
 (function(){
- const menu=document.querySelector('.menu-toggle'),links=document.querySelector('.nav-links');
- function setMenu(open){links.classList.toggle('open',open);menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Fermer la navigation':'Ouvrir la navigation');menu.textContent=open?'Fermer ✕':'Menu ☰';document.getElementById('site-header')?.classList.toggle('menu-open',open);}
- if(menu&&links){
-  menu.addEventListener('click',()=>setMenu(menu.getAttribute('aria-expanded')!=='true'));
-  links.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
-  document.addEventListener('click',e=>{if(!e.target.closest('.site-header'))setMenu(false)});
+ const toggle=document.querySelector('.nav-toggle');
+ const menu=document.getElementById('navigation');
+ if(toggle&&menu){
+   const setMenu=(open)=>{toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');menu.classList.toggle('is-open',open);};
+   toggle.addEventListener('click',()=>setMenu(toggle.getAttribute('aria-expanded')!=='true'));
+   menu.addEventListener('click',(event)=>{if(event.target.closest('a'))setMenu(false)});
+   document.addEventListener('keydown',(event)=>{if(event.key==='Escape')setMenu(false)});
+   document.addEventListener('click',(event)=>{if(!event.target.closest('.site-header'))setMenu(false)});
+   window.addEventListener('resize',()=>{if(innerWidth>790)setMenu(false)},{passive:true});
  }
- 
- const header=document.getElementById('site-header');
- const progress=document.querySelector('.page-progress-fill');
- let lastScroll=0,rafPending=false;
- function updateChrome(){
-  const y=window.scrollY||0;
-  if(header)header.classList.toggle('is-scrolled',y>26);
-  if(progress){
-   const scrollable=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
-   progress.style.width=Math.min(100,Math.max(0,100*y/scrollable))+'%';
-  }
-  rafPending=false;lastScroll=y;
- }
- window.addEventListener('scroll',()=>{
-  if(!rafPending){rafPending=true;requestAnimationFrame(updateChrome)}
- },{passive:true});
- window.addEventListener('resize',updateChrome,{passive:true});
- updateChrome();
- const moods={
-  technique:{label:'Technique & sensations',title:'Se faire plaisir en progressant.',description:'Une journée adaptée à votre niveau, entre précision technique, nouvelles sensations et plaisir de skier.',image:'https://images.pexels.com/photos/31112554/pexels-photo-31112554/free-photo-of-dynamic-skier-on-powder-snow-in-winter-landscape.jpeg?auto=compress&cs=tinysrgb&w=1000',alt:'Skieur dans la poudreuse'},
-  famille:{label:'En famille',title:'Une journée dont tout le monde profite.',description:'Un terrain et un rythme choisis pour permettre aux plus petits comme aux plus grands de partager de bons moments.',image:'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=80',alt:'Paysage alpin enneigé'},
-  amis:{label:'Entre amis',title:'La montagne à votre façon.',description:'Un lieu choisi ensemble, de belles pistes et une journée adaptée à votre groupe, sans itinéraire imposé.',image:'https://images.unsplash.com/photo-1535640368727-187c8a674b5c?auto=format&fit=crop&w=1000&q=80',alt:'Ski dans la neige fraîche'}
+ const images={
+   technique:{src:'https://images.pexels.com/photos/31112554/pexels-photo-31112554/free-photo-of-dynamic-skier-on-powder-snow-in-winter-landscape.jpeg?auto=compress&cs=tinysrgb&w=1100',alt:'Skieur technique en pleine poudreuse',caption:"L'art du mouvement",number:'01 / 04'},
+   famille:{src:'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1100&q=85',alt:'Montagne enneigée au soleil',caption:'Le plaisir de se retrouver',number:'02 / 04'},
+   amis:{src:'https://images.unsplash.com/photo-1535640368727-187c8a674b5c?auto=format&fit=crop&w=1100&q=85',alt:'Skieur dans la neige fraîche',caption:'Les souvenirs que l’on construit',number:'03 / 04'},
+   explorer:{src:'https://images.unsplash.com/photo-1454496522488-7a8e488e8607?auto=format&fit=crop&w=1100&q=85',alt:'Grand panorama des Alpes enneigées',caption:'Voir la montagne autrement',number:'04 / 04'}
  };
- const tabs=[...document.querySelectorAll('.mood-tab')], label=document.getElementById('mood-label'),title=document.getElementById('mood-title'),desc=document.getElementById('mood-description'),img=document.getElementById('mood-image');
- function selectMood(key){
-  const data=moods[key];if(!data)return;
-  tabs.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mood===key)));
-  label.textContent=data.label;title.textContent=data.title;desc.textContent=data.description;
-  if(img.getAttribute('src')!==data.image){img.src=data.image;img.alt=data.alt;}
- }
- tabs.forEach(btn=>btn.addEventListener('click',()=>selectMood(btn.dataset.mood)));
- document.querySelectorAll('[data-select-mood]').forEach(link=>{
-  link.addEventListener('click',()=>selectMood(link.dataset.selectMood));
- });
- // Source de données prête pour les avis authentifiés, volontairement vide.
- // Ajouter uniquement des textes réels avec autorisation et source consultable.
+ const choices=[...document.querySelectorAll('[data-experience]')];
+ const photo=document.getElementById('experience-photo'),caption=document.getElementById('experience-name'),number=document.getElementById('experience-number');
+ choices.forEach(button=>button.addEventListener('click',()=>{
+   const item=images[button.dataset.experience];if(!item||!photo||!caption||!number)return;
+   choices.forEach(btn=>btn.setAttribute('aria-pressed',String(btn===button)));
+   photo.src=item.src;photo.alt=item.alt;caption.textContent=item.caption;number.textContent=item.number;
+ }));
+ // Déposer ici les seuls avis authentiques dont le texte et l’attribution sont vérifiables.
  const reviewData=[];
- const reviews=document.getElementById('verified-reviews');
- if(reviews&&reviewData.length){
-  const nodes=reviewData.filter(v=>v&&v.text&&v.author&&v.source).map(v=>{
-   const card=document.createElement('article');card.className='review-card';
-   const stars=document.createElement('div');stars.className='stars';stars.textContent='★★★★★';stars.setAttribute('aria-hidden','true');
-   const copy=document.createElement('p');copy.textContent=v.text;
-   const author=document.createElement('strong');author.textContent=v.author;
-   card.append(stars,copy,author);return card;
-  });
-  if(nodes.length){reviews.append(...nodes);reviews.hidden=false;}
+ const reviewContainer=document.getElementById('review-collection');
+ if(reviewContainer&&reviewData.length){
+   const cards=reviewData.filter(v=>v&&v.quote&&v.name&&v.source).map(v=>{
+     const article=document.createElement('article');article.className='authentic-review';
+     const quote=document.createElement('blockquote');quote.textContent=v.quote;
+     const cite=document.createElement('cite');cite.textContent=v.name;
+     article.append(quote,cite);return article;
+   });
+   if(cards.length){reviewContainer.append(...cards);reviewContainer.hidden=false;}
  }
 })();
 </script>
