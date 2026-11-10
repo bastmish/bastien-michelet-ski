@@ -304,3 +304,57 @@ footer{background:#192821;color:#ecf2ee;padding:31px 0 24px}
  html{scroll-behavior:auto}
  *,*::before,*::after{animation-duration:0s!important;transition:none!important}
 }
+
+
+/* Request a ski day — concise brief, entirely local until WhatsApp send */
+[hidden]{display:none!important}
+.request-section{background:#ffffff;padding:91px 0 95px;border-top:1px solid var(--line)}
+.request-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(35px,6vw,85px);align-items:start}
+.request-intro{position:sticky;top:120px}
+.request-intro h2{font:800 clamp(33px,3.8vw,52px)/1.14 var(--display);letter-spacing:-.065em;margin:13px 0 18px}
+.request-intro p{max-width:345px;font-size:14px;color:#5c7062}
+.request-step{font:750 11px var(--display);color:var(--red);margin-top:26px}
+.request-form{background:#f5f8f5;border:1px solid #e0e9e1;border-radius:18px;padding:28px 30px 31px}
+.request-form h3{font:800 19px var(--display);letter-spacing:-.04em;margin-bottom:8px}
+.request-form .form-intro{color:#66786b;font-size:12px;margin-bottom:24px;max-width:515px}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 15px}
+.field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.field.wide{grid-column:1/-1}
+.field label{font:750 11px var(--display);color:#344a3a}
+.field label .optional{font-weight:500;color:#738477}
+.field input,.field select,.field textarea{
+ width:100%;max-width:100%;min-height:45px;padding:11px 13px;border:1px solid #cbd9cc;border-radius:9px;
+ background:#fff;color:var(--ink);outline:none;font:500 13px var(--font);
+ transition:border-color .15s,box-shadow .15s;appearance:none
+}
+.field select{appearance:auto}
+.field textarea{min-height:92px;resize:vertical;line-height:1.6}
+.field input::placeholder,.field textarea::placeholder{color:#87978b}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#b83f32;box-shadow:0 0 0 3px #b83f3217}
+.field-help{font-size:10px;color:#7b8b7d}
+.form-submit{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:23px}
+.form-submit .btn{border-radius:9px;min-height:47px}
+.form-privacy{margin-top:18px;padding-top:15px;border-top:1px solid #e0e9e1;font-size:11px;line-height:1.65;color:#718176}
+.request-preview{background:#fff;padding:22px;border:1px solid #d5e2d8;border-radius:13px;margin-top:20px}
+.request-preview h4{font:800 14px var(--display);margin:0 0 8px}
+.request-preview>p{font-size:11px;color:#6d8071;margin-bottom:12px}
+.request-preview pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f6f9f5;padding:17px;border:1px solid #e5ede5;border-radius:9px;font:500 12px/1.65 var(--font);margin:0}
+.preview-actions{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-top:15px}
+.preview-actions .btn{font-size:11px;border-radius:9px}
+.whatsapp-pending{font-size:11px;color:#6d7e6e;line-height:1.5}
+.request-notice{margin-top:12px;color:#3a6444;font:700 11px var(--font);min-height:18px}
+@media(max-width:900px){
+ .request-layout{grid-template-columns:1fr;gap:24px}
+ .request-intro{position:static}
+ .request-intro p{max-width:630px}
+ .request-section{padding:65px 0}
+ .request-form{padding:24px}
+}
+@media(max-width:530px){
+ .request-form{padding:21px 17px;border-radius:14px}
+ .form-grid{grid-template-columns:1fr;gap:15px}
+ .field.wide{grid-column:auto}
+ .request-intro h2{font-size:34px}
+ .request-preview{padding:15px}
+ .preview-actions .btn{width:100%}
+}
