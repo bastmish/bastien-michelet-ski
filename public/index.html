@@ -5,8 +5,8 @@
 <title>Ski Society — Le haut niveau vous apprend à skier</title>
 <link rel="preconnect" href="https://images.pexels.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="alpine-map.css">
- <link rel="stylesheet" href="about-editorial.css"><link rel="stylesheet" href="society-map.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@6.16.0/dist/maplibre-gl.css"><script src="app.js" defer></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script><script src="society-map.js" type="module"></script>
+<link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="about-editorial.css"><link rel="stylesheet" href="territories.css"><script src="app.js" defer></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
 </head><body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="site-header" id="header">
@@ -87,44 +87,21 @@
 <li class="timeline-item"><span class="timeline-icon" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 6c5 3 8 8 10 16M14 5c5 4 7 9 9 17M3 28c10 7 21 7 30-1M9 29l-2-6M26 29l4-7"/><circle cx="17" cy="9" r="2"/></svg></span><span class="timeline-number">04</span><h3>La transmission</h3><p>Des conseils précis, un rythme juste et le plaisir de skier ensemble.</p></li></ol>
   </div>
  </section>
- <section class="society-map" id="zones" aria-labelledby="map-title">
- <div class="wrap society-map-grid">
-  <div class="society-map-copy">
-   <div class="kicker society-map-eyebrow">Nos destinations · Jura &amp; Alpes françaises</div>
-   <h2 class="heading society-map-title" id="map-title">Nous venons<br><em>à vous.</em></h2>
-   <p class="society-map-promise">Dans la station où vous passez vos vacances.</p>
-   <p class="society-map-description">Jura, Haute-Savoie, Savoie, Hautes-Alpes : Ski Society organise votre journée sur place, avec un moniteur adapté à votre niveau, à votre groupe et à votre projet.</p>
-   <p class="society-map-description society-map-description-secondary">Dites-nous où vous séjournez. Nous nous occupons de rechercher la meilleure solution.</p>
-   <div class="society-territories" role="group" aria-label="Explorer les quatre territoires">
-    <button class="society-territory" type="button" data-society-region="jura" data-society-summary="Les Rousses, Métabief et leurs domaines de montagne." aria-pressed="false"><span class="society-territory-index">01</span><span>Jura</span><span class="society-territory-arrow" aria-hidden="true">↗</span></button>
-<button class="society-territory is-active" type="button" data-society-region="haute-savoie" data-society-summary="De Megève à Chamonix, jusqu’aux Portes du Soleil." aria-pressed="true"><span class="society-territory-index">02</span><span>Haute-Savoie</span><span class="society-territory-arrow" aria-hidden="true">↗</span></button>
-<button class="society-territory" type="button" data-society-region="savoie" data-society-summary="De Courchevel aux sommets de Val d’Isère et Val Thorens." aria-pressed="false"><span class="society-territory-index">03</span><span>Savoie</span><span class="society-territory-arrow" aria-hidden="true">↗</span></button>
-<button class="society-territory" type="button" data-society-region="hautes-alpes" data-society-summary="Serre Chevalier, Montgenèvre et Vars." aria-pressed="false"><span class="society-territory-index">04</span><span>Hautes-Alpes</span><span class="society-territory-arrow" aria-hidden="true">↗</span></button>
+ <section class="territories-section" id="zones" aria-labelledby="territories-title">
+  <div class="wrap territories-layout">
+   <div class="territories-copy">
+    <div class="kicker">Nos terrains · Alpes françaises</div>
+    <h2 id="territories-title">Trois territoires.<br>Une même exigence.</h2>
+    <p>De la Haute-Savoie aux Hautes-Alpes, en passant par la Savoie : des massifs différents, une même envie de transmettre le plaisir du ski. La destination se choisit selon votre niveau, votre projet et les conditions.</p>
+    <p class="territories-note">D'autres stations peuvent être envisagées selon les disponibilités, les qualifications et le cadre professionnel applicable.</p>
+    <a class="territories-link" href="#reservation">Parlons de votre prochaine journée <span aria-hidden="true">↗</span></a>
    </div>
-   <div class="society-map-selected" aria-live="polite">
-    <div class="society-selected-top"><span id="society-selected-area">Haute-Savoie</span><span id="society-selected-count">04 STATIONS REPÈRES</span></div>
-    <div class="society-selected-row"><strong id="society-selected-station">Megève</strong><button id="society-selected-button" type="button" class="society-selected-action">Demander ici <span aria-hidden="true">↗</span></button></div>
-    <p id="society-selected-description">De Megève à Chamonix, jusqu’aux Portes du Soleil.</p>
-   </div>
-   <a class="btn btn-primary society-map-main-cta" href="#reservation">Nous dire où vous skiez <span aria-hidden="true">↗</span></a>
-   <p class="society-map-note">Stations données à titre d’exemples. Intervention et choix du moniteur sous réserve des disponibilités, qualifications et autorisations applicables.</p>
+   <figure class="territories-visual">
+    <img src="assets/alpes-territoires.svg" loading="lazy" decoding="async" width="900" height="510" alt="Illustration régionale mettant en évidence les contours géographiques de la Haute-Savoie, de la Savoie et des Hautes-Alpes.">
+    <figcaption>Haute-Savoie · Savoie · Hautes-Alpes</figcaption>
+   </figure>
   </div>
-  <div class="society-map-visual">
-   <div class="society-map-visual-head"><span>ALPES FRANÇAISES · TERRAIN EN RELIEF</span><span>04 TERRITOIRES</span></div>
-   <div class="society-terrain-frame" id="society-terrain-frame">
-    <div id="society-terrain-map" class="society-terrain-canvas" role="region" aria-label="Carte interactive en relief du Jura, de la Haute-Savoie, de la Savoie et des Hautes-Alpes. Utilisez les boutons de territoires ou les points de stations."></div>
-    <div class="society-terrain-loading" id="society-map-status" role="status"><span class="society-loading-ring" aria-hidden="true"></span><span>Préparation de votre carte des Alpes…</span></div>
-    <div class="society-terrain-topline" aria-hidden="true"><span>SKI SOCIETY</span><span>FRENCH ALPS · 45° N</span></div>
-    <div class="society-terrain-badge" id="society-map-badge" aria-hidden="true">HAUTE-SAVOIE</div>
-    <a class="society-map-provider-logo" href="https://www.maptoolkit.org/" target="_blank" rel="noopener noreferrer" aria-label="Maptoolkit, fournisseur de la carte">
-     <img src="https://www.maptoolkit.org/assets/maptoolkit-attribution.png" alt="Maptoolkit" height="26" loading="lazy">
-    </a>
-   </div>
-   <div class="society-map-visual-foot"><span><span class="society-map-legend-dot"></span> 15 stations emblématiques · sélection indicative</span><span>Déplacez, zoomez et explorez <span aria-hidden="true">↗</span></span></div>
-   <p class="society-map-attribution">Relief réel et cartographie d'hiver avec <a href="https://maplibre.org/" target="_blank" rel="noopener noreferrer">MapLibre</a> et <a href="https://www.maptoolkit.org/" target="_blank" rel="noopener noreferrer">Maptoolkit</a>. Les stations sont des repères, non des implantations garanties.</p>
-  </div>
- </div>
-</section>
+ </section>
  <section class="section steps" id="organisation" aria-labelledby="steps-title">
   <div class="wrap">
    <div class="section-heading"><div><div class="kicker">L'organisation</div><h2 class="heading" id="steps-title" style="margin-top:9px">Chaque détail compte.</h2></div><p>Une expérience personnelle, de la première prise de contact aux derniers virages.</p></div>
