@@ -150,7 +150,7 @@
  z-index:3;pointer-events:none
 }
 .map-ready .alpine-pin.is-revealed .alpine-pin-name{
- visibility:visible;opacity:.97;transform:translateY(0)
+ visibility:visible;opacity:.97;transform:translateY(0);pointer-events:auto;cursor:pointer
 }
 .map-ready .alpine-pin.is-current .alpine-pin-name,
 .map-ready .alpine-pin:hover .alpine-pin-name,
