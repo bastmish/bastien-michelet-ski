@@ -71,16 +71,13 @@
   }
  }
 
- // Inquiry form: no backend, no data stored on this site. WhatsApp requires the visitor to press Send.
- // Set this to Bastien's verified professional number with country code and digits only, e.g. "41XXXXXXXXX".
- // Leave empty until the founder supplies the correct recipient.
+
+ // WhatsApp click-to-chat: the visitor starts navigation, reviews the drafted message,
+ // and must tap Send in WhatsApp. No website-side storage or automatic message sending.
+ // Configure Bastien's verified WhatsApp number in international format, digits only.
+ // Without a number, WhatsApp opens its contact picker with the message prefilled.
  const WHATSAPP_RECIPIENT = '';
  const inquiryForm=document.getElementById('ski-request-form');
- const preview=document.getElementById('request-preview');
- const messageOutput=document.getElementById('request-message');
- const copyButton=document.getElementById('copy-request');
- const whatsappLink=document.getElementById('open-whatsapp');
- const pendingNotice=document.getElementById('whatsapp-pending');
  const requestStatus=document.getElementById('request-notice');
  const destinationSelect=document.getElementById('request-destination');
  const stationField=document.getElementById('request-station-field');
@@ -95,24 +92,15 @@
   destinationSelect.addEventListener('change',updateStation);
   updateStation();
  }
- let preparedMessage='';
- if(inquiryForm&&preview&&messageOutput){
+ if(inquiryForm){
   const read=(field)=>String(inquiryForm.elements.namedItem(field)?.value??'').trim();
   const formatMessage=()=>{
-   const name=read('firstName');
-   const experience=read('experience');
-   const level=read('level');
-   const participants=read('participants');
-   const format=read('format');
-   const period=read('period');
-   const destination=read('destination');
-   const station=read('station');
-   const notes=read('notes');
+   const name=read('firstName'),experience=read('experience'),level=read('level');
+   const participants=read('participants'),format=read('format'),period=read('period');
+   const destination=read('destination'),station=read('station'),notes=read('notes');
    return [
-    'Bonjour Bastien,',
-    '',
-    'Je souhaite organiser une journée de ski avec vous.',
-    '',
+    'Bonjour Bastien,','',
+    'Je souhaite organiser une journée de ski avec vous.','',
     '*Ma demande*',
     'Prénom : '+name,
     'Expérience : '+experience,
@@ -126,50 +114,20 @@
     'Pouvons-nous échanger pour organiser cette journée ?'
    ].join('\n');
   };
-  inquiryForm.addEventListener('input',()=>{
-   preview.hidden=true;
-   if(requestStatus)requestStatus.textContent='';
-  });
-  inquiryForm.addEventListener('change',()=>{
-   preview.hidden=true;
-   if(requestStatus)requestStatus.textContent='';
-  });
-  inquiryForm.addEventListener('submit',e=>{
-   e.preventDefault();
+  inquiryForm.addEventListener('submit',event=>{
+   event.preventDefault();
    if(!inquiryForm.reportValidity())return;
-   preparedMessage=formatMessage();
-   messageOutput.textContent=preparedMessage;
-   preview.hidden=false;
    const number=WHATSAPP_RECIPIENT.replace(/\D/g,'');
-   const ready=/^\d{8,15}$/.test(number);
-   if(whatsappLink){
-    whatsappLink.hidden=!ready;
-    if(ready)whatsappLink.href='https://wa.me/'+number+'?text='+encodeURIComponent(preparedMessage);
-    else whatsappLink.removeAttribute('href');
+   if(number&&!/^\d{8,15}$/.test(number)){
+    if(requestStatus)requestStatus.textContent='Le numéro WhatsApp professionnel est mal configuré. Veuillez réessayer plus tard.';
+    return;
    }
-   if(pendingNotice)pendingNotice.hidden=ready;
-   if(requestStatus)requestStatus.textContent='';
-   preview.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest'});
-  });
-  if(copyButton)copyButton.addEventListener('click',async()=>{
-   if(!preparedMessage)return;
-   try{
-    if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(preparedMessage);
-    else{
-     const field=document.createElement('textarea');
-     field.value=preparedMessage;
-     field.style.position='fixed';
-     field.style.opacity='0';
-     document.body.append(field);
-     field.select();
-     const copied=document.execCommand('copy');
-     field.remove();
-     if(!copied)throw new Error('copy rejected');
-    }
-    if(requestStatus)requestStatus.textContent='Message copié. Il peut être collé dans une conversation WhatsApp.';
-   }catch{
-    if(requestStatus)requestStatus.textContent='Copie automatique indisponible. Sélectionnez le texte ci-dessus pour le copier.';
-   }
+   const message=formatMessage();
+   // Documented WhatsApp URLs: wa.me/number?text=... or wa.me/?text=...
+   // No phone configured => WhatsApp lets visitors pick their recipient.
+   const url='https://wa.me/'+number+'?text='+encodeURIComponent(message);
+   if(requestStatus)requestStatus.textContent='Ouverture de WhatsApp avec votre message prérempli…';
+   window.location.assign(url);
   });
  }
 
