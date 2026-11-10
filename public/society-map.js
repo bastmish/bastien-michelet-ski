@@ -115,7 +115,7 @@ if(root){
    const response=await fetch('ski-regions.geojson');
    if(!response.ok)throw new Error('Coverage source '+response.status);
    const data=await response.json();
-   if(!map?.isStyleLoaded())return;
+   if(!map||map.getSource('society-coverage'))return;
    map.addSource('society-coverage',{type:'geojson',data});
    map.addLayer({id:'society-coverage-fill',type:'fill',source:'society-coverage',
     paint:{'fill-color':'#ba8c66','fill-opacity':['case',['==',['get','zone'],selected.zone],0.19,0.015]}});
