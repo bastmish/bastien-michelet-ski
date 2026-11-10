@@ -1,62 +1,94 @@
-/* Alpine-wide editorial section — no map, images, map scripts or tiles. */
-.territories-section{padding:66px 0 70px;background:#f7f8f5;border-block:1px solid #e5e9e2}
-.alpine-reach{display:grid;grid-template-columns:1.02fr .98fr;align-items:start;gap:clamp(35px,6vw,100px)}
-.alpine-reach-intro .kicker{display:block;margin-bottom:20px}
-.alpine-reach h2{margin:0;color:#21342a;font:800 clamp(42px,5.4vw,79px)/1.05 var(--display,Manrope,sans-serif);letter-spacing:-.075em}
-.alpine-reach h2 em{font-style:normal;color:#b83f32}
-.alpine-reach-content{padding-top:16px}
-.alpine-reach-content>p:first-child{max-width:525px;font-size:15px;line-height:1.85;color:#43594b}
-.alpine-reach-locations{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 22px}
-.alpine-reach-locations span{display:inline-flex;align-items:center;border:1px solid #dce4db;background:white;border-radius:100px;padding:9px 14px;font:750 11px/1.3 var(--display,Manrope,sans-serif);color:#30483b}
-.alpine-reach-link{display:inline-flex;align-items:center;gap:19px;color:#b83f32;font:800 13px/1.35 var(--display,Manrope,sans-serif);text-underline-offset:6px}
-.alpine-reach-note{font-size:10px;line-height:1.7;color:#7b897f;margin-top:21px;max-width:490px}
-@media(max-width:800px){.territories-section{padding:47px 0}.alpine-reach{grid-template-columns:1fr;gap:16px}.alpine-reach h2{font-size:clamp(39px,8vw,60px)}.alpine-reach-content{padding-top:0}.alpine-reach-content>p:first-child{font-size:14px}}
-@media(max-width:480px){.territories-section{padding:40px 0}.alpine-reach-locations{gap:8px}.alpine-reach-locations span{font-size:10px;padding:8px 11px}}
-
-/* Ski Society V16 — full-width editorial atlas with restrained alpine-red accents. */
-.territories-section{background:#f2efe7;padding:92px 0 94px;border-color:#dcd7ce}
-.alpine-reach{grid-template-columns:minmax(0,.76fr) minmax(0,1.24fr);column-gap:clamp(35px,6vw,100px);row-gap:44px;align-items:end}
-.alpine-reach h2{color:#242b29}
-.alpine-reach-content>p:first-child{color:#4c514b}
-.alpine-reach-locations span{background:transparent;border-color:#cfc8bc;border-radius:3px;color:#383d38;letter-spacing:.02em}
-.alpine-atlas-figure{grid-column:1/-1;position:relative;overflow:hidden;margin:6px 0 0;background:#e5e0d5;border:1px solid #d6d0c3}
-.alpine-atlas-figure:before{content:"";position:absolute;top:0;left:0;z-index:1;height:3px;width:108px;background:#b83f32}
-.alpine-atlas-figure img{display:block;width:100%;height:auto;aspect-ratio:900/510;object-fit:contain}
-.alpine-atlas-figure figcaption{display:flex;justify-content:space-between;gap:20px;padding:15px 24px;border-top:1px solid #d6d0c3;background:#f7f4ed;color:#66665e;font:700 10px/1.5 var(--display,Manrope,sans-serif);letter-spacing:.1em;text-transform:uppercase}
-.alpine-atlas-figure figcaption span:first-child{color:#ad493c}
-@media(max-width:800px){.territories-section{padding:58px 0 65px}.alpine-reach{gap:24px}.alpine-atlas-figure{margin-top:6px}.alpine-atlas-figure figcaption{padding:12px 14px;font-size:9px}}
-@media(max-width:500px){.alpine-atlas-figure figcaption{flex-direction:column;gap:3px}.alpine-atlas-figure img{min-height:245px;object-fit:cover;object-position:52%}}
-
-/* V17 — atlas fused into the page rather than a framed illustration. */
-.territories-section{background:#f2efe7}
-.alpine-reach{row-gap:16px}
-.alpine-atlas-figure{
-  grid-column:1/-1;
-  width:calc(100% + 12vw);
-  max-width:none;
-  margin:-18px -6vw -65px;
+/* Ski Society — territorial editorial block, compact two-column composition. */
+.territories-section {
+  padding:clamp(75px,8vw,114px) 0;
+  background:#f2efe7;
+  border:0;
+  overflow:hidden;
+}
+.alpine-reach {
+  display:grid;
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:clamp(46px,7vw,110px);
+  align-items:center;
+}
+.alpine-reach-copy {max-width:490px}
+.alpine-reach-copy .kicker {display:block;margin-bottom:22px}
+.alpine-reach h2 {
+  margin:0 0 25px;
+  color:#242b29;
+  font:800 clamp(39px,4.05vw,61px)/1.08 var(--display,Manrope,sans-serif);
+  letter-spacing:-.065em;
+}
+.alpine-reach h2 em {font-style:normal;color:#b83f32}
+.alpine-reach-lead {
+  max-width:440px;
+  color:#565d56;
+  font-size:15px;
+  line-height:1.9;
+  margin:0 0 23px;
+}
+.alpine-reach-places {
+  font:750 12px/1.7 var(--display,Manrope,sans-serif);
+  color:#343d38;
+  margin:0 0 29px;
+}
+.alpine-reach-places span {padding:0 9px;color:#ad483d}
+.alpine-reach-cta {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:32px;
+  min-height:50px;
+  padding:15px 21px;
+  background:#b83f32;
+  color:white;
+  border-radius:3px;
+  font:800 12px/1.3 var(--display,Manrope,sans-serif);
+  text-decoration:none;
+  transition:background .2s ease,transform .2s ease;
+}
+.alpine-reach-cta:hover{background:#972e25;transform:translateY(-1px)}
+.alpine-reach-cta:focus-visible{outline:3px solid #242b29;outline-offset:4px}
+.alpine-reach-cta span{font-size:17px;font-weight:500}
+.alpine-reach-note {
+  max-width:390px;
+  color:#7a7d75;
+  font:400 11px/1.6 var(--font,"DM Sans",sans-serif);
+  margin:17px 0 0;
+}
+.alpine-atlas-figure {
+  position:relative;
+  width:100%;
+  max-width:590px;
+  margin:0 auto;
+  padding:0;
   border:0;
   border-radius:0;
-  box-shadow:none;
   background:transparent;
+  box-shadow:none;
   overflow:visible;
-  position:relative;
 }
 .alpine-atlas-figure::before{content:none}
-.alpine-atlas-figure img{
+.alpine-atlas-figure img {
+  display:block;
   width:100%;
   height:auto;
   aspect-ratio:900/510;
   object-fit:contain;
-  -webkit-mask-image:linear-gradient(to bottom, transparent 0%, #000 17%, #000 78%, transparent 99%);
-  mask-image:linear-gradient(to bottom, transparent 0%, #000 17%, #000 78%, transparent 99%);
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 19%,#000 77%,transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0%,#000 19%,#000 77%,transparent 100%);
 }
-.alpine-atlas-figure figcaption{display:none}
 @media(max-width:800px){
-  .alpine-reach{row-gap:8px}
-  .alpine-atlas-figure{width:calc(100% + 48px);margin:-5px -24px -32px}
+  .territories-section{padding:64px 0 70px}
+  .alpine-reach{grid-template-columns:1fr;gap:30px}
+  .alpine-reach-copy{max-width:600px}
+  .alpine-reach h2{font-size:clamp(38px,8vw,55px)}
+  .alpine-atlas-figure{width:100%;max-width:560px}
 }
-@media(max-width:500px){
-  .alpine-atlas-figure{width:calc(100% + 38px);margin:0 -19px -18px}
-  .alpine-atlas-figure img{min-height:0;object-fit:contain;object-position:center}
+@media(max-width:480px){
+  .territories-section{padding:55px 0 56px}
+  .alpine-reach-lead{font-size:14px;line-height:1.75}
+  .alpine-reach-places{font-size:11px}
+  .alpine-reach-places span{padding:0 5px}
+  .alpine-atlas-figure img{min-height:0;object-fit:contain}
 }
