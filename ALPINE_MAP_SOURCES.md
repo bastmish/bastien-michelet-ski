@@ -1,64 +1,59 @@
-# SKI SOCIETY — Carte des territoires (V14)
+# SKI SOCIETY — Carte alpine relief 3D (V15)
 
-## Objet et positionnement
-À la demande du fondateur, l'ancienne carte de 40 stations couvrant Jura, Haute-Savoie et Suisse est remplacée par une carte **focalisée sur les quatre territoires français** et **15 stations emblématiques**.
+## Décision éditoriale
+Référence visuelle : Harris Mountains Heli-Ski, étude de design Fluid (https://fluid.co.nz/work/harris-mountains-heli-ski/). Inspiration graphique : relief spectaculaire, cartographie hivernale épurée, quelques zones cuivrées et points de stations. **Aucun code, visuel, marque, logo ou photographie appartenant au site Harris Mountains n'a été copié.** L'implémentation est originale.
 
-Message commercial : **« Nous venons à vous. Dans la station où vous passez vos vacances. »**
+Message à côté de la carte : « Nous venons à vous. Dans la station où vous passez vos vacances. » Le texte reste accompagné des réserves sur la disponibilité des moniteurs, les autorisations professionnelles et l'organisation concrète des demandes.
 
-La présence effective d'un moniteur partenaire dans une station n'est pas encore vérifiée. La mention sur site indique que les interventions dépendent des disponibilités, qualifications et autorisations professionnelles. **Aucune garantie de couverture ou d'implantation partout n'est exprimée.**
+## Pile technique gratuite
 
-## Contours réels et droits d'usage
+- **MapLibre GL JS 6.16.0**, moteur WebGL open source, licence BSD-3-Clause. https://github.com/maplibre/maplibre-gl-js
+- **Maptoolkit.org Community**, style **Winter 3D** : https://styles.maptoolkit.org/winter-3d.json et https://docs.maptoolkit.org/map-styles/3d-terrain/
+- Fond de carte de type hivernal, relief Mapterhorn, hillshade et terrain 3D configurés par la feuille de style.
+- Aucune clé API ni abonnement requis tant que les critères du Community License s'appliquent.
+- Documentation du service et licence : https://www.maptoolkit.org/ et https://www.maptoolkit.org/tos
 
-La carte utilise les contours départementaux IGN Admin Express COG (2018), simplifiés à 5 %, diffusés dans le dépôt open source de Grégoire David sous Licence Ouverte :
+**Conditions à surveiller avant publication et ensuite :**
+1. Utilisation commerciale gratuite limitée aux entreprises dont le CA consolidé annuel est strictement inférieur à 1 M€ **et** qui emploient moins de 10 équivalents temps plein, selon les termes en vigueur en novembre 2026.
+2. Le logo Maptoolkit doit rester visible dans la carte, à au moins **24 px de hauteur**. Le vrai logo officiel est chargé depuis `https://www.maptoolkit.org/assets/maptoolkit-attribution.png` et affiché à 26 px (25 px mobile).
+3. Les crédits © Maptoolkit et © OpenStreetMap doivent être affichés en permanence et cliquables : `attributionControl: {compact:false}`, sans masque ou superposition.
+4. Service à disponibilité « best effort », sans SLA ; ne pas utiliser pour navigation de sécurité.
+5. Si les conditions commerciales sont dépassées, négocier une licence Enterprise ou migrer vers une autre source.
 
-- https://github.com/gregoiredavid/france-geojson
-- https://github.com/gregoiredavid/france-geojson/blob/master/departements-version-simplifiee.geojson
+## Relief et précision
+Maptoolkit Winter 3D emploie les données Mapterhorn (https://mapterhorn.com/) dont les sources sont mixtes, publiées selon leurs licences d'origine (https://mapterhorn.com/attribution/). L'affichage topographique est une représentation graphique et **n'est pas une carte d'itinéraires hors-piste ou un outil de décision de sécurité**.
 
-Codes sources : **39 Jura**, **25 Doubs**, **74 Haute-Savoie**, **73 Savoie**, **05 Hautes-Alpes**.
+Contour d'emphase : GeoJSON `public/ski-regions.geojson` créé à partir des géométries réelles du référentiel **IGN Admin Express COG 2018**, Licence Ouverte, via :
+https://github.com/gregoiredavid/france-geojson/blob/master/departements-version-simplifiee.geojson
 
-**Précision géographique** : « Jura » désigne ici le *massif du Jura* et inclut une portion du Doubs, puisque **Métabief est situé dans le Doubs (25)**. La carte utilise une projection affine du WGS84 pour un rendu éditorial ; ce n'est pas une carte de navigation. Les traits de relief en arrière-plan sont purement graphiques et ne sont pas de vraies courbes de niveau.
+Codes : 39 = Jura, 25 = Doubs (pour inclure Métabief), 74 = Haute-Savoie, 73 = Savoie, 05 = Hautes-Alpes.
 
-## Quinze stations (coordonnées WGS84 indicatives)
+## 4 territoires et 15 stations repères
 
-### Massif du Jura — 2
-- Les Rousses — 46.484 / 6.063 (Jura)
-- Métabief — 46.774 / 6.350 (Doubs)
+Jura (massif, avec Doubs) : Les Rousses, Métabief.
+Haute-Savoie : Megève, Chamonix, La Clusaz, Avoriaz.
+Savoie : Courchevel, Méribel, Les Arcs, Tignes, Val d'Isère, Val Thorens.
+Hautes-Alpes : Serre Chevalier, Montgenèvre, Vars.
 
-### Haute-Savoie — 4
-- Megève — 45.857 / 6.618
-- Chamonix — 45.922 / 6.869
-- La Clusaz — 45.907 / 6.425
-- Avoriaz — 46.192 / 6.774
+Les coordonnées sont indicatives (point de village / zone de station) : ce ne sont ni des rendez-vous ni une preuve de couverture commerciale. **Ne jamais promettre qu'un membre est disponible partout tant que le réseau n'est pas constitué.**
 
-### Savoie — 6
-- Courchevel — 45.415 / 6.634
-- Méribel — 45.394 / 6.566
-- Les Arcs — 45.573 / 6.830
-- Tignes — 45.469 / 6.915
-- Val d’Isère — 45.448 / 7.000
-- Val Thorens — 45.298 / 6.580
-
-### Hautes-Alpes — 3
-- Serre Chevalier — 44.940 / 6.587 (point indicatif du domaine)
-- Montgenèvre — 44.931 / 6.723
-- Vars — 44.572 / 6.689
-
-Les coordonnées localisent des secteurs/villages et **ne garantissent pas un point de rendez-vous**, l'emplacement exact d'une école, d'une remontée ou d'une piste. Les lieux affichés sont des *stations de référence*, pas des implantations commerciales déjà vérifiées.
-
-## Interaction
-- Quatre boutons de territoire sélectionnent les stations correspondantes.
-- Les stations principales ont une étiquette visible ; les autres apparaissent au survol, au focus ou dans la carte d'information.
-- Les étiquettes visibles sont repositionnées en JavaScript pour réduire les collisions.
-- Un clic sur une station renseigne « J'ai une station en tête » et le nom de la station dans **le formulaire WhatsApp existant**. L'utilisateur vérifie et envoie lui-même sa demande : aucune réservation ni paiement automatique.
-- Le bouton principal permet également de demander une station **non affichée**.
-- Sous 850 px, la carte est horizontalement déplaçable. Les préférences de réduction des animations sont respectées.
+## UX
+- Vue panoramique initiale et vraie carte interactive 3D.
+- Choix d'une région : recentrage animé et relief dans le territoire choisi.
+- Marqueurs cuivrés ; les stations marquantes reçoivent un nom visible dans la zone active ; les autres noms apparaissent au survol/focus.
+- Clic sur un marqueur : destination préremplie dans le formulaire WhatsApp existant. **Pas de réservation, paiement, ni envoi automatique.**
+- CTA principal pour les stations non affichées dans la sélection.
+- Sous 850 px, la carte reste dans le cadre et se manipule au toucher ; aucune grande image panoramique à faire défiler horizontalement.
+- `prefers-reduced-motion` : pas d'animation obligatoire.
+- Chargement différé via IntersectionObserver ; message alternatif si WebGL indisponible.
 
 ## Fichiers actifs
-- `public/index.html` : carte, contours SVG, 15 points et wording.
-- `public/society-map.css` : style premium indépendant, responsive.
-- `public/society-map.js` : interactions accessibles et présélection du formulaire.
+- `public/index.html` : cadrage et cadre MapLibre 3D, logo Maptoolkit, crédits.
+- `public/society-map.js` : import de MapLibre, carte hiver, affichage des stations, navigation entre territoires, interactions.
+- `public/society-map.css` : interface éditoriale et surcharge graphique autour du canvas.
+- `public/ski-regions.geojson` : contours réels IGN simplifiés (5 départements).
+- `public/app.js` : le formulaire WhatsApp déjà en place ; aucune modification en V15.
 
-L'ancien fichier `public/alpine-map.css` reste chargé uniquement pour ses styles historiques de la section « Notre approche ». L'ancien JavaScript de la carte `public/alpine-map.js` n'est plus chargé et peut être nettoyé plus tard après recette complète.
+Les anciens `alpine-map.js` et les anciennes règles de carte CSS ne sont pas exécutés ; le CSS global `alpine-map.css` reste lié temporairement car il contient des styles encore nécessaires à la section « Notre approche ».
 
-## Restrictions
-Ne pas fusionner cette branche sans recette navigateur et validation de la couverture commerciale réelle. Production, DNS et `main` inchangés.
+**Validation restante** : test navigateur réel (chargement du CDN, style 3D, adaptation mobile, WebGL, crédits visibles), contrôle performance et validation graphique. Ne pas fusionner ou déployer sur les domaines acquis sans accord explicite.
