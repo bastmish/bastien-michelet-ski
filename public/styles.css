@@ -202,7 +202,7 @@ footer{background:#192821;color:#ecf2ee;padding:31px 0 24px}
 .offer-index-list{display:grid;grid-template-columns:repeat(2,1fr);gap:17px;margin-top:34px}
 .offer-index-card{position:relative;display:block;min-height:300px;overflow:hidden;border-radius:15px;color:white;text-decoration:none}
 .offer-index-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#10251bce,transparent 66%)}
-.offer-index-card .caption{position:absolute;z-index:1;left:23px;bottom:22px}
+.offer-index-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .35s}.offer-index-card:hover img{transform:scale(1.025)}.offer-index-card .caption{position:absolute;z-index:1;left:23px;bottom:22px}
 .offer-index-card strong{display:block;font:800 26px var(--display);letter-spacing:-.05em}
 .offer-index-card small{font:650 11px var(--display)}
 /* Responsive */
