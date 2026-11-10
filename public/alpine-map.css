@@ -215,3 +215,7 @@
 @media(prefers-reduced-motion:reduce){
  .map-ready .alpine-pin,.alpine-pin-name,.alpine-pin-leader,.alpine-ledger-item{transition:none!important}
 }
+
+/* Keep SVG station coordinates aligned with the map at every screen width. */
+@media(max-width:600px){.alpine-map-panel{aspect-ratio:1000 / 650}}
+@media(max-width:400px){.alpine-map-panel{aspect-ratio:1000 / 650}}
