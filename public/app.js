@@ -85,7 +85,7 @@
    const destination=read('destination'),station=read('station'),notes=read('notes');
    return [
     'Bonjour Bastien,','',
-    'Je souhaite organiser une journée de ski avec vous.','',
+    'Je souhaite organiser une expérience privée de ski avec Ski Society.','',
     '*Ma demande*',
     'Prénom : '+name,
     'Expérience : '+experience,
@@ -96,7 +96,7 @@
     'Destination : '+destination+(station?' ('+station+')':''),
     ...(notes?['','*Précisions*',notes]:[]),
     '',
-    'Pouvons-nous échanger pour organiser cette journée ?'
+    'Pouvons-nous échanger sur les possibilités, le moniteur disponible et les conditions avant toute réservation ?'
    ].join('\n');
   };
   inquiryForm.addEventListener('submit',event=>{
