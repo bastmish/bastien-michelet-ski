@@ -1,4 +1,4 @@
-/* Haute-Savoie map — original adaptation of Codrops scroll-driven SVG map concept.
+/* Jura / Haute-Savoie / Suisse map — original adaptation of Codrops scroll-driven SVG map concept.
    Contour data: IGN Admin Express COG 2018 (Licence Ouverte), via gregoiredavid/france-geojson.
    Station pin coordinates: indicative WGS84 points; the animated line is NOT a ski itinerary. */
 .alpine-map-section{position:relative;background:#f7faf8;overflow:clip;border-block:1px solid #e2ebe3}
@@ -168,14 +168,10 @@
 @media(max-width:1100px){
  .alpine-map-section.map-ready{height:auto}
  .map-ready .alpine-map-sticky{height:auto;min-height:0;position:static;padding:62px 0}
- .alpine-name-ledger{display:block;grid-column:1/-1;padding:16px 18px;background:#f2f7f3;border:1px solid #dae8dd;border-radius:14px}
- .map-ready .alpine-pin:not(.is-current) .alpine-pin-name{display:none}
- .map-ready .alpine-pin.is-revealed.is-current .alpine-pin-name{display:block;visibility:visible;opacity:1}
  .alpine-pin-leader{display:none}
 }
 @media(max-width:790px){
  .alpine-map-sticky,.map-ready .alpine-map-sticky{padding:58px 0}
- .alpine-ledger-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
  .approach .approach-centered .heading{font-size:clamp(33px,5.8vw,47px)}
  .approach .approach-centered .heading br{display:none}
  .approach .approach-centered .heading span{display:block}
@@ -184,13 +180,9 @@
  .approach .approach-centered .heading{font-size:clamp(31px,8.2vw,38px);line-height:1.2}
  .approach .approach-centered .approach-copy{font-size:13px;line-height:1.7}
  .approach .timeline{margin-top:41px}
- .alpine-name-ledger{padding:13px 12px}
- .alpine-ledger-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
- .alpine-ledger-item{font-size:10px;min-height:32px}
  .alpine-map-hint{font-size:9px}
 }
 @media(prefers-reduced-motion:reduce){
- .map-ready .alpine-pin,.alpine-pin-name,.alpine-pin-leader,.alpine-ledger-item{transition:none!important}
 }
 
 /* Keep SVG station coordinates aligned with the map at every screen width. */
