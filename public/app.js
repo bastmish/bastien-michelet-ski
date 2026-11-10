@@ -82,6 +82,19 @@
  const whatsappLink=document.getElementById('open-whatsapp');
  const pendingNotice=document.getElementById('whatsapp-pending');
  const requestStatus=document.getElementById('request-notice');
+ const destinationSelect=document.getElementById('request-destination');
+ const stationField=document.getElementById('request-station-field');
+ const stationInput=document.getElementById('request-station');
+ if(destinationSelect&&stationField&&stationInput){
+  const updateStation=()=>{
+   const hasStation=destinationSelect.value==="J'ai une station en tête";
+   stationField.hidden=!hasStation;
+   stationInput.required=hasStation;
+   if(!hasStation)stationInput.value='';
+  };
+  destinationSelect.addEventListener('change',updateStation);
+  updateStation();
+ }
  let preparedMessage='';
  if(inquiryForm&&preview&&messageOutput){
   const read=(field)=>String(inquiryForm.elements.namedItem(field)?.value??'').trim();
@@ -136,7 +149,7 @@
    }
    if(pendingNotice)pendingNotice.hidden=ready;
    if(requestStatus)requestStatus.textContent='';
-   preview.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'nearest'});
+   preview.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest'});
   });
   if(copyButton)copyButton.addEventListener('click',async()=>{
    if(!preparedMessage)return;
