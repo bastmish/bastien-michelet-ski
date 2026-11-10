@@ -5,7 +5,7 @@
 <title>Bastien Michelet — Ski privé, à votre mesure</title>
 <link rel="preconnect" href="https://images.pexels.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="alpine-map.css"><script src="app.js" defer></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script><script src="alpine-map.js" defer></script>
 </head><body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="site-header" id="header">
@@ -84,54 +84,84 @@
 <li class="timeline-item"><span class="timeline-icon" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 6c5 3 8 8 10 16M14 5c5 4 7 9 9 17M3 28c10 7 21 7 30-1M9 29l-2-6M26 29l4-7"/><circle cx="17" cy="9" r="2"/></svg></span><span class="timeline-number">04</span><h3>La journée</h3><p>On se retrouve, on skie et on profite de la montagne.</p></li></ol>
   </div>
  </section>
- <section class="ski-map-section" id="zones" aria-labelledby="map-title">
-  <div class="wrap map-layout">
-   <div class="map-editorial">
-    <div class="kicker">Notre terrain de jeu</div>
-    <h2 class="heading" id="map-title">Des possibilités, entre Alpes et Jura.</h2>
-    <p>Haute-Savoie, Savoie, Suisse et Jura : autant de destinations à envisager ensemble selon votre groupe, votre niveau, les conditions et mes disponibilités.</p>
-    <p class="map-disclaimer">Les points illustrent des stations possibles, pas un calendrier de disponibilité. Certaines destinations, notamment en Suisse, restent soumises au cadre professionnel applicable.</p>
-    <a class="btn btn-secondary" href="#reservation">Parlons de votre destination</a>
-   </div>
-   <div class="ski-map" role="img" aria-label="Carte schématique des Alpes et du Jura : repères de stations dans le Jura, la Haute-Savoie, la Savoie et les Alpes suisses.">
-    <svg viewBox="0 0 780 470" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-     <defs>
-      <linearGradient id="terrain" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f9fcf8"/><stop offset=".6" stop-color="#e7f0e7"/><stop offset="1" stop-color="#d8e5dc"/></linearGradient>
-     </defs>
-     <rect width="780" height="470" rx="20" fill="url(#terrain)"/>
-     <g fill="none" stroke="#c5d8c9" stroke-width="2" opacity=".75">
-      <path d="M-20 62Q90 40 183 90T374 111T586 93T820 46"/><path d="M-20 112Q88 90 203 137T421 161T649 123T801 99"/>
-      <path d="M-30 184Q106 130 226 183T473 212T799 151"/><path d="M-30 230Q130 197 268 240T493 275T811 210"/>
-      <path d="M-30 308Q103 253 260 316T522 331T812 292"/><path d="M-30 370Q116 324 263 373T523 398T812 345"/>
-      <path d="M-30 423Q118 389 271 424T523 448T812 410"/>
-     </g>
-     <g fill="#c8dacd" opacity=".35">
-      <path d="M50 391 150 186 218 298 276 133 371 300 444 155 569 395Z"/>
-      <path d="M295 428 404 248 461 318 543 157 677 411Z"/>
-     </g>
-     <g class="region-labels" fill="#83998a" font-size="19" font-family="Manrope, sans-serif" font-weight="800" letter-spacing="2">
-      <text x="120" y="75">JURA</text><text x="183" y="291">HAUTE-SAVOIE</text><text x="383" y="395">SAVOIE</text><text x="560" y="147">SUISSE</text>
-     </g>
-     <path d="M387 44Q424 137 470 187T540 282T680 432" fill="none" stroke="#a7c1af" stroke-width="2.2" stroke-dasharray="7 8" opacity=".62"/>
-     <g class="map-markers" fill="#b83f32" stroke="#fff" stroke-width="3">
-      <circle cx="188" cy="95" r="7"/><circle cx="147" cy="162" r="7"/>
-      <circle cx="253" cy="257" r="7"/><circle cx="323" cy="302" r="7"/><circle cx="288" cy="330" r="7"/>
-      <circle cx="421" cy="340" r="7"/><circle cx="451" cy="373" r="7"/><circle cx="523" cy="350" r="7"/>
-      <circle cx="545" cy="206" r="7"/><circle cx="640" cy="265" r="7"/>
-     </g>
-     <g class="map-station-labels" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#2e483b">
-      <text x="200" y="89">Métabief</text><text x="155" y="151">Les Rousses</text>
-      <text x="193" y="248">Les Gets</text><text x="331" y="293">Chamonix</text><text x="224" y="347">Megève</text>
-      <text x="386" y="327">La Plagne</text><text x="411" y="396">Courchevel</text><text x="529" y="341">Val d'Isère</text>
-      <text x="553" y="195">Villars</text><text x="648" y="258">Verbier</text>
-     </g>
-     <text x="28" y="452" font-family="DM Sans, sans-serif" font-size="10" fill="#748e7b">Carte illustrative non géographique · repères indicatifs</text>
-    </svg>
-    <div class="map-legend"><span><i></i> Exemples de stations</span><span>France · Suisse</span></div>
+ <section class="alpine-map-section" id="zones" aria-labelledby="map-title">
+  <div class="alpine-map-sticky">
+   <div class="wrap alpine-map-shell">
+    <div class="alpine-map-editorial">
+     <div class="kicker">La montagne, sans itinéraire imposé</div>
+     <h2 class="heading" id="map-title">Une région.<br><em>Mille façons de skier.</em></h2>
+     <p class="alpine-map-lead">Des Portes du Soleil à la vallée de Chamonix, découvrez les stations où nous pouvons imaginer votre journée de ski.</p>
+     <div class="alpine-map-regions" aria-label="Explorer les massifs"><button type="button" class="alpine-region is-current" data-alpine-region="portes" aria-pressed="true"><span class="alpine-region-count">01</span><span>Portes du Soleil</span></button><button type="button" class="alpine-region" data-alpine-region="grand" aria-pressed="false"><span class="alpine-region-count">02</span><span>Grand Massif</span></button><button type="button" class="alpine-region" data-alpine-region="aravis" aria-pressed="false"><span class="alpine-region-count">03</span><span>Massif des Aravis</span></button><button type="button" class="alpine-region" data-alpine-region="blanc" aria-pressed="false"><span class="alpine-region-count">04</span><span>Pays du Mont-Blanc</span></button></div>
+     <div class="alpine-active-card" aria-live="polite" aria-atomic="true">
+      <span class="alpine-active-eyebrow" id="alpine-active-region">Portes du Soleil</span>
+      <div class="alpine-active-line"><strong id="alpine-active-station">Châtel</strong><span id="alpine-active-counter">01 / 24</span></div>
+      <p id="alpine-active-description">Des villages aux grands domaines, entre Châtel et Morzine.</p>
+      <button type="button" class="alpine-station-cta" id="alpine-station-cta">Imaginer une journée ici</button>
+     </div>
+     <p class="alpine-map-fineprint">Carte basée sur les contours géographiques de Haute-Savoie. Stations présentées à titre d'exemples, sous réserve des conditions, de mes disponibilités et du cadre professionnel applicable.</p>
+    </div>
+    <div class="alpine-map-panel" aria-label="Carte animée de stations de ski en Haute-Savoie">
+     <div class="alpine-map-scene" id="alpine-map-scene">
+      <svg class="alpine-map-geography" viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+       <defs>
+        <linearGradient id="alpine-white" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset=".5" stop-color="#f5f9f7"/><stop offset="1" stop-color="#e8f1eb"/></linearGradient>
+        <linearGradient id="alpine-dept" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f4faf6"/><stop offset="1" stop-color="#dae8df"/></linearGradient>
+        <filter id="alpine-soft-shadow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="11"/></filter>
+       </defs>
+       <rect width="1000" height="650" fill="url(#alpine-white)"/>
+       <g class="alpine-contour-background" fill="none" stroke="#cedcd2" stroke-width="1.1"><path d="M-80 130 L0 126.0 L60 130.8 L120 128.2 L180 123.1 L240 120.7 L300 121.6 L360 122.0 L420 117.2 L480 106.5 L540 94.8 L600 89.4 L660 95.7 L720 111.9 L780 130.2 L840 141.3 L900 140.1 L960 128.8"/><path d="M-53 160 L0 159.8 L60 159.3 L120 155.1 L180 152.5 L240 153.5 L300 154.9 L360 151.9 L420 142.1 L480 129.1 L540 120.4 L600 122.4 L660 136.0 L720 154.8 L780 169.2 L840 172.3 L900 164.1 L960 150.8"/><path d="M-26 190 L0 189.6 L60 186.6 L120 184.0 L180 184.9 L240 187.3 L300 186.1 L360 177.9 L420 164.5 L480 152.8 L540 150.6 L600 160.7 L660 178.7 L720 195.6 L780 203.0 L840 198.4 L900 186.5 L960 175.0"/><path d="M1 220 L0 217.5 L60 215.1 L120 215.9 L180 219.1 L240 219.8 L300 213.6 L360 200.6 L420 186.8 L480 180.4 L540 186.4 L600 202.6 L660 220.9 L720 232.0 L780 231.4 L840 221.8 L900 210.1 L960 202.9"/><path d="M28 250 L0 245.9 L60 246.5 L120 250.2 L180 252.7 L240 248.9 L300 237.1 L360 222.0 L420 211.9 L480 213.4 L540 226.8 L600 245.4 L660 259.6 L720 263.0 L780 256.2 L840 245.2 L900 236.9 L960 234.2"/><path d="M55 280 L0 276.7 L60 280.7 L120 284.8 L180 283.5 L240 273.7 L300 258.2 L360 245.0 L420 242.0 L480 251.7 L540 269.5 L600 285.9 L660 293.2 L720 289.6 L780 279.9 L840 271.0 L900 267.2 L960 267.2"/><path d="M82 310 L0 310.6 L60 316.0 L120 317.3 L180 310.0 L240 295.1 L300 279.6 L360 272.3 L420 277.8 L480 293.6 L540 311.2 L600 321.9 L660 321.9 L720 314.1 L780 305.1 L840 300.3 L900 299.8 L960 299.6"/><path d="M109 340 L0 346.3 L60 350.1 L120 345.7 L180 332.3 L240 315.6 L300 304.3 L360 305.2 L420 318.1 L480 335.9 L540 349.3 L600 352.9 L660 347.5 L720 339.1 L780 333.5 L840 332.4 L900 332.5 L960 329.2"/><path d="M136 370 L0 381.8 L60 380.6 L120 369.5 L180 352.5 L240 338.1 L300 334.3 L360 343.4 L420 360.3 L480 375.7 L540 382.6 L600 380.0 L660 372.6 L720 366.7 L780 365.0 L840 365.3 L900 363.0 L960 355.6"/><path d="M163 400 L0 414.3 L60 406.3 L120 390.0 L180 373.3 L240 365.2 L300 370.0 L360 384.8 L420 401.3 L480 411.2 L540 411.6 L600 405.7 L660 399.7 L720 397.5 L780 398.0 L840 396.7 L900 390.1 L960 379.6"/><path d="M190 430 L0 442.2 L60 427.7 L120 409.8 L180 397.7 L240 398.0 L300 409.9 L360 426.3 L420 438.6 L480 442.0 L540 438.1 L600 432.4 L660 429.8 L720 430.4 L780 430.2 L840 424.9 L900 414.3 L960 403.6"/><path d="M217 460 L0 465.3 L60 447.2 L120 432.0 L180 427.6 L240 435.9 L300 451.3 L360 465.3 L420 471.5 L480 469.7 L540 464.8 L600 461.9 L660 462.6 L720 463.4 L780 459.6 L840 449.5 L900 437.3 L960 430.5"/><path d="M244 490 L0 485.1 L60 467.7 L120 459.0 L180 463.1 L240 476.5 L300 491.3 L360 499.9 L420 500.5 L480 496.6 L540 493.7 L600 494.3 L660 496.1 L720 494.0 L780 485.1 L840 472.1 L900 462.1 L960 462.1"/></g>
+       <path class="alpine-department-shadow" d="M659.1 494.0L635.9 501.2L614.4 526.9L603.0 523.9L608.0 514.0L601.6 507.7L603.8 498.4L588.1 481.2L558.7 485.7L551.3 480.7L547.9 471.4L539.0 469.2L527.2 444.4L543.4 444.1L545.7 435.2L538.7 425.9L525.6 423.9L515.3 416.5L507.1 428.1L495.2 430.9L485.4 444.8L487.2 448.7L482.5 454.6L485.0 459.1L475.6 469.1L472.7 479.1L441.9 499.8L447.9 501.5L446.4 508.4L434.6 518.5L437.3 521.0L425.2 544.8L375.3 551.3L377.5 539.4L368.7 535.2L367.8 540.2L362.4 540.5L359.8 544.8L356.6 538.1L359.5 521.3L352.9 520.7L351.0 512.5L345.0 511.6L345.0 507.5L333.5 504.0L325.0 510.9L314.2 503.9L312.7 521.5L310.4 515.1L300.3 516.3L290.2 510.2L284.1 517.3L267.6 510.2L259.9 512.2L261.3 504.2L249.5 499.0L253.9 492.4L253.3 483.5L242.3 484.2L244.6 473.6L230.2 472.9L228.7 477.0L220.1 478.7L216.0 474.7L216.0 465.7L204.5 465.3L200.3 461.0L203.4 445.3L194.9 402.6L182.9 402.9L176.7 398.8L181.5 391.5L181.0 379.1L169.0 368.6L167.7 336.5L171.3 328.6L168.0 324.6L175.4 307.8L173.9 301.3L179.8 299.5L191.7 311.0L205.3 312.1L210.4 305.8L206.3 298.5L209.5 292.8L223.6 284.6L241.9 286.6L259.4 276.8L281.1 281.5L287.0 278.7L288.6 272.7L308.6 272.5L311.8 277.1L327.7 279.2L350.4 268.1L356.2 263.8L355.4 255.5L378.6 240.0L399.9 234.6L416.1 217.8L415.7 210.4L408.8 210.7L408.5 205.5L394.5 215.7L380.2 197.7L387.8 190.1L383.1 182.4L390.1 169.3L399.5 155.0L413.6 144.9L433.1 142.9L440.4 155.1L455.0 160.7L466.9 149.1L497.4 140.1L502.1 129.0L516.2 122.3L531.4 128.2L576.6 121.6L620.2 120.4L660.4 128.6L660.9 137.1L653.8 144.6L643.7 148.3L644.0 154.6L650.1 164.8L656.1 164.9L657.8 172.3L670.2 177.4L672.6 184.5L681.4 190.5L686.9 190.1L689.7 196.6L685.3 211.1L668.2 224.9L668.5 230.1L659.6 241.2L664.1 254.7L653.9 266.2L656.1 280.2L665.1 285.5L676.6 283.8L683.4 287.5L707.1 289.0L698.7 306.1L703.0 318.7L697.5 321.4L695.1 334.2L702.9 337.4L719.3 323.8L725.9 325.0L724.9 329.8L732.0 331.9L738.2 344.4L747.4 350.8L749.2 359.7L761.7 364.1L768.0 375.3L761.0 380.9L775.1 389.6L774.2 399.3L778.8 408.5L765.6 413.3L758.1 423.1L759.9 429.5L752.3 440.8L732.5 444.9L727.6 453.3L717.9 452.9L713.7 457.0L696.9 452.0L691.1 466.9L679.7 457.2L667.1 459.7L660.2 471.9L664.3 483.9L660.6 485.4L659.1 494.0Z" fill="#afc2b6" transform="translate(3 9)" opacity=".2" filter="url(#alpine-soft-shadow)"/>
+       <path class="alpine-department" d="M659.1 494.0L635.9 501.2L614.4 526.9L603.0 523.9L608.0 514.0L601.6 507.7L603.8 498.4L588.1 481.2L558.7 485.7L551.3 480.7L547.9 471.4L539.0 469.2L527.2 444.4L543.4 444.1L545.7 435.2L538.7 425.9L525.6 423.9L515.3 416.5L507.1 428.1L495.2 430.9L485.4 444.8L487.2 448.7L482.5 454.6L485.0 459.1L475.6 469.1L472.7 479.1L441.9 499.8L447.9 501.5L446.4 508.4L434.6 518.5L437.3 521.0L425.2 544.8L375.3 551.3L377.5 539.4L368.7 535.2L367.8 540.2L362.4 540.5L359.8 544.8L356.6 538.1L359.5 521.3L352.9 520.7L351.0 512.5L345.0 511.6L345.0 507.5L333.5 504.0L325.0 510.9L314.2 503.9L312.7 521.5L310.4 515.1L300.3 516.3L290.2 510.2L284.1 517.3L267.6 510.2L259.9 512.2L261.3 504.2L249.5 499.0L253.9 492.4L253.3 483.5L242.3 484.2L244.6 473.6L230.2 472.9L228.7 477.0L220.1 478.7L216.0 474.7L216.0 465.7L204.5 465.3L200.3 461.0L203.4 445.3L194.9 402.6L182.9 402.9L176.7 398.8L181.5 391.5L181.0 379.1L169.0 368.6L167.7 336.5L171.3 328.6L168.0 324.6L175.4 307.8L173.9 301.3L179.8 299.5L191.7 311.0L205.3 312.1L210.4 305.8L206.3 298.5L209.5 292.8L223.6 284.6L241.9 286.6L259.4 276.8L281.1 281.5L287.0 278.7L288.6 272.7L308.6 272.5L311.8 277.1L327.7 279.2L350.4 268.1L356.2 263.8L355.4 255.5L378.6 240.0L399.9 234.6L416.1 217.8L415.7 210.4L408.8 210.7L408.5 205.5L394.5 215.7L380.2 197.7L387.8 190.1L383.1 182.4L390.1 169.3L399.5 155.0L413.6 144.9L433.1 142.9L440.4 155.1L455.0 160.7L466.9 149.1L497.4 140.1L502.1 129.0L516.2 122.3L531.4 128.2L576.6 121.6L620.2 120.4L660.4 128.6L660.9 137.1L653.8 144.6L643.7 148.3L644.0 154.6L650.1 164.8L656.1 164.9L657.8 172.3L670.2 177.4L672.6 184.5L681.4 190.5L686.9 190.1L689.7 196.6L685.3 211.1L668.2 224.9L668.5 230.1L659.6 241.2L664.1 254.7L653.9 266.2L656.1 280.2L665.1 285.5L676.6 283.8L683.4 287.5L707.1 289.0L698.7 306.1L703.0 318.7L697.5 321.4L695.1 334.2L702.9 337.4L719.3 323.8L725.9 325.0L724.9 329.8L732.0 331.9L738.2 344.4L747.4 350.8L749.2 359.7L761.7 364.1L768.0 375.3L761.0 380.9L775.1 389.6L774.2 399.3L778.8 408.5L765.6 413.3L758.1 423.1L759.9 429.5L752.3 440.8L732.5 444.9L727.6 453.3L717.9 452.9L713.7 457.0L696.9 452.0L691.1 466.9L679.7 457.2L667.1 459.7L660.2 471.9L664.3 483.9L660.6 485.4L659.1 494.0Z" fill="url(#alpine-dept)" stroke="#91ad99" stroke-width="1.8" stroke-linejoin="round"/>
+       <g fill="none" class="alpine-relief-lines" stroke="#8eab98" stroke-width="1.2" opacity=".24">
+        <path d="M280 375Q360 315 457 342T680 320T810 389"/>
+        <path d="M260 412Q367 341 468 386T674 367T816 435"/>
+        <path d="M262 449Q391 387 493 431T673 420T820 471"/>
+        <path d="M326 478Q408 423 537 482T718 500"/>
+        <path d="M460 188Q529 150 626 201T808 223"/>
+        <path d="M445 222Q554 173 625 236T831 252"/>
+       </g>
+       <g class="alpine-basemap-labels" font-family="Manrope, sans-serif" fill="#96ad9d" font-weight="800" letter-spacing="3">
+        <text x="152" y="93" font-size="14">LAC LÉMAN</text>
+        <text x="175" y="504" font-size="14">ANNECY</text>
+        <text x="732" y="104" font-size="14">SUISSE</text>
+        <text x="452" y="578" font-size="16">SAVOIE</text>
+       </g>
+       <path class="alpine-journey-base" d="M678.1 205.3 L645.0 248.6 L593.7 268.7 L552.2 281.2 L622.8 313.3 L604.0 358.9 L474.7 396.9 L471.2 418.9 L568.5 448.5 L614.9 425.4 L691.9 408.2 L720.5 372.6" fill="none" stroke="#c9d9cc" stroke-width="3.7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 10" opacity=".8"/>
+       <path class="alpine-journey-progress" id="alpine-journey-progress" d="M678.1 205.3 L645.0 248.6 L593.7 268.7 L552.2 281.2 L622.8 313.3 L604.0 358.9 L474.7 396.9 L471.2 418.9 L568.5 448.5 L614.9 425.4 L691.9 408.2 L720.5 372.6" fill="none" stroke="#b83f32" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="alpine-map-pins" id="alpine-map-pins"><button type="button" class="alpine-pin is-current" data-alpine-index="0" data-alpine-zone="portes" style="left:67.806%;top:31.577%" aria-label="Châtel : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Châtel</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="1" data-alpine-zone="portes" style="left:61.883%;top:30.117%" aria-label="Abondance : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Abondance</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="2" data-alpine-zone="portes" style="left:64.499%;top:38.242%" aria-label="Avoriaz : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Avoriaz</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="3" data-alpine-zone="portes" style="left:61.044%;top:39.155%" aria-label="Morzine : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Morzine</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="4" data-alpine-zone="portes" style="left:59.365%;top:41.346%" aria-label="Les Gets : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Les Gets</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="5" data-alpine-zone="portes" style="left:59.020%;top:22.722%" aria-label="Bernex : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Bernex</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="6" data-alpine-zone="portes" style="left:61.784%;top:20.074%" aria-label="Thollon-les-Mémises : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Thollon-les-Mémises</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="7" data-alpine-zone="grand" style="left:55.219%;top:43.263%" aria-label="Praz de Lys : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Praz de Lys</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="8" data-alpine-zone="grand" style="left:62.278%;top:48.193%" aria-label="Samoëns : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Samoëns</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="9" data-alpine-zone="grand" style="left:59.563%;top:47.919%" aria-label="Morillon : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Morillon</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="10" data-alpine-zone="grand" style="left:60.402%;top:55.222%" aria-label="Flaine : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Flaine</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="11" data-alpine-zone="grand" style="left:57.983%;top:53.396%" aria-label="Les Carroz : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Les Carroz</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="12" data-alpine-zone="aravis" style="left:47.124%;top:64.443%" aria-label="La Clusaz : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">La Clusaz</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="13" data-alpine-zone="aravis" style="left:47.470%;top:61.065%" aria-label="Le Grand-Bornand : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Le Grand-Bornand</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="14" data-alpine-zone="aravis" style="left:45.940%;top:68.460%" aria-label="Manigod : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Manigod</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="15" data-alpine-zone="aravis" style="left:30.688%;top:74.394%" aria-label="Le Semnoz : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Le Semnoz</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="16" data-alpine-zone="blanc" style="left:56.848%;top:69.008%" aria-label="Megève : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Megève</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="17" data-alpine-zone="blanc" style="left:58.033%;top:65.447%" aria-label="Combloux : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Combloux</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="18" data-alpine-zone="blanc" style="left:61.488%;top:65.447%" aria-label="Saint-Gervais : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Saint-Gervais</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="19" data-alpine-zone="blanc" style="left:62.129%;top:72.020%" aria-label="Les Contamines : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Les Contamines</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="20" data-alpine-zone="blanc" style="left:65.634%;top:65.538%" aria-label="Les Houches : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Les Houches</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="21" data-alpine-zone="blanc" style="left:69.188%;top:62.800%" aria-label="Chamonix : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Chamonix</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="22" data-alpine-zone="blanc" style="left:72.051%;top:57.322%" aria-label="Argentière : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Argentière</span></button>
+<button type="button" class="alpine-pin" data-alpine-index="23" data-alpine-zone="blanc" style="left:54.380%;top:70.651%" aria-label="Praz-sur-Arly : choisir cette station et préparer une demande"><span class="alpine-pin-halo"></span><span class="alpine-pin-core"></span><span class="alpine-pin-name">Praz-sur-Arly</span></button></div>
+     </div>
+     <div class="alpine-map-compass" aria-hidden="true"><span>N</span><i></i></div>
+     <span class="alpine-map-brand">ALPES FRANÇAISES · HAUTE-SAVOIE</span>
+     <span class="alpine-map-hint">Faites défiler ou choisissez un point</span>
+     <div class="alpine-map-credit">Contours IGN / Admin Express · <a href="https://github.com/gregoiredavid/france-geojson" target="_blank" rel="noopener noreferrer">france-geojson</a> · tracé animé illustratif</div>
+    </div>
    </div>
   </div>
  </section>
-
  <section class="section steps" id="organisation" aria-labelledby="steps-title">
   <div class="wrap">
    <div class="section-heading"><div><div class="kicker">L'organisation</div><h2 class="heading" id="steps-title" style="margin-top:9px">Comment se passe une journée avec moi ?</h2></div><p>Trois étapes simples, sans réservation compliquée.</p></div>
