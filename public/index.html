@@ -73,10 +73,12 @@
 
  <section class="section approach" id="approche" aria-labelledby="approche-title">
   <div class="wrap">
-   <div class="approach-grid">
+   <div class="approach-grid approach-centered">
     <div class="kicker approach-side">L'approche</div>
-    <div><h2 class="heading" id="approche-title">Une bonne journée de ski commence par vous.</h2>
-     <p class="approach-copy">De votre première idée jusqu'au dernier virage : chaque étape est pensée en fonction de votre niveau et des personnes qui vous accompagnent.</p></div>
+    <div class="approach-heading-block">
+     <h2 class="heading" id="approche-title">Une bonne journée de ski<br><span>commence par vous.</span></h2>
+     <p class="approach-copy">De votre première idée jusqu'au dernier virage : chaque étape est pensée en fonction de votre niveau et des personnes qui vous accompagnent.</p>
+    </div>
    </div>
    <ol class="timeline" aria-label="Les quatre étapes de l'accompagnement"><li class="timeline-item"><span class="timeline-icon" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="12" r="6"/><path d="M6 32c1-8 5-12 12-12s11 4 12 12"/></svg></span><span class="timeline-number">01</span><h3>Votre niveau</h3><p>Nous échangeons sur votre niveau, le groupe et vos envies.</p></li>
 <li class="timeline-item"><span class="timeline-icon" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 33s11-12 11-21A11 11 0 0 0 7 12c0 9 11 21 11 21Z"/><circle cx="18" cy="12" r="4"/></svg></span><span class="timeline-number">02</span><h3>Le bon endroit</h3><p>Nous choisissons ensemble un domaine et un terrain adaptés.</p></li>
@@ -156,8 +158,12 @@
      </div>
      <div class="alpine-map-compass" aria-hidden="true"><span>N</span><i></i></div>
      <span class="alpine-map-brand">ALPES FRANÇAISES · HAUTE-SAVOIE</span>
-     <span class="alpine-map-hint">Faites défiler ou choisissez un point</span>
+     <span class="alpine-map-hint" id="alpine-map-hint">Faites défiler pour révéler les stations</span>
      <div class="alpine-map-credit">Contours IGN / Admin Express · <a href="https://github.com/gregoiredavid/france-geojson" target="_blank" rel="noopener noreferrer">france-geojson</a> · tracé animé illustratif</div>
+    </div>
+    <div class="alpine-name-ledger" id="alpine-name-ledger" aria-label="Stations découvertes sur la carte">
+     <div class="alpine-name-ledger-header"><strong>Stations découvertes</strong><span id="alpine-reveal-count">0 / 24</span></div>
+     <div class="alpine-ledger-grid" id="alpine-ledger-grid"></div>
     </div>
    </div>
   </div>
