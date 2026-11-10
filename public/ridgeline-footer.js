@@ -7,7 +7,7 @@ const canvas=root.querySelector(".ss-ridge-scene canvas"),scene=root.querySelect
 if(!canvas||!scene)return;
 const ctx=canvas.getContext("2d",{alpha:false});
 if(!ctx)return;
-const paper=[242,239,231],tones=[[242,239,231],[223,219,209],[195,192,180],[159,159,150],[117,123,115],[72,81,75],[35,45,42]];
+const paper=[255,255,255],tones=[[255,255,255],[244,244,243],[224,227,224],[190,196,191],[141,151,144],[87,101,92],[35,45,42]];
 const bayer=[0,32,8,40,48,16,56,24,12,44,4,36,60,28,52,20,3,35,11,43,51,19,59,27,15,47,7,39,63,31,55,23,2,34,10,42,50,18,58,26,14,46,6,38,62,30,54,22,1,33,9,41,49,17,57,25,13,45,5,37,61,29,53,21];
 const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let frame=0,visible=false,revealed=reduce,start=0;
