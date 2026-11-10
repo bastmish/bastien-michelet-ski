@@ -281,18 +281,118 @@ footer a{color:#e0e5de}
  html{scroll-behavior:auto}
  .button,.experience,.experience img,.mood-tab{transition:none}
 }
+
+/* ── QUALITY PASS V6 — DA V5 INCHANGÉE (snow / #B83F32 / deep ink) ── */
+:root{--focus-ring:#a73329;--shadow-soft:0 14px 45px rgba(23,32,33,.065)}
+html{scroll-padding-top:86px}
+body{font-size:14px;line-height:1.66;text-rendering:optimizeLegibility}
+.page-progress{position:fixed;inset:0 0 auto;z-index:90;height:2px;pointer-events:none}
+.page-progress-fill{height:100%;background:var(--red);width:0;transition:width .09s linear}
+.site-header{position:fixed;top:0;left:0;right:0;transition:background .25s,box-shadow .25s,backdrop-filter .25s}
+.site-header.is-scrolled,.site-header.menu-open{background:rgba(255,255,255,.94);box-shadow:0 7px 25px rgba(22,35,32,.065);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.site-header.is-scrolled .nav{border-color:#e3e8e5}
+.nav-links>a:not(.button){transition:color .2s}
+.nav-links>a:not(.button):focus-visible{color:var(--red)}
+.brand:focus-visible{border-radius:4px}
+.hero-edition{display:inline-flex;align-items:center;gap:16px;color:#65726d;font:700 10px/1.4 'Manrope',sans-serif;letter-spacing:.045em;margin:0 0 16px}
+.hero-edition span{color:var(--red);font-size:15px}
+.hero-kicker{margin-bottom:15px}
+.hero h1{line-height:1.08;margin-bottom:17px;letter-spacing:-.063em}
+.hero .hero-copy{position:relative}
+.hero-snow img{transition:transform 1.6s cubic-bezier(.15,.75,.28,1);transform:scale(1.012)}
+.hero .hero-actions .button{box-shadow:0 3px 9px rgba(11,32,29,.065)}
+.hero-trust{gap:12px}
+.rating{box-shadow:var(--shadow-soft);transition:box-shadow .2s,transform .2s;border-color:#e2e8e3;gap:12px}
+.rating:hover{transform:translateY(-2px);box-shadow:0 17px 40px rgba(23,32,33,.11)}
+.rating-content strong{font:800 13px/1.2 'Manrope',sans-serif;letter-spacing:-.04em}
+.rating-stars{font-size:14px;letter-spacing:.03em}
+.rating-content small{color:#65716d;font-size:10px}
+.hero-step{letter-spacing:.09em}
+.hero-step span{color:var(--red);padding-left:7px}
+.trust-strip{position:relative;z-index:8;background:#fff}
+.trust-grid{padding-top:28px;padding-bottom:28px}
+.trust-item{position:relative;gap:0}
+.trust-item:before{content:"";display:block;width:18px;height:2px;border-radius:9px;background:var(--red);margin-bottom:13px}
+.trust-item strong{font-size:clamp(18px,1.9vw,24px)}
+.eyebrow-separator{display:inline-block;vertical-align:middle;width:22px;height:1px;background:#c89a95;margin:0 9px}
+.section-header{margin-bottom:32px}
+.section-header h2{line-height:1.19}
+.process-point{transition:background .2s,padding .2s}
+.process-point:hover{padding-left:11px;background:rgba(255,255,255,.5)}
+.process-num{display:inline-grid;place-items:center;min-width:28px;height:28px;background:#fff0eb;border:1px solid #f0d9d3;border-radius:7px;font-size:10px;margin-top:0}
+.process-photo,.about-photo{box-shadow:var(--shadow-soft)}
+.process-photo img,.about-photo img{transition:transform .6s cubic-bezier(.21,.6,.25,1)}
+.process-photo:hover img,.about-photo:hover img{transform:scale(1.025)}
+.testimonial-placeholder{box-shadow:0 10px 35px rgba(23,32,33,.035)}
+.testimonial-kicker{font:800 9px/1.5 'Manrope',sans-serif;letter-spacing:.16em;color:var(--red)}
+.testimonial-placeholder h3{font-size:18px;margin:13px 0 9px}
+.testimonial-aside{position:relative;overflow:hidden}
+.testimonial-aside:after{content:"";position:absolute;right:-45px;bottom:-95px;width:225px;height:225px;border:1px solid rgba(255,255,255,.2);border-radius:50%;pointer-events:none}
+.experience{box-shadow:0 3px 14px rgba(23,32,33,.018)}
+.experience-copy{padding:23px;min-height:195px}
+.experience-image img{transition:transform .45s cubic-bezier(.21,.6,.25,1),filter .3s}
+.experience:hover .experience-image img{filter:saturate(.9);transform:scale(1.04)}
+.experience-link{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;align-self:stretch;padding:12px 0 0;border-top:1px solid #ebefeb;text-decoration:none;transition:color .2s}
+.experience-link:hover{color:#942d24;text-decoration:underline;text-underline-offset:4px}
+.experience-link span{font-size:14px}
+.mood-shell{box-shadow:0 20px 70px rgba(23,32,33,.06)}
+.mood-tab{transition:background .2s,color .2s,transform .2s,border .2s}
+.mood-tab:hover{transform:translateX(3px)}
+.mood-tab[aria-pressed="true"]{border-left:3px solid var(--red)}
+.mood-result img{transition:opacity .25s ease}
+.mood-result.is-changing img{opacity:.72}
+.social-head{align-items:center}
+.social-note{margin:0}
+.faq summary:after{width:27px;height:27px;display:grid;place-items:center;border-radius:50%;background:#fff1ed;font-size:20px;flex:none;transition:background .15s}
+.faq details[open] summary:after{background:#f5ded9}
+.faq details p{max-width:620px}
+.cta{position:relative;overflow:hidden}
+.cta:after{content:"";position:absolute;right:-140px;top:-250px;width:560px;height:560px;border:1px solid rgba(255,255,255,.085);border-radius:50%;pointer-events:none}
+.cta-inner{position:relative;z-index:2}
+.footer-top a:hover{color:#fff;text-decoration-thickness:2px}
+@media(max-width:1050px){
+ .hero-snow img{object-position:54% center}
+ .nav-links{gap:19px}
+ .hero-edition{max-width:440px}
+}
+@media(max-width:760px){
+ html{scroll-padding-top:65px}
+ .site-header{background:rgba(255,255,255,.85);backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px)}
+ .site-header .nav{height:62px}
+ .hero-edition{font-size:9px;margin-bottom:12px}
+ .hero h1{font-size:clamp(39px,10vw,53px)}
+ .hero-trust{gap:10px}
+ .hero-snow img{object-position:62% center}
+ .trust-item:before{margin-bottom:8px;width:14px}
+ .experience-copy{min-height:auto}
+ .process-point:hover{padding-left:0;background:transparent}
+ .cta:after{width:320px;height:320px;top:auto;bottom:-240px;right:-160px}
+}
+@media(max-width:500px){
+ .hero-edition{max-width:300px}
+ .hero h1{font-size:clamp(37px,9.6vw,46px)}
+ .hero-trust{margin-top:17px}
+ .rating-content strong{font-size:12px}
+ .experience-link{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){
+ .site-header,.hero-snow img,.rating,.process-point,.process-photo img,.about-photo img,.experience-image img,.mood-result img,.mood-tab{transition:none}
+ .mood-tab:hover,.rating:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
-<header class="site-header">
+<div class="page-progress" aria-hidden="true"><div class="page-progress-fill"></div></div>
+<header class="site-header" id="site-header">
  <div class="wrap">
   <nav class="nav" aria-label="Navigation principale">
    <a class="brand" href="#accueil" aria-label="Bastien Michelet, accueil">
     <svg class="brand-mark" viewBox="0 0 75 56" aria-hidden="true"><path d="M3 30L20 14l8 6L41 3l14 17 7-6 10 16" fill="none" stroke="#1b2829" stroke-width="3.8"/><path d="M4 48h67" stroke="#b83f32" stroke-width="3"/></svg>
     <span><span class="brand-name">BASTIEN MICHELET</span><span class="brand-sub">SKI & SNOWBOARD PRIVÉ</span></span>
    </a>
-   <button type="button" class="menu-toggle" aria-controls="site-links" aria-expanded="false">Menu ☰</button>
+   <button type="button" class="menu-toggle" aria-label="Ouvrir la navigation" aria-controls="site-links" aria-expanded="false">Menu ☰</button>
    <div class="nav-links" id="site-links">
     <a href="#approche">L'approche</a><a href="#avis">Avis</a><a href="#experiences">Expériences</a><a href="#bastien">Bastien</a>
     <a class="button primary" href="#contact">Préparer une journée <span aria-hidden="true">↗</span></a>
@@ -307,21 +407,22 @@ footer a{color:#e0e5de}
   </div>
   <div class="wrap hero-inner">
    <div class="hero-copy">
+    <span class="hero-edition">Une expérience de montagne, construite autour de vous <span aria-hidden="true">↗</span></span>
     <div class="hero-kicker"><i class="dot" aria-hidden="true"></i><span>Moniteur privé · Ski & snowboard</span></div>
     <h1>La montagne,<br><em>à votre mesure.</em></h1>
     <p>Vous avez une station en tête ? On y va. Vous préférez être conseillé ? Je vous propose le terrain et la journée qui correspondent à votre niveau, à vos envies et à ceux qui vous accompagnent.</p>
-    <div class="hero-actions"><a class="button primary" href="#approche">Imaginer ma journée <span aria-hidden="true">↗</span></a><a class="button ghost" href="#experiences">Découvrir les expériences</a></div>
+    <div class="hero-actions"><a class="button primary" href="#approche">Construire ma journée <span aria-hidden="true">↗</span></a><a class="button ghost" href="#experiences">Découvrir les expériences</a></div>
     <div class="hero-trust">
-     <a class="rating" href="https://fr.trustpilot.com/review/bastienmichelet.fr" target="_blank" rel="noopener noreferrer" aria-label="Voir la page Trustpilot, note 4,9 sur 5 à vérifier">
+     <a class="rating" href="https://fr.trustpilot.com/review/bastienmichelet.fr" target="_blank" rel="noopener noreferrer" aria-label="Voir les 24 avis sur Trustpilot, note indiquée 4,6 sur 5 en novembre 2026">
       <span class="rating-stars" aria-hidden="true">★★★★★</span>
-      <span class="rating-content"><span>4,9 / 5 <small>Note à confirmer avant publication</small></span><small>Trustpilot · aperçu</small></span>
+      <span class="rating-content"><span><strong>4,6 / 5</strong></span><small>24 avis · Trustpilot</small></span>
      </a>
-     <div class="hero-fact"><b>15 ans de compétition</b><br>7 ans d'enseignement à l'ESF</div>
+     <div class="hero-fact"><b>15 ans de compétition</b><br>7 ans d’enseignement à l’ESF</div>
     </div>
    </div>
   </div>
   <span class="photo-credit">Photographie d'ambiance · © Vivika Stamolis / Pexels</span>
-  <span class="hero-step">Le ski, autrement · Hiver 2026/27</span>
+  <span class="hero-step">Une autre idée du ski privé <span aria-hidden="true">↓</span></span>
  </section>
  <!-- SECOND SECTION — proof before sales narrative -->
  <section class="trust-strip" aria-label="Les repères qui font la différence">
@@ -335,7 +436,7 @@ footer a{color:#e0e5de}
  <section class="section process" id="approche">
   <div class="wrap process-grid">
    <div class="process-copy">
-    <div class="eyebrow">Plus qu'un cours privé</div>
+    <div class="eyebrow">Plus qu’un cours privé <span class="eyebrow-separator" aria-hidden="true"></span> 01 / 06</div>
     <h2>Vous choisissez l'envie.<br><em>Je m'occupe du reste.</em></h2>
     <p>Une belle journée de ski ne commence pas par le choix d'une station. Elle commence par une conversation : avec qui vous partez, ce que vous aimez, ce que vous souhaitez découvrir ou améliorer.</p>
     <div class="process-points">
@@ -353,9 +454,9 @@ footer a{color:#e0e5de}
  <!-- Real reviews can be populated via reviewData below, never fabricate quotations -->
  <section class="socialproof" id="avis">
   <div class="wrap">
-   <div class="social-head"><div><div class="eyebrow">La confiance d'abord</div><h2>Ils m'ont déjà fait confiance.</h2></div><p class="social-note">La sélection des avis clients sera affichée ici lorsque leur texte et leur provenance auront été vérifiés.</p></div>
+   <div class="social-head"><div><div class="eyebrow">La confiance d’abord <span class="eyebrow-separator" aria-hidden="true"></span> 02 / 06</div><h2>Ils m’ont déjà fait confiance.</h2></div><p class="social-note">La sélection des avis clients sera affichée ici lorsque leur texte et leur provenance auront été vérifiés.</p></div>
    <div class="social-content">
-    <div class="testimonial-placeholder"><div class="stars" aria-hidden="true">★★★★★</div><h3>Une relation qui compte autant que la technique.</h3><p>Après sept ans d'enseignement à l'ESF, je souhaite retrouver dans chaque journée privée ce qui me plaît le plus : la progression, l'échange et le plaisir de skier ensemble.</p></div>
+    <div class="testimonial-placeholder"><div class="testimonial-kicker">L’ESPRIT BASTIEN MICHELET</div><h3>Une relation qui compte autant que la technique.</h3><p>Après sept ans d'enseignement à l'ESF, je souhaite retrouver dans chaque journée privée ce qui me plaît le plus : la progression, l'échange et le plaisir de skier ensemble.</p></div>
     <div class="testimonial-aside"><span class="eyebrow">Avis clients</span><strong>Un accompagnement personnel, du premier échange au dernier virage.</strong><a href="https://fr.trustpilot.com/review/bastienmichelet.fr" target="_blank" rel="noopener noreferrer">Consulter la page Trustpilot ↗</a></div>
    </div>
    <div class="review-list" id="verified-reviews" hidden aria-label="Témoignages clients vérifiés"></div>
@@ -363,18 +464,18 @@ footer a{color:#e0e5de}
  </section>
  <section class="section experiences" id="experiences">
   <div class="wrap">
-   <div class="section-header"><div><div class="eyebrow">Vos envies, nos journées</div><h2>Il n'y a pas une seule façon<br>de vivre la montagne.</h2></div><p class="lead">Vous arrivez avec une idée, une envie ou simplement l'envie de skier. Nous construisons le reste ensemble.</p></div>
+   <div class="section-header"><div><div class="eyebrow">Vos envies, nos journées <span class="eyebrow-separator" aria-hidden="true"></span> 03 / 06</div><h2>Il n'y a pas une seule façon<br>de vivre la montagne.</h2></div><p class="lead">Vous arrivez avec une idée, une envie ou simplement l'envie de skier. Nous construisons le reste ensemble.</p></div>
    <div class="experience-grid">
-    <article class="experience"><div class="experience-image"><img src="https://images.pexels.com/photos/31112554/pexels-photo-31112554/free-photo-of-dynamic-skier-on-powder-snow-in-winter-landscape.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="Virage précis dans la poudreuse" loading="lazy"></div><div class="experience-copy"><span class="experience-index">01 / PROGRESSION</span><h3>Affiner votre ski</h3><p>Un regard précis sur votre technique, avec des conseils utiles et un rythme qui vous convient.</p><span class="tag">Ski ou snowboard · Tous niveaux ↗</span></div></article>
-    <article class="experience"><div class="experience-image"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Paysage de montagne enneigée" loading="lazy"></div><div class="experience-copy"><span class="experience-index">02 / EN FAMILLE</span><h3>Skier en famille</h3><p>Partager une journée adaptée aux envies, aux âges et aux niveaux de chacun.</p><span class="tag">Un programme à construire ensemble ↗</span></div></article>
-    <article class="experience"><div class="experience-image"><img src="https://images.unsplash.com/photo-1535640368727-187c8a674b5c?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Descente de ski dans la neige fraîche" loading="lazy"></div><div class="experience-copy"><span class="experience-index">03 / ENTRE AMIS</span><h3>La journée qui vous ressemble</h3><p>Skier, explorer, profiter : je vous aide à trouver un terrain à la hauteur de votre groupe.</p><span class="tag">Demi-journée ou journée ↗</span></div></article>
-    <article class="experience"><div class="experience-image"><img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8607?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Grand panorama de montagne enneigée" loading="lazy"></div><div class="experience-copy"><span class="experience-index">04 / EXPLORATION</span><h3>Découvrir autrement</h3><p>Pour skieurs expérimentés, des itinéraires à choisir dans le respect des conditions et du cadre réglementaire.</p><span class="tag">Selon la météo et la sécurité ↗</span></div></article>
+    <article class="experience"><div class="experience-image"><img src="https://images.pexels.com/photos/31112554/pexels-photo-31112554/free-photo-of-dynamic-skier-on-powder-snow-in-winter-landscape.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="Virage précis dans la poudreuse" loading="lazy"></div><div class="experience-copy"><span class="experience-index">01 / PROGRESSION</span><h3>Affiner votre ski</h3><p>Un regard précis sur votre technique, avec des conseils utiles et un rythme qui vous convient.</p><a class="tag experience-link" href="#selection" data-select-mood="technique">Voir cette expérience <span aria-hidden="true">↗</span></a></div></article>
+    <article class="experience"><div class="experience-image"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Paysage de montagne enneigée" loading="lazy"></div><div class="experience-copy"><span class="experience-index">02 / EN FAMILLE</span><h3>Skier en famille</h3><p>Partager une journée adaptée aux envies, aux âges et aux niveaux de chacun.</p><a class="tag experience-link" href="#selection" data-select-mood="famille">Voir cette expérience <span aria-hidden="true">↗</span></a></div></article>
+    <article class="experience"><div class="experience-image"><img src="https://images.unsplash.com/photo-1535640368727-187c8a674b5c?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Descente de ski dans la neige fraîche" loading="lazy"></div><div class="experience-copy"><span class="experience-index">03 / ENTRE AMIS</span><h3>La journée qui vous ressemble</h3><p>Skier, explorer, profiter : je vous aide à trouver un terrain à la hauteur de votre groupe.</p><a class="tag experience-link" href="#selection" data-select-mood="amis">Voir cette expérience <span aria-hidden="true">↗</span></a></div></article>
+    <article class="experience"><div class="experience-image"><img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8607?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Grand panorama de montagne enneigée" loading="lazy"></div><div class="experience-copy"><span class="experience-index">04 / EXPLORATION</span><h3>Découvrir autrement</h3><p>Pour skieurs expérimentés, des itinéraires à choisir dans le respect des conditions et du cadre réglementaire.</p><a class="tag experience-link" href="#questions">En savoir plus <span aria-hidden="true">↗</span></a></div></article>
    </div>
   </div>
  </section>
  <section class="section moods" id="selection">
   <div class="wrap">
-   <div class="section-header"><div><div class="eyebrow">Un premier aperçu</div><h2>Quel genre de journée<br>vous ferait plaisir ?</h2></div><p class="lead">Trois envies à explorer, sans formulaire ni réservation. Le programme final se construit ensuite avec vous.</p></div>
+   <div class="section-header"><div><div class="eyebrow">Un premier aperçu <span class="eyebrow-separator" aria-hidden="true"></span> 04 / 06</div><h2>Quel genre de journée<br>vous ferait plaisir ?</h2></div><p class="lead">Trois envies à explorer, sans formulaire ni réservation. Le programme final se construit ensuite avec vous.</p></div>
    <div class="mood-shell">
     <div class="mood-select">
      <div class="eyebrow">Choisir une envie</div>
@@ -394,12 +495,12 @@ footer a{color:#e0e5de}
  <section class="section about" id="bastien">
   <div class="wrap about-layout">
    <div class="about-photo"><img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8607?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Montagne enneigée — photographie d'ambiance en attendant les photos personnelles de Bastien" loading="lazy"></div>
-   <div class="about-copy"><span class="eyebrow">Derrière les skis</span><h2>Je suis Bastien.</h2><p>J'ai passé 15 ans dans le ski de compétition, au niveau national et international, puis sept ans à enseigner à l'ESF. Cette expérience m'a appris à regarder un geste, comprendre une difficulté et surtout m'adapter aux personnes.</p><p>Aujourd'hui, j'ai envie de partager la montagne autrement : des journées privées, sans programme figé, avec des conseils exigeants et une bonne dose de plaisir.</p><div class="about-metrics"><div><strong>15 ans</strong><span>Compétition</span></div><div><strong>7 ans</strong><span>ESF</span></div><div><strong>DE</strong><span>Moniteur de ski</span></div></div></div>
+   <div class="about-copy"><span class="eyebrow">Derrière les skis <span class="eyebrow-separator" aria-hidden="true"></span> 05 / 06</span><h2>Je suis Bastien.</h2><p>J'ai passé 15 ans dans le ski de compétition, au niveau national et international, puis sept ans à enseigner à l'ESF. Cette expérience m'a appris à regarder un geste, comprendre une difficulté et surtout m'adapter aux personnes.</p><p>Aujourd'hui, j'ai envie de partager la montagne autrement : des journées privées, sans programme figé, avec des conseils exigeants et une bonne dose de plaisir.</p><div class="about-metrics"><div><strong>15 ans</strong><span>Compétition</span></div><div><strong>7 ans</strong><span>ESF</span></div><div><strong>DE</strong><span>Moniteur de ski</span></div></div></div>
   </div>
  </section>
  <section class="section faq" id="questions">
   <div class="wrap faq-layout">
-   <div><div class="eyebrow">En pratique</div><h2>Avant de chausser<br>les skis.</h2><p style="color:#697570">Quelques repères pour imaginer votre expérience.</p></div>
+   <div><div class="eyebrow">En pratique <span class="eyebrow-separator" aria-hidden="true"></span> 06 / 06</div><h2>Avant de chausser<br>les skis.</h2><p style="color:#697570">Quelques repères pour imaginer votre expérience.</p></div>
    <div class="faq-list">
     <details><summary>Faut-il choisir une station à l'avance ?</summary><p>Non. Si vous avez un lieu précis en tête, nous en discutons. Sinon, je vous aide à choisir une destination adaptée à vos envies, votre niveau et aux conditions.</p></details>
     <details><summary>Est-ce adapté aux familles et aux débutants ?</summary><p>Oui. Le contenu de la journée s'adapte à vos niveaux et aux besoins du groupe. Nous définissons ensemble ce qui est réaliste et agréable pour chacun.</p></details>
@@ -418,30 +519,53 @@ footer a{color:#e0e5de}
 <footer>
  <div class="wrap">
   <div class="footer-top"><strong>BASTIEN MICHELET — SKI & SNOWBOARD PRIVÉ</strong><span>Vos envies d'abord. Le bon terrain ensuite.</span><a href="#accueil">Retour en haut ↑</a></div>
-  <div class="legal">Site de prévisualisation · Ouverture commerciale à confirmer après vérification des obligations administratives et d'assurance. Note Trustpilot 4,9/5 indiquée à titre de maquette et non vérifiée : ne pas publier comme note réelle avant confirmation. Aucune réservation, paiement ou mesure publicitaire. Photographies issues de Pexels et Unsplash : illustrations provisoires, elles ne montrent pas Bastien. Mentions légales définitives à compléter avant ouverture.</div>
+  <div class="legal">Site de prévisualisation · Ouverture commerciale à confirmer après vérification des obligations administratives et d'assurance. Trustpilot : 4,6/5 pour 24 avis, relevés sur la page catégorie en novembre 2026 ; à recontrôler avant toute publication définitive. Aucune réservation, paiement ou mesure publicitaire. Photographies issues de Pexels et Unsplash : illustrations provisoires, elles ne montrent pas Bastien. Mentions légales définitives à compléter avant ouverture.</div>
  </div>
 </footer>
 <script>
 (function(){
  const menu=document.querySelector('.menu-toggle'),links=document.querySelector('.nav-links');
- function setMenu(open){links.classList.toggle('open',open);menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'Fermer ✕':'Menu ☰';}
+ function setMenu(open){links.classList.toggle('open',open);menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Fermer la navigation':'Ouvrir la navigation');menu.textContent=open?'Fermer ✕':'Menu ☰';document.getElementById('site-header')?.classList.toggle('menu-open',open);}
  if(menu&&links){
   menu.addEventListener('click',()=>setMenu(menu.getAttribute('aria-expanded')!=='true'));
   links.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
   document.addEventListener('click',e=>{if(!e.target.closest('.site-header'))setMenu(false)});
  }
+ 
+ const header=document.getElementById('site-header');
+ const progress=document.querySelector('.page-progress-fill');
+ let lastScroll=0,rafPending=false;
+ function updateChrome(){
+  const y=window.scrollY||0;
+  if(header)header.classList.toggle('is-scrolled',y>26);
+  if(progress){
+   const scrollable=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
+   progress.style.width=Math.min(100,Math.max(0,100*y/scrollable))+'%';
+  }
+  rafPending=false;lastScroll=y;
+ }
+ window.addEventListener('scroll',()=>{
+  if(!rafPending){rafPending=true;requestAnimationFrame(updateChrome)}
+ },{passive:true});
+ window.addEventListener('resize',updateChrome,{passive:true});
+ updateChrome();
  const moods={
   technique:{label:'Technique & sensations',title:'Se faire plaisir en progressant.',description:'Une journée adaptée à votre niveau, entre précision technique, nouvelles sensations et plaisir de skier.',image:'https://images.pexels.com/photos/31112554/pexels-photo-31112554/free-photo-of-dynamic-skier-on-powder-snow-in-winter-landscape.jpeg?auto=compress&cs=tinysrgb&w=1000',alt:'Skieur dans la poudreuse'},
   famille:{label:'En famille',title:'Une journée dont tout le monde profite.',description:'Un terrain et un rythme choisis pour permettre aux plus petits comme aux plus grands de partager de bons moments.',image:'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=80',alt:'Paysage alpin enneigé'},
   amis:{label:'Entre amis',title:'La montagne à votre façon.',description:'Un lieu choisi ensemble, de belles pistes et une journée adaptée à votre groupe, sans itinéraire imposé.',image:'https://images.unsplash.com/photo-1535640368727-187c8a674b5c?auto=format&fit=crop&w=1000&q=80',alt:'Ski dans la neige fraîche'}
  };
  const tabs=[...document.querySelectorAll('.mood-tab')], label=document.getElementById('mood-label'),title=document.getElementById('mood-title'),desc=document.getElementById('mood-description'),img=document.getElementById('mood-image');
- tabs.forEach(btn=>btn.addEventListener('click',()=>{
-  const data=moods[btn.dataset.mood];if(!data)return;
-  tabs.forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));
-  label.textContent=data.label;title.textContent=data.title;desc.textContent=data.description;img.src=data.image;img.alt=data.alt;
- }));
+ function selectMood(key){
+  const data=moods[key];if(!data)return;
+  tabs.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mood===key)));
+  label.textContent=data.label;title.textContent=data.title;desc.textContent=data.description;
+  if(img.getAttribute('src')!==data.image){img.src=data.image;img.alt=data.alt;}
+ }
+ tabs.forEach(btn=>btn.addEventListener('click',()=>selectMood(btn.dataset.mood)));
+ document.querySelectorAll('[data-select-mood]').forEach(link=>{
+  link.addEventListener('click',()=>selectMood(link.dataset.selectMood));
+ });
  // Source de données prête pour les avis authentifiés, volontairement vide.
  // Ajouter uniquement des textes réels avec autorisation et source consultable.
  const reviewData=[];
