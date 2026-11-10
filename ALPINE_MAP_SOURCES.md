@@ -1,77 +1,64 @@
-# Carte animée — Jura, Haute-Savoie et Suisse (V12.2)
+# SKI SOCIETY — Carte des territoires (V14)
 
-## Inspiration
+## Objet et positionnement
+À la demande du fondateur, l'ancienne carte de 40 stations couvrant Jura, Haute-Savoie et Suisse est remplacée par une carte **focalisée sur les quatre territoires français** et **15 stations emblématiques**.
 
-Animation inspirée du principe de Codrops : carte SVG vectorielle et révélation visuelle liée au défilement.
+Message commercial : **« Nous venons à vous. Dans la station où vous passez vos vacances. »**
 
-- Codrops, Tom Miller, « Creating Scroll-Driven SVG Map Animations with GSAP » (21 mai 2026) : https://tympanus.net/codrops/2026/05/21/creating-scroll-driven-svg-map-animations-with-gsap/
-- Démonstration : https://tympanus.net/Tutorials/ScrollMap/
+La présence effective d'un moniteur partenaire dans une station n'est pas encore vérifiée. La mention sur site indique que les interventions dépendent des disponibilités, qualifications et autorisations professionnelles. **Aucune garantie de couverture ou d'implantation partout n'est exprimée.**
 
-Le code de cette carte est une adaptation originale, et non une copie de la démo. GSAP/ScrollTrigger est facultatif, pour une légère animation de caméra. La révélation des stations fonctionne en JavaScript natif, sans API cartographique ni clé payante.
+## Contours réels et droits d'usage
 
-## Géographie et licences
+La carte utilise les contours départementaux IGN Admin Express COG (2018), simplifiés à 5 %, diffusés dans le dépôt open source de Grégoire David sous Licence Ouverte :
 
-La carte s'appuie sur de vrais contours vectoriels, simplifiés uniquement pour le rendu web.
+- https://github.com/gregoiredavid/france-geojson
+- https://github.com/gregoiredavid/france-geojson/blob/master/departements-version-simplifiee.geojson
 
-**France — IGN Admin Express COG, millésime 2018, Licence Ouverte**, via les fichiers départementaux de `gregoiredavid/france-geojson` :
+Codes sources : **39 Jura**, **25 Doubs**, **74 Haute-Savoie**, **73 Savoie**, **05 Hautes-Alpes**.
 
-- Jura (39)
-- Doubs (25)
-- Ain (01)
-- Haute-Savoie (74)
-- Savoie (73)
+**Précision géographique** : « Jura » désigne ici le *massif du Jura* et inclut une portion du Doubs, puisque **Métabief est situé dans le Doubs (25)**. La carte utilise une projection affine du WGS84 pour un rendu éditorial ; ce n'est pas une carte de navigation. Les traits de relief en arrière-plan sont purement graphiques et ne sont pas de vraies courbes de niveau.
 
-Source et licence : https://github.com/gregoiredavid/france-geojson
+## Quinze stations (coordonnées WGS84 indicatives)
 
-**Suisse — Office fédéral de la statistique (OFS), frontières cantonales 2025**, via les GeoJSON de `samkhavandi/Swiss_Geography_Look_Ups` :
+### Massif du Jura — 2
+- Les Rousses — 46.484 / 6.063 (Jura)
+- Métabief — 46.774 / 6.350 (Doubs)
 
-- GE, VD, VS, FR, NE, JU et BE.
+### Haute-Savoie — 4
+- Megève — 45.857 / 6.618
+- Chamonix — 45.922 / 6.869
+- La Clusaz — 45.907 / 6.425
+- Avoriaz — 46.192 / 6.774
 
-Source : https://github.com/samkhavandi/Swiss_Geography_Look_Ups
+### Savoie — 6
+- Courchevel — 45.415 / 6.634
+- Méribel — 45.394 / 6.566
+- Les Arcs — 45.573 / 6.830
+- Tignes — 45.469 / 6.915
+- Val d’Isère — 45.448 / 7.000
+- Val Thorens — 45.298 / 6.580
 
-Vérifier les éventuelles conditions d'attribution spécifiques de l'OFS avant diffusion publique commerciale. Les traits de relief fins sont décoratifs et ne constituent pas des courbes de niveau réelles.
+### Hautes-Alpes — 3
+- Serre Chevalier — 44.940 / 6.587 (point indicatif du domaine)
+- Montgenèvre — 44.931 / 6.723
+- Vars — 44.572 / 6.689
 
-## Mise en page V12.3 et lac Léman
+Les coordonnées localisent des secteurs/villages et **ne garantissent pas un point de rendez-vous**, l'emplacement exact d'une école, d'une remontée ou d'une piste. Les lieux affichés sont des *stations de référence*, pas des implantations commerciales déjà vérifiées.
 
-La section est devenue une composition **éditoriale à deux colonnes** sur ordinateur : titre, six massifs, station sélectionnée et informations à gauche ; carte plus compacte à droite. Sous 1 060 px, les blocs se superposent et la carte reste panoramique/déplaçable horizontalement afin de ne pas réduire les 40 noms à une taille illisible.
+## Interaction
+- Quatre boutons de territoire sélectionnent les stations correspondantes.
+- Les stations principales ont une étiquette visible ; les autres apparaissent au survol, au focus ou dans la carte d'information.
+- Les étiquettes visibles sont repositionnées en JavaScript pour réduire les collisions.
+- Un clic sur une station renseigne « J'ai une station en tête » et le nom de la station dans **le formulaire WhatsApp existant**. L'utilisateur vérifie et envoie lui-même sa demande : aucune réservation ni paiement automatique.
+- Le bouton principal permet également de demander une station **non affichée**.
+- Sous 850 px, la carte est horizontalement déplaçable. Les préférences de réduction des animations sont respectées.
 
-Le lac Léman (« lac de Genève ») est représenté en bleu pâle, avec son nom au cœur de la carte. Sa silhouette est **stylisée**, obtenue depuis des points de rive approximatifs : il ne s'agit pas d'une extraction directe d'un contour officiel. Le jeu de données public de référence, à consulter pour une future version géométriquement plus précise, est celui du **Système d'information du territoire à Genève (SITG)**, « GEO_LAC_LEMAN » : https://vector.sitg.ge.ch/arcgis/rest/services/GEO_LAC_LEMAN/FeatureServer/0
+## Fichiers actifs
+- `public/index.html` : carte, contours SVG, 15 points et wording.
+- `public/society-map.css` : style premium indépendant, responsive.
+- `public/society-map.js` : interactions accessibles et présélection du formulaire.
 
-Cette représentation d'ambiance reste indicative et ne doit pas être utilisée pour la navigation. Le tracé rouge de découverte des stations est distinct du lac ; il ne représente pas un déplacement réel.
+L'ancien fichier `public/alpine-map.css` reste chargé uniquement pour ses styles historiques de la section « Notre approche ». L'ancien JavaScript de la carte `public/alpine-map.js` n'est plus chargé et peut être nettoyé plus tard après recette complète.
 
-## 40 points de stations et six ensembles
-
-- Jura (8) : Les Fourgs, Métabief, Les Rousses, Saint-Cergue, La Dôle, Lamoura, Mijoux – La Faucille, Lélex. Le groupe regroupe les stations du massif du Jura côté français et suisse.
-- Portes du Soleil, Haute-Savoie (7) : Les Gets, Morzine, Avoriaz, Châtel, Abondance, Bernex, Thollon-les-Mémises.
-- Grand Massif, Haute-Savoie (5) : Praz de Lys, Samoëns, Morillon, Les Carroz, Flaine.
-- Aravis, Haute-Savoie (4) : Le Grand-Bornand, La Clusaz, Manigod, Le Semnoz.
-- Pays du Mont-Blanc, Haute-Savoie (8) : Praz-sur-Arly, Megève, Combloux, Saint-Gervais, Les Contamines, Les Houches, Chamonix, Argentière.
-- Alpes suisses (8) : Champéry, Les Crosets, Morgins, Leysin, Villars-sur-Ollon, Les Diablerets, Verbier, Crans-Montana.
-
-Références de domaines et d'implantation :
-
-- Jura Tourisme : https://www.jura-tourism.com/vivre-le-jura/pratiquer/ski-sports-hiver/ski-alpin-et-snowboard/
-- Suisse Tourisme : https://www.myswitzerland.com/fr-ch/decouvrir/hiver/winter-sport-destinations-search/regions/
-- Haute-Savoie Mont-Blanc : https://hautesavoiemontblanc-tourisme.com/notre-destination/hautement-blanche/les-stations/
-
-**Précision :** les coordonnées WGS84 des points de station sont approximatives et indiquent le village/le secteur, pas l'emplacement d'un départ de remontée, de cours ou d'une piste. Le tracé rouge passe par les 40 points et constitue un **chemin graphique de lecture seulement**. Ce n'est pas un itinéraire skiable, de randonnée, routier ou une recommandation de sécurité.
-
-## Interaction V12.2
-
-- La carte apparaît dans le déroulé normal de la page ; un scroll court (~0,74 hauteur d'écran) révèle les 40 points.
-- Le tracé SVG progresse jusqu'à chaque point en synchronisation avec les apparitions.
-- Les noms révélés restent en permanence sur la carte, même lors du scroll inverse. Le système de liste « Stations découvertes » a été supprimé.
-- Les étiquettes sont positionnées pour limiter les superpositions ; les traits fins relient le texte au point si nécessaire.
-- En dessous de 950 pixels de large, la carte reste grande et **peut être parcourue horizontalement** au doigt ou à la souris : les noms ne sont pas réduits à une taille illisible.
-- Les six boutons de zone dévoilent et sélectionnent les stations correspondantes.
-- Clic sur un point ou un nom : la destination est présélectionnée dans le formulaire WhatsApp existant.
-- La préférence utilisateur de réduction du mouvement est respectée.
-- Le menu, le hero, les offres, les avis et le formulaire restent inchangés.
-
-## Fichiers de la PR
-
-- `public/index.html` — carte SVG, positions et tracé intégral (40 sommets)
-- `public/alpine-map.css` — mise en page et animation responsive
-- `public/alpine-map.js` — révélation, positionnement des étiquettes et préremplissage du formulaire
-
-**Production :** la PR V12.2 reste en brouillon sur `design/codrops-alpine-map-v12` ; ne pas fusionner automatiquement.
+## Restrictions
+Ne pas fusionner cette branche sans recette navigateur et validation de la couverture commerciale réelle. Production, DNS et `main` inchangés.
