@@ -384,3 +384,35 @@
  .alpine-map-shell{gap:22px}
  .alpine-map-panel{width:1050px;min-width:1050px;aspect-ratio:1000 / 650}
 }
+
+
+/* Protect readability on laptops: keep >= ~680px map before stacking. */
+@media (min-width:1061px) and (max-width:1250px){
+ .alpine-map-shell{grid-template-columns:minmax(260px,.52fr) minmax(0,1.48fr);gap:24px}
+ .alpine-map-editorial>.heading{font-size:clamp(31px,3.2vw,40px)}
+ .alpine-map-editorial>.alpine-map-regions{gap:6px;margin:17px 0 13px}
+ .alpine-map-editorial .alpine-region{min-height:43px;padding:7px 9px}
+ .alpine-map-editorial>.alpine-active-card{padding:13px 15px;min-height:125px}
+ .alpine-map-editorial>.alpine-map-fineprint{margin-top:10px}
+}
+@media(max-width:1060px){
+ .alpine-map-shell{grid-template-columns:minmax(0,1fr);gap:26px}
+ .alpine-map-editorial{display:flex;flex-direction:column;gap:0}
+ .alpine-map-editorial>.heading{font-size:clamp(35px,5vw,49px);max-width:640px}
+ .alpine-map-editorial>.alpine-map-lead{font-size:14px;max-width:640px}
+ .alpine-map-editorial>.alpine-map-regions{
+  grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:21px 0 15px
+ }
+ .alpine-map-editorial .alpine-region{min-height:46px;font-size:10px}
+ .alpine-map-viewer{
+  width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;
+  overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch
+ }
+ .alpine-map-panel{width:1050px;min-width:1050px;max-width:none;aspect-ratio:1000 / 650}
+ .alpine-map-panel .alpine-pin-name{font-size:10px;padding:5px 7px}
+ .alpine-map-editorial>.alpine-active-card{max-width:none}
+}
+@media(max-width:560px){
+ .alpine-map-editorial>.alpine-map-regions{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .alpine-map-editorial>.heading{font-size:35px}
+}
