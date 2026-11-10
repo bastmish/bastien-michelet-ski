@@ -153,17 +153,108 @@
    </div>
   </div>
  </section>
- <section class="final-cta" id="reservation" aria-labelledby="reservation-title">
+ <section class="request-section" id="reservation" aria-labelledby="request-title">
+  <div class="wrap request-layout">
+   <div class="request-intro">
+    <div class="kicker">Préparer votre journée</div>
+    <h2 id="request-title">Parlez-moi de votre projet.</h2>
+    <p>Quelques informations suffisent pour que je comprenne votre niveau, votre groupe et ce que vous avez envie de vivre.</p>
+    <p class="request-step">01. Vous décrivez votre journée.<br>02. Un message WhatsApp est préparé.<br>03. Vous l'envoyez après vérification.</p>
+   </div>
+   <div>
+    <form class="request-form" id="ski-request-form" autocomplete="on">
+     <h3>Votre journée en quelques mots</h3>
+     <p class="form-intro">Pas de compte à créer, ni de paiement. La demande ne constitue pas une réservation.</p>
+     <div class="form-grid">
+      <div class="field">
+       <label for="request-name">Votre prénom *</label>
+       <input id="request-name" name="firstName" type="text" autocomplete="given-name" maxlength="60" placeholder="Ex. Camille" required>
+      </div>
+      <div class="field">
+       <label for="request-experience">Votre envie *</label>
+       <select id="request-experience" name="experience" required>
+        <option value="" selected disabled>Choisir une expérience</option>
+        <option value="Progresser">Progresser</option>
+        <option value="En famille">En famille</option>
+        <option value="Entre amis">Entre amis</option>
+        <option value="Explorer">Explorer</option>
+        <option value="À définir ensemble">Je ne sais pas encore</option>
+       </select>
+      </div>
+      <div class="field">
+       <label for="request-level">Votre niveau *</label>
+       <select id="request-level" name="level" required>
+        <option value="" selected disabled>Choisir votre niveau</option>
+        <option value="Débutant">Débutant</option>
+        <option value="Intermédiaire">Intermédiaire</option>
+        <option value="Confirmé">Confirmé</option>
+        <option value="Niveaux différents dans le groupe">Niveaux différents</option>
+        <option value="À discuter">À discuter</option>
+       </select>
+      </div>
+      <div class="field">
+       <label for="request-participants">Nombre de skieurs *</label>
+       <input id="request-participants" name="participants" type="number" inputmode="numeric" min="1" max="20" step="1" placeholder="Ex. 3" required>
+      </div>
+      <div class="field">
+       <label for="request-format">Format *</label>
+       <select id="request-format" name="format" required>
+        <option value="" selected disabled>Choisir une formule</option>
+        <option value="Demi-journée">Demi-journée</option>
+        <option value="Journée complète">Journée complète</option>
+        <option value="À déterminer">À déterminer ensemble</option>
+       </select>
+      </div>
+      <div class="field">
+       <label for="request-period">Quand souhaitez-vous skier ? <span class="optional">(facultatif)</span></label>
+       <input id="request-period" name="period" type="text" maxlength="100" placeholder="Ex. un week-end en février">
+      </div>
+      <div class="field">
+       <label for="request-destination">Destination *</label>
+       <select id="request-destination" name="destination" required>
+        <option value="" selected disabled>Votre préférence</option>
+        <option value="Je souhaite être conseillé">Je souhaite être conseillé</option>
+        <option value="J'ai une station en tête">J'ai une station en tête</option>
+        <option value="À discuter">À discuter</option>
+       </select>
+      </div>
+      <div class="field">
+       <label for="request-station">Station envisagée <span class="optional">(facultatif)</span></label>
+       <input id="request-station" name="station" type="text" maxlength="100" placeholder="Si vous en avez une">
+      </div>
+      <div class="field wide">
+       <label for="request-notes">Autre chose à préciser ? <span class="optional">(facultatif)</span></label>
+       <textarea id="request-notes" name="notes" maxlength="550" rows="3" placeholder="Des enfants dans le groupe, une envie particulière, un objectif technique…"></textarea>
+      </div>
+     </div>
+     <div class="form-submit"><button class="btn btn-primary" type="submit">Préparer ma demande</button><span class="field-help">* Champs nécessaires pour préparer le message.</span></div>
+     <p class="form-privacy">Les informations restent sur cette page jusqu'à ce que vous décidiez de les transmettre. L'envoi passe ensuite par WhatsApp, selon ses propres conditions et sa politique de confidentialité. Ne saisissez pas de données sensibles.</p>
+     <div class="request-preview" id="request-preview" hidden>
+      <h4>Votre message est prêt</h4>
+      <p>Relisez-le avant de l'envoyer. L'envoi dans WhatsApp nécessite une confirmation de votre part.</p>
+      <pre id="request-message" aria-label="Message préparé pour WhatsApp"></pre>
+      <div class="preview-actions">
+       <a class="btn btn-primary" id="open-whatsapp" href="#" target="_blank" rel="noopener noreferrer" hidden>Ouvrir dans WhatsApp</a>
+       <button type="button" class="btn btn-quiet" id="copy-request">Copier le message</button>
+      </div>
+      <p class="whatsapp-pending" id="whatsapp-pending">L'envoi direct sur WhatsApp sera activé lorsque le numéro professionnel du moniteur sera configuré. Vous pouvez déjà copier le message.</p>
+      <div class="request-notice" id="request-notice" role="status" aria-live="polite"></div>
+     </div>
+    </form>
+   </div>
+  </div>
+ </section>
+ <section class="final-cta" id="contact-final" aria-labelledby="contact-final-title">
   <div class="final-cta-image"><img src="https://images.pexels.com/photos/31112551/pexels-photo-31112551.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1550" alt="Vaste montagne de neige, lieu de vos prochaines journées de ski" loading="lazy"></div>
-  <div class="wrap"><div class="kicker">La prochaine journée</div><h2 id="reservation-title">La montagne vous attend.<br>À nous d'imaginer la suite.</h2>
-   <p>Votre station préférée ou ma recommandation : on préparera votre journée ensemble. L'ouverture des demandes privées est prévue prochainement.</p>
-   <span class="btn btn-primary" aria-disabled="true">Réserver ma journée — bientôt disponible</span>
-   <div class="booking-note">Aucun créneau ni paiement en ligne n'est actuellement proposé.</div>
+  <div class="wrap"><div class="kicker">La prochaine journée</div><h2 id="contact-final-title">La montagne vous attend.<br>À nous d'imaginer la suite.</h2>
+   <p>Votre station préférée ou ma recommandation : préparons une journée adaptée à vos envies.</p>
+   <a class="btn btn-primary" href="#reservation">Décrire ma journée</a>
+   <div class="booking-note">Une demande n'est pas une réservation confirmée.</div>
   </div>
  </section>
 </main>
 <footer><div class="wrap">
  <div class="footer-top"><strong>BASTIEN MICHELET · SKI &amp; SNOWBOARD PRIVÉ</strong><a href="#accueil">Retour en haut</a></div>
- <p class="legal">Prévisualisation non référencée. Photographies d'illustration sous licence Pexels, ne représentant pas Bastien. Les réservations WhatsApp et paiements sont désactivés. Conditions de prestations, autorisations, assurances et mentions légales à vérifier avant ouverture. Trustpilot : score 4,6/5 pour 24 avis relevé dans une catégorie publique en novembre 2026, susceptible d'évoluer. Aucun témoignage inventé.</p>
+ <p class="legal">Prévisualisation non référencée. Photographies d'illustration sous licence Pexels, ne représentant pas Bastien. L'envoi WhatsApp n'est pas actif tant que le numéro professionnel n'a pas été configuré ; aucun paiement n'est activé. Conditions de prestations, autorisations, assurances et mentions légales à vérifier avant ouverture. Trustpilot : score 4,6/5 pour 24 avis relevé dans une catégorie publique en novembre 2026, susceptible d'évoluer. Aucun témoignage inventé.</p>
 </div></footer>
 </body></html>
