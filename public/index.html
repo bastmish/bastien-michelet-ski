@@ -159,7 +159,7 @@
     <div class="kicker">Préparer votre journée</div>
     <h2 id="request-title">Parlez-moi de votre projet.</h2>
     <p>Quelques informations suffisent pour que je comprenne votre niveau, votre groupe et ce que vous avez envie de vivre.</p>
-    <p class="request-step">01. Vous décrivez votre journée.<br>02. Un message WhatsApp est préparé.<br>03. Vous l'envoyez après vérification.</p>
+    <p class="request-step">01. Vous remplissez les informations.<br>02. WhatsApp s’ouvre avec votre message déjà rédigé.<br>03. Vous vérifiez le texte, puis appuyez sur Envoyer dans WhatsApp.</p>
    </div>
    <div>
     <form class="request-form" id="ski-request-form" autocomplete="on">
@@ -227,19 +227,10 @@
        <textarea id="request-notes" name="notes" maxlength="550" rows="3" placeholder="Des enfants dans le groupe, une envie particulière, un objectif technique…"></textarea>
       </div>
      </div>
-     <div class="form-submit"><button class="btn btn-primary" type="submit">Préparer ma demande</button><span class="field-help">* Champs nécessaires pour préparer le message.</span></div>
-     <p class="form-privacy">Les informations restent sur cette page jusqu'à ce que vous décidiez de les transmettre. L'envoi passe ensuite par WhatsApp, selon ses propres conditions et sa politique de confidentialité. Ne saisissez pas de données sensibles.</p>
-     <div class="request-preview" id="request-preview" hidden>
-      <h4>Votre message est prêt</h4>
-      <p>Relisez-le avant de l'envoyer. L'envoi dans WhatsApp nécessite une confirmation de votre part.</p>
-      <pre id="request-message" aria-label="Message préparé pour WhatsApp"></pre>
-      <div class="preview-actions">
-       <a class="btn btn-primary" id="open-whatsapp" href="#" target="_blank" rel="noopener noreferrer" hidden>Ouvrir dans WhatsApp</a>
-       <button type="button" class="btn btn-quiet" id="copy-request">Copier le message</button>
-      </div>
-      <p class="whatsapp-pending" id="whatsapp-pending">L'envoi direct sur WhatsApp sera activé lorsque le numéro professionnel du moniteur sera configuré. Vous pouvez déjà copier le message.</p>
-      <div class="request-notice" id="request-notice" role="status" aria-live="polite"></div>
-     </div>
+     <div class="form-submit"><button class="btn btn-primary" type="submit">Envoyer mes infos sur WhatsApp</button><span class="field-help">* Champs nécessaires pour préparer le message.</span></div>
+     <p class="form-privacy">Au clic, WhatsApp s’ouvre avec les informations du formulaire déjà saisies dans le message. Vous restez libre de modifier le texte et devez confirmer l’envoi dans WhatsApp. Aucune donnée n’est enregistrée sur ce site. Évitez toute donnée sensible.</p>
+     <p class="whatsapp-pending" id="whatsapp-pending">En prévisualisation, WhatsApp vous demandera de sélectionner le destinataire. Une fois le numéro professionnel de Bastien ajouté, sa conversation sera sélectionnée automatiquement.</p>
+     <div class="request-notice" id="request-notice" role="status" aria-live="polite"></div>
     </form>
    </div>
   </div>
