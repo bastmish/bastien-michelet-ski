@@ -28,11 +28,14 @@ La présence d'une station sur la carte n'est **pas** une garantie de disponibil
 ## Interaction
 
 - Cartographie affichée sans API de cartographie payante, sans dépôt de cookies, sans géolocalisation du visiteur.
-- Scroll desktop : quatre massifs successifs, apparition du tracé et animation douce.
-- Arrêt sur la carte : rotation lente des stations dans le massif visible (2,6 s par station), pause lors du survol, de la sélection ou du focus clavier.
-- Clic sur un point ou sur « Imaginer une journée ici » : le nom de la station est renseigné dans le formulaire du site.
-- Smartphone : section sans scroll capturé, carte responsive et interactions par toucher.
-- Préférence « réduire les animations » respectée, fallback natif si GSAP indisponible.
+- **V12.1 : scroll accéléré** sur ordinateur : la carte reste visible environ 176vh au total, et les 24 stations se révèlent sur les 76vh de défilement disponibles.
+- Chaque point s'active et **son nom reste affiché** sur la carte ; l'affichage ne repart jamais à zéro en remontant le scroll. Placement automatique des étiquettes pour éviter les chevauchements.
+- Plus de carrousel temporisé de 2,6 s : la progression du scroll est la source de vérité, avec fonctionnement natif même si GSAP n'est pas téléchargé. GSAP apporte uniquement une subtile mise à l'échelle.
+- Clic sur un massif : dévoile rapidement ses stations sans effacer celles déjà apparues.
+- Clic sur un point, sur un nom ou sur « Imaginer une journée ici » : le nom de la station est renseigné dans le formulaire du site.
+- Écrans étroits : noms cumulés dans un catalogue lisible sous la carte ; carte et marqueurs partagent maintenant exactement le même ratio SVG 1000:650 afin que les points ne soient pas décalés.
+- Préférence « réduire les animations » respectée : la carte est immédiatement complètement visible et les transitions sont neutralisées.
+- Le titre « Une bonne journée de ski commence par vous » est dorénavant centré et disposé sur deux lignes, sans toucher au contenu de la frise.
 - Prévisualisation uniquement avant validation du fondateur.
 
 ## Fichiers
