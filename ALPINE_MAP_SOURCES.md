@@ -31,6 +31,14 @@ Source : https://github.com/samkhavandi/Swiss_Geography_Look_Ups
 
 Vérifier les éventuelles conditions d'attribution spécifiques de l'OFS avant diffusion publique commerciale. Les traits de relief fins sont décoratifs et ne constituent pas des courbes de niveau réelles.
 
+## Mise en page V12.3 et lac Léman
+
+La section est devenue une composition **éditoriale à deux colonnes** sur ordinateur : titre, six massifs, station sélectionnée et informations à gauche ; carte plus compacte à droite. Sous 1 060 px, les blocs se superposent et la carte reste panoramique/déplaçable horizontalement afin de ne pas réduire les 40 noms à une taille illisible.
+
+Le lac Léman (« lac de Genève ») est représenté en bleu pâle, avec son nom au cœur de la carte. Sa silhouette est **stylisée**, obtenue depuis des points de rive approximatifs : il ne s'agit pas d'une extraction directe d'un contour officiel. Le jeu de données public de référence, à consulter pour une future version géométriquement plus précise, est celui du **Système d'information du territoire à Genève (SITG)**, « GEO_LAC_LEMAN » : https://vector.sitg.ge.ch/arcgis/rest/services/GEO_LAC_LEMAN/FeatureServer/0
+
+Cette représentation d'ambiance reste indicative et ne doit pas être utilisée pour la navigation. Le tracé rouge de découverte des stations est distinct du lac ; il ne représente pas un déplacement réel.
+
 ## 40 points de stations et six ensembles
 
 - Jura (8) : Les Fourgs, Métabief, Les Rousses, Saint-Cergue, La Dôle, Lamoura, Mijoux – La Faucille, Lélex. Le groupe regroupe les stations du massif du Jura côté français et suisse.
