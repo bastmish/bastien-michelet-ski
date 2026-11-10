@@ -98,3 +98,144 @@
 @media(prefers-reduced-motion:reduce){
  .society-department,.society-territory,.society-station,.society-station-ring,.society-station-dot,.society-station-label{transition:none!important}
 }
+
+
+/* V15 — Real alpine terrain. Harris Mountains inspired, original execution.
+   Winter 3D imagery and land relief are supplied by Maptoolkit/MapLibre.
+   Their required logo and copyright remain unobscured and visible. */
+.society-map{background:#f4f6f1}
+.society-map-grid{grid-template-columns:minmax(285px,.78fr) minmax(0,1.22fr);gap:clamp(24px,3.7vw,62px);align-items:center}
+.society-map-visual{width:100%;min-width:0}
+.society-map-visual-head{font-size:9px;letter-spacing:.13em;color:#65766a}
+.society-terrain-frame{
+ position:relative;width:100%;height:clamp(510px,52vw,745px);
+ background:#d9e1da;border:1px solid #cedbd0;
+ overflow:hidden;border-radius:18px;isolation:isolate;
+ box-shadow:0 29px 65px #182b211c;
+}
+.society-terrain-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.society-terrain-frame:after{
+ content:"";position:absolute;inset:0;z-index:2;
+ pointer-events:none;border-radius:inherit;
+ box-shadow:inset 0 0 0 1px #ffffff54,inset 0 30px 65px #22372912;
+}
+.society-terrain-loading{
+ position:absolute;inset:0;display:flex;flex-direction:column;
+ gap:13px;justify-content:center;align-items:center;
+ background:radial-gradient(ellipse at center,#e7efe6,#becfbe);
+ color:#294437;font:750 12px var(--display,Manrope,sans-serif);
+ letter-spacing:.02em;text-align:center;padding:24px;z-index:6
+}
+.society-terrain-loading[hidden],.society-terrain-frame.is-loaded .society-terrain-loading{display:none}
+.society-loading-ring{
+ display:block;width:28px;height:28px;border-radius:50%;
+ border:2px solid #a5b6a8;border-top-color:#a84232;
+ animation:society-spin 1s linear infinite
+}
+@keyframes society-spin{to{transform:rotate(360deg)}}
+.society-terrain-topline{
+ position:absolute;left:16px;top:16px;right:92px;z-index:3;
+ display:flex;justify-content:space-between;gap:10px;
+ pointer-events:none;color:#304a3b;
+ font:850 10px var(--display,Manrope,sans-serif);
+ letter-spacing:.15em;text-shadow:0 1px 6px #fff9
+}
+.society-terrain-topline span:last-child{font-size:8px;opacity:.72}
+.society-terrain-badge{
+ position:absolute;right:16px;bottom:54px;z-index:3;
+ background:#17362bcf;backdrop-filter:blur(7px);
+ color:#f9f5ea;padding:10px 14px;border:1px solid #ffffff5c;
+ border-radius:7px;pointer-events:none;
+ font:800 10px/1.2 var(--display,Manrope,sans-serif);letter-spacing:.16em
+}
+.society-map-provider-logo{
+ display:flex;align-items:center;justify-content:center;
+ position:absolute;z-index:8;bottom:10px;left:12px;
+ padding:2px 4px;border-radius:4px;background:#f7faf7da;
+ text-decoration:none;box-shadow:0 2px 8px #1f312114
+}
+.society-map-provider-logo img{display:block;height:26px;width:auto;max-width:none;object-fit:contain}
+.society-map-provider-logo:focus-visible{outline:2px solid #bc4635;outline-offset:3px}
+.society-terrain-frame .maplibregl-ctrl-bottom-right{
+ bottom:7px;right:8px;z-index:9;
+}
+.society-terrain-frame .maplibregl-ctrl-attrib{
+ background:#fafcf9ee!important;color:#2b4236!important;
+ padding:3px 6px!important;border-radius:4px;
+ box-shadow:0 2px 8px #203b2818;
+ font:400 10px/1.3 var(--font,'DM Sans',sans-serif)!important;
+}
+.society-terrain-frame .maplibregl-ctrl-attrib a{color:#1f4535!important;text-decoration:underline}
+.society-terrain-frame .maplibregl-ctrl-top-right{top:52px;right:9px}
+.society-terrain-frame .maplibregl-ctrl-group{border-radius:9px;overflow:hidden}
+.society-terrain-frame .maplibregl-control-container,.society-terrain-frame .maplibregl-marker{z-index:4}
+.society-geo-marker{
+ position:relative;display:flex;align-items:center;
+ width:22px;height:22px;min-width:22px;min-height:22px;
+ margin:0;padding:0;border:0;border-radius:100%;
+ background:#bf714e38;cursor:pointer;
+ box-shadow:0 0 0 1px #c69370a0;
+ transition:transform .2s,opacity .25s,background .2s;
+ appearance:none
+}
+.society-geo-dot{
+ position:absolute;left:50%;top:50%;width:9px;height:9px;
+ background:#9f3f2c;border:2px solid #f7f5ed;transform:translate(-50%,-50%);
+ border-radius:50%;box-shadow:0 2px 5px #37261c50
+}
+.society-geo-marker.is-secondary{opacity:.48}
+.society-geo-marker.is-featured.is-in-zone,.society-geo-marker.is-selected{
+ opacity:1;background:#e6b39266
+}
+.society-geo-marker.is-selected{transform:scale(1.2);z-index:50!important}
+.society-geo-marker.is-selected .society-geo-dot{width:12px;height:12px;background:#a33625}
+.society-geo-label{
+ position:absolute;left:20px;top:-3px;white-space:nowrap;
+ padding:7px 9px;color:#263729;background:#fffffff4;
+ backdrop-filter:blur(6px);border:1px solid #d9dfd4;
+ border-radius:5px;box-shadow:0 5px 13px #15271a20;
+ font:800 10px/1.1 var(--display,Manrope,sans-serif);letter-spacing:-.02em;
+ visibility:hidden;opacity:0;pointer-events:none;
+ transition:opacity .18s
+}
+.society-geo-marker.is-featured.is-in-zone .society-geo-label,
+.society-geo-marker.is-selected .society-geo-label,
+.society-geo-marker:hover .society-geo-label,
+.society-geo-marker:focus-visible .society-geo-label{
+ opacity:1;visibility:visible
+}
+.society-geo-marker.is-selected .society-geo-label{
+ background:#fcf2ed;color:#9b3827;border-color:#cd9885
+}
+.society-geo-marker:focus-visible{outline:2px solid #be4632;outline-offset:4px}
+.society-map-visual-foot{font-size:9px;letter-spacing:0}
+.society-map-visual-foot>span:last-child{display:inline;color:#6c7f70}
+.society-map-attribution{font-size:9px;margin-top:9px}
+@media(max-width:1200px){
+ .society-map-grid{grid-template-columns:minmax(270px,.82fr) minmax(0,1.18fr);gap:27px}
+ .society-terrain-frame{height:clamp(490px,59vw,710px)}
+ .society-map-title{font-size:clamp(39px,4.2vw,58px)}
+ .society-geo-label{font-size:9px;padding:5px 7px}
+}
+@media(max-width:850px){
+ .society-map-grid{grid-template-columns:1fr;gap:30px}
+ .society-terrain-frame{height:min(76vh,610px);min-height:445px}
+ .society-terrain-topline{font-size:9px}
+ .society-terrain-frame .maplibregl-ctrl-attrib{font-size:9px!important}
+}
+@media(max-width:520px){
+ .society-terrain-frame{height:445px;min-height:445px;border-radius:12px}
+ .society-terrain-topline{left:12px;top:13px;right:70px;font-size:8px}
+ .society-terrain-topline span:last-child{display:none}
+ .society-terrain-badge{right:10px;bottom:55px;font-size:8px;padding:7px 10px}
+ .society-map-provider-logo{left:8px;bottom:7px}
+ .society-map-provider-logo img{height:25px}
+ .society-terrain-frame .maplibregl-ctrl-bottom-right{right:5px;bottom:5px}
+ .society-terrain-frame .maplibregl-ctrl-attrib{max-width:210px;font-size:8px!important}
+ .society-terrain-frame .maplibregl-ctrl-top-right{right:6px;top:37px}
+ .society-geo-label{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ .society-loading-ring{animation:none}
+ .society-geo-marker,.society-geo-label{transition:none}
+}
