@@ -1759,3 +1759,47 @@
  }
  .ss-architecture .ss-offers-v46{padding-bottom:50px!important}
 }
+
+
+/* V52 — Restore the original scrolling review-card layout on the B&W mountain. */
+.ss-architecture .ss-reviews-v52{
+ min-height:0;padding:clamp(65px,7vw,99px) 0 clamp(61px,7vw,96px);
+}
+.ss-architecture .ss-reviews-v52 .ss-reviews-v49-inner{display:block!important}
+.ss-architecture .ss-reviews-v52 .ss-reviews-heading{
+ margin:0 auto clamp(28px,3vw,43px)!important;text-align:center!important;
+ max-width:850px;
+}
+.ss-architecture .ss-reviews-v52 .ss-reviews-shell{
+ width:100%;max-width:1140px;margin:0 auto;
+}
+.ss-architecture .ss-reviews-v52 .ss-reviews-marquee{
+ margin-top:0;
+}
+.ss-architecture .ss-reviews-v52 .ss-reviews-marquee[data-reviews-state="ready"]{
+ height:clamp(430px,43vw,565px);
+}
+.ss-architecture .ss-reviews-v52 .ss-review-card{
+ background:rgba(255,255,255,.89)!important;
+ border:1px solid rgba(255,255,255,.82)!important;
+ box-shadow:0 16px 42px rgba(9,19,16,.21)!important;
+}
+.ss-architecture .ss-reviews-v52 .ss-reviews-v52-bottom{
+ display:flex;align-items:center;justify-content:space-between;
+ flex-wrap:wrap;gap:12px;margin-top:23px;
+ border-top:1px solid rgba(255,255,255,.35);padding-top:17px;
+}
+.ss-architecture .ss-reviews-v52 .ss-reviews-v52-bottom>span{
+ color:rgba(255,255,255,.83);
+ font:750 10px/1.5 var(--display,Manrope,sans-serif);letter-spacing:.12em;
+}
+.ss-architecture .ss-reviews-v52 .ss-reviews-v52-bottom>a{
+ color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.8);
+ font:750 12px/1.4 var(--display,Manrope,sans-serif);
+ padding-bottom:5px;
+}
+.ss-architecture .ss-reviews-v52 .ss-reviews-v52-bottom>a:hover{color:#ffc0ac}
+@media(max-width:650px){
+ .ss-architecture .ss-reviews-v52 .ss-reviews-marquee[data-reviews-state="ready"]{height:470px}
+ .ss-architecture .ss-reviews-v52 .ss-reviews-v52-bottom{align-items:flex-start}
+}
