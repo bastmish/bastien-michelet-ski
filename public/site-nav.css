@@ -322,3 +322,60 @@ body[data-scroll-tone="dark"] .site-header .nav-links .nav-cta{
  .ss-architecture .hero::before{background-position:63% center}
  .ss-architecture .hero::after{background:linear-gradient(90deg,rgba(8,11,14,.74),rgba(8,11,14,.35))!important}
 }
+
+/* V60 — Arc'teryx-inspired, tightly spaced editorial photo diptych below hero.
+   Photographs are editorial illustrations; no claim they show Ski Society staff. */
+.ss-architecture .ss-photo-diptych{
+ display:grid;grid-template-columns:1fr 1fr;gap:12px;
+ padding:12px;background:#fafaf8;width:100%;
+}
+.ss-architecture .ss-photo-panel{
+ position:relative;display:block;min-width:0;height:clamp(450px,52vw,780px);
+ overflow:hidden;background:#2e363b;color:#fff;text-decoration:none;isolation:isolate;
+}
+.ss-architecture .ss-photo-panel img{
+ display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+ filter:saturate(.94) contrast(1.04);
+ transform:scale(1);
+ transition:transform .85s cubic-bezier(.2,.65,.25,1),filter .85s ease;
+}
+.ss-architecture .ss-photo-panel--performance img{object-position:48% 48%}
+.ss-architecture .ss-photo-panel--freeride img{object-position:53% 45%}
+.ss-architecture .ss-photo-panel-shade{
+ position:absolute;inset:0;z-index:1;
+ background:linear-gradient(180deg,rgba(9,14,17,.18),transparent 28%,transparent 48%,rgba(8,11,14,.62));
+}
+.ss-architecture .ss-photo-panel-label{
+ position:absolute;z-index:2;inset:auto clamp(22px,3vw,45px) clamp(25px,3.2vw,45px);
+ display:grid;grid-template-columns:1fr auto;align-items:end;
+ gap:8px 20px;text-shadow:0 2px 14px rgba(0,0,0,.2);
+}
+.ss-architecture .ss-photo-panel-label small{
+ grid-column:1 / -1;font:700 10px/1.4 var(--display,Manrope,sans-serif);
+ letter-spacing:.16em;color:rgba(255,255,255,.84);
+}
+.ss-architecture .ss-photo-panel-label strong{
+ font:700 clamp(30px,3.5vw,53px)/1.08 var(--display,Manrope,sans-serif);
+ letter-spacing:-.06em;color:white;
+}
+.ss-architecture .ss-photo-panel-label>span{
+ font:400 27px/1 var(--font,"DM Sans",sans-serif);
+ border:1px solid rgba(255,255,255,.68);width:44px;height:44px;
+ display:grid;place-items:center;transition:background-color .25s,color .25s;
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .ss-architecture .ss-photo-panel:hover img{transform:scale(1.055);filter:saturate(1.04) contrast(1.03)}
+ .ss-architecture .ss-photo-panel:hover .ss-photo-panel-label>span{background:#fff;color:#17191b}
+}
+.ss-architecture .ss-photo-panel:focus-visible{
+ outline:3px solid #17191b;outline-offset:-5px;
+}
+@media(max-width:760px){
+ .ss-architecture .ss-photo-diptych{gap:8px;padding:8px;grid-template-columns:1fr}
+ .ss-architecture .ss-photo-panel{height:clamp(340px,70vw,530px)}
+ .ss-architecture .ss-photo-panel-label{inset:auto 23px 26px}
+ .ss-architecture .ss-photo-panel-label strong{font-size:clamp(31px,7vw,44px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .ss-architecture .ss-photo-panel img,.ss-architecture .ss-photo-panel-label>span{transition:none}
+}
