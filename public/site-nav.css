@@ -1,0 +1,12 @@
+/* One shared Ski Society navigation across home, resort finder, manifesto and offers. */
+.site-header .nav-shell,.site-header.is-scrolled .nav-shell{
+ background:rgba(248,249,246,.76)!important;
+ -webkit-backdrop-filter:blur(18px) saturate(110%);
+ backdrop-filter:blur(18px) saturate(110%);
+ border:1px solid rgba(255,255,255,.72)!important;
+ box-shadow:0 12px 38px rgba(25,41,32,.08);
+}
+.site-header .brand-text strong{letter-spacing:.07em}
+.site-header .nav-links{align-items:center}
+.site-header .nav-links .nav-cta{border-radius:9px}
+@media(max-width:900px){.site-header .nav-links.is-open{background:rgba(249,250,248,.97);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}}
