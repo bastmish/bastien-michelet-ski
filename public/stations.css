@@ -192,3 +192,8 @@
 
 /* Preserve full page heading without clipping on mid-sized desktops. */
 .ss-destinations-hero h1{white-space:normal;max-width:640px;font-size:clamp(35px,3.7vw,54px)!important}
+
+/* V34: larger supporting hero sentence, without increasing header height. */
+.ss-destinations-hero-inner>p{font-size:clamp(16px,1.6vw,19px)!important;line-height:1.52!important;max-width:650px;color:#34493c!important}
+@media(max-width:800px){.ss-destinations-hero-inner>p{font-size:16px!important}}
+@media(max-width:600px){.ss-destinations-hero-inner>p{font-size:15px!important}}
