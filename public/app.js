@@ -96,6 +96,20 @@
   updateStation();
  }
  if(inquiryForm){
+  const experienceSelect=inquiryForm.elements.namedItem('experience');
+  const participantsSelect=inquiryForm.elements.namedItem('participants');
+  if(experienceSelect&&participantsSelect){
+   const updateParticipants=()=>{
+    const individual=experienceSelect.value==='Performance & technique';
+    const allowed=Array.from(participantsSelect.options);
+    allowed.forEach(option=>{
+     if(option.value==='2 personnes'||option.value==='3 personnes')option.disabled=individual;
+    });
+    if(individual)participantsSelect.value='1 personne';
+   };
+   experienceSelect.addEventListener('change',updateParticipants);
+   updateParticipants();
+  }
   const read=(field)=>String(inquiryForm.elements.namedItem(field)?.value??'').trim();
   const formatMessage=()=>{
    const name=read('firstName'),experience=read('experience'),level=read('level');
