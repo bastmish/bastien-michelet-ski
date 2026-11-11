@@ -94,15 +94,6 @@ body[data-scroll-tone="dark"] .site-header .nav-links .nav-cta{
 .ss-architecture .hero{isolation:isolate;background:#101316!important}
 .ss-architecture .hero .hero-image{background:#101316!important}
 .ss-architecture .hero .hero-image img{filter:saturate(.92) contrast(1.08)}
-.ss-architecture .hero .ss-hero-crossfade{
- position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0
-}
-.ss-architecture .hero .ss-hero-crossfade img{
- position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
- opacity:0;transform:scale(1.065);filter:saturate(.90) contrast(1.065);
- transition:opacity 1.55s cubic-bezier(.2,.75,.3,1),transform 8s linear
-}
-.ss-architecture .hero .ss-hero-crossfade img.is-active{opacity:1;transform:scale(1)}
 .ss-architecture .hero .hero-inner,.ss-architecture .hero .hero-annotation{
  position:relative;z-index:2
 }
@@ -277,4 +268,20 @@ body[data-scroll-tone="dark"] .site-header .nav-links .nav-cta{
 @media(max-width:600px){
  .ss-architecture .hero .hero-inner{width:calc(100% - 40px)!important}
  .ss-architecture .hero .hero-copy h1{font-size:clamp(37px,10.4vw,51px)!important}
+}
+
+/* V57 — single, static powder photograph in the homepage hero. */
+.ss-architecture .hero .hero-image{
+ position:absolute!important;inset:0!important;height:100%!important;
+ width:100%!important;z-index:0!important;overflow:hidden;
+}
+.ss-architecture .hero .hero-image img{
+ width:100%;height:100%;object-fit:cover;object-position:center 44%;
+ opacity:1!important;filter:saturate(.98) contrast(1.035)!important;
+ animation:none!important;transition:none!important;
+}
+.ss-architecture .hero .hero-image:after{opacity:0!important;background:none!important}
+@media(max-width:600px){
+ .ss-architecture .hero .hero-image{inset:0!important;height:100%!important}
+ .ss-architecture .hero .hero-image img{object-position:63% center}
 }
