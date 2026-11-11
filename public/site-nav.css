@@ -285,3 +285,22 @@ body[data-scroll-tone="dark"] .site-header .nav-links .nav-cta{
  .ss-architecture .hero .hero-image{inset:0!important;height:100%!important}
  .ss-architecture .hero .hero-image img{object-position:63% center}
 }
+
+/* V58 — Floating navigation follows scroll direction on all pages. */
+.site-header{
+ transition:transform .3s cubic-bezier(.22,.75,.3,1),top .25s ease,width .25s ease!important;
+ will-change:transform;
+}
+.site-header.is-hidden{
+ transform:translate(-50%,calc(-100% - 38px))!important;
+ pointer-events:none;
+}
+.site-header:focus-within,
+.site-header:has(.nav-links.is-open),
+.site-header:has(.offer-dropdown[open]){
+ transform:translate(-50%,0)!important;
+ pointer-events:auto;
+}
+@media(prefers-reduced-motion:reduce){
+ .site-header{transition:none!important}
+}
