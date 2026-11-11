@@ -1695,3 +1695,67 @@
  .ss-architecture .ss-journey-v49 .ss-format-card h3{min-height:0;font-size:28px}
  .ss-architecture .ss-journey-v49 .ss-format-number{margin-bottom:19px}
 }
+
+
+/* V51 — Sporting excellence first, improved headline emphasis and connected offer/program journey. */
+.ss-architecture .ss-expertise-v44 .ss-excellence-frame h2 em,
+.ss-architecture .ss-expertise-v44 .ss-excellence-frame h3 em{
+ color:#ff7659!important;
+ text-shadow:0 2px 18px rgba(18,19,16,.32);
+}
+.ss-architecture .ss-expertise-v44 .ss-excellence-frame:after{
+ background:linear-gradient(180deg,rgba(10,22,19,.06) 2%,rgba(10,22,19,.11) 30%,rgba(9,21,18,.69) 70%,rgba(7,17,15,.96) 100%)!important;
+}
+.ss-architecture .ss-expertise-v44 .ss-excellence-frame-eyebrow{
+ color:#ffc2b1!important;border-color:rgba(255,194,177,.66)!important;
+}
+.ss-architecture .ss-offers-v46{
+ padding-bottom:clamp(52px,5.3vw,77px)!important;
+ background:#fff;
+}
+.ss-architecture .ss-offers-v46 .ss-offers-heading{margin-bottom:clamp(25px,3.3vw,43px)}
+.ss-architecture .ss-journey-v49{
+ position:relative;
+ padding-top:clamp(42px,4.5vw,65px)!important;
+ border-top:1px solid #e9e5dc;
+}
+.ss-architecture .ss-journey-v49:before{
+ content:"";position:absolute;top:-1px;left:50%;
+ width:min(180px,22vw);height:2px;transform:translateX(-50%);
+ background:#b83f32;
+}
+.ss-architecture .ss-journey-v49 .ss-journey-heading{
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.55fr);
+ align-items:end;column-gap:clamp(20px,4vw,70px);row-gap:12px;
+ margin-bottom:clamp(28px,3vw,43px);
+}
+.ss-architecture .ss-journey-v49 .ss-journey-heading>.kicker{
+ grid-column:1/-1;letter-spacing:.12em;
+}
+.ss-architecture .ss-journey-v49 .ss-journey-heading .ss-journey-kicker-sep{
+ color:#b83f32;padding:0 8px;
+}
+.ss-architecture .ss-journey-v49 .ss-journey-heading h2{
+ margin:0!important;max-width:660px;
+}
+.ss-architecture .ss-journey-v49 .ss-journey-heading>p{
+ margin:0!important;justify-self:end;max-width:360px;
+ border-left:1px solid rgba(184,63,50,.38);
+ padding-left:20px;
+}
+.ss-architecture .ss-journey-v49 .ss-format-card{
+ border-top:2px solid rgba(184,63,50,.24);
+}
+.ss-architecture .ss-journey-v49 .ss-format-card--day{
+ border-top-color:#b83f32;
+}
+@media(max-width:720px){
+ .ss-architecture .ss-journey-v49 .ss-journey-heading{
+  grid-template-columns:1fr;gap:12px;
+ }
+ .ss-architecture .ss-journey-v49 .ss-journey-heading>.kicker{grid-column:1}
+ .ss-architecture .ss-journey-v49 .ss-journey-heading>p{
+  justify-self:start;max-width:570px;padding-left:0;border-left:0;
+ }
+ .ss-architecture .ss-offers-v46{padding-bottom:50px!important}
+}
