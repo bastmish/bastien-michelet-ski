@@ -1154,3 +1154,84 @@
  .ss-architecture .hero .hero-actions .btn-primary{min-height:50px;padding:12px 18px!important}
  .ss-architecture .ss-adn.ss-editorial-v41{padding-top:35px!important}
 }
+
+
+/* V44 — Racetrack to teaching: full-width cinematic 50/50 visual diptych. */
+.ss-architecture .ss-expertise-v44{
+ padding:clamp(64px,7vw,98px) 0 clamp(52px,6vw,80px);
+ background:#f8faf7;
+}
+.ss-architecture .ss-expertise-v44 .ss-excellence-intro{margin-bottom:22px}
+.ss-architecture .ss-expertise-v44 .ss-excellence-intro .kicker{
+ font-size:11px;letter-spacing:.19em;color:#b83f32;
+}
+.ss-architecture .ss-excellence-diptych{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:clamp(8px,1.05vw,15px);width:100%;
+ padding:0 clamp(12px,2.5vw,38px);
+}
+.ss-architecture .ss-excellence-frame{
+ isolation:isolate;position:relative;overflow:hidden;
+ min-width:0;min-height:clamp(500px,51vw,715px);
+ border-radius:9px;background:#263731;color:#fff;
+ display:flex;align-items:flex-end;transition:filter .4s;
+}
+.ss-architecture .ss-excellence-frame>img{
+ position:absolute;z-index:-2;inset:0;width:100%;height:100%;
+ object-fit:cover;display:block;filter:saturate(.85) contrast(1.06);
+ transition:transform .75s cubic-bezier(.2,.78,.2,1);
+}
+.ss-architecture .ss-excellence-frame--race>img{object-position:47% 42%}
+.ss-architecture .ss-excellence-frame--coach>img{object-position:55% 38%}
+.ss-architecture .ss-excellence-frame:after{
+ content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;
+ background:linear-gradient(180deg,rgba(13,26,21,.05) 4%,rgba(13,26,21,.12) 32%,rgba(8,20,17,.59) 63%,rgba(8,20,17,.93) 100%);
+}
+.ss-architecture .ss-excellence-frame:hover>img{transform:scale(1.045)}
+.ss-architecture .ss-excellence-frame-content{
+ width:100%;max-width:730px;padding:clamp(26px,4.3vw,69px);
+ display:flex;flex-direction:column;align-items:flex-start;
+}
+.ss-architecture .ss-excellence-frame-eyebrow{
+ font:800 10px/1.5 var(--display,Manrope,sans-serif);letter-spacing:.17em;
+ color:#f1c7b7;padding-bottom:12px;margin-bottom:19px;
+ border-bottom:1px solid rgba(241,199,183,.45);
+}
+.ss-architecture .ss-excellence-frame h2,.ss-architecture .ss-excellence-frame h3{
+ font:800 clamp(39px,4.8vw,73px)/1.06 var(--display,Manrope,sans-serif);
+ letter-spacing:-.068em;color:#fff;margin:0 0 22px;text-wrap:balance;
+}
+.ss-architecture .ss-excellence-frame h2 em,.ss-architecture .ss-excellence-frame h3 em{
+ color:#e4b3a5;font-style:normal;
+}
+.ss-architecture .ss-excellence-frame-content>p{
+ font:500 clamp(14px,1.35vw,17px)/1.73 var(--display,Manrope,sans-serif);
+ color:rgba(255,255,255,.91);max-width:490px;margin:0;
+}
+.ss-architecture .ss-excellence-foot{
+ display:flex;justify-content:space-between;align-items:center;
+ gap:35px;padding-top:24px;
+}
+.ss-architecture .ss-excellence-foot>p{font:500 13px/1.7 var(--display,Manrope,sans-serif);color:#607165;max-width:650px}
+.ss-architecture .ss-excellence-foot>a{
+ display:inline-flex;align-items:center;gap:15px;flex:none;
+ text-decoration:none;color:#263b30;font:750 12px/1.4 var(--display,Manrope,sans-serif);
+ border-bottom:1px solid #b83f32;padding:11px 0 8px;
+}
+.ss-architecture .ss-excellence-foot>a span{color:#b83f32;font-size:17px}
+.ss-architecture .ss-excellence-foot>a:hover{color:#b83f32}
+@media(max-width:950px){
+ .ss-architecture .ss-excellence-frame{min-height:570px}
+ .ss-architecture .ss-excellence-frame-content{padding:32px}
+ .ss-architecture .ss-excellence-frame h2,.ss-architecture .ss-excellence-frame h3{font-size:clamp(33px,4.5vw,50px)}
+}
+@media(max-width:650px){
+ .ss-architecture .ss-excellence-diptych{grid-template-columns:1fr;padding:0 12px;gap:9px}
+ .ss-architecture .ss-excellence-frame{min-height:485px}
+ .ss-architecture .ss-excellence-frame-content{padding:29px}
+ .ss-architecture .ss-excellence-frame h2,.ss-architecture .ss-excellence-frame h3{font-size:clamp(43px,9vw,61px)}
+ .ss-architecture .ss-excellence-frame-content>p{font-size:14px}
+ .ss-architecture .ss-excellence-foot{flex-direction:column;align-items:flex-start;gap:9px;padding-top:19px}
+ .ss-architecture .ss-excellence-foot>p{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){.ss-architecture .ss-excellence-frame>img{transition:none}}
