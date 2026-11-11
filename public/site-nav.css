@@ -1,10 +1,10 @@
 /* One shared Ski Society navigation across home, resort finder, manifesto and offers. */
 .site-header .nav-shell,.site-header.is-scrolled .nav-shell{
- background:rgba(248,249,246,.76)!important;
- -webkit-backdrop-filter:blur(18px) saturate(110%);
- backdrop-filter:blur(18px) saturate(110%);
- border:1px solid rgba(255,255,255,.72)!important;
- box-shadow:0 12px 38px rgba(25,41,32,.08);
+ background:rgba(249,248,244,.95)!important;
+ -webkit-backdrop-filter:blur(19px) saturate(115%);
+ backdrop-filter:blur(19px) saturate(115%);
+ border:1px solid rgba(37,54,43,.17)!important;
+ box-shadow:0 9px 32px rgba(20,38,27,.15),0 1px 2px rgba(20,38,27,.05);
 }
 .site-header .brand-text strong{letter-spacing:.07em}
 .site-header .nav-links{align-items:center}
@@ -27,3 +27,16 @@
 .ss-whatsapp-float:focus-visible{outline:3px solid #b83f32;outline-offset:4px}
 @media(max-width:600px){.ss-whatsapp-float{right:15px;bottom:16px;width:49px;height:49px;border-radius:13px}.ss-whatsapp-float svg{width:26px;height:26px}}
 @media(prefers-reduced-motion:reduce){.ss-whatsapp-float{transition:none}}
+
+/* V47 — Legible over snowy photos and white sections without losing premium restraint. */
+.site-header .nav-links a:not(.nav-cta){color:#24362d!important}
+.site-header .nav-links a:not(.nav-cta):hover{color:#a63b2f!important}
+.site-header .brand-text strong{color:#21372b!important}
+.site-header .nav-toggle{color:#25372d}
+@media(max-width:900px){
+ .site-header .nav-links.is-open{
+  background:rgba(249,248,244,.99)!important;
+  border:1px solid rgba(37,54,43,.11);
+  box-shadow:0 15px 32px rgba(20,38,27,.12);
+ }
+}
