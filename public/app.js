@@ -148,7 +148,6 @@
   });
  }
 
-}
  // V54: Photo-led editorial motion, shared across the site.
  // Images are Pexels editorial illustrations, not portraits of Ski Society staff.
  const motionReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
