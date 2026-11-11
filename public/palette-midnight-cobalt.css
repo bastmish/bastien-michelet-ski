@@ -72,3 +72,6 @@ body:has(>.ss-architecture) .brand-mark path:last-child{stroke:var(--ss-cobalt)}
 .ss-architecture .ss-request-form button.btn-primary:hover{background:#3550d1!important}
 .ss-architecture .ss-request-fields input:focus,.ss-architecture .ss-request-fields select:focus,.ss-architecture .ss-request-fields textarea:focus{border-color:var(--ss-cobalt)!important;outline-color:var(--ss-cobalt)!important}
 body:has(>.ss-architecture) .ss-whatsapp-float{background:#247b52}
+
+/* Keep the existing animated mountain footer, with a blue-toned treatment on this palette test. */
+body:has(>.ss-architecture) .ss-ridge-footer .ss-ridge-scene canvas{filter:hue-rotate(218deg) saturate(1.15)}
