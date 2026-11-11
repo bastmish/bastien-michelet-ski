@@ -1,5 +1,6 @@
-/* Ski Society — independent first-party testimonials, no Trustpilot content scraping.
-   Only add exact customer quotes for which display permission has been obtained.
+/* Ski Society — independent sample testimonials, no Trustpilot content scraping.
+   All ten demo reviews are invented and labelled as such. Never publish as authentic.
+   Real client quotes require source verification and consent.
    This is NOT an official Trustpilot widget, nor a live Trustpilot integration.
    Example record format:
    { quote: "Customer's exact approved quote", name: "First name or initials",
@@ -9,18 +10,34 @@
 */
 (function () {
   'use strict';
-  const testimonials = []; // Add real, approved firsthand testimonies here.
+  const testimonials = [
+    { quote: "Une vraie différence sur la technique dès les premières descentes. Les conseils sont précis, faciles à appliquer et on repart avec des pistes de progression concrètes.", name: "Exemple 01", context: "Ski privé · Savoie", demo: true },
+    { quote: "Superbe journée en montagne. Le programme a évolué avec notre niveau et les conditions, sans jamais nous presser.", name: "Exemple 02", context: "Journée privée · Haute-Savoie", demo: true },
+    { quote: "J'avais envie de retrouver de la confiance sur les pistes plus engagées. L'accompagnement et les explications ont tout changé.", name: "Exemple 03", context: "Progression · Chamonix", demo: true },
+    { quote: "Une expérience qui va bien au-delà d'un cours classique. On prend le temps de comprendre le terrain et de profiter de chaque descente.", name: "Exemple 04", context: "Expérience sur mesure", demo: true },
+    { quote: "L'équilibre entre exigence technique et plaisir de skier était exactement ce que nous recherchions.", name: "Exemple 05", context: "Perfectionnement · Megève", demo: true },
+    { quote: "Notre groupe n'avait pas le même niveau. La journée a pourtant fonctionné pour tout le monde, du premier au dernier virage.", name: "Exemple 06", context: "Ski en groupe", demo: true },
+    { quote: "Des conseils clairs, aucune formule compliquée et de vrais progrès sur les appuis. Très bonne approche pédagogique.", name: "Exemple 07", context: "Technique alpine", demo: true },
+    { quote: "Le choix des itinéraires et l'attention portée aux conditions ont rendu la découverte du domaine particulièrement agréable.", name: "Exemple 08", context: "Découverte · Alpes", demo: true },
+    { quote: "J'ai particulièrement apprécié la capacité à ajuster les exercices. On comprend pourquoi on fait les choses, pas seulement comment.", name: "Exemple 09", context: "Coaching · Ski", demo: true },
+    { quote: "Une demi-journée intense, conviviale et extrêmement utile. C'est le genre de moment qui redonne envie de skier davantage.", name: "Exemple 10", context: "Demi-journée privée", demo: true },
+  ];
   const marquee = document.getElementById('ss-reviews-marquee');
   if (!marquee) return;
   const allowed = testimonials.filter(t =>
-    t && t.consent === true && typeof t.quote === 'string' && t.quote.trim() &&
+    t && (t.demo === true || t.consent === true) && typeof t.quote === 'string' && t.quote.trim() &&
     typeof t.name === 'string' && t.name.trim());
   if (!allowed.length) return;
   const cols = Array.from(marquee.querySelectorAll('[data-reviews-col]'));
-  const frag = document.createDocumentFragment();
   function makeCard(t) {
     const figure = document.createElement('figure');
     figure.className = 'ss-review-card';
+    if (t.demo) {
+      const tag = document.createElement('span');
+      tag.className = 'ss-review-demo-tag';
+      tag.textContent = 'AVIS FICTIF · DÉMONSTRATION';
+      figure.appendChild(tag);
+    }
     const quote = document.createElement('blockquote');
     quote.textContent = t.quote;
     figure.appendChild(quote);
@@ -68,5 +85,5 @@
     }
   });
   marquee.dataset.reviewsState = 'ready';
-  marquee.setAttribute('aria-label', allowed.length + ' témoignages clients');
+  marquee.setAttribute('aria-label', allowed.length + ' exemples fictifs de témoignages, pour tester le design');
 })();
