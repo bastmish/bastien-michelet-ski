@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
 /* One shared Ski Society navigation across home, resort finder, manifesto and offers. */
 .site-header .nav-shell,.site-header.is-scrolled .nav-shell{
  background:rgba(249,248,244,.95)!important;
@@ -427,8 +427,10 @@ body[data-scroll-tone="dark"] .site-header .nav-links .nav-cta{
 }
 
 
-/* V63 — Syne: expressive editorial display, DM Sans preserved for body copy. */
-:root{--display:"Syne",Arial,sans-serif}
+
+/* V64 — Clash Display (Fontshare official CDN, ITF Free Font License).
+   Display typography only. DM Sans remains the body/UI copy typeface. */
+:root{--display:"Clash Display",Arial,sans-serif}
 body h1,body h2,body h3,
 body .site-header .brand-text strong,
 body .site-header .nav-links>a,
@@ -439,16 +441,16 @@ body .ss-offer-content h3,
 body .ss-format-card h3,
 body .ss-resort-content h3,
 body .ss-footer-col h3{
- font-family:"Syne",Arial,sans-serif!important;
+ font-family:"Clash Display",Arial,sans-serif!important;
 }
-body h1,body h2,body h3{letter-spacing:-.05em}
+body h1,body h2,body h3{letter-spacing:-.045em}
 .ss-architecture .hero .hero-copy h1{
- font-weight:700!important;letter-spacing:-.054em!important;line-height:1.1!important;
+ font-weight:600!important;letter-spacing:-.047em!important;line-height:1.1!important;
 }
 .ss-architecture .ss-expertise-editorial .ss-photo-panel-label h2,
 .ss-architecture .ss-expertise-editorial .ss-photo-panel-label h3{
- font-weight:700!important;letter-spacing:-.05em!important;
+ font-weight:600!important;letter-spacing:-.045em!important;
 }
 body .site-header .nav-links>a,
-body .site-header .offer-dropdown summary{font-weight:600!important;letter-spacing:-.01em!important}
-body .site-header .brand-text strong{font-weight:800!important}
+body .site-header .offer-dropdown summary{font-weight:600!important;letter-spacing:.005em!important}
+body .site-header .brand-text strong{font-weight:700!important;letter-spacing:.045em!important}
