@@ -153,52 +153,6 @@
  const motionReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
  const main=document.querySelector('main');
  const homepage=main&&main.classList.contains('ss-architecture');
- if(homepage){
-  const hero=main.querySelector('.hero');
-  const heroImage=hero&&hero.querySelector('.hero-image img');
-  if(hero&&heroImage){
-   const crossfade=document.createElement('div');
-   crossfade.className='ss-hero-crossfade';
-   crossfade.setAttribute('aria-hidden','true');
-   const sources=[
-    heroImage.getAttribute('src'),
-    'https://images.pexels.com/photos/416805/pexels-photo-416805.jpeg?auto=compress&cs=tinysrgb&w=1900',
-    'https://images.pexels.com/photos/31293431/pexels-photo-31293431.jpeg?auto=compress&cs=tinysrgb&w=1900'
-   ];
-   const slides=sources.map((src,i)=>{
-    const image=document.createElement('img');
-    image.src=src;image.alt='';image.decoding='async';
-    if(i===0){image.classList.add('is-active');image.fetchPriority='high'}
-    else image.loading='lazy';
-    crossfade.appendChild(image);return image;
-   });
-   hero.insertBefore(crossfade,hero.querySelector('.hero-inner'));
-   heroImage.style.opacity='0';
-   if(!motionReduced){
-    let active=0;
-    const swap=()=>{
-     if(document.hidden)return;
-     const next=(active+1)%slides.length;
-     const image=slides[next];
-     if(!image.complete||!image.naturalWidth)return;
-     slides[active].classList.remove('is-active');
-     image.classList.add('is-active');
-     active=next;
-    };
-    // Only run while the hero is visible, and stop when the page is in the background.
-    let rotation=null;
-    const observe=new IntersectionObserver(entries=>{
-     const visible=entries.some(e=>e.isIntersecting);
-     if(visible&&!rotation)rotation=window.setInterval(swap,5600);
-     if(!visible&&rotation){window.clearInterval(rotation);rotation=null}
-    },{threshold:.05});
-    observe.observe(hero);
-    document.addEventListener('visibilitychange',()=>{
-     if(document.hidden&&rotation){window.clearInterval(rotation);rotation=null}
-    });
-   }
-  }
- }
  const toneSections=homepage?[
   main.querySelector('#offres'),main.querySelector('#destinations')
  ].filter(Boolean):[];
