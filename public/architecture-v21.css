@@ -331,20 +331,6 @@
  .ss-formules-grid article,.ss-formules-grid article+article{min-height:0}
 }
 
-/* Trustpilot Flex XL PREVIEW: labelled and opt-in display. Not official Ski Society reviews. */
-.ss-trustpilot-demo{grid-column:1/-1;min-width:0;margin-top:6px;padding:22px 27px 24px;border:1px solid #e2e6e1;background:#fff;border-radius:3px}
-.ss-trustpilot-demo-head{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;font:800 10px/1.5 var(--display,Manrope,sans-serif);letter-spacing:.13em;color:#67746b}
-.ss-trustpilot-demo-head strong{font:750 10px/1.4 var(--display,Manrope,sans-serif);letter-spacing:.05em;color:#b83f32}
-.ss-trustpilot-demo-warning{max-width:850px;margin:11px 0!important;font-size:12px!important;line-height:1.7!important;color:#667169!important}
-.ss-trustpilot-demo-details{border-top:1px solid #e8ebe7;margin-top:16px;padding-top:14px}
-.ss-trustpilot-demo-details>summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:15px;align-items:center;font:750 13px/1.4 var(--display,Manrope,sans-serif);color:#202827}
-.ss-trustpilot-demo-details>summary::-webkit-details-marker{display:none}
-.ss-trustpilot-demo-details>summary span{font-size:19px;color:#b83f32}
-.ss-trustpilot-demo-details[open]>summary span{transform:rotate(45deg)}
-.ss-trustpilot-widget-wrap{margin-top:17px;border-top:1px solid #edeFEB;padding-top:12px}
-.ss-trustpilot-widget-wrap iframe{max-width:100%;background:transparent}
-@media(max-width:600px){.ss-trustpilot-demo{padding:18px 16px}.ss-trustpilot-demo-head{align-items:flex-start;flex-direction:column;gap:4px}.ss-trustpilot-widget-wrap iframe{min-height:222px}}
-
 /* V26 — independent editorial testimonial wall. No unofficial Trustpilot widget. */
 .ss-reviews-v26{background:#f8f9f7!important;border-block:1px solid #e9ede7}
 .ss-reviews-heading{text-align:center;max-width:750px;margin:0 auto 32px}
