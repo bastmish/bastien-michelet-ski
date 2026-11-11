@@ -657,3 +657,60 @@
 .ss-review-sample-stars{font:800 19px/1 var(--display,Manrope,sans-serif);letter-spacing:.09em;color:#b83f32;margin:-1px 0 14px}
 .ss-review-demo-notice{font-size:9px!important;padding:6px 9px;letter-spacing:.07em}
 .ss-reviews-v26 .ss-reviews-heading>p:not(.ss-review-demo-notice){max-width:500px}
+
+
+/* V37 — editorial hero: clarity, modest confidence and elevated proof strip. */
+.ss-architecture .hero .hero-overline{display:none!important}
+.ss-architecture .hero h1{font-size:clamp(48px,6.5vw,89px);line-height:1.065;letter-spacing:-.071em;max-width:790px}
+.ss-architecture .hero-copy>p{max-width:590px;font-size:clamp(16px,1.55vw,19px);line-height:1.68;margin-top:27px}
+.ss-architecture .hero-actions{align-items:center;gap:25px}
+.ss-architecture .hero-actions .btn-primary{border-radius:9px;box-shadow:0 10px 27px rgba(34,56,41,.13)}
+.ss-architecture .hero-actions .ss-hero-contact{
+ border:0!important;background:transparent!important;box-shadow:none!important;
+ color:#24362d!important;padding:11px 2px!important;min-height:0;
+ border-bottom:1px solid #b83f32!important;border-radius:0!important;
+ font-weight:750;font-size:13px;
+}
+.ss-architecture .hero-actions .ss-hero-contact span{color:#b83f32;margin-left:10px}
+.ss-architecture .hero-actions .ss-hero-contact:hover{color:#b83f32!important}
+.ss-architecture .ss-hero-signatures{
+ bottom:24px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+ width:min(1120px,calc(100% - 92px));padding:8px 9px;
+ border:1px solid rgba(255,255,255,.70);border-radius:13px;
+ background:rgba(252,252,250,.76);backdrop-filter:blur(21px) saturate(105%);
+ -webkit-backdrop-filter:blur(21px) saturate(105%);
+ box-shadow:0 22px 56px rgba(30,45,36,.12);
+}
+.ss-architecture .ss-hero-signatures>span{
+ display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+ gap:13px;min-height:82px;padding:16px 22px;position:relative;
+}
+.ss-architecture .ss-hero-signatures>span+span{border-left:1px solid rgba(119,137,120,.2)}
+.ss-architecture .ss-hero-signatures b{
+ font:800 10px/1 var(--display,Manrope,sans-serif);
+ letter-spacing:.16em;color:#b83f32;
+}
+.ss-architecture .ss-hero-signatures strong{
+ font:750 clamp(12px,1.2vw,15px)/1.35 var(--display,Manrope,sans-serif);
+ letter-spacing:-.025em;color:#27392d;
+}
+.ss-architecture .ss-hero-signatures>span:before{
+ content:"";position:absolute;top:0;left:22px;width:28px;height:2px;background:#b83f32;opacity:.7;
+}
+@media(max-width:850px){
+ .ss-architecture .ss-hero-signatures{width:calc(100% - 42px);padding:7px}
+ .ss-architecture .ss-hero-signatures>span{min-height:67px;gap:8px;padding:12px 15px}
+ .ss-architecture .ss-hero-signatures>span:nth-child(3){border-left:0}
+ .ss-architecture .ss-hero-signatures>span:nth-child(n+3){border-top:1px solid rgba(119,137,120,.2)}
+ .ss-architecture .ss-hero-signatures>span:before{left:15px;width:19px}
+}
+@media(max-width:600px){
+ .ss-architecture .hero{padding-bottom:215px}
+ .ss-architecture .hero h1{font-size:clamp(45px,9vw,65px)}
+ .ss-architecture .hero-actions{gap:14px;flex-wrap:wrap}
+ .ss-architecture .hero-actions .ss-hero-contact{font-size:12px}
+ .ss-architecture .ss-hero-signatures{width:calc(100% - 32px);bottom:10px;border-radius:11px}
+ .ss-architecture .ss-hero-signatures>span{padding:10px 11px;min-height:68px;gap:8px}
+ .ss-architecture .ss-hero-signatures>span:before{left:11px;width:18px}
+ .ss-architecture .ss-hero-signatures strong{font-size:11px}
+}
