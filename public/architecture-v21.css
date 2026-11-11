@@ -873,3 +873,44 @@
  .ss-architecture .ss-alpine-band-copy{padding:23px 18px 28px}
  .ss-architecture .ss-alpine-band-grid p{font-size:18px}
 }
+
+
+/* V40 — strip the dark interlude. Four discreet typographic signals in the actual hero. */
+.ss-architecture .hero{padding-bottom:0!important}
+.ss-architecture .hero .hero-inner{align-items:center;padding-bottom:58px}
+.ss-architecture .hero .hero-copy{max-width:900px}
+.ss-architecture .hero .ss-hero-values{
+ display:flex;align-items:center;flex-wrap:wrap;gap:10px 0;
+ margin-top:clamp(31px,4vw,52px);padding-top:20px;
+ max-width:910px;border-top:1px solid rgba(79,96,83,.27);
+ background:transparent!important;box-shadow:none!important;
+}
+.ss-architecture .hero .ss-hero-values span{
+ display:inline-flex;align-items:center;gap:0;
+ margin:0;padding:0 20px;
+ color:#3a5142;font:750 clamp(11px,1.1vw,13px)/1.5 var(--display,Manrope,sans-serif);
+ letter-spacing:-.025em;white-space:nowrap;
+}
+.ss-architecture .hero .ss-hero-values span:first-child{padding-left:0}
+.ss-architecture .hero .ss-hero-values span+span{border-left:1px solid rgba(79,96,83,.24)}
+.ss-architecture .hero .ss-hero-values span:last-child{padding-right:0}
+@media(max-width:950px){
+ .ss-architecture .hero .ss-hero-values{max-width:650px}
+ .ss-architecture .hero .ss-hero-values span{font-size:12px;padding:0 12px}
+ .ss-architecture .hero .ss-hero-values span:nth-child(3){border-left:0;padding-left:0}
+}
+@media(max-width:720px){
+ .ss-architecture .hero{min-height:650px!important;height:auto!important}
+ .ss-architecture .hero .hero-inner{min-height:650px!important;padding-top:195px!important;padding-bottom:44px!important;align-items:flex-end!important}
+ .ss-architecture .hero .ss-hero-values{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:18px;row-gap:13px;
+  margin-top:29px;padding-top:17px;
+ }
+ .ss-architecture .hero .ss-hero-values span{display:block;padding:0!important;white-space:normal;border:0!important;font-size:11px;line-height:1.4}
+ .ss-architecture .hero .ss-hero-values span:nth-child(even){padding-left:13px!important;border-left:1px solid rgba(79,96,83,.22)!important}
+}
+@media(max-width:400px){
+ .ss-architecture .hero .hero-inner{padding-top:180px!important}
+ .ss-architecture .hero .ss-hero-values{margin-top:20px;row-gap:10px}
+ .ss-architecture .hero .ss-hero-values span{font-size:10px}
+}
