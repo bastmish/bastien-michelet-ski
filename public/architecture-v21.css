@@ -394,3 +394,15 @@
  .ss-reviews-marquee[data-reviews-state="ready"] .ss-reviews-col:nth-child(2){display:none}
 }
 @media(prefers-reduced-motion:reduce){.ss-reviews-animate{animation:none!important}.ss-reviews-marquee[data-reviews-state="ready"]{overflow-y:auto;mask-image:none}}
+
+/* V27: visible demo safeguards for illustrative reviews. */
+.ss-review-demo-notice{
+ display:inline-block;margin:15px auto 0!important;padding:8px 13px;
+ border:1px solid #dba199;background:#fff6f4;border-radius:4px;
+ color:#96382e!important;font:800 10px/1.45 var(--display,Manrope,sans-serif)!important;
+ letter-spacing:.08em;
+}
+.ss-review-demo-tag{
+ display:block;color:#b83f32;font:800 9px/1.5 var(--display,Manrope,sans-serif);
+ letter-spacing:.08em;margin-bottom:13px;
+}
