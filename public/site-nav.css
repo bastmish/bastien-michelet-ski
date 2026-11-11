@@ -424,3 +424,34 @@ body[data-scroll-tone="dark"] .site-header .nav-links .nav-cta{
  }
  .ss-architecture .ss-expertise-editorial .ss-photo-panel-label p{font-size:13px}
 }
+
+/* V62 — Helvetica Now Display direction: licensed font first when available,
+   Helvetica Neue system fallback until an authorized webfont is supplied.
+   Keep DM Sans for paragraphs and long-form copy. */
+:root{--display:"Helvetica Now Display","Helvetica Neue",Helvetica,Arial,sans-serif}
+body h1,body h2,body h3,
+body .site-header .brand-text strong,
+body .site-header .nav-links>a,
+body .site-header .offer-dropdown summary,
+body .ss-photo-panel-label h2,
+body .ss-photo-panel-label h3,
+body .ss-offer-content h3,
+body .ss-format-card h3,
+body .ss-resort-content h3,
+body .ss-footer-col h3{
+ font-family:"Helvetica Now Display","Helvetica Neue",Helvetica,Arial,sans-serif!important;
+}
+body h1,body h2,body h3{font-synthesis:weight;letter-spacing:-.055em}
+.ss-architecture .hero .hero-copy h1{
+ font-weight:700!important;letter-spacing:-.058em!important;line-height:1.09!important;
+}
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-label h2,
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-label h3{
+ font-weight:700!important;letter-spacing:-.055em!important;
+}
+body .site-header .nav-links>a,
+body .site-header .offer-dropdown summary{
+ font-weight:650!important;letter-spacing:-.015em!important;
+}
+body .site-header .brand-text strong{font-weight:750!important}
+@media(prefers-reduced-motion:reduce){body h1,body h2,body h3{font-synthesis:none}}
