@@ -1570,9 +1570,7 @@
 }
 /* V49 — Reviews: black-and-white mountain, genuine sources only. */
 .ss-architecture .ss-reviews-v49{
- background:linear-gradient(90deg,rgba(20,31,28,.78),rgba(20,31,28,.43)),
- url("https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1800")
- center 53%/cover no-repeat!important;
+ background:#182520!important;
  padding:clamp(70px,8vw,112px) 0;
  min-height:410px;display:flex;align-items:center;
  isolation:isolate;position:relative;
