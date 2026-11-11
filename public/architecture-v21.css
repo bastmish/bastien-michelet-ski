@@ -1074,3 +1074,11 @@
  .ss-architecture .ss-adn-photo-card--personal h3{font-size:31px!important}
  .ss-architecture .ss-adn-photo-card p{font-size:13px;max-width:330px}
 }
+
+
+/* Center the three prominent messages inside the photography, not in a top label. */
+.ss-architecture .ss-adn.ss-editorial-v41 .ss-adn-photo-caption{justify-content:center}
+.ss-architecture .ss-adn.ss-editorial-v41 .ss-adn-photo-card:after{
+ background:linear-gradient(180deg,rgba(10,23,19,.16) 0%,rgba(10,23,19,.32) 35%,rgba(10,23,19,.68) 100%);
+}
+.ss-architecture .ss-adn.ss-editorial-v41 .ss-adn-photo-card h3{text-wrap:balance}
