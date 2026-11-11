@@ -1,0 +1,73 @@
+/* Ski Society palette experiment V53 — DESTINATIONS ONLY / Carbon & Ice.
+   Loaded after legacy styles; source palette is not modified. */
+:root{--ss-carbon:#202426;--ss-ice:#c4d8e3;--ss-mineral:#f4f3ef;--ss-steel:#737c80}
+body:has(>.ss-destinations-page){background:var(--ss-mineral);color:var(--ss-carbon)}
+body:has(>.ss-destinations-page) .site-header .nav-shell,
+body:has(>.ss-destinations-page) .site-header.is-scrolled .nav-shell{
+ background:rgba(250,251,251,.96)!important;border:1px solid rgba(32,36,38,.15)!important;
+ box-shadow:0 10px 31px rgba(32,36,38,.14)!important;
+}
+body:has(>.ss-destinations-page) .site-header .nav-links a:not(.nav-cta),
+body:has(>.ss-destinations-page) .site-header .brand-text strong{color:var(--ss-carbon)!important}
+body:has(>.ss-destinations-page) .site-header .nav-links .nav-cta{background:var(--ss-carbon)!important;border-color:var(--ss-carbon)!important;color:white!important}
+body:has(>.ss-destinations-page) .site-header .nav-links .nav-cta:hover{background:#455c6a!important;border-color:#455c6a!important}
+body:has(>.ss-destinations-page) .brand-mark path:first-child{stroke:var(--ss-carbon)}
+body:has(>.ss-destinations-page) .brand-mark path:last-child{stroke:#668ca2}
+.ss-destinations-page{background:var(--ss-mineral)!important;--red:#668ca2;--ink:var(--ss-carbon)}
+.ss-destinations-page .ss-destinations-hero{background:#e8eef1!important}
+.ss-destinations-page .ss-destinations-hero:after{
+ background:linear-gradient(90deg,rgba(244,246,247,.96),rgba(244,247,249,.88) 52%,rgba(222,234,241,.32))!important;
+}
+.ss-destinations-page .ss-destinations-eyebrow{color:#50798d!important}
+.ss-destinations-page .ss-destinations-line{background:#668ca2!important}
+.ss-destinations-page .ss-destinations-hero h1{color:var(--ss-carbon)!important}
+.ss-destinations-page .ss-destinations-hero h1 em{color:#537b91!important}
+.ss-destinations-page .ss-destinations-hero-inner>p{color:#44545c!important}
+.ss-destinations-page .ss-resort-search>label{color:var(--ss-carbon)!important}
+.ss-destinations-page .ss-resort-search-field{
+ background:rgba(255,255,255,.94)!important;border-color:#cedae0!important;
+ box-shadow:0 14px 45px rgba(37,55,66,.12)!important;
+}
+.ss-destinations-page .ss-resort-search-field:focus-within{border-color:#668ca2!important;box-shadow:0 14px 40px rgba(80,121,141,.2)!important}
+.ss-destinations-page .ss-resort-search-field svg{stroke:#537b91!important}
+.ss-destinations-page .ss-resort-search-field input{color:var(--ss-carbon)!important}
+.ss-destinations-page .ss-search-clear{background:#e7eff3!important;color:#3c5a68!important}
+.ss-destinations-page .ss-search-suggestions{background:#fff!important;border-color:#dbe5e9!important}
+.ss-destinations-page .ss-stations-surface{background:var(--ss-mineral)!important}
+.ss-destinations-page .ss-territory-filters{border-color:#d9e1e4!important}
+.ss-destinations-page .ss-territory-filter{
+ background:#fff!important;color:#50616a!important;border-color:#d7dfe2!important;
+ border-radius:8px!important;
+}
+.ss-destinations-page .ss-territory-filter.is-active{
+ background:var(--ss-carbon)!important;color:#fff!important;border-color:var(--ss-carbon)!important;
+}
+.ss-destinations-page .ss-territory-filter.is-active span{color:var(--ss-ice)!important}
+.ss-destinations-page .ss-territory-index,
+.ss-destinations-page .ss-resort-count,
+.ss-destinations-page .ss-resort-level-label{color:#537b91!important}
+.ss-destinations-page .ss-territory-heading h2{color:var(--ss-carbon)!important}
+.ss-destinations-page .ss-resort{
+ background:rgba(255,255,255,.9)!important;border-color:#dbe2e5!important;
+ box-shadow:0 4px 18px rgba(32,45,51,.05)!important;
+}
+.ss-destinations-page .ss-resort:hover{background:#fff!important;box-shadow:0 15px 34px rgba(40,59,67,.12)!important}
+.ss-destinations-page .ss-resort-content h3,
+.ss-destinations-page .ss-resort-level strong{color:var(--ss-carbon)!important}
+.ss-destinations-page .ss-resort-content>p,.ss-destinations-page .ss-resort-level{color:#667782!important}
+.ss-destinations-page .ss-resort-level{border-color:#dde5e8!important}
+.ss-destinations-page .ss-resort-dot{background:#668ca2!important}
+.ss-destinations-page .ss-resort .ss-resort-cta{
+ background:var(--ss-carbon)!important;border-color:var(--ss-carbon)!important;color:#fff!important;
+ box-shadow:0 6px 16px rgba(32,36,38,.15)!important
+}
+.ss-destinations-page .ss-resort .ss-resort-cta:hover{
+ background:#567e94!important;border-color:#567e94!important;
+ box-shadow:0 8px 19px rgba(61,103,126,.22)!important
+}
+.ss-destinations-page .ss-resort .ss-resort-cta>span{color:#fff!important;background:rgba(196,216,227,.2)!important}
+.ss-destinations-page .ss-territory-filter:focus-visible,
+.ss-destinations-page .ss-suggestion:focus-visible{outline-color:#537b91!important}
+@media(max-width:900px){
+ body:has(>.ss-destinations-page) .site-header .nav-links.is-open{background:#f9fbfc!important}
+}

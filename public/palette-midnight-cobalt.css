@@ -1,0 +1,77 @@
+/* Ski Society palette experiment V53 — HOME ONLY / Midnight & Cobalt.
+   This file is scoped to .ss-architecture and loads after the existing theme.
+   Original styles remain unchanged so the experiment is reversible. */
+:root{--ss-midnight:#191e2b;--ss-cobalt:#4768f0;--ss-white:#f6f7f5;--ss-silver:#afb8c7}
+body:has(>.ss-architecture){background:var(--ss-white);color:var(--ss-midnight)}
+body:has(>.ss-architecture) .site-header .nav-shell,
+body:has(>.ss-architecture) .site-header.is-scrolled .nav-shell{
+ background:rgba(247,249,252,.96)!important;border:1px solid rgba(32,48,81,.14)!important;
+ box-shadow:0 10px 32px rgba(25,30,43,.15)!important;
+}
+body:has(>.ss-architecture) .site-header .nav-links a:not(.nav-cta),
+body:has(>.ss-architecture) .site-header .brand-text strong{color:var(--ss-midnight)!important}
+body:has(>.ss-architecture) .site-header .nav-links .nav-cta{
+ background:var(--ss-midnight)!important;border-color:var(--ss-midnight)!important;color:#fff!important
+}
+body:has(>.ss-architecture) .site-header .nav-links .nav-cta:hover{background:var(--ss-cobalt)!important;border-color:var(--ss-cobalt)!important}
+body:has(>.ss-architecture) .brand-mark path:first-child{stroke:var(--ss-midnight)}
+body:has(>.ss-architecture) .brand-mark path:last-child{stroke:var(--ss-cobalt)}
+.ss-architecture{--red:var(--ss-cobalt);--ink:var(--ss-midnight)}
+.ss-architecture .hero{background:var(--ss-white)!important}
+.ss-architecture .hero .hero-copy h1{color:var(--ss-midnight)!important}
+.ss-architecture .hero .hero-copy h1 em{color:var(--ss-cobalt)!important}
+.ss-architecture .hero .hero-copy>p{color:#424f64!important}
+.ss-architecture .hero .hero-actions .btn-primary{background:var(--ss-cobalt)!important;border-color:var(--ss-cobalt)!important;color:#fff!important;box-shadow:0 10px 25px rgba(71,104,240,.2)!important}
+.ss-architecture .hero .hero-actions .btn-primary:hover{background:#3550d1!important;border-color:#3550d1!important}
+.ss-architecture .hero .hero-actions a:not(.btn-primary){color:var(--ss-midnight)!important}
+.ss-architecture .kicker,.ss-architecture .ss-index,.ss-architecture .ss-region-soon{color:var(--ss-cobalt)!important}
+.ss-architecture .ss-expertise-v44 .ss-excellence-frame h2 em,
+.ss-architecture .ss-expertise-v44 .ss-excellence-frame h3 em{color:#98b4ff!important;text-shadow:0 2px 18px rgba(10,17,36,.4)}
+.ss-architecture .ss-expertise-v44 .ss-excellence-frame-eyebrow{color:#bed0ff!important;border-color:rgba(190,208,255,.7)!important}
+.ss-architecture .ss-expertise-v44 .ss-excellence-frame:after{background:linear-gradient(180deg,transparent 4%,rgba(12,18,36,.2) 32%,rgba(10,15,31,.74) 73%,rgba(9,13,28,.96) 100%)!important}
+.ss-architecture .ss-excellence-foot>a{border-color:var(--ss-cobalt)!important;color:var(--ss-midnight)!important}
+.ss-architecture .ss-excellence-foot>a span{color:var(--ss-cobalt)!important}
+.ss-architecture .ss-adn.ss-editorial-v41,
+.ss-architecture .ss-offers-v46{background:#fff!important}
+.ss-architecture .ss-adn h2,.ss-architecture .ss-offers h2,
+.ss-architecture .ss-destinations h2,.ss-architecture .ss-questions h2,
+.ss-architecture .ss-journey-v49 h2{color:var(--ss-midnight)!important}
+.ss-architecture .ss-offers-v46 .ss-offer-content .ss-offer-meta{color:var(--ss-cobalt)!important}
+.ss-architecture .ss-offers-v46 .ss-offer-feature-tag{color:var(--ss-cobalt)!important;border-color:rgba(71,104,240,.3)!important}
+.ss-architecture .ss-offers-v46 .ss-offer-cta,
+.ss-architecture .ss-format-contact,
+.ss-architecture .ss-destinations .ss-region-after-v48 .ss-region-catalogue{
+ color:var(--ss-cobalt)!important;background:#fff!important;border-color:rgba(71,104,240,.55)!important;box-shadow:none!important;
+}
+.ss-architecture .ss-offers-v46 .ss-offer-card:hover .ss-offer-cta,
+.ss-architecture .ss-offers-v46 .ss-offer-card:focus-visible .ss-offer-cta,
+.ss-architecture .ss-format-contact:hover,
+.ss-architecture .ss-destinations .ss-region-after-v48 .ss-region-catalogue:hover{
+ background:var(--ss-cobalt)!important;border-color:var(--ss-cobalt)!important;color:white!important;
+}
+.ss-architecture .ss-journey-v49{
+ background:radial-gradient(ellipse at 98% 3%,rgba(71,104,240,.085),transparent 43%),#f1f3f8!important;
+ border-top-color:#e0e5f1!important;
+}
+.ss-architecture .ss-journey-v49:before{background:var(--ss-cobalt)!important}
+.ss-architecture .ss-journey-v49 .ss-journey-heading .ss-journey-kicker-sep{color:var(--ss-cobalt)!important}
+.ss-architecture .ss-journey-v49 .ss-journey-heading>p{border-color:rgba(71,104,240,.38)!important}
+.ss-architecture .ss-journey-v49 .ss-format-card{border-color:#dde2ec!important;border-top-color:#b7c4fd!important}
+.ss-architecture .ss-journey-v49 .ss-format-card--day{border-color:rgba(71,104,240,.4)!important;border-top-color:var(--ss-cobalt)!important}
+.ss-architecture .ss-journey-v49 .ss-format-number,
+.ss-architecture .ss-journey-v49 .ss-format-micro{color:var(--ss-cobalt)!important}
+.ss-architecture .ss-journey-v49 .ss-format-card--day .ss-format-chip{background:#eef1ff!important;color:#2841ad!important;border-color:#cad3ff!important}
+.ss-architecture .ss-journey-v49 .ss-format-card h3{color:var(--ss-midnight)!important}
+.ss-architecture .ss-destinations .ss-region-after-v48{background:#f1f3f8!important;border-color:#e2e7f0!important}
+.ss-architecture .ss-destinations .ss-region-after-v48 .ss-region-soon{color:var(--ss-cobalt)!important}
+.ss-architecture .ss-reviews-v49:after{background:linear-gradient(90deg,rgba(12,18,37,.87),rgba(17,26,55,.49))!important}
+.ss-architecture .ss-review-demo-tag{color:var(--ss-cobalt)!important}
+.ss-architecture .ss-reviews-v52 .ss-reviews-v52-bottom>a:hover{color:#bed0ff!important}
+.ss-architecture .ss-contact{background:#f1f3f8!important}
+.ss-architecture .ss-request-form button.btn-primary{background:var(--ss-cobalt)!important;border-color:var(--ss-cobalt)!important;color:#fff!important}
+.ss-architecture .ss-request-form button.btn-primary:hover{background:#3550d1!important}
+.ss-architecture .ss-request-fields input:focus,.ss-architecture .ss-request-fields select:focus,.ss-architecture .ss-request-fields textarea:focus{border-color:var(--ss-cobalt)!important;outline-color:var(--ss-cobalt)!important}
+body:has(>.ss-architecture) .ss-whatsapp-float{background:#247b52}
+
+/* Keep the existing animated mountain footer, with a blue-toned treatment on this palette test. */
+body:has(>.ss-architecture) .ss-ridge-footer .ss-ridge-scene canvas{filter:hue-rotate(218deg) saturate(1.15)}

@@ -1,0 +1,228 @@
+/* Ski Society / destinations — premium alpine editorial guide V30 */
+.site-header .nav-shell,.site-header.is-scrolled .nav-shell{background:rgba(249,249,246,.72)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-color:rgba(255,255,255,.7)!important}
+.ss-destinations-page{background:#fff}
+.ss-destinations-hero{position:relative;isolation:isolate;min-height:690px;display:flex;align-items:center;overflow:visible;background:#e7eae6}
+.ss-destinations-hero-photo{position:absolute;z-index:-2;inset:0;background:#d7dfda url("https://images.pexels.com/photos/31112551/pexels-photo-31112551.jpeg?auto=compress&cs=tinysrgb&w=1900") center 53%/cover no-repeat}
+.ss-destinations-hero:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(250,251,249,.93) 0%,rgba(250,251,249,.88) 40%,rgba(250,251,249,.38) 75%,rgba(250,251,249,.09) 100%)}
+.ss-destinations-hero-inner{position:relative;padding-top:155px;padding-bottom:95px}
+.ss-destinations-eyebrow{display:flex;gap:12px;align-items:center;color:#b83f32;font:800 10px/1.4 var(--display,Manrope,sans-serif);letter-spacing:.15em}
+.ss-destinations-line{width:32px;height:1px;background:#b83f32}
+.ss-destinations-hero h1{font:800 clamp(56px,7.5vw,110px)/1.02 var(--display,Manrope,sans-serif);letter-spacing:-.085em;margin:25px 0 23px;color:#202b25}
+.ss-destinations-hero h1 em{font-style:normal;color:#b83f32}
+.ss-destinations-hero-inner>p{max-width:520px;color:#425147;font:500 clamp(15px,1.5vw,18px)/1.7 var(--font,"DM Sans",sans-serif)}
+.ss-hero-index{display:flex;align-items:center;gap:28px;margin-top:27px;font:800 10px/1.4 var(--display,Manrope,sans-serif);color:#4f6053;letter-spacing:.13em}
+.ss-hero-index span+span:before{content:"";display:inline-block;width:22px;height:1px;background:#b83f32;margin:0 20px 3px 0}
+.ss-resort-search{position:relative;max-width:635px;margin-top:38px;z-index:5}
+.ss-resort-search>label{display:block;font:800 10px/1.5 var(--display,Manrope,sans-serif);letter-spacing:.12em;margin-bottom:10px;color:#273b30}
+.ss-resort-search-field{display:flex;align-items:center;gap:12px;min-height:66px;padding:8px 13px 8px 22px;border:1px solid rgba(231,235,228,.9);background:rgba(255,255,255,.91);box-shadow:0 14px 45px rgba(27,44,34,.12);border-radius:7px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.ss-resort-search-field:focus-within{border-color:#b83f32;box-shadow:0 14px 50px rgba(27,44,34,.17)}
+.ss-resort-search-field svg{width:23px;height:23px;fill:none;stroke:#b83f32;stroke-width:1.7;stroke-linecap:round;flex:none}
+.ss-resort-search-field input{appearance:none;-webkit-appearance:none;background:transparent;border:0;outline:0;min-width:0;width:100%;font:500 14px/1.4 var(--font,"DM Sans",sans-serif);color:#1d3125}
+.ss-resort-search-field input::placeholder{color:#87948a}
+.ss-search-clear{flex:none;background:#eef1ed;border:0;border-radius:4px;padding:8px 11px;color:#445247;font:700 11px var(--display,Manrope,sans-serif)}
+.ss-search-clear span{font-size:15px;margin-left:5px}
+.ss-search-help{font-size:11px!important;color:#536356!important;margin-top:10px}
+.ss-search-suggestions{position:absolute;z-index:10;top:calc(100% - 25px);left:0;right:0;max-height:330px;overflow-y:auto;background:#fff;border:1px solid #e1e7df;border-radius:0 0 7px 7px;box-shadow:0 22px 55px #1d35242a;padding:5px}
+.ss-suggestion{width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left;gap:16px;padding:14px 17px;border:0;background:transparent;color:#2e3e32;font:700 14px var(--display,Manrope,sans-serif);border-radius:4px}
+.ss-suggestion small{font-size:11px;color:#819083;font-weight:500}
+.ss-suggestion:hover,.ss-suggestion[aria-selected="true"]{background:#f0f3ed;color:#b83f32}
+.ss-stations-surface{padding:90px 0 0}
+.ss-stations-intro{display:flex;align-items:end;justify-content:space-between;gap:42px;margin-bottom:36px}
+.ss-stations-intro-overline{color:#b83f32;font:800 10px/1.4 var(--display,Manrope,sans-serif);letter-spacing:.16em}
+.ss-stations-intro h2{font:800 clamp(39px,4.5vw,63px)/1.1 var(--display,Manrope,sans-serif);letter-spacing:-.067em;margin-top:15px}
+.ss-stations-intro>p{font-size:14px;color:#66766b;max-width:355px}
+.ss-territory-filters{display:flex;align-items:center;gap:7px;flex-wrap:wrap;border-bottom:1px solid #e2e9e1;padding-bottom:25px}
+.ss-territory-filter{border:1px solid #e3e9e0;border-radius:5px;background:#fafbf9;color:#4d5d51;padding:12px 16px;font:750 12px/1.35 var(--display,Manrope,sans-serif);transition:background .2s,color .2s}
+.ss-territory-filter span{color:#87958a;font-size:10px;margin-left:9px}
+.ss-territory-filter.is-active{background:#24362b;color:#fff;border-color:#24362b}
+.ss-territory-filter.is-active span{color:#e2ebe2}
+.ss-territory-filter:focus-visible,.ss-suggestion:focus-visible{outline:3px solid #b83f32;outline-offset:2px}
+.ss-results-bar{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:19px 0;font:700 12px var(--display,Manrope,sans-serif);color:#738176}
+.ss-results-bar button{border:0;background:transparent;color:#b83f32;font:750 12px var(--display,Manrope,sans-serif);text-decoration:underline;cursor:pointer}
+.ss-territory{padding:50px 0 70px;scroll-margin-top:110px}
+.ss-territory[hidden],.ss-resort[hidden],.ss-stations-empty[hidden],.ss-search-clear[hidden],.ss-search-suggestions[hidden]{display:none!important}
+.ss-territory-heading{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:25px}
+.ss-territory-index{font:800 10px/1.5 var(--display,Manrope,sans-serif);letter-spacing:.17em;color:#b83f32}
+.ss-territory-heading h2{font:800 clamp(39px,5.5vw,72px)/1.05 var(--display,Manrope,sans-serif);letter-spacing:-.075em;margin:10px 0 0}
+.ss-territory-total{font:600 12px var(--display,Manrope,sans-serif);color:#869187}
+.ss-territory-list{display:grid;gap:9px}
+.ss-resort{position:relative;display:grid;grid-template-columns:260px minmax(0,1fr) auto;align-items:center;min-height:136px;overflow:hidden;border:1px solid #e5ebe3;border-radius:5px;background:#f9faf8;transition:background .2s,transform .25s,box-shadow .25s}
+.ss-resort:hover{background:#f4f6f2;transform:translateY(-2px);box-shadow:0 15px 37px rgba(30,44,34,.09)}
+.ss-resort-photo{height:100%;min-height:136px;overflow:hidden;position:relative;background:#dce3dc}
+.ss-resort-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 65%,#f9faf82e)}
+.ss-resort-photo img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.82);transition:transform .5s ease}
+.ss-resort:hover .ss-resort-photo img{transform:scale(1.045)}
+.ss-resort-content{padding:18px 25px;min-width:0}
+.ss-resort-count{display:block;color:#b83f32;font:800 9px/1.4 var(--display,Manrope,sans-serif);letter-spacing:.13em}
+.ss-resort-content h3{font:800 clamp(23px,2.4vw,33px)/1.15 var(--display,Manrope,sans-serif);letter-spacing:-.06em;margin:7px 0 6px;color:#25372b}
+.ss-resort-content>p{font-size:13px;color:#5b6e61;margin:0}
+.ss-resort-level{display:inline-flex;align-items:center;gap:7px;margin-top:9px;font-size:10px;color:#869489}
+.ss-resort-dot{width:5px;height:5px;border-radius:50%;background:#b83f32}
+.ss-resort-cta{display:inline-flex;align-items:center;justify-content:center;gap:16px;padding:14px 17px;min-height:43px;white-space:nowrap;background:#fff;border:1px solid #dce3d9;border-radius:4px;margin-right:24px;text-decoration:none;color:#28392e;font:750 12px var(--display,Manrope,sans-serif);transition:background .2s,color .2s,border-color .2s}
+.ss-resort-cta span{color:#b83f32;font-size:17px}
+.ss-resort-cta:hover{background:#26382d;color:#fff;border-color:#26382d}
+.ss-resort-cta:hover span{color:#fff}
+.ss-stations-disclaimer{border-top:1px solid #e6e9e5;padding-top:22px;margin:0 0 85px;color:#838e85;font-size:11px;line-height:1.8;max-width:980px}
+.ss-stations-empty{text-align:center;padding:90px 20px;border:1px solid #e4e9e4;background:#f8f9f6}
+.ss-stations-empty>span{font:800 10px var(--display,Manrope,sans-serif);color:#b83f32;letter-spacing:.12em}
+.ss-stations-empty h3{font:800 28px var(--display,Manrope,sans-serif);letter-spacing:-.05em;margin:18px 0 10px}
+.ss-stations-empty p{color:#6c7a6f;font-size:14px}
+.ss-stations-empty button{border:0;background:#24362d;color:#fff;padding:12px 18px;font:750 12px var(--display,Manrope,sans-serif);margin-top:24px}
+.ss-stations-outro{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:45px 50px;margin-bottom:80px;background:#25382e;color:#fff;border-radius:5px}
+.ss-stations-outro span{font:800 10px var(--display,Manrope,sans-serif);letter-spacing:.17em;color:#cda4a0}
+.ss-stations-outro h2{font:800 clamp(30px,3.4vw,48px)/1.1 var(--display,Manrope,sans-serif);letter-spacing:-.06em;margin:13px 0}
+.ss-stations-outro p{font-size:14px;color:#cbd9cb}
+.ss-stations-outro a{display:inline-flex;gap:15px;align-items:center;white-space:nowrap;background:white;color:#24362d;text-decoration:none;padding:16px 20px;border-radius:4px;font:750 12px var(--display,Manrope,sans-serif)}
+.ss-stations-outro a span{color:#b83f32}
+.ss-stations-footer{background:#fff;padding:27px 0;border-top:1px solid #e5e9e4}
+.ss-stations-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.ss-stations-footer a{text-decoration:none;font:750 12px var(--display,Manrope,sans-serif)}
+.ss-stations-footer span{font-size:11px;color:#728076}
+@media(max-width:1050px){.ss-resort{grid-template-columns:210px minmax(0,1fr) auto}.ss-resort-cta{margin-right:15px}.ss-resort-content{padding-inline:20px}}
+@media(max-width:800px){.ss-destinations-hero{min-height:640px}.ss-destinations-hero-inner{padding-top:155px}.ss-destinations-hero:after{background:linear-gradient(90deg,#fafbf8eb,#fafbf8a0)}.ss-resort{grid-template-columns:165px minmax(0,1fr);min-height:145px}.ss-resort-photo{grid-row:span 2}.ss-resort-content{align-self:end;padding:15px 18px 4px}.ss-resort-cta{justify-self:start;margin:0 0 16px 18px;padding:9px 13px;font-size:11px}.ss-resort-level{margin-top:6px}.ss-stations-intro{align-items:start}.ss-stations-outro{padding:32px}}
+@media(max-width:600px){.ss-destinations-hero{min-height:580px}.ss-destinations-hero-inner{padding-top:145px;padding-bottom:65px}.ss-destinations-hero h1{font-size:clamp(52px,10.9vw,70px)}.ss-destinations-hero-inner>p{font-size:14px}.ss-resort-search{margin-top:27px}.ss-resort-search-field{min-height:58px;padding-inline:15px}.ss-resort-search-field input{font-size:12px}.ss-hero-index{gap:9px;font-size:9px}.ss-hero-index span+span:before{width:9px;margin:0 8px 3px 0}.ss-stations-surface{padding-top:65px}.ss-stations-intro{flex-direction:column;gap:15px}.ss-stations-intro h2{font-size:40px}.ss-territory-filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:15px;scrollbar-width:thin}.ss-territory-filter{flex:none;padding:11px 13px}.ss-territory{padding:30px 0 55px}.ss-territory-heading{align-items:start;flex-direction:column;gap:9px}.ss-territory-heading h2{font-size:44px}.ss-resort{grid-template-columns:118px minmax(0,1fr);min-height:153px}.ss-resort-photo{height:100%;min-height:153px}.ss-resort-content{padding:12px 11px 2px}.ss-resort-content h3{font-size:22px}.ss-resort-content>p{font-size:11px}.ss-resort-level{font-size:9px}.ss-resort-count{font-size:8px}.ss-resort-cta{margin:0 0 12px 11px;padding:8px 10px;font-size:10px}.ss-stations-outro{display:block;padding:28px}.ss-stations-outro a{margin-top:25px;white-space:normal}.ss-stations-disclaimer{margin-bottom:55px}}
+@media(prefers-reduced-motion:reduce){.ss-resort,.ss-resort-photo img,.ss-resort-cta,.ss-territory-filter{transition:none}}
+
+
+/* V31 — compact above-the-fold resort directory, uniform floating glass bands */
+.ss-destinations-hero{min-height:0!important;display:block;overflow:visible}
+.ss-destinations-hero-inner{
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,430px);
+ grid-template-rows:auto auto auto;column-gap:clamp(25px,4vw,70px);
+ align-items:center;padding-top:111px!important;padding-bottom:25px!important;
+}
+.ss-destinations-hero .ss-destinations-eyebrow{grid-column:1;grid-row:1;margin-bottom:7px}
+.ss-destinations-hero h1{grid-column:1;grid-row:2;white-space:nowrap;font-size:clamp(38px,4.2vw,62px)!important;letter-spacing:-.068em;margin:1px 0 5px!important}
+.ss-destinations-hero-inner>p{grid-column:1;grid-row:3;font-size:13px!important}
+.ss-resort-search{grid-column:2;grid-row:1/4;max-width:none;margin:0!important}
+.ss-resort-search>label{margin-bottom:7px}
+.ss-resort-search-field{min-height:52px;padding:5px 12px 5px 15px;border-radius:12px}
+.ss-search-help{margin-top:6px;font-size:10px!important}
+.ss-destinations-hero:after{background:linear-gradient(90deg,#fafbf8ef 0%,#fafbf8c5 57%,#fafbf893 100%)}
+.ss-stations-surface{padding-top:15px!important}
+.ss-territory-filters{padding-bottom:11px;gap:6px}
+.ss-territory-filter{border-radius:99px;padding:9px 14px;font-size:11px}
+.ss-results-bar{padding:10px 0;font-size:11px}
+.ss-territory{padding:14px 0 33px!important}
+.ss-territory-heading{align-items:center;margin-bottom:12px}
+.ss-territory-heading h2{font-size:clamp(27px,3.2vw,42px);margin:3px 0 0}
+.ss-territory-index{font-size:9px}
+.ss-territory-list{gap:8px}
+.ss-resort{
+ height:102px;min-height:102px!important;
+ grid-template-columns:175px minmax(0,1fr) 200px;
+ align-items:stretch;background:rgba(250,251,249,.78);
+ border:1px solid rgba(222,230,222,.94);border-radius:17px;
+ overflow:hidden;box-shadow:0 3px 17px rgba(34,49,40,.035);
+ backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);
+}
+.ss-resort:hover{background:rgba(255,255,255,.92);box-shadow:0 16px 38px rgba(34,49,40,.10)}
+.ss-resort-photo{height:102px!important;min-height:102px!important;grid-row:auto!important;border-radius:13px 0 0 13px}
+.ss-resort-photo:after{background:linear-gradient(90deg,transparent 65%,rgba(249,250,248,.17))}
+.ss-resort-content{
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(155px,190px);
+ grid-template-rows:1fr 1fr;gap:1px 10px;align-items:center;min-width:0;
+ padding:13px 15px 13px 22px!important;align-self:stretch!important;
+}
+.ss-resort-content h3{grid-column:1;grid-row:1;align-self:end;margin:0;font-size:clamp(19px,2.1vw,28px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ss-resort-content>p{grid-column:1;grid-row:2;align-self:start;margin:4px 0 0;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ss-resort-level{
+ grid-column:2;grid-row:1/3;display:flex;flex-direction:column;align-items:flex-start;
+ justify-content:center;gap:4px;margin:0!important;padding:8px 0 8px 15px;
+ border-left:1px solid #dce5dcd9;font:500 11px/1.4 var(--display,Manrope,sans-serif);color:#536659;
+}
+.ss-resort-level-label{font:800 9px/1.3 var(--display,Manrope,sans-serif);letter-spacing:.13em;color:#b83f32}
+.ss-resort-level strong{font:750 13px/1.4 var(--display,Manrope,sans-serif);color:#23372d}
+.ss-resort-cta{
+ margin:auto 14px auto 0!important;justify-self:stretch!important;
+ display:flex;align-items:center;justify-content:space-between;gap:10px;
+ padding:13px 11px 13px 16px!important;min-height:46px;
+ color:white;background:#24362d;border:1px solid #24362d;border-radius:50px;
+ font:750 11px/1.35 var(--display,Manrope,sans-serif);
+ box-shadow:0 6px 15px rgba(26,46,33,.14);
+}
+.ss-resort-cta>span{display:grid;place-items:center;width:27px;height:27px;flex:none;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:16px}
+.ss-resort-cta:hover{background:#b83f32;border-color:#b83f32;box-shadow:0 8px 19px rgba(184,63,50,.20)}
+@media(max-width:1050px){
+ .ss-destinations-hero-inner{grid-template-columns:minmax(0,1fr) minmax(290px,370px);gap:20px}
+ .ss-destinations-hero h1{font-size:clamp(34px,4vw,49px)!important}
+ .ss-resort{grid-template-columns:135px minmax(0,1fr) 160px}
+ .ss-resort-photo{height:102px!important}
+ .ss-resort-content{grid-template-columns:minmax(0,1fr) minmax(110px,145px);padding-inline:15px!important}
+ .ss-resort-level strong{font-size:11px}
+ .ss-resort-cta{padding:11px 8px 11px 11px!important;font-size:10px}
+}
+@media(max-width:800px){
+ .ss-destinations-hero-inner{grid-template-columns:1fr;grid-template-rows:auto;gap:5px;padding-top:105px!important;padding-bottom:15px!important}
+ .ss-destinations-hero .ss-destinations-eyebrow,.ss-destinations-hero h1,.ss-destinations-hero-inner>p,.ss-resort-search{grid-column:1;grid-row:auto}
+ .ss-destinations-hero h1{white-space:normal;font-size:clamp(37px,7vw,52px)!important}
+ .ss-resort-search{margin-top:12px!important}
+ .ss-resort{height:116px;min-height:116px!important;grid-template-columns:122px minmax(0,1fr) 148px}
+ .ss-resort-photo{height:116px!important;min-height:116px!important;grid-row:auto!important}
+ .ss-resort-content{grid-template-columns:1fr;grid-template-rows:auto auto auto;gap:2px}
+ .ss-resort-content h3{grid-column:1;grid-row:1;align-self:center;font-size:22px}
+ .ss-resort-content>p{grid-column:1;grid-row:2;align-self:center;font-size:11px;margin:0}
+ .ss-resort-level{grid-column:1;grid-row:3;flex-direction:row;align-items:center;gap:8px;border:0;padding:0;font-size:10px}
+ .ss-resort-level strong{font-size:10px}
+ .ss-resort-cta{margin:auto 9px auto 0!important;font-size:10px}
+}
+@media(max-width:600px){
+ .ss-destinations-hero-inner{padding-top:92px!important;padding-bottom:10px!important}
+ .ss-destinations-hero h1{font-size:clamp(34px,8.4vw,46px)!important}
+ .ss-destinations-hero-inner>p{font-size:12px!important}
+ .ss-resort-search-field{min-height:49px}
+ .ss-resort-search{margin-top:8px!important}
+ .ss-search-help{font-size:9px!important}
+ .ss-stations-surface{padding-top:10px!important}
+ .ss-territory-heading{flex-direction:row;align-items:center}
+ .ss-territory-heading h2{font-size:30px}
+ .ss-territory-total{font-size:10px}
+ .ss-resort{height:118px;min-height:118px!important;grid-template-columns:95px minmax(0,1fr);grid-template-rows:1fr;position:relative}
+ .ss-resort-photo{height:118px!important;min-height:118px!important;grid-row:1!important}
+ .ss-resort-content{padding:9px 10px 43px!important;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:1px;overflow:hidden}
+ .ss-resort-content h3{font-size:clamp(16px,4.8vw,21px);width:100%;white-space:nowrap}
+ .ss-resort-content>p{width:100%;font-size:10px}
+ .ss-resort-level{flex-direction:row;max-width:100%;gap:6px;margin-top:4px!important}
+ .ss-resort-level-label{font-size:8px}
+ .ss-resort-level strong{font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .ss-resort-cta{position:absolute;bottom:8px;right:9px;left:105px;min-height:30px;justify-content:space-between;margin:0!important;padding:3px 4px 3px 12px!important;border-radius:50px;font-size:9px}
+ .ss-resort-cta>span{width:23px;height:23px;font-size:13px}
+ .ss-resort-photo img{object-position:center}
+}
+
+/* Preserve full page heading without clipping on mid-sized desktops. */
+.ss-destinations-hero h1{white-space:normal;max-width:640px;font-size:clamp(35px,3.7vw,54px)!important}
+
+/* V34: larger supporting hero sentence, without increasing header height. */
+.ss-destinations-hero-inner>p{font-size:clamp(16px,1.6vw,19px)!important;line-height:1.52!important;max-width:650px;color:#34493c!important}
+@media(max-width:800px){.ss-destinations-hero-inner>p{font-size:16px!important}}
+@media(max-width:600px){.ss-destinations-hero-inner>p{font-size:15px!important}}
+
+/* V35 — restrained rounded rectangle CTA matching the glass navigation/search. */
+.ss-resort .ss-resort-cta{
+ border-radius:10px!important;
+ background:#24362d;
+ padding-inline:16px 10px!important;
+ box-shadow:0 5px 16px rgba(24,43,31,.13);
+}
+.ss-resort .ss-resort-cta>span{
+ border-radius:7px;
+ background:rgba(255,255,255,.13);
+}
+.ss-resort .ss-resort-cta:hover{
+ background:#b83f32;border-color:#b83f32;
+ box-shadow:0 7px 21px rgba(184,63,50,.18);
+}
+@media(max-width:600px){
+ .ss-resort .ss-resort-cta{border-radius:8px!important;padding:3px 4px 3px 12px!important}
+ .ss-resort .ss-resort-cta>span{border-radius:6px}
+}
+
+/* V36 — slightly smaller booking buttons; retain the squared-off premium look. */
+.ss-resort .ss-resort-cta{justify-self:center!important;min-height:39px;padding:8px 9px 8px 12px!important;font-size:10px;gap:8px}
+.ss-resort .ss-resort-cta>span{width:23px;height:23px;font-size:14px}
+@media(max-width:600px){.ss-resort .ss-resort-cta{justify-self:stretch!important;min-height:28px;padding:2px 4px 2px 10px!important;font-size:9px}.ss-resort .ss-resort-cta>span{width:21px;height:21px;font-size:12px}}
+
+
+/* V48 — Region deep links from the homepage clear the fixed navigation. */
+.ss-territory[id^="region-"]{scroll-margin-top:clamp(95px,12vh,140px)}

@@ -1,0 +1,31 @@
+/* Ski Society — editorial scroll timeline inspired by 21st.dev @ibrandify.
+   Designed for our existing HTML/CSS stack, progressive enhancement. */
+.ss-scroll-story{background:#f9fbf9;padding:clamp(95px,11vw,160px) 0;border:0}
+.ss-story-grid{display:grid;grid-template-columns:minmax(0,.97fr) minmax(0,1.03fr);column-gap:clamp(70px,10vw,170px);align-items:start}
+.ss-story-intro{position:sticky;top:160px;align-self:start;padding:24px 0 55px}
+.ss-story-intro .kicker{display:block;margin-bottom:25px;color:#b83f32}
+.ss-story-intro h2{font:800 clamp(39px,4vw,62px)/1.14 var(--display,Manrope,sans-serif);letter-spacing:-.066em;color:#242b29;margin:0;max-width:650px}
+.ss-story-intro h2 em{font-style:normal;color:#b83f32}
+.ss-story-intro>p{max-width:465px;margin:25px 0 24px;color:#606b64;font-size:14px;line-height:1.9}
+.ss-story-link{display:inline-flex;align-items:center;gap:26px;padding:10px 0;color:#b83f32;font:800 12px/1.3 var(--display,Manrope,sans-serif);text-decoration:none;border-bottom:1px solid currentColor}
+.ss-story-link:hover{color:#922e27}
+.ss-story-link:focus-visible{outline:2px solid #b83f32;outline-offset:5px}
+.ss-story-track{position:relative;min-width:0;padding:35px 0}
+.ss-story-list{list-style:none;margin:0;padding:0}
+.ss-story-rail{position:absolute;left:12px;top:46px;bottom:79px;width:1px;background:#d6ded6}
+.ss-story-progress{display:block;width:2px;height:var(--ss-progress,0%);max-height:100%;background:#b83f32;transform:translateX(-.5px);transition:height .1s linear}
+.ss-story-step{position:relative;min-height:230px;padding:0 0 75px 67px;opacity:.5;transition:opacity .45s ease,transform .45s ease}
+.ss-story-step:last-child{min-height:160px;padding-bottom:0}
+.ss-story-step.is-active,.ss-story-step.is-passed{opacity:1}
+.ss-story-marker{position:absolute;top:12px;left:5px;width:16px;height:16px;border-radius:50%;border:1px solid #b8c0b7;background:#f9fbf9;box-shadow:0 0 0 5px #f9fbf9;transition:background .35s,border-color .35s,transform .35s}
+.ss-story-step.is-active .ss-story-marker,.ss-story-step.is-passed .ss-story-marker{background:#b83f32;border-color:#b83f32}
+.ss-story-step.is-active .ss-story-marker{transform:scale(1.22)}
+.ss-story-step-body{padding:0 0 24px;border-bottom:1px solid #e6ebe5;max-width:450px}
+.ss-story-step:last-child .ss-story-step-body{border-bottom:0}
+.ss-story-n{display:block;color:#b83f32;font:800 10px/1.4 var(--display,Manrope,sans-serif);text-transform:uppercase;letter-spacing:.15em}
+.ss-story-n i{padding:0 8px;font-style:normal;color:#a9b1a9}
+.ss-story-step h3{font:800 clamp(22px,2.1vw,31px)/1.2 var(--display,Manrope,sans-serif);letter-spacing:-.055em;margin:15px 0 12px;color:#242b29}
+.ss-story-step p{max-width:380px;font:400 14px/1.8 var(--font,"DM Sans",sans-serif);color:#5c685f;margin:0}
+@media(max-width:900px){.ss-story-grid{gap:40px;grid-template-columns:minmax(0,.93fr) minmax(0,1.07fr)}.ss-story-intro{top:105px}.ss-story-step{padding-left:50px}.ss-story-intro h2{font-size:clamp(34px,4.8vw,49px)}}
+@media(max-width:700px){.ss-scroll-story{padding:80px 0 75px}.ss-story-grid{display:block}.ss-story-intro{position:static;padding:0 0 40px}.ss-story-intro h2{font-size:clamp(35px,8vw,48px)}.ss-story-track{padding:20px 0 0}.ss-story-rail{top:30px;bottom:53px}.ss-story-step{min-height:185px;padding-bottom:48px}.ss-story-step:last-child{min-height:110px}.ss-story-step h3{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.ss-story-step{opacity:1;transition:none}.ss-story-marker,.ss-story-progress{transition:none}}

@@ -1,0 +1,51 @@
+/* Ski Society — brighter editorial white direction (V20).
+   Applied last, retaining existing layouts, photography and alpine red. */
+:root{--snow:#ffffff;--snow2:#f8f9f8;--ink:#202827;--gray:#606a65;--line:#e7e9e7}
+html,body{background:#fff}
+.nav-shell,.site-header.is-scrolled .nav-shell{background:rgba(255,255,255,.95);border-color:#f0f0ef;box-shadow:0 10px 35px #1d292019}
+.offer-panel,.nav-links.is-open{background:#fff}
+.hero{background:#fff}
+.hero-image:after{background:linear-gradient(90deg,#fff 1%,#fffffffc 13%,#fffffff2 29%,#ffffffb8 50%,transparent 81%),linear-gradient(0deg,#ffffffef,transparent 31%),linear-gradient(180deg,#ffffff90,transparent 17%)}
+.trust-wrap,.offer-tiles,.reviews-early,.ss-scroll-story,.section.approach,.section.steps,.section.faq,.trustpilot-section,.request-section{background:#fff}
+.trust-pill,.enhanced-steps .step{background:#fff;border-color:#e9eae7;box-shadow:0 8px 26px #1f29220a}
+.trust-symbol{background:#faf2f0}
+.reviews-early,.trustpilot-section{border-color:#ececea}
+.ss-scroll-story .ss-story-marker{background:#fff;box-shadow:0 0 0 5px #fff}
+.ss-scroll-story .ss-story-rail{background:#e7e8e5}
+.ss-scroll-story .ss-story-step-body{border-color:#e9e9e6}
+.ss-scroll-story .ss-story-step p{color:#65706a}
+.territories-section{background:#fbfbfa}
+.territories-section .alpine-reach{background:transparent}
+.alpine-atlas-figure,.alpine-atlas-figure img{background:transparent}
+.manifesto-teaser{background:#fff;color:#202827;border-block:1px solid #ededeb}
+.manifesto-teaser h2,.manifesto-teaser p,.manifesto-teaser a{color:#202827}
+.manifesto-teaser .kicker{color:var(--red)}
+.manifesto-teaser-image{opacity:.88}
+.about.about-editorial{background:#fff}
+.about-editorial .about-visual-signature{background:rgba(255,255,255,.96)}
+.about-editorial .about-top-line{background:#e3e6e2}
+.about-editorial .about-story p{color:#606a65}
+.request-form{background:#fff;border-color:#e8ebe8;box-shadow:0 15px 42px #18281d08}
+.request-form input,.request-form select,.request-form textarea{background:#fff}
+.final-cta{background:#fff}
+.final-cta-image:after{background:linear-gradient(90deg,#fff 0%,#ffffffed 22%,#ffffff8c 62%,transparent),linear-gradient(0deg,#ffffff9c,transparent 34%)}
+.ss-ridge-footer{--paper:#fff;--line:#ebebe8;background:#fff}
+.ss-ridge-footer .ss-footer-inner{border-color:#ebebe8}
+.ss-ridge-footer .ss-footer-meta{border-color:#e8e9e6}
+.ss-ridge-footer .ss-footer-col h3{color:#98736d}
+/* Secondary offers and legal pages */
+.detail-hero{background:#fff}
+.detail-photo:after{background:linear-gradient(90deg,#fff 1%,#fffffffa 19%,#ffffffc5 47%,transparent 79%)}
+.section[style*="background:#f1f6f2"],.section[style*="background:#f2f7f3"]{background:#fafafa!important}
+.offer-index-card,.other-offer{border-color:#e6e6e4}
+.other-offer{background:#fff}
+.legal-page{background:#fff}
+.legal-warning{background:#faf9f7}
+.manifesto-intro,.manifesto-final{background:#fff}
+.manifesto-principles{background:#fafafa}
+@media(max-width:800px){
+ .hero-image:after{background:linear-gradient(0deg,#fff 0%,#ffffffeb 21%,#ffffffad 50%,transparent 85%)}
+ .detail-photo:after{background:linear-gradient(0deg,#fff 0%,#ffffffdc 26%,#ffffff8c 69%,transparent 95%)}
+ .manifesto-teaser{background:#fff}
+ .ss-ridge-footer{background:#fff}
+}

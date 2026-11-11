@@ -1,0 +1,137 @@
+/* Ski Society Manifesto — premium editorial page */
+body{background:#f6f3ec}
+.manifesto-label,.manifesto-eyebrow{font:800 10px/1.4 var(--display,Manrope,sans-serif);letter-spacing:.18em;text-transform:uppercase;color:#b83f32}
+.manifesto-hero{position:relative;min-height:clamp(580px,77svh,800px);display:flex;align-items:center;color:#fff;isolation:isolate;overflow:hidden;background:#25372f}
+.manifesto-hero-image{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(13,29,29,.83) 0%,rgba(14,30,30,.42) 60%,rgba(16,34,33,.10)),url('https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=2000') center 48%/cover}
+.manifesto-hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(11,29,26,.38),transparent 38%)}
+.manifesto-hero-content{padding:160px 0 95px}
+.manifesto-eyebrow{color:#f3c8a5}
+.manifesto-hero h1{font:800 clamp(56px,8vw,118px)/.97 Georgia,serif;letter-spacing:-.055em;max-width:920px;margin:21px 0 27px}
+.manifesto-hero p{font-size:clamp(16px,1.55vw,20px);line-height:1.7;max-width:580px;color:#f3f0e8}
+.manifesto-scroll{display:inline-flex;gap:25px;align-items:center;margin-top:37px;color:white;text-decoration:none;border-bottom:1px solid #fff9;padding-bottom:9px;font-weight:700;font-size:12px}
+.manifesto-intro{padding:110px 0;background:#f6f3ec}
+.manifesto-intro-grid{display:grid;grid-template-columns:.45fr 1fr;gap:60px}
+.manifesto-intro h2,.manifesto-section-heading h2,.manifesto-final h2{font:700 clamp(34px,4.4vw,66px)/1.12 Georgia,serif;letter-spacing:-.045em;color:#22332a}
+.manifesto-intro h2{max-width:830px;margin-bottom:26px}
+.manifesto-intro-grid>div>p{max-width:780px;font-size:16px;line-height:1.9;color:#526357;margin-top:19px}
+.manifesto-principles{background:#fffdfa;padding:85px 0 100px}
+.manifesto-section-heading{display:grid;grid-template-columns:.45fr 1fr;gap:60px;align-items:start;margin-bottom:36px}
+.manifesto-principles-list{border-top:1px solid #d9dfd5}
+.manifesto-principle{display:grid;grid-template-columns:.45fr 1fr 32px;gap:60px;align-items:start;border-bottom:1px solid #d9dfd5;padding:34px 0}
+.manifesto-number{font:700 12px var(--display);color:#b83f32}
+.manifesto-principle h3{font:700 clamp(26px,2.8vw,39px)/1.2 Georgia,serif;color:#23362c;margin:0 0 12px}
+.manifesto-principle p{max-width:650px;font-size:14px;line-height:1.85;color:#627267}
+.manifesto-symbol{font-size:24px;color:#b83f32}
+.manifesto-statement{position:relative;text-align:center;color:white;padding:110px 0 115px;background:linear-gradient(0deg,#152720c9,#152720a6),url('https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1800') center/cover}
+.manifesto-statement .manifesto-label{color:#f4b99d}
+.manifesto-statement blockquote{font:700 clamp(37px,5.8vw,79px)/1.13 Georgia,serif;letter-spacing:-.04em;margin:25px 0}
+.manifesto-statement blockquote em{color:#e8c8b8;font-weight:400}
+.manifesto-statement p{font-size:16px;color:#eee9e1}
+.manifesto-final{padding:95px 0;background:#f6f3ec}
+.manifesto-final-grid{display:flex;justify-content:space-between;gap:45px;align-items:end}
+.manifesto-final h2{margin:14px 0 17px}
+.manifesto-final p{max-width:625px;line-height:1.8;color:#53645a}
+.manifesto-final-actions{display:flex;flex-direction:column;gap:18px;align-items:flex-start;flex:none}
+.manifesto-back{font-weight:700;color:#304638;font-size:13px;text-underline-offset:5px}
+.manifesto-footer{padding:35px 0;background:#192c24;color:#eef2eb}
+.manifesto-footer-row{display:flex;justify-content:space-between;gap:28px;align-items:center}
+.manifesto-footer-row strong{font:800 18px var(--display);display:block;letter-spacing:.08em}
+.manifesto-footer-row small{font-size:9px;letter-spacing:.14em}
+.manifesto-footer nav{display:flex;gap:20px;flex-wrap:wrap}
+.manifesto-footer a{color:inherit;text-decoration:none;font-size:11px}
+.manifesto-footer a:hover{text-decoration:underline}
+.nav-links>a[aria-current="page"]{color:#b83f32;text-decoration:underline;text-underline-offset:7px}
+.manifesto-teaser{background:#223329;color:white;overflow:hidden}
+.manifesto-teaser-grid{display:grid;grid-template-columns:1fr .95fr;gap:0;align-items:stretch;min-height:345px}
+.manifesto-teaser-copy{padding:58px 48px 58px 0;align-self:center}
+.manifesto-teaser-copy .kicker{color:#e4a38e}
+.manifesto-teaser-copy h2{font:700 clamp(30px,3.2vw,47px)/1.14 Georgia,serif;letter-spacing:-.03em;margin:16px 0}
+.manifesto-teaser-copy p{font-size:13px;max-width:590px;line-height:1.8;color:#d9e3dc;margin-bottom:24px}
+.manifesto-teaser-image{background:linear-gradient(90deg,#223329 0%,transparent 35%),url('https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1100') center/cover;min-height:340px}
+@media(max-width:800px){.manifesto-hero{min-height:540px}.manifesto-hero-content{padding:135px 0 75px}.manifesto-intro,.manifesto-principles,.manifesto-final{padding:65px 0}.manifesto-intro-grid,.manifesto-section-heading{grid-template-columns:1fr;gap:18px}.manifesto-principle{grid-template-columns:45px 1fr 20px;gap:12px}.manifesto-final-grid{flex-direction:column;align-items:start}.manifesto-teaser-grid{grid-template-columns:1fr}.manifesto-teaser-copy{padding:44px 0}.manifesto-teaser-image{min-height:210px}.manifesto-footer-row{flex-direction:column;align-items:start}}
+@media(max-width:480px){.manifesto-hero h1{font-size:53px}.manifesto-statement{padding:70px 0}.manifesto-principle h3{font-size:24px}.manifesto-principle p{font-size:12px}.manifesto-teaser-copy{padding:36px 0}}
+
+
+/* V37 — Ski Society origin story / modern alpine editorial language */
+.ss-manifesto-v37{background:#fff;color:#23322a}
+.ss-manifesto-v37 h1,.ss-manifesto-v37 h2,.ss-manifesto-v37 h3{font-family:var(--display,Manrope,sans-serif);letter-spacing:-.065em}
+.ss-manifesto-v37 p{line-height:1.85}
+.ss-manifesto-v37 .mf-kicker{display:flex;align-items:center;gap:12px;font:800 10px/1.4 var(--display,Manrope,sans-serif);letter-spacing:.16em;color:#b83f32}
+.mf-kicker>span{height:1px;width:25px;background:currentColor}
+.mf-hero{position:relative;isolation:isolate;min-height:clamp(560px,78svh,770px);display:flex;align-items:center;background:#c9d2cf}
+.mf-hero-photo{position:absolute;inset:0;z-index:-2;background:url("https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1950") center/cover}
+.mf-hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#f9faf8ed 0%,#f9faf8d4 38%,#f9faf887 70%,#f9faf80a 100%)}
+.mf-hero-layout{position:relative;padding:160px 0 90px;width:min(var(--width),calc(100% - 92px))}
+.mf-hero-copy{max-width:850px}
+.mf-hero h1{font-size:clamp(48px,6.4vw,94px);line-height:1.03;color:#213027;margin:26px 0 22px}
+.mf-hero h1 em{color:#b83f32;font-style:normal}
+.mf-hero-copy>p{font-size:clamp(16px,1.55vw,19px);max-width:620px;color:#425449;line-height:1.7}
+.mf-hero-link{display:inline-flex;align-items:center;gap:22px;text-decoration:none;color:#26392c;border-bottom:1px solid #b83f32;padding:9px 1px;margin-top:30px;font:750 12px var(--display,Manrope,sans-serif)}
+.mf-hero-counter{display:flex;gap:14px;align-items:center;margin-top:52px;font:700 10px var(--display,Manrope,sans-serif);letter-spacing:.1em}
+.mf-hero-counter strong{color:#b83f32}
+.mf-hero-counter span{color:#5e7363}
+.mf-origin{padding:clamp(80px,9vw,130px) 0;background:#fff}
+.mf-origin-layout{display:grid;grid-template-columns:minmax(180px,.4fr) minmax(0,1fr);gap:clamp(50px,9vw,140px)}
+.mf-side-note{display:flex;flex-direction:column;gap:20px}
+.mf-side-note>span{color:#b83f32;font:800 10px var(--display,Manrope,sans-serif);letter-spacing:.13em}
+.mf-side-note>strong{font:700 15px/1.65 var(--display,Manrope,sans-serif);max-width:200px;color:#58695b}
+.mf-origin-story h2{font:800 clamp(36px,4.3vw,62px)/1.1 var(--display,Manrope,sans-serif);margin-bottom:36px}
+.mf-origin-story h2 em{font-style:normal;color:#b83f32}
+.mf-origin-story>p{max-width:760px;color:#506052;font-size:clamp(15px,1.4vw,17px);margin:20px 0}
+.mf-origin-pullquote{font:800 clamp(24px,2.7vw,39px)/1.35 var(--display,Manrope,sans-serif);letter-spacing:-.04em;border-left:3px solid #b83f32;padding:20px 0 20px 25px;margin-top:48px;max-width:680px;color:#26362b}
+.mf-turning{padding:0;background:#f3f5f1}
+.mf-turning-layout{display:grid;grid-template-columns:1fr 1fr;min-height:630px;gap:0}
+.mf-turning-photo{position:relative;overflow:hidden;min-height:630px}
+.mf-turning-photo img{width:100%;height:100%;object-fit:cover}
+.mf-turning-photo>span{position:absolute;bottom:21px;left:22px;background:#ffffffdd;color:#25362c;padding:9px 13px;font:800 9px var(--display,Manrope,sans-serif);letter-spacing:.1em}
+.mf-turning-copy{padding:clamp(40px,6.4vw,95px) 0 clamp(40px,6.4vw,95px) clamp(35px,7vw,100px);align-self:center}
+.mf-turning-copy h2{font:800 clamp(40px,4.2vw,61px)/1.1 var(--display,Manrope,sans-serif);margin:24px 0 26px}
+.mf-turning-copy p{font-size:15px;color:#596b5c;line-height:1.83;margin-top:21px;max-width:565px}
+.mf-statement{position:relative;isolation:isolate;background:#24362d;color:#fff;padding:clamp(88px,10vw,135px) 0;overflow:hidden}
+.mf-statement:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.26;background:url("https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1800") center/cover}
+.mf-statement-inner{max-width:950px;text-align:center}
+.mf-statement-inner>span{color:#f1b7a9;letter-spacing:.15em;font:800 10px var(--display,Manrope,sans-serif)}
+.mf-statement h2{font:800 clamp(45px,6.3vw,84px)/1.07 var(--display,Manrope,sans-serif);margin:29px 0 24px}
+.mf-statement h2 em{font-style:normal;color:#d5a8a0}
+.mf-statement p{font-size:17px;max-width:680px;color:#e4e8e2;margin:0 auto}
+.mf-translation{padding:clamp(85px,9vw,125px) 0;background:#fff}
+.mf-section-head{display:grid;grid-template-columns:1.15fr .65fr;gap:40px;align-items:end;margin-bottom:47px}
+.mf-section-head h2{font:800 clamp(36px,4vw,58px)/1.12 var(--display,Manrope,sans-serif);margin-top:20px}
+.mf-section-head>p{font-size:14px;color:#5d6e61;max-width:365px}
+.mf-values{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.mf-values article{min-height:255px;display:flex;flex-direction:column;align-items:start;padding:27px 25px;background:#f4f6f2;border:1px solid #e7ece5;border-radius:6px}
+.mf-values article:nth-child(2){background:#e9eee8}
+.mf-values article:nth-child(3){background:#f6f1ee}
+.mf-values article>span{color:#b83f32;font:800 10px var(--display,Manrope,sans-serif)}
+.mf-values h3{font:800 clamp(23px,2.3vw,30px)/1.16 var(--display,Manrope,sans-serif);margin:49px 0 12px}
+.mf-values p{font-size:13px;color:#657469}
+.mf-collective{padding:clamp(85px,9vw,123px) 0;background:#f4f6f2}
+.mf-collective-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.mf-collective h2{font:800 clamp(36px,4.1vw,58px)/1.11 var(--display,Manrope,sans-serif);margin-top:23px}
+.mf-collective-layout>div:nth-child(2) p{font-size:15px;color:#536458;margin-bottom:19px}
+.mf-collective-layout .mf-small{font-size:11px!important;color:#829084!important}
+.mf-final{padding:94px 0;background:#fff}
+.mf-final-layout{display:flex;justify-content:space-between;align-items:end;gap:36px}
+.mf-final h2{font:800 clamp(37px,4.2vw,60px)/1.1 var(--display,Manrope,sans-serif);margin:20px 0}
+.mf-final p{font-size:14px;color:#617164;max-width:570px}
+.mf-final-actions{flex:none;display:flex;flex-direction:column;align-items:start;gap:22px}
+.mf-link{font:750 12px var(--display,Manrope,sans-serif);color:#b83f32;text-decoration:none;border-bottom:1px solid #b83f32;padding-bottom:8px}
+@media(max-width:850px){
+ .mf-turning-layout{grid-template-columns:1fr}.mf-turning-photo{min-height:390px;height:390px}.mf-turning-copy{padding:50px 0}
+ .mf-origin-layout{grid-template-columns:1fr;gap:22px}
+ .mf-side-note strong{display:none}
+ .mf-collective-layout{gap:30px}
+}
+@media(max-width:600px){
+ .mf-hero{min-height:610px}.mf-hero-layout{width:calc(100% - 38px);padding:125px 0 55px}
+ .mf-hero h1{font-size:clamp(43px,10vw,59px)}
+ .mf-hero-copy>p{font-size:15px}.mf-hero-counter{flex-direction:column;align-items:start;gap:6px}
+ .mf-origin,.mf-translation,.mf-collective,.mf-final{padding:65px 0}
+ .mf-turning-photo{height:310px;min-height:310px}
+ .mf-turning-copy{padding:40px 0}
+ .mf-section-head,.mf-collective-layout{grid-template-columns:1fr;gap:16px}
+ .mf-values{grid-template-columns:1fr}
+ .mf-values article{min-height:180px}.mf-values h3{margin:24px 0 10px}
+ .mf-final-layout{flex-direction:column;align-items:start}
+ .mf-statement h2{font-size:clamp(37px,8vw,55px)}
+}

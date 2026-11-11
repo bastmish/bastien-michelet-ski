@@ -1,0 +1,235 @@
+/* One shared Ski Society navigation across home, resort finder, manifesto and offers. */
+.site-header .nav-shell,.site-header.is-scrolled .nav-shell{
+ background:rgba(249,248,244,.95)!important;
+ -webkit-backdrop-filter:blur(19px) saturate(115%);
+ backdrop-filter:blur(19px) saturate(115%);
+ border:1px solid rgba(37,54,43,.17)!important;
+ box-shadow:0 9px 32px rgba(20,38,27,.15),0 1px 2px rgba(20,38,27,.05);
+}
+.site-header .brand-text strong{letter-spacing:.07em}
+.site-header .nav-links{align-items:center}
+.site-header .nav-links .nav-cta{border-radius:9px}
+@media(max-width:900px){.site-header .nav-links.is-open{background:rgba(249,250,248,.97);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}}
+
+
+/* V42 — unobtrusive site-wide WhatsApp contact shortcut. */
+.ss-whatsapp-float{
+ position:fixed;right:clamp(17px,2.4vw,32px);bottom:clamp(18px,2.3vw,29px);
+ z-index:1000;width:55px;height:55px;display:grid;place-items:center;
+ border-radius:15px;background:#247b52;color:#fff;
+ box-shadow:0 10px 28px rgba(26,68,46,.23);
+ border:1px solid rgba(255,255,255,.2);
+ text-decoration:none;
+ transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+}
+.ss-whatsapp-float svg{display:block;width:29px;height:29px}
+.ss-whatsapp-float:hover{background:#1a6944;transform:translateY(-3px);box-shadow:0 14px 34px rgba(26,68,46,.31)}
+.ss-whatsapp-float:focus-visible{outline:3px solid #b83f32;outline-offset:4px}
+@media(max-width:600px){.ss-whatsapp-float{right:15px;bottom:16px;width:49px;height:49px;border-radius:13px}.ss-whatsapp-float svg{width:26px;height:26px}}
+@media(prefers-reduced-motion:reduce){.ss-whatsapp-float{transition:none}}
+
+/* V47 — Legible over snowy photos and white sections without losing premium restraint. */
+.site-header .nav-links a:not(.nav-cta){color:#24362d!important}
+.site-header .nav-links a:not(.nav-cta):hover{color:#a63b2f!important}
+.site-header .brand-text strong{color:#21372b!important}
+.site-header .nav-toggle{color:#25372d}
+@media(max-width:900px){
+ .site-header .nav-links.is-open{
+  background:rgba(249,248,244,.99)!important;
+  border:1px solid rgba(37,54,43,.11);
+  box-shadow:0 15px 32px rgba(20,38,27,.12);
+ }
+}
+
+
+/* V54 — Alpine Performance Editorial. Brand system shared by every Ski Society page.
+   The photographs are the chromatic emphasis; interface black / snow / stone. */
+:root{
+ --ss-graphite:#17191b;--ss-graphite-soft:#292c30;--ss-snow:#fafaf8;
+ --ss-stone:#dbddda;--ss-slate:#687079;
+ --snow:#fafaf8;--snow2:#f1f2ef;--ink:#17191b;--gray:#646b70;
+ --red:#17191b;--red2:#34383e;--line:#dcdfdd;
+}
+body{background:var(--ss-snow);color:var(--ss-graphite)}
+::selection{background:#cbd0ce;color:#17191b}
+:focus-visible{outline-color:#6d777b!important}
+.site-header .nav-shell,.site-header.is-scrolled .nav-shell{
+ background:rgba(250,250,248,.93)!important;
+ border-color:rgba(20,24,25,.13)!important;
+ box-shadow:0 9px 28px rgba(14,18,20,.10),0 1px 3px rgba(14,18,20,.05)!important;
+ transition:background-color .7s ease,border-color .7s ease,box-shadow .7s ease!important
+}
+.site-header .nav-links a:not(.nav-cta),
+.site-header .brand-text strong{color:#17191b!important}
+.site-header .nav-links a:not(.nav-cta):hover{color:#66717a!important}
+.site-header .nav-links .nav-cta{background:#17191b!important;border-color:#17191b!important;color:#fff!important}
+.site-header .nav-links .nav-cta:hover{background:#41464d!important;border-color:#41464d!important}
+.brand-mark path:first-child{stroke:#17191b!important}
+.brand-mark path:last-child{stroke:#7d898d!important}
+.site-header .brand-text small{color:#71787a!important}
+.kicker{color:#5b666d!important}
+.btn-primary{background:#17191b!important;border-color:#17191b!important;color:#fff!important}
+.btn-primary:hover{background:#444a50!important;border-color:#444a50!important}
+.btn-secondary,.btn-quiet{background:#fff!important;color:#17191b!important;border-color:#cdd2d1!important}
+.btn-secondary:hover,.btn-quiet:hover{background:#eef0ee!important}
+.ss-whatsapp-float:focus-visible{outline-color:#899194!important}
+body[data-scroll-tone="dark"] .site-header .nav-shell{
+ background:rgba(25,27,29,.92)!important;border-color:rgba(255,255,255,.23)!important;
+ box-shadow:0 9px 28px rgba(0,0,0,.22)!important
+}
+body[data-scroll-tone="dark"] .site-header .nav-links a:not(.nav-cta),
+body[data-scroll-tone="dark"] .site-header .brand-text strong,
+body[data-scroll-tone="dark"] .site-header .brand-text small,
+body[data-scroll-tone="dark"] .site-header .nav-toggle{color:#f9faf9!important}
+body[data-scroll-tone="dark"] .site-header .brand-mark path:first-child{stroke:#f9faf9!important}
+body[data-scroll-tone="dark"] .site-header .brand-mark path:last-child{stroke:#c1c8ca!important}
+body[data-scroll-tone="dark"] .site-header .nav-links .nav-cta{
+ background:#f9faf9!important;border-color:#f9faf9!important;color:#17191b!important
+}
+@media(max-width:900px){
+ body[data-scroll-tone="dark"] .site-header .nav-links.is-open{background:rgba(27,29,32,.98)!important}
+ body[data-scroll-tone="dark"] .site-header .nav-links.is-open a{color:#fff!important}
+}
+/* Homepage — immersive photo crossfade behind legible editorial copy. */
+.ss-architecture .hero{isolation:isolate;background:#101316!important}
+.ss-architecture .hero .hero-image{background:#101316!important}
+.ss-architecture .hero .hero-image img{filter:saturate(.92) contrast(1.08)}
+.ss-architecture .hero .ss-hero-crossfade{
+ position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0
+}
+.ss-architecture .hero .ss-hero-crossfade img{
+ position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+ opacity:0;transform:scale(1.065);filter:saturate(.90) contrast(1.065);
+ transition:opacity 1.55s cubic-bezier(.2,.75,.3,1),transform 8s linear
+}
+.ss-architecture .hero .ss-hero-crossfade img.is-active{opacity:1;transform:scale(1)}
+.ss-architecture .hero .hero-inner,.ss-architecture .hero .hero-annotation{
+ position:relative;z-index:2
+}
+.ss-architecture .hero:after{
+ content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+ background:linear-gradient(90deg,rgba(7,11,13,.76),rgba(9,14,17,.53) 46%,rgba(13,18,20,.06) 100%)!important
+}
+.ss-architecture .hero .hero-copy h1,
+.ss-architecture .hero .hero-copy h1 em{color:#fff!important;text-shadow:0 2px 24px rgba(0,0,0,.16)}
+.ss-architecture .hero .hero-copy>p{color:rgba(255,255,255,.91)!important}
+.ss-architecture .hero .hero-actions .btn-primary{background:#fafaf8!important;border-color:#fafaf8!important;color:#17191b!important}
+.ss-architecture .hero .hero-actions .btn-primary:hover{background:#dfe3e1!important;border-color:#dfe3e1!important}
+.ss-architecture .hero .hero-actions a:not(.btn-primary){color:#fff!important;border-color:rgba(255,255,255,.65)!important}
+.ss-architecture .hero .hero-annotation{color:rgba(255,255,255,.74)!important}
+/* Home light/dark alternation: scroll changes surfaces, not the image color. */
+.ss-architecture .ss-expertise-v44{background:#fafaf8!important}
+.ss-architecture .ss-expertise-v44 .ss-excellence-frame h2 em,
+.ss-architecture .ss-expertise-v44 .ss-excellence-frame h3 em{
+ color:#fff!important;text-decoration:underline;text-decoration-color:rgba(255,255,255,.7);
+ text-decoration-thickness:2px;text-underline-offset:.13em
+}
+.ss-architecture .ss-expertise-v44 .ss-excellence-frame-eyebrow{color:#e9efec!important;border-color:#dde4e0!important}
+.ss-architecture .ss-expertise-v44 .ss-excellence-frame:after{
+ background:linear-gradient(180deg,rgba(5,8,10,.04),rgba(5,8,10,.09) 30%,rgba(5,8,10,.72) 71%,rgba(5,8,10,.97))!important
+}
+.ss-architecture .ss-adn{background:#fafaf8!important}
+.ss-architecture .ss-adn h2,.ss-architecture .ss-journey-v49 h2,
+.ss-architecture .ss-questions h2{color:#17191b!important}
+.ss-architecture .ss-offers-v46,
+.ss-architecture .ss-destinations{
+ transition:background-color 1s ease,color 1s ease;
+ background:#fafaf8!important;color:#17191b
+}
+.ss-architecture .ss-offers-v46.is-tone-active,
+.ss-architecture .ss-destinations.is-tone-active{background:#17191b!important;color:#f9faf8!important}
+.ss-architecture .ss-offers-v46 h2,.ss-architecture .ss-destinations h2{transition:color 1s ease;color:#17191b!important}
+.ss-architecture .ss-offers-v46.is-tone-active h2,
+.ss-architecture .ss-destinations.is-tone-active h2{color:#f9faf8!important}
+.ss-architecture .ss-offers-v46 .ss-offer-card{color:inherit!important}
+.ss-architecture .ss-offers-v46 .ss-offer-content h3{color:inherit!important;transition:color .8s}
+.ss-architecture .ss-offers-v46 .ss-offer-content p{color:#6c7476!important;transition:color .8s}
+.ss-architecture .ss-offers-v46.is-tone-active .ss-offer-content p{color:#c6cbca!important}
+.ss-architecture .ss-offers-v46 .ss-offer-content .ss-offer-meta{color:#717a7d!important}
+.ss-architecture .ss-offers-v46.is-tone-active .ss-offer-content .ss-offer-meta{color:#bcc4c5!important}
+.ss-architecture .ss-offers-v46 .ss-offer-cta,
+.ss-architecture .ss-format-contact,
+.ss-architecture .ss-destinations .ss-region-catalogue{
+ color:#17191b!important;border-color:#70787b!important;background:#fff!important;box-shadow:none!important
+}
+.ss-architecture .ss-offers-v46 .ss-offer-card:hover .ss-offer-cta,
+.ss-architecture .ss-offers-v46 .ss-offer-card:focus-visible .ss-offer-cta,
+.ss-architecture .ss-format-contact:hover,
+.ss-architecture .ss-destinations .ss-region-catalogue:hover{
+ background:#17191b!important;color:#fff!important;border-color:#17191b!important
+}
+.ss-architecture .ss-offers-v46.is-tone-active .ss-offer-card:hover .ss-offer-cta{
+ background:#dfe3e1!important;color:#17191b!important
+}
+.ss-architecture .ss-journey-v49{
+ background:#f1f2ef!important;border-top:1px solid #d6d9d7!important
+}
+.ss-architecture .ss-journey-v49:before{background:#9ba3a2!important}
+.ss-architecture .ss-journey-v49 .ss-format-number,
+.ss-architecture .ss-journey-v49 .ss-format-micro,
+.ss-architecture .ss-journey-v49 .ss-journey-kicker-sep{color:#505c63!important}
+.ss-architecture .ss-journey-v49 .ss-format-card{border-color:#d9deda!important;border-top-color:#adb7b3!important}
+.ss-architecture .ss-journey-v49 .ss-format-card--day{border-top-color:#17191b!important}
+.ss-architecture .ss-journey-v49 .ss-format-card--day .ss-format-chip{background:#f1f2ef!important;color:#2e3639!important;border-color:#c9cfcb!important}
+.ss-architecture .ss-destinations.is-tone-active .ss-region-after-v48{
+ background:#272a2b!important;border-color:#3b4142!important
+}
+.ss-architecture .ss-destinations.is-tone-active .ss-region-after-v48 p{color:#d7dcdb!important}
+.ss-architecture .ss-destinations.is-tone-active .ss-region-soon{color:#c5cecc!important}
+.ss-architecture .ss-reviews-v49:after{
+ background:linear-gradient(90deg,rgba(8,10,11,.85),rgba(10,13,15,.44))!important
+}
+.ss-architecture .ss-reviews-v52 .ss-reviews-v52-bottom>a:hover{color:#d2dfdf!important}
+.ss-architecture .ss-reviews-v52 .ss-review-demo-tag{color:#646d72!important}
+.ss-architecture .ss-questions{background:#fafaf8!important}
+.ss-architecture .ss-contact{background:#efefeb!important}
+.ss-architecture .ss-contact-aside{background:#17191b!important}
+.ss-architecture .ss-request-form button.btn-primary{background:#17191b!important;border-color:#17191b!important;color:#fff!important}
+/* All other pages: neutral architectural background, natural-color photography. */
+.ss-destinations-page,.ss-stations-surface,.ss-manifesto-v37,.ss-offer-detail,
+.legal-page{background:#fafaf8!important;color:#17191b!important}
+.ss-destinations-page .ss-destinations-hero{
+ background:#e6e7e4!important
+}
+.ss-destinations-page .ss-destinations-hero:after{
+ background:linear-gradient(90deg,rgba(250,250,248,.94),rgba(250,250,248,.84) 53%,rgba(250,250,248,.05))!important
+}
+.ss-destinations-page .ss-destinations-hero h1,
+.ss-destinations-page .ss-territory-heading h2{color:#17191b!important}
+.ss-destinations-page .ss-destinations-hero h1 em{
+ color:#17191b!important;text-decoration:underline;text-decoration-color:#aeb6b6;
+ text-decoration-thickness:2px;text-underline-offset:.13em
+}
+.ss-destinations-page .ss-destinations-eyebrow,
+.ss-destinations-page .ss-territory-index,
+.ss-destinations-page .ss-resort-count,
+.ss-destinations-page .ss-resort-level-label{color:#69767b!important}
+.ss-destinations-page .ss-destinations-line{background:#69767b!important}
+.ss-destinations-page .ss-resort-search-field:focus-within{border-color:#6c787c!important}
+.ss-destinations-page .ss-resort-search-field svg{stroke:#69767b!important}
+.ss-destinations-page .ss-territory-filter.is-active{background:#17191b!important;border-color:#17191b!important}
+.ss-destinations-page .ss-resort{background:#fff!important;border-color:#dce0df!important}
+.ss-destinations-page .ss-resort-content h3{color:#17191b!important}
+.ss-destinations-page .ss-resort .ss-resort-cta{background:#17191b!important;border-color:#17191b!important;color:#fff!important}
+.ss-destinations-page .ss-resort .ss-resort-cta:hover{background:#444d52!important;border-color:#444d52!important}
+.ss-offer-detail .detail-hero,.ss-manifesto-v37 .mf-hero{
+ position:relative;isolation:isolate
+}
+.ss-offer-detail .detail-hero img,.ss-manifesto-v37 .mf-hero-photo{
+ filter:saturate(.91) contrast(1.05)
+}
+.ss-offer-detail a:hover,.ss-manifesto-v37 a:hover{transition:color .25s ease}
+.legal-warning{border-left-color:#646d72!important;background:#eff0ef!important;color:#343b3d!important}
+/* Global scroll-linked image entry — motion restrained and optional. */
+.ss-story-visual{overflow:hidden}
+.ss-story-visual img{transition:transform 1.6s cubic-bezier(.2,.7,.23,1)}
+.ss-story-visual.is-inview img{transform:scale(1.025)}
+@media(max-width:900px){
+ body[data-scroll-tone="dark"] .site-header .nav-links.is-open a:not(.nav-cta){color:#f9faf9!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .ss-architecture .hero .ss-hero-crossfade img,
+ .ss-architecture .ss-offers-v46,.ss-architecture .ss-destinations,
+ .ss-architecture .ss-offers-v46 h2,.ss-architecture .ss-destinations h2,
+ .site-header .nav-shell,.ss-story-visual img{transition:none!important}
+}

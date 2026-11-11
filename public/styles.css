@@ -380,6 +380,19 @@ footer{background:#192821;color:#ecf2ee;padding:31px 0 24px}
 .timeline-number{display:block;margin-top:21px;color:var(--red);font:800 10px var(--display);letter-spacing:.1em}
 .timeline-item h3{font:800 18px/1.28 var(--display);margin:9px 0}
 .timeline-item p{font-size:12px;color:#64756a;line-height:1.72;max-width:230px}
+.ski-map-section{background:white;padding:76px 0 91px}
+.map-layout{display:grid;grid-template-columns:.63fr 1.37fr;gap:48px;align-items:center}
+.map-editorial h2{font-size:clamp(30px,3vw,43px);margin:13px 0 18px}
+.map-editorial>p{max-width:350px;color:var(--gray);font-size:13px}
+.map-editorial .map-disclaimer{font-size:11px;color:#7f8c82;margin-top:16px}
+.map-editorial .btn{margin-top:23px}
+.ski-map{background:#e8f1e9;border:1px solid #d9e5db;border-radius:19px;box-shadow:0 16px 40px #20332612;overflow:hidden}
+.ski-map>svg{width:100%;height:auto;display:block}
+.ski-map .map-markers circle{filter:drop-shadow(0 2px 2px #1d362025);transition:r .2s ease}
+.ski-map:hover .map-markers circle{r:8}
+.map-legend{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:13px 23px;color:#6c7f70;font:700 11px var(--display)}
+.map-legend span:first-child{display:inline-flex;align-items:center;gap:10px}
+.map-legend i{display:block;width:9px;height:9px;background:var(--red);border-radius:50%}
 .enhanced-steps{gap:18px}
 .enhanced-steps .step{position:relative;border:1px solid #dce7df;border-top:3px solid #b83f32;border-radius:15px;padding:23px 25px 25px;background:#fff;min-height:272px;box-shadow:0 15px 36px #1f3d2a0b;transition:transform .2s,box-shadow .2s}
 .enhanced-steps .step:hover{transform:translateY(-3px);box-shadow:0 18px 40px #1f3d2a17}
@@ -401,10 +414,14 @@ footer{background:#192821;color:#ecf2ee;padding:31px 0 24px}
 .footer-legal-links a:hover{text-decoration:underline;text-underline-offset:4px}
 .full-footer .legal{margin-top:0;border-top:0;padding-top:10px;color:#b1c4b6;max-width:1000px}
 @media(max-width:1050px){
+ .map-layout{grid-template-columns:.76fr 1.24fr;gap:25px}
  .footer-columns{grid-template-columns:1.3fr 1fr 1fr 1fr;gap:20px}
  .timeline-item{padding-right:12px}
 }
 @media(max-width:800px){
+ .map-layout{grid-template-columns:1fr;gap:25px}
+ .map-editorial>p{max-width:630px}
+ .ski-map-section{padding:60px 0}
  .timeline{margin-top:36px}
  .timeline-item h3{font-size:16px}
  .timeline-item p{font-size:11px}
@@ -423,6 +440,9 @@ footer{background:#192821;color:#ecf2ee;padding:31px 0 24px}
  .timeline-number{margin:0}
  .timeline-item h3{font-size:17px;margin:6px 0}
  .timeline-item p{font-size:12px;max-width:450px}
+ .ski-map{border-radius:13px}
+ .ski-map svg .map-station-labels{font-size:12px}
+ .map-legend{padding:10px 13px;font-size:10px}
  .enhanced-steps{grid-template-columns:1fr;gap:15px}
  .enhanced-steps .step{display:grid;grid-template-columns:72px 1fr;column-gap:8px;align-items:start;min-height:0;padding:17px}
  .enhanced-steps .step .step-number{grid-column:1/-1}
@@ -437,18 +457,3 @@ footer{background:#192821;color:#ecf2ee;padding:31px 0 24px}
  .timeline:after,.timeline-item,.enhanced-steps .step{transition:none}
  .timeline:not(.is-visible) .timeline-item{opacity:1;transform:none}
 }
-
-/* Local, static alpine territory illustration: no interactive map dependencies. */
-.territories-section{background:#f6f3ec;padding:54px 0 56px}
-.territories-layout{display:grid;grid-template-columns:minmax(0,.79fr) minmax(0,1.21fr);gap:clamp(28px,4.5vw,65px);align-items:center}
-.territories-copy .kicker{margin-bottom:12px}
-.territories-copy h2{font:800 clamp(29px,3vw,46px)/1.14 var(--display);letter-spacing:-.055em;color:#25352d;margin:0 0 18px}
-.territories-copy p{max-width:490px;color:#506056;font-size:14px;line-height:1.8}
-.territories-copy .territories-note{font-size:12px;color:#748277;margin-top:13px}
-.territories-link{display:inline-flex;gap:14px;align-items:center;font:800 12px var(--display);color:var(--red);text-underline-offset:6px;margin-top:20px}
-.territories-link span{font-size:17px}
-.territories-visual{margin:0;overflow:hidden;border-radius:15px;border:1px solid #d7dcd1;background:#e5ebe2;box-shadow:0 15px 37px #303b2a10}
-.territories-visual img{width:100%;height:auto;aspect-ratio:900/510;display:block}
-.territories-visual figcaption{font:700 10px var(--display);letter-spacing:.07em;color:#6a766e;background:#fffdf8;padding:12px 18px}
-@media(max-width:800px){.territories-section{padding:41px 0}.territories-layout{grid-template-columns:1fr;gap:23px}.territories-copy h2{font-size:clamp(29px,6vw,41px)}.territories-copy p{max-width:630px}.territories-visual{border-radius:12px}}
-@media(max-width:480px){.territories-section{padding:34px 0}.territories-visual figcaption{font-size:9px;padding:11px}.territories-copy p{font-size:13px}}
