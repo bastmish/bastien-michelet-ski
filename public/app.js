@@ -84,13 +84,13 @@
    const participants=read('participants'),format=read('format'),period=read('period');
    const destination=read('destination'),station=read('station'),notes=read('notes');
    return [
-    'Bonjour Bastien,','',
-    'Je souhaite organiser une expérience privée de ski avec Ski Society.','',
+    'Bonjour Ski Society,','',
+    'Je souhaite organiser une expérience privée avec Ski Society.','',
     '*Ma demande*',
     'Prénom : '+name,
     'Expérience : '+experience,
     'Niveau : '+level,
-    'Nombre de skieurs : '+participants,
+    'Nombre de participants : '+participants,
     'Format : '+format,
     'Période souhaitée : '+(period||'À définir ensemble'),
     'Destination : '+destination+(station?' ('+station+')':''),
