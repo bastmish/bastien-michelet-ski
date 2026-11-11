@@ -15,9 +15,31 @@
  if(links)links.addEventListener('click',e=>{if(e.target.closest('a')){setNav(false);if(dropdown)dropdown.open=false;}});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){setNav(false);if(dropdown)dropdown.open=false;}});
  document.addEventListener('click',e=>{if(nav&&!nav.contains(e.target)){setNav(false);if(dropdown)dropdown.open=false;}});
+ // Hide on downward scroll, reveal immediately on upward scroll.
+ // Keep it visible near the page top, while menus are open, and when keyboard-focused.
  let ticking=false;
- function updateNav(){if(nav)nav.classList.toggle('is-scrolled',(window.scrollY||0)>32);ticking=false;}
- window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(updateNav);ticking=true;}},{passive:true});
+ let previousScroll=Math.max(0,window.scrollY||0);
+ function updateNav(){
+  const currentScroll=Math.max(0,window.scrollY||0);
+  if(nav){
+   nav.classList.toggle('is-scrolled',currentScroll>32);
+   const menuOpen=(toggle&&toggle.getAttribute('aria-expanded')==='true')||
+    (dropdown&&dropdown.open);
+   const hasFocus=nav.contains(document.activeElement);
+   if(currentScroll<=90||menuOpen||hasFocus){
+    nav.classList.remove('is-hidden');
+   }else if(currentScroll<previousScroll-1){
+    nav.classList.remove('is-hidden');
+   }else if(currentScroll>previousScroll+3){
+    nav.classList.add('is-hidden');
+   }
+  }
+  previousScroll=currentScroll;
+  ticking=false;
+ }
+ window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(updateNav);}},{passive:true});
+ if(toggle)toggle.addEventListener('click',()=>{if(nav)nav.classList.remove('is-hidden');});
+ if(nav)nav.addEventListener('focusin',()=>nav.classList.remove('is-hidden'));
  updateNav();
  // Animate the four visible stages when the timeline reaches the viewport.
  // Observe only the presentation; no user data or third-party tracking.
