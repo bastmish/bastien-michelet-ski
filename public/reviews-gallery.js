@@ -38,6 +38,13 @@
       tag.textContent = 'AVIS FICTIF · DÉMONSTRATION';
       figure.appendChild(tag);
     }
+    if (t.demo) {
+      const stars = document.createElement('div');
+      stars.className = 'ss-review-sample-stars';
+      stars.setAttribute('aria-label', 'Cinq étoiles illustratives — note fictive');
+      stars.textContent = '★★★★★';
+      figure.appendChild(stars);
+    }
     const quote = document.createElement('blockquote');
     quote.textContent = t.quote;
     figure.appendChild(quote);
