@@ -255,3 +255,78 @@
 @media(prefers-reduced-motion:reduce){
  .ss-region-card,.ss-region-card>img,.ss-region-discover{transition:none}
 }
+
+
+/* V23 — increase visual substance without adding generic decorative cards.
+   Source: real screenshots of sparse sections (Nov 11, 2026). */
+.ss-architecture .ss-section{padding-block:clamp(68px,6.6vw,98px)}
+.ss-architecture .ss-intro-row{margin-bottom:clamp(27px,3.5vw,40px)}
+.ss-architecture .ss-intro-row>p{max-width:390px}
+.ss-architecture .ss-section h2{font-size:clamp(36px,3.85vw,56px)}
+/* 03 — tighten the personal approach and add an alpine photographic punctuation. */
+.ss-architecture .ss-personal{padding-bottom:clamp(64px,6vw,88px)}
+.ss-personal-grid{margin-top:35px;gap:18px}
+.ss-personal-grid article{padding-top:24px}
+.ss-personal-grid article+article{padding-left:25px}
+.ss-personal-grid h3{font-size:clamp(21px,1.9vw,26px);margin:15px 0 9px}
+.ss-personal-grid p{font-size:13px;line-height:1.65}
+.ss-personal-photo{
+ position:relative;min-height:clamp(220px,23vw,315px);margin-top:36px;overflow:hidden;
+ background:#d2d9d4 url("https://images.pexels.com/photos/31112551/pexels-photo-31112551.jpeg?auto=compress&cs=tinysrgb&w=1700") center 53%/cover no-repeat;
+}
+.ss-personal-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#18251db5,transparent 68%),linear-gradient(0deg,#121c1e69,transparent 60%)}
+.ss-personal-photo-caption{position:absolute;bottom:27px;left:clamp(22px,3vw,43px);right:25px;z-index:1;max-width:520px;color:white}
+.ss-personal-photo-caption span{display:block;font:750 10px/1.5 var(--display,Manrope,sans-serif);letter-spacing:.17em;margin-bottom:10px}
+.ss-personal-photo-caption strong{display:block;font:750 clamp(22px,2.5vw,35px)/1.2 var(--display,Manrope,sans-serif);letter-spacing:-.055em}
+/* 05 — Trustpilot stays clearly historic; a substantial but restrained evidence composition. */
+.ss-architecture .ss-testimonials{padding:clamp(56px,5.8vw,78px) 0;background:#f8f9f7}
+.ss-trust-layout{gap:clamp(35px,5.5vw,85px)}
+.ss-trust-layout h2{font-size:clamp(34px,3.4vw,49px)}
+.ss-trust-evidence{position:relative;border-left:2px solid #b83f32;padding:6px 0 6px 32px}
+.ss-trust-evidence-top{display:flex;align-items:center;gap:11px;margin-bottom:17px;color:#b83f32;font:800 10px/1.4 var(--display,Manrope,sans-serif);letter-spacing:.13em}
+.ss-trust-evidence-rule{width:28px;height:1px;background:#b83f32}
+.ss-trust-evidence>p{font:650 clamp(17px,1.6vw,22px)/1.5 var(--display,Manrope,sans-serif);color:#26342c;letter-spacing:-.035em;margin:0 0 22px}
+.ss-trust-history{padding-top:17px;border-top:1px solid #e0e5df}
+.ss-trust-history>span{display:block;font-size:12px;color:#6c756d;line-height:1.75;max-width:440px}
+.ss-trust-history .ss-inline-link{margin-top:13px}
+/* 06 — more compact offering height; visual hierarchy through large typographic numbering. */
+.ss-architecture .ss-formules{padding-block:clamp(64px,6vw,88px);background:#fbfbfa}
+.ss-formules-grid article{min-height:215px;padding-top:25px;padding-bottom:12px}
+.ss-formules-grid h3{margin:15px 0 10px}
+.ss-formules-grid p{line-height:1.65;font-size:13px}
+.ss-formules-grid a{padding-top:14px}
+/* 08 — use real mountain photo and overlay instead of a large pale UI-style box. */
+.ss-architecture .ss-contact{padding-block:clamp(64px,6vw,95px)}
+.ss-contact-layout{gap:clamp(40px,6vw,85px)}
+.ss-contact-aside{
+ position:relative;min-height:315px;padding:0;overflow:hidden;background:#293935;
+ border:0;display:flex;align-items:flex-end;color:white;
+}
+.ss-contact-aside:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#101f20dd,#101f2070 38%,transparent 86%)}
+.ss-contact-aside>img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.75)}
+.ss-contact-aside-content{position:relative;z-index:1;padding:26px 32px 29px;width:100%}
+.ss-contact-aside-content>span{font:800 10px/1.5 var(--display,Manrope,sans-serif);letter-spacing:.15em;color:#f6d0c8}
+.ss-contact-aside-content p{font:700 clamp(22px,2.15vw,30px)/1.32 var(--display,Manrope,sans-serif);letter-spacing:-.045em;color:white;margin:12px 0 17px}
+.ss-contact-aside-content>a{font:750 12px/1.4 var(--display,Manrope,sans-serif);color:#fff;text-decoration:none;border-bottom:1px solid #fff;padding-bottom:7px}
+.ss-contact-layout>div:first-child>p{margin:17px 0 20px}
+/* Keep the footer near enough to the last CTA */
+.ss-architecture .ss-contact+.ss-ridge-footer{margin-top:0}
+@media(max-width:800px){
+ .ss-architecture .ss-section{padding-block:62px}
+ .ss-architecture .ss-intro-row{margin-bottom:26px}
+ .ss-personal-grid{margin-top:30px}
+ .ss-personal-photo{margin-top:28px}
+ .ss-contact-aside{min-height:280px}
+}
+@media(max-width:600px){
+ .ss-architecture .ss-section{padding-block:52px}
+ .ss-personal-grid{margin-top:22px}
+ .ss-personal-grid article,.ss-personal-grid article+article{padding-top:19px;padding-bottom:19px}
+ .ss-personal-photo{min-height:220px;margin-top:20px}
+ .ss-personal-photo-caption{bottom:22px}
+ .ss-personal-photo-caption strong{font-size:23px}
+ .ss-trust-evidence{padding-left:21px}
+ .ss-contact-aside{min-height:260px}
+ .ss-contact-aside-content{padding:21px 23px}
+ .ss-formules-grid article,.ss-formules-grid article+article{min-height:0}
+}
