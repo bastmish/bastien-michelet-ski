@@ -233,3 +233,48 @@ body[data-scroll-tone="dark"] .site-header .nav-links .nav-cta{
  .ss-architecture .ss-offers-v46 h2,.ss-architecture .ss-destinations h2,
  .site-header .nav-shell,.ss-story-visual img{transition:none!important}
 }
+
+/* V56 — Hero alignment: inset the complete copy block from the viewport edge. */
+@media(min-width:901px){
+ .ss-architecture .hero .hero-inner{
+  width:min(1320px,calc(100% - 120px))!important;
+  margin-inline:auto!important;
+  padding-inline:0!important;
+ }
+ .ss-architecture .hero .hero-copy{
+  width:min(700px,calc(100% - 48px))!important;
+  max-width:700px!important;
+  margin-left:clamp(40px,5.5vw,96px)!important;
+  margin-right:0!important;
+ }
+ .ss-architecture .hero .hero-copy h1{
+  max-width:700px!important;
+  font-size:clamp(46px,4.8vw,72px)!important;
+  line-height:1.08!important;
+  letter-spacing:-.06em!important;
+ }
+ .ss-architecture .hero .hero-copy>p{
+  max-width:560px!important;
+  font-size:clamp(17px,1.35vw,20px)!important;
+  line-height:1.6!important;
+ }
+}
+@media(max-width:900px){
+ .ss-architecture .hero .hero-inner{
+  width:calc(100% - 56px)!important;
+  margin-inline:auto!important;
+ }
+ .ss-architecture .hero .hero-copy{
+  max-width:100%!important;
+  margin-left:0!important;
+  margin-right:0!important;
+ }
+ .ss-architecture .hero .hero-copy h1{
+  max-width:100%!important;
+  font-size:clamp(38px,8vw,56px)!important;
+ }
+}
+@media(max-width:600px){
+ .ss-architecture .hero .hero-inner{width:calc(100% - 40px)!important}
+ .ss-architecture .hero .hero-copy h1{font-size:clamp(37px,10.4vw,51px)!important}
+}
