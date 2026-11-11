@@ -197,3 +197,23 @@
 .ss-destinations-hero-inner>p{font-size:clamp(16px,1.6vw,19px)!important;line-height:1.52!important;max-width:650px;color:#34493c!important}
 @media(max-width:800px){.ss-destinations-hero-inner>p{font-size:16px!important}}
 @media(max-width:600px){.ss-destinations-hero-inner>p{font-size:15px!important}}
+
+/* V35 — restrained rounded rectangle CTA matching the glass navigation/search. */
+.ss-resort .ss-resort-cta{
+ border-radius:10px!important;
+ background:#24362d;
+ padding-inline:16px 10px!important;
+ box-shadow:0 5px 16px rgba(24,43,31,.13);
+}
+.ss-resort .ss-resort-cta>span{
+ border-radius:7px;
+ background:rgba(255,255,255,.13);
+}
+.ss-resort .ss-resort-cta:hover{
+ background:#b83f32;border-color:#b83f32;
+ box-shadow:0 7px 21px rgba(184,63,50,.18);
+}
+@media(max-width:600px){
+ .ss-resort .ss-resort-cta{border-radius:8px!important;padding:3px 4px 3px 12px!important}
+ .ss-resort .ss-resort-cta>span{border-radius:6px}
+}
