@@ -189,3 +189,6 @@
  .ss-resort-cta>span{width:23px;height:23px;font-size:13px}
  .ss-resort-photo img{object-position:center}
 }
+
+/* Preserve full page heading without clipping on mid-sized desktops. */
+.ss-destinations-hero h1{white-space:normal;max-width:640px;font-size:clamp(35px,3.7vw,54px)!important}
