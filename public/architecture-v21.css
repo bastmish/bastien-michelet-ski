@@ -651,3 +651,9 @@
  .ss-request-side-body{padding:25px}
 }
 @media(prefers-reduced-motion:reduce){.ss-adn-tile,.ss-region-catalogue{transition:none}}
+
+/* V29 finishing touches */
+.ss-request-fields label[hidden]{display:none!important}
+.ss-review-sample-stars{font:800 19px/1 var(--display,Manrope,sans-serif);letter-spacing:.09em;color:#b83f32;margin:-1px 0 14px}
+.ss-review-demo-notice{font-size:9px!important;padding:6px 9px;letter-spacing:.07em}
+.ss-reviews-v26 .ss-reviews-heading>p:not(.ss-review-demo-notice){max-width:500px}
