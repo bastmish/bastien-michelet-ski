@@ -379,3 +379,48 @@ body[data-scroll-tone="dark"] .site-header .nav-links .nav-cta{
 @media(prefers-reduced-motion:reduce){
  .ss-architecture .ss-photo-panel img,.ss-architecture .ss-photo-panel-label>span{transition:none}
 }
+
+/* V61 — The original expertise copy now lives directly on the edge-to-edge diptych. */
+.ss-architecture .ss-expertise-editorial{background:#fafaf8;padding:0}
+.ss-architecture .ss-expertise-editorial-intro{padding-block:clamp(19px,2.8vw,36px)}
+.ss-architecture .ss-expertise-editorial-intro .kicker{color:#4e5a60!important}
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-label{
+ display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;
+ gap:0;max-width:650px;
+ inset:auto clamp(24px,3.5vw,57px) clamp(28px,3.7vw,58px);
+ text-shadow:0 2px 17px rgba(0,0,0,.27);
+}
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-eyebrow{
+ display:block;margin-bottom:15px;
+ font:750 10px/1.45 var(--display,Manrope,sans-serif);
+ letter-spacing:.13em;color:rgba(255,255,255,.89);
+}
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-label h2,
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-label h3{
+ color:#fff!important;font:750 clamp(30px,3.15vw,51px)/1.11 var(--display,Manrope,sans-serif);
+ letter-spacing:-.065em;margin:0 0 17px;
+}
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-label h2 em,
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-label h3 em{
+ color:#fff!important;font-style:normal;
+}
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-label p{
+ font:450 clamp(12px,1.06vw,15px)/1.65 var(--font,"DM Sans",sans-serif);
+ max-width:470px;color:rgba(255,255,255,.94);
+ margin:0;
+}
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-shade{
+ background:linear-gradient(180deg,rgba(8,11,13,.02),rgba(8,11,13,.12) 30%,rgba(8,11,13,.82) 100%);
+}
+.ss-architecture .ss-expertise-editorial .ss-excellence-foot{
+ padding-block:clamp(25px,3vw,44px);
+}
+@media(max-width:760px){
+ .ss-architecture .ss-expertise-editorial .ss-photo-panel{height:clamp(470px,110vw,640px)}
+ .ss-architecture .ss-expertise-editorial .ss-photo-panel-label{inset:auto 24px 28px}
+ .ss-architecture .ss-expertise-editorial .ss-photo-panel-label h2,
+ .ss-architecture .ss-expertise-editorial .ss-photo-panel-label h3{
+  font-size:clamp(31px,8vw,45px);margin-bottom:13px;
+ }
+ .ss-architecture .ss-expertise-editorial .ss-photo-panel-label p{font-size:13px}
+}
