@@ -304,3 +304,21 @@ body[data-scroll-tone="dark"] .site-header .nav-links .nav-cta{
 @media(prefers-reduced-motion:reduce){
  .site-header{transition:none!important}
 }
+
+/* V59 — Hero full bleed image: remove legacy split background and pale rectangle. */
+.ss-architecture .hero{position:relative!important;isolation:isolate!important;background:#101316!important}
+.ss-architecture .hero .hero-image{display:none!important}
+.ss-architecture .hero::before{
+ content:"";position:absolute;inset:0;display:block;z-index:0;pointer-events:none;
+ background-image:url("https://images.pexels.com/photos/31112554/pexels-photo-31112554.jpeg?auto=compress&cs=tinysrgb&w=1900");
+ background-size:cover;background-repeat:no-repeat;background-position:center 44%;
+}
+.ss-architecture .hero::after{
+ content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+ background:linear-gradient(90deg,rgba(8,11,14,.73) 0%,rgba(8,11,14,.55) 32%,rgba(8,11,14,.22) 64%,rgba(8,11,14,.07) 100%)!important;
+}
+.ss-architecture .hero .hero-inner,.ss-architecture .hero .hero-annotation{position:relative!important;z-index:2!important}
+@media(max-width:600px){
+ .ss-architecture .hero::before{background-position:63% center}
+ .ss-architecture .hero::after{background:linear-gradient(90deg,rgba(8,11,14,.74),rgba(8,11,14,.35))!important}
+}
