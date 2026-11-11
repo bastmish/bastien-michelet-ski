@@ -75,6 +75,12 @@
    if(!hasStation)stationInput.value='';
   };
   destinationSelect.addEventListener('change',updateStation);
+  // Preserve the station selected from the resort directory when entering the questionnaire.
+  const selectedStation=new URLSearchParams(window.location.search).get('station');
+  if(selectedStation && selectedStation.trim()){
+    destinationSelect.value="J'ai une station en tête";
+    stationInput.value=selectedStation.trim().slice(0,100);
+  }
   updateStation();
  }
  if(inquiryForm){
