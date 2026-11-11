@@ -454,3 +454,23 @@ body h1,body h2,body h3{letter-spacing:-.045em}
 body .site-header .nav-links>a,
 body .site-header .offer-dropdown summary{font-weight:600!important;letter-spacing:.005em!important}
 body .site-header .brand-text strong{font-weight:700!important;letter-spacing:.045em!important}
+
+/* V65 — Clash Display: lighter editorial headings and more open tracking. */
+body h1,body h2,body h3,
+body h1 em,body h2 em,body h3 em{
+ font-family:"Clash Display",Arial,sans-serif!important;
+ font-weight:500!important;
+ letter-spacing:-.018em!important;
+}
+.ss-architecture .hero .hero-copy h1,
+.ss-architecture .hero .hero-copy h1 em{
+ font-weight:500!important;
+ letter-spacing:-.022em!important;
+}
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-label h2,
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-label h2 em,
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-label h3,
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-label h3 em{
+ font-weight:500!important;
+ letter-spacing:-.018em!important;
+}
