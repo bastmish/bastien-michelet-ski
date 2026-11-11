@@ -1620,3 +1620,78 @@
 @media(prefers-reduced-motion:reduce){
  .ss-architecture .ss-format-contact,.ss-architecture .ss-reviews-v49-content>a{transition:none}
 }
+
+
+/* V50 — refined format section, unified time/quote chips, restrained visual energy. */
+.ss-architecture .ss-journey-v49{
+ background:
+  radial-gradient(ellipse at 100% 0%,rgba(184,63,50,.055),transparent 40%),
+  radial-gradient(ellipse at 0% 100%,rgba(39,53,46,.045),transparent 37%),
+  #f7f6f2!important;
+ padding:clamp(60px,6.6vw,92px) 0 clamp(50px,5.7vw,78px);
+}
+.ss-architecture .ss-journey-v49 .ss-journey-heading{margin-bottom:clamp(27px,3.4vw,42px)}
+.ss-architecture .ss-journey-v49 .ss-journey-heading h2{
+ font-size:clamp(34px,3.7vw,54px)!important;
+ line-height:1.10;letter-spacing:-.06em;
+}
+.ss-architecture .ss-journey-v49 .ss-journey-heading>p{
+ max-width:700px;color:#657369;font-size:14px;line-height:1.75;
+}
+.ss-architecture .ss-journey-v49 .ss-format-grid{gap:clamp(12px,1.4vw,19px)}
+.ss-architecture .ss-journey-v49 .ss-format-card{
+ position:relative;box-sizing:border-box;
+ min-height:365px;padding:clamp(23px,2.25vw,32px);
+ background:rgba(255,255,255,.91);
+ border:1px solid rgba(39,53,46,.1);border-radius:11px;
+ box-shadow:0 11px 33px rgba(26,42,31,.045);
+}
+.ss-architecture .ss-journey-v49 .ss-format-card--day{
+ background:#fff;border-color:rgba(184,63,50,.32);
+ box-shadow:0 17px 38px rgba(26,42,31,.075);
+}
+.ss-architecture .ss-journey-v49 .ss-format-number{
+ font-size:25px;gap:7px;margin-bottom:22px;
+}
+.ss-architecture .ss-journey-v49 .ss-format-card h3{
+ font-size:clamp(23px,2.12vw,31px);margin-bottom:13px;
+}
+.ss-architecture .ss-journey-v49 .ss-format-card>p{
+ font-size:13px;line-height:1.75;margin-bottom:23px;
+}
+.ss-architecture .ss-journey-v49 .ss-format-bottom{
+ gap:12px;padding-top:18px;margin-top:auto;
+ border-color:#e7e9e2;
+}
+.ss-architecture .ss-journey-v49 .ss-format-micro{
+ color:#9c4437;letter-spacing:.11em;
+}
+.ss-architecture .ss-journey-v49 .ss-format-chips{
+ display:flex;flex-wrap:wrap;align-items:flex-start;gap:7px;
+}
+.ss-architecture .ss-journey-v49 .ss-format-chip{
+ display:inline-flex;align-items:center;justify-content:center;
+ box-sizing:border-box;min-height:34px;padding:8px 11px;
+ border:1px solid #e3e5df;border-radius:6px;
+ background:#f5f5f1;color:#364b40;
+ font:750 11px/1.35 var(--display,Manrope,sans-serif);
+ letter-spacing:-.02em;white-space:nowrap;
+}
+.ss-architecture .ss-journey-v49 .ss-format-card--day .ss-format-chip{
+ background:#fbf7f4;border-color:rgba(184,63,50,.25);
+ color:#8f3d32;
+}
+.ss-architecture .ss-journey-v49 .ss-format-footer{margin-top:25px}
+.ss-architecture .ss-journey-v49 .ss-format-contact{
+ border-radius:7px;min-height:43px;
+}
+@media(max-width:1020px) and (min-width:721px){
+ .ss-architecture .ss-journey-v49 .ss-format-card{padding:20px;min-height:385px}
+ .ss-architecture .ss-journey-v49 .ss-format-card h3{font-size:clamp(21px,2.4vw,27px)}
+ .ss-architecture .ss-journey-v49 .ss-format-chip{font-size:10px;padding:7px 8px}
+}
+@media(max-width:720px){
+ .ss-architecture .ss-journey-v49 .ss-format-card{min-height:0;padding:25px}
+ .ss-architecture .ss-journey-v49 .ss-format-card h3{min-height:0;font-size:28px}
+ .ss-architecture .ss-journey-v49 .ss-format-number{margin-bottom:19px}
+}
