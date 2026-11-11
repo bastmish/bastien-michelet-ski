@@ -714,3 +714,92 @@
  .ss-architecture .ss-hero-signatures>span:before{left:11px;width:18px}
  .ss-architecture .ss-hero-signatures strong{font-size:11px}
 }
+
+
+/* V38 — high-end, quiet home hero: no decorative arrows or numbered tiles. */
+.ss-architecture .hero .hero-copy{max-width:840px}
+.ss-architecture .hero h1{
+ max-width:810px;font:800 clamp(46px,5.75vw,82px)/1.055 var(--display,Manrope,sans-serif);
+ letter-spacing:-.075em;
+}
+.ss-architecture .hero h1 em{font-style:normal;color:#b83f32}
+.ss-architecture .hero-copy>p{max-width:590px}
+.ss-architecture .hero .hero-actions{display:flex;align-items:center;gap:30px;margin-top:31px}
+.ss-architecture .hero .hero-actions .btn-primary{
+ border-radius:9px;padding:16px 25px;min-height:51px;
+ background:#26372f;color:#fff;box-shadow:0 9px 22px rgba(25,43,32,.15);
+ transition:background .2s,transform .2s,box-shadow .2s;
+}
+.ss-architecture .hero .hero-actions .btn-primary:hover{
+ background:#b83f32;transform:translateY(-2px);box-shadow:0 14px 32px rgba(25,43,32,.17);
+}
+.ss-architecture .hero .hero-actions .ss-hero-contact{
+ display:inline-flex;position:relative;align-items:center;justify-content:center;
+ min-height:44px;padding:7px 0!important;text-decoration:none;
+ font:750 13px/1.4 var(--display,Manrope,sans-serif);letter-spacing:-.015em;
+ color:#293d30!important;background:transparent!important;border:0!important;
+ border-bottom:0!important;border-radius:0!important;box-shadow:none!important;
+ transition:color .2s;
+}
+.ss-architecture .hero .hero-actions .ss-hero-contact:after{
+ content:"";position:absolute;bottom:5px;left:0;width:100%;height:1px;
+ background:#b83f32;transform:scaleX(.42);transform-origin:left;
+ transition:transform .26s ease;
+}
+.ss-architecture .hero .hero-actions .ss-hero-contact:hover{color:#b83f32!important}
+.ss-architecture .hero .hero-actions .ss-hero-contact:hover:after{transform:scaleX(1)}
+/* Four floating editorial labels: subtle mica-glass, individual rhythm, no counters. */
+.ss-architecture .ss-hero-signatures{
+ display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;
+ width:min(1130px,calc(100% - 84px));bottom:28px;
+ padding:0!important;border:0!important;background:transparent!important;
+ box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+ border-radius:0!important;align-items:stretch;
+}
+.ss-architecture .ss-hero-signatures .ss-hero-signature{
+ position:relative;display:flex;flex-direction:column;align-items:flex-start;
+ justify-content:space-between;gap:25px;min-height:110px;
+ padding:22px 23px 23px!important;border:1px solid rgba(255,255,255,.72)!important;
+ border-radius:12px!important;background:rgba(252,253,250,.79);
+ backdrop-filter:blur(19px) saturate(112%);-webkit-backdrop-filter:blur(19px) saturate(112%);
+ box-shadow:0 12px 32px rgba(28,43,34,.085);overflow:hidden;
+ transform:translateY(0);transition:transform .3s ease,background .3s ease,box-shadow .3s ease;
+}
+.ss-architecture .ss-hero-signatures .ss-hero-signature:before{content:none!important}
+.ss-architecture .ss-hero-signatures .ss-hero-signature:nth-child(2){background:rgba(245,248,244,.87)}
+.ss-architecture .ss-hero-signatures .ss-hero-signature:nth-child(3){background:rgba(250,247,244,.85)}
+.ss-architecture .ss-hero-signatures .ss-hero-signature:nth-child(4){background:rgba(248,249,246,.87)}
+.ss-architecture .ss-hero-signatures .ss-hero-signature:hover{transform:translateY(-5px);background:rgba(255,255,255,.94);box-shadow:0 21px 44px rgba(28,43,34,.13)}
+.ss-architecture .ss-hero-signatures .ss-signature-mark{
+ display:block;width:24px;height:2px;border-radius:4px;background:#b83f32;
+ flex:none;opacity:.86;
+}
+.ss-architecture .ss-hero-signatures .ss-hero-signature strong{
+ color:#26392f;font:750 clamp(12px,1.15vw,15px)/1.36 var(--display,Manrope,sans-serif);
+ letter-spacing:-.025em;max-width:215px;
+}
+@media(max-width:900px){
+ .ss-architecture .ss-hero-signatures{width:calc(100% - 44px);gap:8px}
+ .ss-architecture .ss-hero-signatures .ss-hero-signature{min-height:99px;padding:18px!important;gap:17px}
+ .ss-architecture .ss-hero-signatures .ss-hero-signature strong{font-size:12px}
+}
+@media(max-width:720px){
+ .ss-architecture .hero{padding-bottom:236px}
+ .ss-architecture .hero h1{font-size:clamp(43px,8.6vw,64px)}
+ .ss-architecture .ss-hero-signatures{grid-template-columns:repeat(2,minmax(0,1fr));width:calc(100% - 32px);gap:8px;bottom:12px}
+ .ss-architecture .ss-hero-signatures .ss-hero-signature{min-height:87px;padding:15px!important;gap:11px;border:1px solid rgba(255,255,255,.72)!important}
+ .ss-architecture .ss-hero-signatures .ss-hero-signature:nth-child(n+3){border-top:1px solid rgba(255,255,255,.72)!important}
+ .ss-architecture .ss-hero-signatures .ss-hero-signature strong{font-size:12px}
+ .ss-architecture .hero .hero-actions{gap:19px}
+}
+@media(max-width:390px){
+ .ss-architecture .hero h1{font-size:41px}
+ .ss-architecture .hero .hero-actions{gap:13px}
+ .ss-architecture .hero .hero-actions .btn-primary{padding:13px 16px;font-size:12px}
+ .ss-architecture .hero .hero-actions .ss-hero-contact{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ss-architecture .ss-hero-signatures .ss-hero-signature,
+ .ss-architecture .hero .hero-actions .btn-primary,
+ .ss-architecture .hero .hero-actions .ss-hero-contact:after{transition:none}
+}
