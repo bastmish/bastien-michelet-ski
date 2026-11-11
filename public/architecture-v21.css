@@ -406,3 +406,61 @@
  display:block;color:#b83f32;font:800 9px/1.5 var(--display,Manrope,sans-serif);
  letter-spacing:.08em;margin-bottom:13px;
 }
+
+
+/* V28 — storytelling layout additions, using Ski Society's existing visual language. */
+.ss-adn{background:#fff}
+.ss-adn-grid{margin-top:20px}
+.ss-adn-caveat{margin-top:18px;font-size:11px!important;color:#879087!important}
+.ss-society{background:#fff}
+.ss-society-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,90px);align-items:center}
+.ss-society-photo{position:relative;height:460px;margin:0;overflow:hidden;background:#e5e8e5}
+.ss-society-photo img{width:100%;height:100%;object-fit:cover}
+.ss-society-photo figcaption{position:absolute;left:0;bottom:0;background:#ffffffeb;color:#606a65;padding:9px 15px;font-size:10px}
+.ss-society-founder h3{font:800 clamp(33px,3.5vw,49px)/1.15 var(--display,Manrope,sans-serif);letter-spacing:-.06em;margin:14px 0 18px}
+.ss-society-founder p{max-width:525px;font-size:14px}
+.ss-society-founder .ss-society-lead{font:650 clamp(18px,1.8vw,23px)/1.5 var(--display,Manrope,sans-serif);color:#303f35;margin-bottom:13px}
+.ss-society-facts{display:flex;flex-wrap:wrap;gap:9px;margin:23px 0 12px}
+.ss-society-facts span{font:750 10px/1.5 var(--display,Manrope,sans-serif);color:#4b5a50;border:1px solid #dce3dc;padding:9px 12px}
+.ss-society-next{border-top:1px solid #e6eae5;margin-top:27px;padding-top:18px;display:grid;grid-template-columns:210px 1fr;gap:20px;align-items:start}
+.ss-society-next>span{font:800 10px/1.5 var(--display,Manrope,sans-serif);letter-spacing:.12em;color:#b83f32}
+.ss-society-next>p{font-size:12px;max-width:650px}
+.ss-architecture .ss-adn .ss-intro-row{margin-bottom:32px}
+.ss-architecture .ss-society .ss-intro-row{margin-bottom:38px}
+/* Preserve V27 testimonial cards and add the requested mountain backdrop + frosted glass. */
+.ss-architecture .ss-reviews-v26{
+ position:relative;isolation:isolate;overflow:hidden;
+ background:
+ linear-gradient(180deg,rgba(248,249,247,.84),rgba(248,249,247,.88)),
+ url("https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1800")
+ center center/cover no-repeat!important;
+}
+.ss-reviews-v26>.wrap{position:relative;z-index:1}
+.ss-reviews-v26 .ss-review-card{
+ background:rgba(255,255,255,.73);border:1px solid rgba(255,255,255,.78);
+ backdrop-filter:blur(11px);-webkit-backdrop-filter:blur(11px);
+ box-shadow:0 14px 35px rgba(31,43,39,.12);
+}
+.ss-reviews-v26 .ss-review-avatar{background:rgba(255,255,255,.78);border:1px solid rgba(32,40,39,.10)}
+.ss-reviews-v26 .ss-reviews-topline{border-color:rgba(100,115,107,.25);background:rgba(255,255,255,.20);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.ss-reviews-v26 .ss-reviews-empty{background:rgba(255,255,255,.74);backdrop-filter:blur(11px)}
+@media(max-width:950px){
+ .ss-society-layout{gap:30px}
+ .ss-society-photo{height:400px}
+}
+@media(max-width:800px){
+ .ss-society-layout{grid-template-columns:1fr}
+ .ss-society-photo{height:350px}
+ .ss-society-next{grid-template-columns:1fr;gap:9px}
+}
+@media(max-width:600px){
+ .ss-society-photo{height:310px}
+ .ss-society-founder h3{font-size:34px}
+ .ss-society-facts{gap:6px}
+ .ss-society-facts span{font-size:9px;padding:7px 9px}
+ .ss-architecture .ss-reviews-v26{
+  background:linear-gradient(rgba(248,249,247,.88),rgba(248,249,247,.90)),
+  url("https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1200") center/cover no-repeat!important;
+ }
+ .ss-reviews-v26 .ss-review-card{background:rgba(255,255,255,.80)}
+}
