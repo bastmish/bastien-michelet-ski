@@ -176,7 +176,8 @@
  const main=document.querySelector('main');
  const homepage=main&&main.classList.contains('ss-architecture');
  const toneSections=homepage?[
-  main.querySelector('#offres'),main.querySelector('#destinations')
+  main.querySelector('#adn'),main.querySelector('#offres'),
+  main.querySelector('#formules'),main.querySelector('#destinations')
  ].filter(Boolean):[];
  toneSections.forEach(section=>section.dataset.editorialTone='dark');
  let toneScheduled=false;
@@ -192,7 +193,7 @@
    }
   }
   const isDark=!!(active&&(active.dataset.editorialTone==='dark'||
-   active.id==='avis'||active.classList.contains('mf-hero')||
+   active.classList.contains('mf-hero')||
    active.classList.contains('detail-hero')));
   toneSections.forEach(section=>section.classList.toggle('is-tone-active',section===active));
   document.body.dataset.scrollTone=isDark?'dark':'light';
