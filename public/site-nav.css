@@ -683,15 +683,68 @@ body .btn{font-weight:650!important;letter-spacing:.01em!important}
  .ss-architecture .ss-offers-v46,.ss-architecture .ss-journey-v49,
  .ss-architecture .ss-destinations{transition:none!important}
 }
-
-/* V69 — deep black chapter revealed at Experiences; ADN fades on entry. */
-.ss-architecture .ss-adn.ss-editorial-v41{position:relative!important;isolation:isolate;background:#fafaf8!important;color:#17191b!important}
-.ss-architecture .ss-adn.ss-editorial-v41::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:#050505;opacity:0;transition:opacity 1.35s ease}
-.ss-architecture.is-entering-dark .ss-adn.ss-editorial-v41::before{opacity:1}
-.ss-architecture .ss-adn .ss-adn-heading h2{color:#17191b!important;transition:color 1.35s ease}
-.ss-architecture.is-entering-dark .ss-adn .ss-adn-heading h2{color:#fafaf8!important}
-.ss-architecture .ss-offers-v46,.ss-architecture .ss-journey-v49,.ss-architecture .ss-destinations{background:#050505!important}
-.ss-architecture .ss-journey-v49{border-top-color:#292929!important}
-.ss-architecture .ss-journey-v49 .ss-format-card,.ss-architecture .ss-journey-v49 .ss-format-card--day{background:#141414!important;border-color:#303030!important}
-.ss-architecture .ss-destinations .ss-region-after-v48{background:#141414!important;border-color:#303030!important}
-@media(prefers-reduced-motion:reduce){.ss-architecture .ss-adn.ss-editorial-v41::before,.ss-architecture .ss-adn .ss-adn-heading h2{transition:none!important}}
+/* V70 — One coherent page-wide light/dark state, triggered at ADN and Reviews.
+   All selected sections change together; photos and hero stay unchanged. */
+body:has(.ss-architecture){transition:background-color 1.45s ease}
+.ss-architecture .ss-expertise-editorial,
+.ss-architecture .ss-photo-diptych,
+.ss-architecture .ss-adn.ss-editorial-v41,
+.ss-architecture .ss-offers-v46,
+.ss-architecture .ss-journey-v49,
+.ss-architecture .ss-destinations{
+ background:#fafaf8!important;
+ background-image:none!important;
+ color:#17191b!important;
+ transition:background-color 1.45s ease,color 1.45s ease!important;
+}
+body.ski-dark-mode{background-color:#050505!important}
+body.ski-dark-mode .ss-architecture .ss-expertise-editorial,
+body.ski-dark-mode .ss-architecture .ss-photo-diptych,
+body.ski-dark-mode .ss-architecture .ss-adn.ss-editorial-v41,
+body.ski-dark-mode .ss-architecture .ss-offers-v46,
+body.ski-dark-mode .ss-architecture .ss-journey-v49,
+body.ski-dark-mode .ss-architecture .ss-destinations{
+ background-color:#050505!important;
+ color:#fafaf8!important;
+}
+.ss-architecture .ss-adn .ss-adn-heading h2,
+.ss-architecture .ss-offers-v46 h2,
+.ss-architecture .ss-journey-v49 .ss-journey-heading h2,
+.ss-architecture .ss-destinations h2{
+ color:#17191b!important;transition:color 1.45s ease!important;
+}
+body.ski-dark-mode .ss-architecture .ss-adn .ss-adn-heading h2,
+body.ski-dark-mode .ss-architecture .ss-offers-v46 h2,
+body.ski-dark-mode .ss-architecture .ss-journey-v49 .ss-journey-heading h2,
+body.ski-dark-mode .ss-architecture .ss-destinations h2{color:#fafaf8!important}
+body.ski-dark-mode .ss-architecture .ss-offers-v46 .ss-offer-content h3{color:#fafaf8!important}
+body:not(.ski-dark-mode) .ss-architecture .ss-offers-v46 .ss-offer-content h3{color:#17191b!important}
+body:not(.ski-dark-mode) .ss-architecture .ss-offers-v46 .ss-offer-content p,
+body:not(.ski-dark-mode) .ss-architecture .ss-offers-v46 .ss-offer-content .ss-offer-meta{color:#626b6c!important}
+body:not(.ski-dark-mode) .ss-architecture .ss-destinations .ss-region-note{color:#626b6c!important}
+body.ski-dark-mode .ss-architecture .ss-offers-v46 .ss-offer-content p,
+body.ski-dark-mode .ss-architecture .ss-offers-v46 .ss-offer-content .ss-offer-meta,
+body.ski-dark-mode .ss-architecture .ss-destinations .ss-region-note{color:#c4c9c9!important}
+.ss-architecture .ss-journey-v49{border-top-color:#d6d9d7!important;transition:background-color 1.45s ease,border-color 1.45s ease!important}
+body.ski-dark-mode .ss-architecture .ss-journey-v49{border-top-color:#292929!important}
+body:not(.ski-dark-mode) .ss-architecture .ss-journey-v49 .ss-format-card{background:#f1f2ef!important;color:#17191b!important;border-color:#d9deda!important}
+body.ski-dark-mode .ss-architecture .ss-journey-v49 .ss-format-card,
+body.ski-dark-mode .ss-architecture .ss-journey-v49 .ss-format-card--day{background:#141414!important;color:#fafaf8!important;border-color:#303030!important}
+body:not(.ski-dark-mode) .ss-architecture .ss-journey-v49 .ss-format-card h3,
+body:not(.ski-dark-mode) .ss-architecture .ss-journey-v49 .ss-format-card p{color:#17191b!important}
+body.ski-dark-mode .ss-architecture .ss-journey-v49 .ss-format-card h3,
+body.ski-dark-mode .ss-architecture .ss-journey-v49 .ss-format-card p{color:#fafaf8!important}
+body:not(.ski-dark-mode) .ss-architecture .ss-destinations .ss-region-after-v48{background:#f1f2ef!important;border-color:#d9deda!important}
+body.ski-dark-mode .ss-architecture .ss-destinations .ss-region-after-v48{background:#141414!important;border-color:#303030!important}
+body:not(.ski-dark-mode) .ss-architecture .ss-destinations .ss-region-after-v48 p,
+body:not(.ski-dark-mode) .ss-architecture .ss-destinations .ss-region-soon{color:#626b6c!important}
+body.ski-dark-mode .ss-architecture .ss-destinations .ss-region-after-v48 p,
+body.ski-dark-mode .ss-architecture .ss-destinations .ss-region-soon{color:#d7dcdb!important}
+.ss-architecture .ss-reviews-v52{background:#fafaf8!important;color:#17191b!important}
+@media(prefers-reduced-motion:reduce){
+ body:has(.ss-architecture),
+ .ss-architecture .ss-expertise-editorial,.ss-architecture .ss-photo-diptych,
+ .ss-architecture .ss-adn.ss-editorial-v41,.ss-architecture .ss-offers-v46,
+ .ss-architecture .ss-journey-v49,.ss-architecture .ss-destinations,
+ .ss-architecture .ss-adn .ss-adn-heading h2{transition:none!important}
+}
