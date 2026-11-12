@@ -683,3 +683,15 @@ body .btn{font-weight:650!important;letter-spacing:.01em!important}
  .ss-architecture .ss-offers-v46,.ss-architecture .ss-journey-v49,
  .ss-architecture .ss-destinations{transition:none!important}
 }
+
+/* V69 — deep black chapter revealed at Experiences; ADN fades on entry. */
+.ss-architecture .ss-adn.ss-editorial-v41{position:relative!important;isolation:isolate;background:#fafaf8!important;color:#17191b!important}
+.ss-architecture .ss-adn.ss-editorial-v41::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:#050505;opacity:0;transition:opacity 1.35s ease}
+.ss-architecture.is-entering-dark .ss-adn.ss-editorial-v41::before{opacity:1}
+.ss-architecture .ss-adn .ss-adn-heading h2{color:#17191b!important;transition:color 1.35s ease}
+.ss-architecture.is-entering-dark .ss-adn .ss-adn-heading h2{color:#fafaf8!important}
+.ss-architecture .ss-offers-v46,.ss-architecture .ss-journey-v49,.ss-architecture .ss-destinations{background:#050505!important}
+.ss-architecture .ss-journey-v49{border-top-color:#292929!important}
+.ss-architecture .ss-journey-v49 .ss-format-card,.ss-architecture .ss-journey-v49 .ss-format-card--day{background:#141414!important;border-color:#303030!important}
+.ss-architecture .ss-destinations .ss-region-after-v48{background:#141414!important;border-color:#303030!important}
+@media(prefers-reduced-motion:reduce){.ss-architecture .ss-adn.ss-editorial-v41::before,.ss-architecture .ss-adn .ss-adn-heading h2{transition:none!important}}
