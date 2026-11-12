@@ -908,3 +908,54 @@ body.ski-dark-mode .ss-architecture .ss-expertise-editorial,body.ski-dark-mode .
 @media(prefers-reduced-motion:reduce){
  .ss-architecture .ss-programme-v72::before,.ss-architecture .ss-station-action-v72 svg{transition:none!important}
 }
+
+/* V73 — single uninterrupted true-black canvas across the editorial chapter.
+   The global scroll triggers remain ADN -> reviews (app.js). */
+:root{--ss-deep-black:#030303}
+body.ski-dark-mode{background-color:var(--ss-deep-black)!important}
+body.ski-dark-mode .ss-architecture .ss-expertise-editorial,
+body.ski-dark-mode .ss-architecture .ss-photo-diptych,
+body.ski-dark-mode .ss-architecture .ss-adn.ss-editorial-v41,
+body.ski-dark-mode .ss-architecture .ss-offers-v46,
+body.ski-dark-mode .ss-architecture .ss-journey-v49,
+body.ski-dark-mode .ss-architecture .ss-destinations{
+ background:var(--ss-deep-black)!important;
+ background-color:var(--ss-deep-black)!important;
+ background-image:none!important;
+ box-shadow:none!important;
+ border-color:transparent!important;
+}
+body.ski-dark-mode .ss-architecture .ss-journey-v49,
+body.ski-dark-mode .ss-architecture .ss-programmes-v72{
+ border-top:0!important;border-bottom:0!important;
+}
+body.ski-dark-mode .ss-architecture .ss-journey-v49::before,
+body.ski-dark-mode .ss-architecture .ss-journey-v49::after{
+ background:none!important;
+ box-shadow:none!important;
+}
+/* Keep editorial dividers inside the programmes and station index; no
+   horizontal divider across the boundaries between dark sections. */
+body.ski-dark-mode .ss-architecture .ss-adn.ss-editorial-v41,
+body.ski-dark-mode .ss-architecture .ss-offers-v46,
+body.ski-dark-mode .ss-architecture .ss-destinations{
+ border-top:0!important;border-bottom:0!important;
+}
+/* The background-color transition stays smooth when entering and leaving
+   the dark chapter; suppress decorative gradients on the section canvases. */
+.ss-architecture .ss-expertise-editorial,
+.ss-architecture .ss-photo-diptych,
+.ss-architecture .ss-adn.ss-editorial-v41,
+.ss-architecture .ss-offers-v46,
+.ss-architecture .ss-journey-v49,
+.ss-architecture .ss-destinations{
+ transition:background-color 1.45s ease,color 1.45s ease!important;
+}
+@media(prefers-reduced-motion:reduce){
+ .ss-architecture .ss-expertise-editorial,
+ .ss-architecture .ss-photo-diptych,
+ .ss-architecture .ss-adn.ss-editorial-v41,
+ .ss-architecture .ss-offers-v46,
+ .ss-architecture .ss-journey-v49,
+ .ss-architecture .ss-destinations{transition:none!important}
+}
