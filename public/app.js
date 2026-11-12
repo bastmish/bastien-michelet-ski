@@ -180,6 +180,15 @@
   main.querySelector('#formules'),main.querySelector('#destinations')
  ].filter(Boolean):[];
  toneSections.forEach(section=>section.dataset.editorialTone='dark');
+ // V69: fade the ADN section into black as Experiences approaches the viewport.
+ const experiencesStart=homepage?main.querySelector('#offres'):null;
+ function updateDarkReveal(){
+  if(!experiencesStart||!main)return;
+  main.classList.toggle('is-entering-dark',experiencesStart.getBoundingClientRect().top<=window.innerHeight*.82);
+ }
+ window.addEventListener('scroll',updateDarkReveal,{passive:true});
+ window.addEventListener('resize',updateDarkReveal,{passive:true});
+ updateDarkReveal();
  let toneScheduled=false;
  function updateEditorialTone(){
   toneScheduled=false;
