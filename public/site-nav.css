@@ -748,3 +748,39 @@ body.ski-dark-mode .ss-architecture .ss-destinations .ss-region-soon{color:#d7dc
  .ss-architecture .ss-journey-v49,.ss-architecture .ss-destinations,
  .ss-architecture .ss-adn .ss-adn-heading h2{transition:none!important}
 }
+
+/* V71: unified visual polish for Ski Society. */
+.ss-architecture .ss-expertise-editorial .ss-photo-panel--transmission .ss-photo-panel-label{bottom:clamp(122px,10vw,150px)!important}
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-story{top:auto!important;bottom:clamp(28px,3.5vw,52px)!important;right:clamp(24px,3.5vw,52px)!important;min-height:47px;padding:12px 18px!important;display:inline-flex!important;align-items:center;gap:15px;border-radius:9px!important;background:#fafaf8!important;color:#17191b!important;border:1px solid #fff!important;font:650 12px/1.4 "DM Sans",sans-serif!important;box-shadow:0 10px 24px #0003!important;text-shadow:none!important}
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-story svg{flex:none;transition:transform .25s}
+.ss-architecture .ss-expertise-editorial .ss-photo-panel-story:hover svg{transform:translateX(3px)}
+.ss-architecture .ss-adn.ss-editorial-v41 .ss-adn-photo-caption{display:flex!important;align-items:flex-end!important;justify-content:flex-end!important;padding:clamp(28px,3.7vw,58px)!important}
+.ss-architecture .ss-adn.ss-editorial-v41 .ss-adn-photo-card:after{background:linear-gradient(180deg,#05060705 10%,#05060716 48%,#050607df 100%)!important}
+.ss-architecture .ss-offers-v46{padding-top:clamp(48px,5.5vw,85px)!important}
+.ss-architecture .ss-offers-v46 .ss-offers-heading{display:block!important;margin-bottom:clamp(25px,3vw,43px)!important}
+.ss-architecture .ss-offers-v46 .ss-offers-editorial-photo{display:none!important}
+.ss-architecture .ss-offers-v46 .ss-offer-grid{gap:clamp(14px,1.6vw,24px)!important}
+.ss-architecture .ss-offers-v46 .ss-offer-image,.ss-architecture .ss-offers-v46 .ss-offer-card--featured .ss-offer-image{border-radius:0!important;aspect-ratio:3/4!important;overflow:hidden!important}
+.ss-architecture .ss-offers-v46 .ss-offer-image img{transform:scale(1)!important;filter:saturate(.91) contrast(1.06);transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s ease!important}
+.ss-architecture .ss-offers-v46 .ss-offer-card:hover .ss-offer-image img,.ss-architecture .ss-offers-v46 .ss-offer-card:focus-visible .ss-offer-image img{transform:scale(1.05)!important;filter:saturate(1) contrast(1.07)}
+.ss-architecture .ss-offers-v46 .ss-offer-cta{border-radius:9px!important;font-family:"DM Sans",sans-serif!important}
+.ss-architecture .ss-journey-v49 .ss-programs-layout{display:grid;grid-template-columns:minmax(250px,.76fr) minmax(0,1.42fr);gap:clamp(32px,6vw,105px);align-items:start}
+.ss-architecture .ss-journey-v49 .ss-journey-heading{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:0!important;position:sticky;top:115px;margin:0!important}
+.ss-architecture .ss-journey-v49 .ss-journey-heading>p{max-width:335px!important;padding:0!important;margin:22px 0 0!important;border:0!important;justify-self:auto!important}
+.ss-architecture .ss-journey-v49 .ss-format-grid{display:flex!important;flex-direction:column!important;gap:0!important;border-top:1px solid #454545}
+.ss-architecture .ss-journey-v49 .ss-format-card,.ss-architecture .ss-journey-v49 .ss-format-card--day{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:10px 18px!important;align-items:start!important;min-height:0!important;padding:27px 6px 29px!important;margin:0!important;border:0!important;border-bottom:1px solid #454545!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;transition:padding .24s ease,background-color .24s ease!important}
+.ss-architecture .ss-journey-v49 .ss-format-card:hover{padding-left:15px!important;background:rgba(255,255,255,.035)!important}
+.ss-architecture .ss-journey-v49 .ss-format-number{grid-column:1/-1!important}
+.ss-architecture .ss-journey-v49 .ss-format-card h3{grid-column:1!important;margin:5px 0 0!important}
+.ss-architecture .ss-journey-v49 .ss-format-card>p{grid-column:1!important;margin:0!important;max-width:410px}
+.ss-architecture .ss-journey-v49 .ss-format-bottom{grid-column:2!important;grid-row:2/span 2!important;display:flex!important;flex-direction:column!important;align-items:flex-end!important;border:0!important;margin:5px 0 0!important;padding:0!important;gap:9px!important}
+.ss-architecture .ss-journey-v49 .ss-format-chips{display:flex!important;flex-wrap:wrap!important;justify-content:flex-end!important;gap:5px!important}
+.ss-architecture .ss-journey-v49 .ss-format-chip{border-radius:6px!important}
+.ss-architecture .ss-journey-v49 .ss-format-footer{margin-top:30px!important}
+.ss-architecture .ss-destinations .ss-region-after-v48{margin-top:clamp(36px,5vw,72px)!important;padding:24px 0!important;border:0!important;border-top:1px solid #444!important;border-bottom:1px solid #444!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+.ss-architecture .ss-destinations .ss-region-after-v48 .ss-region-after-caption p{font:500 clamp(22px,2.3vw,34px)/1.2 "DM Sans",sans-serif!important;color:#fafaf8!important;letter-spacing:-.035em!important}
+.ss-architecture .ss-destinations .ss-region-after-v48 .ss-region-catalogue{border-radius:9px!important;font-family:"DM Sans",sans-serif!important}
+body.ski-dark-mode .ss-architecture .ss-expertise-editorial,body.ski-dark-mode .ss-architecture .ss-photo-diptych,body.ski-dark-mode .ss-architecture .ss-adn.ss-editorial-v41,body.ski-dark-mode .ss-architecture .ss-offers-v46,body.ski-dark-mode .ss-architecture .ss-journey-v49,body.ski-dark-mode .ss-architecture .ss-destinations{background-color:#070809!important;background-image:linear-gradient(118deg,rgba(255,255,255,.018),transparent 38%,rgba(255,255,255,.026) 77%,transparent)!important}
+@media(max-width:1000px){.ss-architecture .ss-journey-v49 .ss-programs-layout{grid-template-columns:1fr;gap:30px}.ss-architecture .ss-journey-v49 .ss-journey-heading{position:static}}
+@media(max-width:650px){.ss-architecture .ss-expertise-editorial .ss-photo-panel--transmission .ss-photo-panel-label{bottom:120px!important}.ss-architecture .ss-expertise-editorial .ss-photo-panel-story{bottom:22px!important;right:20px!important;font-size:11px!important}.ss-architecture .ss-adn.ss-editorial-v41 .ss-adn-photo-caption{padding:24px!important}.ss-architecture .ss-offers-v46 .ss-offer-image,.ss-architecture .ss-offers-v46 .ss-offer-card--featured .ss-offer-image{aspect-ratio:4/3!important}.ss-architecture .ss-journey-v49 .ss-format-card,.ss-architecture .ss-journey-v49 .ss-format-card--day{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:12px!important}.ss-architecture .ss-journey-v49 .ss-format-bottom{align-items:flex-start!important;margin-top:6px!important}.ss-architecture .ss-journey-v49 .ss-format-chips{justify-content:flex-start!important}}
+@media(prefers-reduced-motion:reduce){.ss-architecture .ss-offers-v46 .ss-offer-image img,.ss-architecture .ss-journey-v49 .ss-format-card{transition:none!important}}
