@@ -180,15 +180,20 @@
   main.querySelector('#formules'),main.querySelector('#destinations')
  ].filter(Boolean):[];
  toneSections.forEach(section=>section.dataset.editorialTone='dark');
- // V69: fade the ADN section into black as Experiences approaches the viewport.
- const experiencesStart=homepage?main.querySelector('#offres'):null;
- function updateDarkReveal(){
-  if(!experiencesStart||!main)return;
-  main.classList.toggle('is-entering-dark',experiencesStart.getBoundingClientRect().top<=window.innerHeight*.82);
+ // V70 — global page mode. Enter when ADN approaches, return to light at Reviews.
+ // Triggers are deliberately later than the beginning of the areas they recolor.
+ const adnTrigger=homepage?main.querySelector('#adn'):null;
+ const reviewsTrigger=homepage?main.querySelector('#avis'):null;
+ function updatePageTheme(){
+  if(!homepage||!adnTrigger||!reviewsTrigger)return;
+  const threshold=window.innerHeight*.58;
+  const pastAdn=adnTrigger.getBoundingClientRect().top<=threshold;
+  const pastReviews=reviewsTrigger.getBoundingClientRect().top<=threshold;
+  document.body.classList.toggle('ski-dark-mode',pastAdn&&!pastReviews);
  }
- window.addEventListener('scroll',updateDarkReveal,{passive:true});
- window.addEventListener('resize',updateDarkReveal,{passive:true});
- updateDarkReveal();
+ window.addEventListener('scroll',updatePageTheme,{passive:true});
+ window.addEventListener('resize',updatePageTheme,{passive:true});
+ updatePageTheme();
  let toneScheduled=false;
  function updateEditorialTone(){
   toneScheduled=false;
@@ -201,7 +206,7 @@
     if(rect.top<=focus&&rect.bottom>=focus){active=block;break}
    }
   }
-  const isDark=!!(active&&(active.dataset.editorialTone==='dark'||
+  const isDark=document.body.classList.contains('ski-dark-mode')||!!(active&&(
    active.classList.contains('mf-hero')||
    active.classList.contains('detail-hero')));
   toneSections.forEach(section=>section.classList.toggle('is-tone-active',section===active));
