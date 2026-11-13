@@ -1311,3 +1311,16 @@ body.ski-dark-mode .ss-architecture .ss-reviews-v52{
  .ss-architecture .ss-offers-v46 .ss-offer-image img,
  .ss-architecture .ss-offers-v46 .ss-offer-cta{transition:none!important}
 }
+
+/* V77: match legibility to the actual shared page tone during the crossfade. */
+body:not(.ski-dark-mode) .ss-architecture .ss-offers-v46 .ss-offers-lead-v77{color:#60686b!important}
+body:not(.ski-dark-mode) .ss-architecture .ss-offers-v46 .ss-offer-content h3{color:#17191b!important}
+body:not(.ski-dark-mode) .ss-architecture .ss-offers-v46 .ss-offer-content p,
+body:not(.ski-dark-mode) .ss-architecture .ss-offers-v46 .ss-offer-meta{color:#626b6c!important}
+body:not(.ski-dark-mode) .ss-architecture .ss-offers-v46 .ss-offer-cta{
+ color:#17191b!important;border-bottom-color:#82898b!important;
+}
+body:not(.ski-dark-mode) .ss-architecture .ss-offers-v46 .ss-offer-card:hover .ss-offer-cta,
+body:not(.ski-dark-mode) .ss-architecture .ss-offers-v46 .ss-offer-card:focus-visible .ss-offer-cta{
+ color:#17191b!important;border-bottom-color:#17191b!important;
+}
