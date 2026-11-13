@@ -180,16 +180,18 @@
   main.querySelector('#formules'),main.querySelector('#destinations')
  ].filter(Boolean):[];
  toneSections.forEach(section=>section.dataset.editorialTone='dark');
- // V70 — global page mode. Enter when ADN approaches, return to light at Reviews.
- // Triggers are deliberately later than the beginning of the areas they recolor.
- const adnTrigger=homepage?main.querySelector('#adn'):null;
- const reviewsTrigger=homepage?main.querySelector('#avis'):null;
+ // V76 — the heading itself is the visual trigger, not the section boundary.
+ // Page black starts at "La montagne se vit à votre manière";
+ // all sections including reviews return to white at "Vos retours sur les pistes".
+ const offersTitle=homepage?main.querySelector('#tiles-title'):null;
+ const reviewsTitle=homepage?main.querySelector('#reviews-title'):null;
  function updatePageTheme(){
-  if(!homepage||!adnTrigger||!reviewsTrigger)return;
+  if(!homepage||!offersTitle||!reviewsTitle)return;
   const threshold=window.innerHeight*.58;
-  const pastAdn=adnTrigger.getBoundingClientRect().top<=threshold;
-  const pastReviews=reviewsTrigger.getBoundingClientRect().top<=threshold;
-  document.body.classList.toggle('ski-dark-mode',pastAdn&&!pastReviews);
+  const pastOffers=offersTitle.getBoundingClientRect().top<=threshold;
+  const pastReviews=reviewsTitle.getBoundingClientRect().top<=threshold;
+  document.body.classList.toggle('ski-dark-mode',pastOffers&&!pastReviews);
+  document.body.classList.toggle('ski-reviews-light',pastReviews);
  }
  window.addEventListener('scroll',updatePageTheme,{passive:true});
  window.addEventListener('resize',updatePageTheme,{passive:true});
