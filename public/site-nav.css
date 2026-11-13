@@ -1133,3 +1133,67 @@ body[data-scroll-tone="dark"] .site-header .nav-links>.nav-cta:hover{
 @media(prefers-reduced-motion:reduce){
  .site-header .nav-links>a:not(.nav-cta){transition:none!important}
 }
+
+/* V76 — heading-triggered, page-wide deep-black chapter ending inside reviews.
+   Reviews remain on #030303 until the "Vos retours" heading crosses the trigger. */
+.ss-architecture .ss-reviews-v52{
+ background-color:var(--ss-deep-black,#030303)!important;
+ background-image:none!important;
+ color:#f6f5f2!important;
+ border-color:transparent!important;
+ transition:background-color 1.45s ease,color 1.45s ease,border-color 1.45s ease!important;
+}
+.ss-architecture .ss-reviews-v52::before,
+.ss-architecture .ss-reviews-v52::after{
+ opacity:0!important;
+ pointer-events:none!important;
+ transition:opacity 1.45s ease!important;
+}
+.ss-architecture .ss-reviews-v52 .ss-reviews-heading h2{
+ color:#fafaf8!important;
+ transition:color 1.45s ease!important;
+}
+body.ski-reviews-light .ss-architecture .ss-reviews-v52{
+ background-color:#fafaf8!important;
+ color:#17191b!important;
+ border-color:transparent!important;
+}
+body.ski-reviews-light .ss-architecture .ss-reviews-v52 .ss-reviews-heading h2{
+ color:#17191b!important;
+}
+.ss-architecture .ss-reviews-v52 .ss-reviews-heading .kicker{
+ color:#b4b8b8!important;
+ transition:color 1.45s ease!important;
+}
+body.ski-reviews-light .ss-architecture .ss-reviews-v52 .ss-reviews-heading .kicker{
+ color:#666d70!important;
+}
+body.ski-reviews-light .ss-architecture .ss-reviews-v52 .ss-reviews-v52-bottom{
+ border-top-color:rgba(23,25,27,.18)!important;
+ transition:border-color 1.45s ease!important;
+}
+body.ski-reviews-light .ss-architecture .ss-reviews-v52 .ss-reviews-v52-bottom>span{
+ color:#656d70!important;
+}
+body.ski-reviews-light .ss-architecture .ss-reviews-v52 .ss-reviews-v52-bottom>a{
+ color:#17191b!important;
+ border-bottom-color:rgba(23,25,27,.55)!important;
+}
+body.ski-reviews-light .ss-architecture .ss-reviews-v52 .ss-reviews-v52-bottom>a:hover{
+ color:#5b6265!important;
+}
+/* Before the white trigger, reviews occupy the same uninterrupted black surface. */
+body.ski-dark-mode .ss-architecture .ss-reviews-v52{
+ background:var(--ss-deep-black,#030303)!important;
+ border-color:transparent!important;
+ box-shadow:none!important;
+}
+@media(prefers-reduced-motion:reduce){
+ .ss-architecture .ss-reviews-v52,
+ .ss-architecture .ss-reviews-v52::before,
+ .ss-architecture .ss-reviews-v52::after,
+ .ss-architecture .ss-reviews-v52 .ss-reviews-heading h2,
+ .ss-architecture .ss-reviews-v52 .ss-reviews-heading .kicker{
+  transition:none!important;
+ }
+}
