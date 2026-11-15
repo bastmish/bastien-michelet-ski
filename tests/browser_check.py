@@ -3,7 +3,7 @@ import json,os
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 root=Path(__file__).resolve().parents[1]
-paths=[p['path'] for p in json.loads((root/'content/pages.json').read_text())]+['stations.html']+[s['URL'].lstrip('/') for s in json.loads((root/'content/stations.json').read_text())]
+paths=[p['path'] for p in json.loads((root/'content/pages.json').read_text())]+['stations.html','questions.html']+[s['URL'].lstrip('/') for s in json.loads((root/'content/stations.json').read_text())]
 results=[];violations=[];console=[]
 with sync_playwright() as p:
  browser=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox'])
@@ -12,7 +12,8 @@ with sync_playwright() as p:
  for path in paths:
   for width in [375,768,1440]:
    page.set_viewport_size({'width':width,'height':900})
-   response=page.goto('http://localhost:3000/'+path,wait_until='networkidle')
+   response=page.goto('http://localhost:3000/'+path,wait_until='load')
+   page.evaluate('document.fonts.ready.then(()=>true)')
    assert response.status==200,(path,response.status)
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(path,width,'overflow')
    assert page.locator('h1').count()==1
@@ -22,6 +23,13 @@ with sync_playwright() as p:
   results.append(path)
  page.set_viewport_size({'width':375,'height':850})
  page.goto('http://localhost:3000/')
+ assert not page.locator('.art-formats-disclosure').evaluate('(e)=>e.open')
+ page.locator('.art-formats-disclosure > summary').click()
+ assert page.locator('.art-formats-disclosure .ss-programme-v72').count()==3
+ assert page.locator('.art-formats-disclosure .ss-programme-v72').first.is_visible()
+ assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
+ page.locator('.art-formats-disclosure > summary').click()
+ page.evaluate('scrollTo(0,0)')
  page.locator('.nav-toggle').click()
  assert page.locator('.nav-toggle').get_attribute('aria-expanded')=='true'
  page.keyboard.press('Escape')

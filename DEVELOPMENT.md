@@ -28,3 +28,11 @@ Avec un accès Cloudflare valide et les domaines réseau autorisés :
 Cette commande téléverse une version de prévisualisation sans activer la version en production. Vérifier l’URL HTTPS effectivement retournée, le contenu et les en-têtes robots avant de la transmettre. Ne pas employer une commande de déploiement de production, ne pas modifier main et ne pas fusionner la PR #20.
 
 Les canoniques et le sitemap attendent toujours un domaine définitif approuvé. APPROVED_CANONICAL_ORIGIN permet leur génération ultérieure ; ne pas soumettre le sitemap ni retirer noindex,nofollow.
+
+## Deuxième passe design
+
+art-direction.css porte la composition resserrée de la home et le footer partagé en deux étages. integration.css reste chargé pour les pages intérieures. Le générateur prend en charge le nouveau footer pour toutes les pages non redirigées ; les scripts et styles de l’ancien footer ne sont plus chargés.
+
+La FAQ est déplacée sans réécriture vers questions.html, alimentée par la section a07 de content/pages.json. Les programmes de la home et le formulaire de demande utilisent des éléments details/summary natifs, fermés par défaut. Le formulaire doit être ouvert avant de tester ses champs.
+
+Pour les captures avant/après de cette passe : servir un git archive de 5a9cc1f sur le port 3003 et le site courant sur 3000, puis exécuter tests/design_pass2.py. Il n’est pas nécessaire de créer un worktree ni de modifier main.

@@ -1,56 +1,60 @@
-# Recette de la correction graphique — PR #20
+# Recette Ski Society — deuxième passe design
 
-## Référence et contenu
+## Périmètre
 
-Référence visuelle : main au commit bc9bb78, sans modification de cette branche.
-Correction sur feat/ski-society-complete uniquement.
+Référence artistique : main (bc9bb78), sans modification de cette branche.
+Branche corrigée : feat/ski-society-complete.
+Avant/après de cette passe : commit 5a9cc1f et nouvelle composition.
+Détail des décisions et des sections : DESIGN_PASS2.md.
 
-- Accueil : hero, diptyque photographique, galerie ADN, cartes expériences, programmes, cartes destinations, FAQ en accordéons, formulaire et animations de main réutilisés.
-- Collectif : hero photographique du manifeste et composition éditoriale ; aucun profil individuel.
-- Offres : hero photographique existant, cartes illustrées, méthode, formats en lignes éditoriales et panneau de réservation.
-- Destinations : 43 pages avec hero photographique, portrait en deux colonnes, cartes disciplines et panneau WhatsApp. Les photos d’ambiance sont identifiées comme telles, sans attribution locale non vérifiée.
-- edition.css supprimé ; les styles historiques sont conservés. integration.css contient des adaptations ciblées.
-- Copies validées, métadonnées locales et messages WhatsApp conservés ; noindex,nofollow inchangé.
+Six pages principales et 43 destinations conservées. Les copies validées restent dans content/pages.json et content/stations.json, sans changement. La FAQ validée est désormais pré-rendue dans public/questions.html et accessible depuis le footer. Les programmes restent intégralement dans un volet de la home. Les textes ne sont pas injectés par JavaScript.
+
+## Contrôles reproductibles
+
+- `PYTHONPATH=/tmp/ski-libs python scripts/build.py` dans cette machine ; installation reproductible dans DEVELOPMENT.md.
+- `python tests/check_site.py` : copie des 32 sections (dont la FAQ déplacée), liens/ancres, robots, un H1 par page, 43 destinations, métadonnées locales distinctes, 86 CTA locaux, formats freeride et nouveau footer unique sur chaque page non redirigée.
+- `AXE_SCRIPT=/chemin/axe.min.js python tests/browser_check.py` : 51 pages à 375/768/1440 px ; menu mobile, volet Programmes, recherche clavier « Meribel », URL WhatsApp et règles axe-core WCAG 2 A/AA, 2.1 AA.
+- `python tests/booking_check.py` : ouverture du formulaire facultatif, exclusion du freeride demi-journée, correction d’une sélection précédente et demande de coaching sans restriction de participants inventée.
+- `python tests/design_pass2.py` : 20 captures avant/après et détails aux largeurs 1440 et 390 px.
+- `git diff --check`.
+
+Le test de navigation remet la page en haut après utilisation des programmes : la navigation de référence se masque volontairement pendant la descente et se révèle à la remontée. Aucun changement de ce comportement n’a été introduit pour faire passer le test.
+
+Les résultats finaux sont dans tests/browser-results.json et docs/visual-pass2/captures.json.
 
 ## Captures et comparaison
 
-20 captures desktop (1440 px) et mobile (390 px), dans docs/visual :
-référence main, proposition rejetée et intégration corrigée. L’index HTML permet de les parcourir et captures.json consigne les erreurs de chargement.
+Ouvrir docs/visual-pass2/index.html.
+Trois types de pages comparés : accueil, collectif et destination Courchevel, sur ordinateur/mobile. Captures complémentaires du pré-footer, du footer fonctionnel, des programmes dépliés et de la FAQ.
 
-**Limite majeure :** le proxy de l’environnement refuse images.pexels.com et les polices externes. Les captures montrent donc la composition réelle avec les ressources non chargées ; aucune photographie n’a été simulée ou remplacée pour masquer ce blocage. Une validation photographique et typographique complète reste nécessaire après application des autorisations réseau. Les captures ne constituent pas une validation graphique du propriétaire.
+Mesures de la home, volets fermés :
+- 1440 px : 9100 → 7215 px (environ −21 %).
+- 390 px : 13235 → 9402 px (environ −29 %).
 
-## Contrôles
+Limite : le proxy refuse encore les photographies Pexels et les polices externes. Les captures montrent la vraie composition avec les ressources absentes ; elles ne constituent pas une validation photographique/typographique complète. Les défauts de chargement sont enregistrés, pas masqués. Les droits et la pertinence locale des photos restent à vérifier.
 
-Les tests statiques vérifient les textes des 32 sections, les liens et ancres, les 43 liens de destinations, les métadonnées distinctes, les 86 CTA locaux et les formats freeride. La recherche clavier et le menu mobile sont testés par Playwright. Le formulaire ne permet plus la demi-journée en freeride et ne présume plus un nombre de participants imposé pour le coaching.
+## Prévisualisation Cloudflare
 
-Les résultats navigateur de la correction sont dans tests/browser-results.json. Les tests automatisés ne remplacent pas la recette humaine et ne prouvent pas les droits photographiques, la propriété du numéro WhatsApp ni la disponibilité des prestations. Aucun message envoyé.
+Tentative réelle avec Wrangler 4.162.0 :
+`wrangler versions upload --preview-alias review-pr20 --message "Design pass 2 - preview only"`
 
-## Prévisualisation HTTPS : blocage constaté
+Échec avant téléversement : variable CLOUDFLARE_API_TOKEN absente en mode non interactif ; aucune session Wrangler disponible. Le réseau de la machine ne dispose toujours pas des domaines photos/polices/Cloudflare. La configuration enregistrée précédemment est un brouillon et n’est pas appliquée.
 
-Wrangler 4.162.0 :
-- whoami : non authentifié ; aucune session locale ni variable CLOUDFLARE_API_TOKEN utilisable.
-- versions upload --preview-alias review-pr20 : échec avant téléversement, jeton requis en mode non interactif.
-- API Cloudflare : connexion refusée par le proxy (CONNECT 403).
-- Aucun lien de prévisualisation Cloudflare obtenu ; aucune URL inventée.
+Aucune URL HTTPS publique obtenue ou inventée. Reprise après application des accès et connexion Cloudflare : refaire la recette avec les photos/polices, téléverser une version de prévisualisation, puis vérifier l’URL retournée et les en-têtes robots. Ne pas utiliser un déploiement de production.
 
-Les domaines photos/polices/Cloudflare ainsi que les champs CLOUDFLARE_API_TOKEN et CLOUDFLARE_ACCOUNT_ID sont enregistrés dans le brouillon de l’environnement. La sauvegarde du brouillon ne les applique pas à la machine. L’interface exige de sauvegarder et publier l’environnement de travail, puis de renseigner les accès dans ses paramètres sécurisés. Cela ne publie pas le site.
+## Garanties et validations restantes
 
-Après application : recharger les photos, refaire les captures et les contrôles, téléverser une version de prévisualisation sans activation production, vérifier son URL HTTPS et la transmettre au propriétaire.
+Aucun envoi de message WhatsApp, aucun paiement, aucune soumission de sitemap, aucune activation de l’indexation. noindex,nofollow conservé partout. Aucun déploiement en production ni fusion de PR.
 
-## Points métier
+Les contrôles automatisés ne remplacent pas une recette humaine au lecteur d’écran ni la validation graphique du propriétaire. Voir LOCAL_VERIFICATION.md : couverture réelle des destinations, qualifications/assurances, autorisations suisses, La Grave, numéro WhatsApp, questionnaire après confirmation et domaine canonique restent à vérifier.
 
-Voir LOCAL_VERIFICATION.md pour les contrôles station par station, les autorisations suisses, La Grave, les qualifications/assurances, le numéro WhatsApp et la procédure du questionnaire. Domaine canonique et photos locales restent à valider.
+## Résultat final
 
-Aucun déploiement en production ni fusion. PR #20 conservée ouverte.
-
-## Résultat final de la correction
-
-- Tests statiques : PASS, y compris absence d’edition.css et présence des 43 templates photographiques.
-- Playwright : 50 pages, 150 rendus à 375/768/1440 px, aucun débordement horizontal, aucune erreur JavaScript.
-- axe-core : aucune violation détectée pour les règles WCAG 2 A/AA et 2.1 AA testées. Résultat final dans tests/browser-results.json.
-- Formulaire : tests/booking_check.py PASS pour l’exclusion du freeride demi-journée et l’adaptation d’une sélection existante.
-- Captures : 20 vues à 390/1440 px, aucun débordement ; 266 occurrences d’images non chargées dans l’ensemble des captures (plusieurs vues réutilisent les mêmes photos).
-- Wrangler versions upload --dry-run : PASS. Ce contrôle ne téléverse rien et ne fournit aucune URL publique.
-- git diff --check : PASS.
-
-Les résultats d’accessibilité et de géométrie restent limités au rendu disponible sans les photos et polices externes. Il faut refaire la validation visuelle complète une fois l’accès appliqué.
+- Intégrité éditoriale et contrôles statiques : PASS ; fichiers sources pages.json et stations.json inchangés.
+- 51 pages, 153 rendus à trois largeurs : PASS, aucun débordement.
+- axe-core : zéro violation détectée sur les règles testées ; zéro erreur JavaScript.
+- Volet Programmes, menu mobile, recherche clavier et lien WhatsApp contextualisé : PASS.
+- Formulaire facultatif et formats freeride : PASS.
+- 20 captures comparatives et de détail enregistrées.
+- Vérification des espaces et du patch Git : PASS.
+- Prévisualisation Cloudflare : bloquée avant téléversement ; aucune URL publique obtenue.

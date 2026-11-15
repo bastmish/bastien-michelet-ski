@@ -32,12 +32,15 @@ for p in pages:
  text=unescape(re.sub('<[^>]+>',' ',raw))
  text=' '.join(text.split())
  for sec in p['sections']:
+  section_text=text
+  if sec['id']=='a07':
+   section_text=' '.join(unescape(re.sub('<[^>]+>',' ',(PUBLIC/'questions.html').read_text())).split())
   for b in sec['blocks']:
    value=re.sub(r'\*\*(.*?)\*\*',r'\1',b['text']).split(' — version')[0]
    if value.startswith('CTA :'):value=value[6:]
    for line in value.splitlines():
     line=line.removeprefix('- ')
-    check(' '.join(line.split()) in text,p['path']+': copy '+line[:70])
+    check(' '.join(line.split()) in section_text,p['path']+': copy '+line[:70])
 stations=json.loads((ROOT/'content/stations.json').read_text())
 check(len(stations)==43,'station count')
 for s in stations:
@@ -68,3 +71,15 @@ for station in stations:
  assert 'destination-hero' in raw and 'detail-photo' in raw
  assert 'integrated-service-card' in raw
 print('PASS: reference integration styles and 43 photographic destination templates.')
+
+home=(PUBLIC/'index.html').read_text()
+assert 'id="expertise"' not in home
+assert 'id="questions"' not in home
+assert 'art-formats-disclosure' in home and 'art-request-disclosure' in home
+for path in PUBLIC.rglob('*.html'):
+ raw=path.read_text()
+ if 'http-equiv="refresh"' in raw:continue
+ assert raw.count('class="art-footer"')==1,str(path)
+ assert raw.count('class="art-prefooter"')==1,str(path)
+ assert 'ridgeline-footer.js' not in raw,str(path)
+print('PASS: compact home, linked FAQ and shared two-stage footer on every non-redirect page.')

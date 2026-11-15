@@ -1,5 +1,7 @@
-Restaure la direction graphique de main et intègre les copies validées dans ses composants photographiques, cartes et interactions. Supprime edition.css. Les 43 fiches conservent leurs contenus SEO et WhatsApp et utilisent un template photographique avec panneau de réservation.
+Restructure l’accueil autour du hero, de l’ADN, des expériences, des destinations, des avis et de la réservation. Supprime le diptyque sans texte, replie les programmes dans les expériences et déplace la FAQ vers une page dédiée, sans réécrire les copies validées.
 
-Les captures comparatives ordinateur/mobile se trouvent dans docs/visual. Le chargement des photos et polices est bloqué par le proxy de l’environnement : validation visuelle complète en attente de l’accès réseau. Les tests de contenu, liens, navigation et accessibilité sont documentés dans QA_IMPLEMENTATION.md.
+Remplace le footer par une clôture photographique avec CTA WhatsApp et un footer fonctionnel partagé. Renforce les cadrages, la hiérarchie, les compositions asymétriques et les espacements. Les 43 destinations, leurs métadonnées, les réservations WhatsApp et noindex,nofollow sont conservés.
 
-Aucun déploiement en production, aucune fusion ni modification de main. noindex,nofollow conservé. La prévisualisation Cloudflare est bloquée par l’absence d’authentification Wrangler et le refus réseau de l’API ; voir le rapport pour les constats et la reprise.
+Comparaison avant/après et détails : DESIGN_PASS2.md et docs/visual-pass2/index.html. La validation complète des photos et polices reste limitée par les refus du proxy. La prévisualisation Cloudflare est bloquée avant téléversement faute d’authentification active.
+
+Tests et limites : QA_IMPLEMENTATION.md. Aucun changement de main, déploiement en production ou fusion.

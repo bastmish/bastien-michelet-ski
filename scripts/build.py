@@ -42,6 +42,25 @@ offerpaths=['/'+p['path'] for p in pages[2:]]
 def message(p):return 'Bonjour Ski Society, je souhaite organiser une expérience : '+p['title'].split(' |')[0]+'. Station : ... Dates : ... Niveau : ... Nombre de participants : ... Format : ...'
 origin=os.environ.get('APPROVED_CANONICAL_ORIGIN','').rstrip('/')
 if origin and (urlparse(origin).scheme!='https' or urlparse(origin).path or not urlparse(origin).netloc):raise ValueError('Approved HTTPS origin required')
+def install_footer(soup,page):
+ for n in soup.select('.art-prefooter,footer'):n.decompose()
+ for n in soup.select('link[href$="ridgeline-footer.css"],script[src$="ridgeline-footer.js"]'):n.decompose()
+ local=next((x for x in stations if x['URL'].lstrip('/')==page['path']),None)
+ chat=wa('Bonjour Ski Society, je souhaite préparer une expérience'+(' à '+local['name'] if local else ' avec Ski Society')+'. Dates : ... Niveau : ... Nombre de participants : ...')
+ closing='<section class="art-prefooter" aria-labelledby="art-closing-title"><div class="art-prefooter-photo">'+img('31112551','Massif enneigé, photographie d’illustration alpine')+'</div><div class="wrap art-prefooter-inner"><span class="art-eyebrow">SKI SOCIETY</span><h2 id="art-closing-title">L’excellence du geste.<br>Le plaisir de transmettre.</h2>'+link('Nous contacter sur WhatsApp',chat,'art-cta art-cta-light').replace('</a>','<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>')+'</div><span class="art-prefooter-index" aria-hidden="true">SS /</span></section>'
+ def nav(title,items):
+  return '<nav aria-label="'+title+'"><h2>'+title+'</h2>'+''.join(link(t,u,'art-footer-link') for t,u in items)+'</nav>'
+ functional='<footer class="art-footer"><div class="wrap"><div class="art-footer-top"><a class="art-footer-brand" href="/" aria-label="Ski Society, accueil">SKI SOCIETY<span>PRIVATE SKI &amp; SNOWBOARD</span></a><a class="art-footer-toplink" href="#header">Retour en haut ↑</a></div><div class="art-footer-navigation">'
+ functional+=nav('Découvrir',[('Accueil','/'),('Le collectif','/manifesto.html'),('Questions fréquentes','/questions.html')])
+ functional+=nav('Expériences',[(x['title'].split(' |')[0],'/'+x['path']) for x in pages[2:]])
+ functional+=nav('Destinations',[('Savoie','/stations.html#region-0'),('Haute-Savoie','/stations.html#region-1'),('Hautes-Alpes','/stations.html#region-2'),('Jura suisse','/stations.html#region-3'),('Les 43 destinations','/stations.html')])
+ functional+=nav('Contact',[('WhatsApp',chat),('Votre projet','/index.html#contact')])
+ functional+=nav('Informations légales',[('Mentions légales','/legal/mentions-legales.html'),('Confidentialité','/legal/confidentialite.html'),('CGU','/legal/cgu.html'),('CGV','/legal/cgv.html')])
+ functional+='</div><div class="art-footer-bottom"><span>© 2026 Ski Society. Tous droits réservés.</span><span>Haute-Savoie · Savoie · Hautes-Alpes</span></div><p class="art-footer-legal">Ski Society est un projet en pré-ouverture. Toute demande reste sans confirmation de réservation ni paiement en ligne. Les prestations et futurs partenaires sont soumis aux qualifications, assurances, disponibilités et autorisations applicables. Informations légales à finaliser avant ouverture.</p><div class="art-footer-signature" aria-hidden="true">SKI SOCIETY</div></div></footer>'
+ soup.body.append(BeautifulSoup(closing+functional,'html.parser'))
+ if not soup.select_one('link[href="/art-direction.css"]'):
+  soup.head.append(soup.new_tag('link',rel='stylesheet',href='/art-direction.css'))
+
 def finish(soup,page):
  for node in soup.select('link[rel="canonical"],link[href$="edition.css"]'):node.decompose()
  soup.title.string=page['title']
@@ -57,6 +76,14 @@ def finish(soup,page):
  for n in soup.select('.nav-links a,.ss-footer-col a'):
   if n.get('href')=='/manifesto.html':n.string='Le collectif'
  css=soup.new_tag('link',rel='stylesheet',href='/integration.css');soup.head.append(css)
+ for labelled in soup.select('[aria-labelledby]'):
+  if any(not soup.find(id=ref) for ref in labelled['aria-labelledby'].split()):
+   heading=labelled.find(['h1','h2','h3'])
+   if heading:
+    heading['id']=heading.get('id',labelled['aria-labelledby'].split()[0])
+    labelled['aria-labelledby']=heading['id']
+   else:labelled.attrs.pop('aria-labelledby',None)
+ install_footer(soup,page)
  return str(soup)
 def base(page,body,extra=''):
  soup=BeautifulSoup((ROOT/('content/templates/collective.html' if page['path']=='manifesto.html' else 'content/templates/offer.html')).read_text(),'html.parser')
@@ -120,6 +147,48 @@ for option in soup.select('select[name="experience"] option'):
  if option.get('value'):option.string=option['value']
 for n in soup.select('select[name="participants"] option'):
  n.attrs.pop('disabled',None)
+# Second art-direction pass: tighten the home without dropping approved copy.
+soup.body['class']='art-home'
+soup.select_one('#expertise').decompose()
+soup.select_one('.hero-image img')['src']='https://images.pexels.com/photos/416805/pexels-photo-416805.jpeg?auto=compress&cs=tinysrgb&w=1900'
+soup.select_one('.hero-image img')['alt']='Skieur en virage, photographie d’illustration sportive'
+# One photographic anchor and three editorial rows instead of three uniform overlays.
+adn=soup.select_one('#adn')
+adn['class']='art-adn'
+adn_rows=''
+for i in range(3):
+ blocks=ss[1]['blocks'][i*3:i*3+3]
+ adn_rows+='<article class="art-adn-row"><span class="art-adn-index" aria-hidden="true">'+str(i+1).zfill(2)+'</span><div>'+''.join(element(b,m) for b in blocks)+'</div></article>'
+put(adn,'<div class="wrap art-adn-layout"><figure class="art-adn-photo">'+img('4943913','Préparation physique, photographie d’illustration sportive')+'<span class="art-photo-mark" aria-hidden="true">SS / 01</span></figure><div class="art-adn-story">'+adn_rows+'</div></div>')
+# Retain every programme line, but disclose it on demand within Experiences.
+programme=soup.select_one('#formules').extract()
+title=programme.select_one('h2');title['id']='formules-title';title.extract()
+disclosure=soup.new_tag('details',attrs={'class':'art-formats-disclosure'})
+summary=soup.new_tag('summary')
+summary.append(title)
+icon=soup.new_tag('span',attrs={'class':'art-disclosure-icon','aria-hidden':'true'});icon.string='+';summary.append(icon)
+disclosure.append(summary);disclosure.append(programme)
+soup.select_one('#offres > .wrap').append(disclosure)
+# Split station labels into a name and a smaller geographic line, preserving the copy.
+for i,card in enumerate(soup.select('.ss-region-card')):
+ name,detail=featurelines[i].removeprefix('- ').split(' — ',1)
+ put(card.select_one('.ss-region-title'),'<span class="art-station-name">'+esc(name)+'</span><span class="art-station-detail">— '+esc(detail)+'</span>')
+# FAQ becomes a full, linked page; its approved questions and answers are unchanged.
+faq_section=soup.select_one('#questions').extract()
+faq_section.select_one('h2').name='h1'
+faq_page={'path':'questions.html','title':'Questions fréquentes | Ski Society','description':'Retrouvez les réponses sur les cours privés, les formats, les destinations et la réservation Ski Society.'}
+# Build later: base() uses shared footer and metadata like the six main pages.
+(OUT/'questions.html').write_text(base(faq_page,str(faq_section),'art-faq-page'))
+# Direct booking first; the detailed enquiry form becomes an optional disclosure.
+contact=soup.select_one('#contact');contact['class']='art-contact'
+form=soup.select_one('#ski-request-form').extract()
+contact_lead=''.join(element(b,m) for b in ss[7]['blocks'][:3])
+contact_primary=''.join(element(b,m) for b in ss[7]['blocks'][3:6])
+contact_steps=''.join(element(b,m) for b in ss[7]['blocks'][6:])
+put(contact,'<div class="wrap"><div class="art-contact-heading">'+contact_lead+'</div><div class="art-contact-layout"><div class="art-contact-primary">'+contact_primary+'</div><div class="art-contact-steps">'+contact_steps+'</div></div></div>')
+request=soup.new_tag('details',attrs={'class':'art-request-disclosure'})
+request_summary=soup.new_tag('summary');request_summary.string='Préciser mon projet';request.append(request_summary);request.append(form)
+contact.select_one('.wrap').append(request)
 (OUT/p['path']).write_text(finish(soup,p))
 # Editorial pages: original photographic offer hero, manifesto layouts, image cards and programme rows.
 for j,p in enumerate(pages[1:]):
@@ -172,7 +241,17 @@ for card,s in zip(soup.select('.ss-resort'),stations):
  card.select_one('.ss-resort-cta').string='Découvrir la station ↗'
 (OUT/'stations.html').write_text(finish(soup,{'path':'stations.html','title':soup.title.string,'description':soup.select_one('meta[name="description"]')['content']}))
 if origin:
- urls=['' if p=='index.html' else p for p in [p['path'] for p in pages]+['stations.html']+[s['URL'].lstrip('/') for s in stations]]
+ urls=['' if p=='index.html' else p for p in [p['path'] for p in pages]+['stations.html','questions.html']+[s['URL'].lstrip('/') for s in stations]]
  (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+esc(origin+'/'+u)+'</loc></url>' for u in urls)+'</urlset>')
 (OUT/'404.html').write_text(base({'path':'404.html','title':'Page introuvable | Ski Society','description':'Retrouvez les expériences et destinations Ski Society.'},'<section class="integrated-section"><div class="wrap"><h1>Cette piste reste à découvrir.</h1>'+link('Retour à l’accueil','/')+'</div></section>'))
 print('Integrated 6 approved pages and 43 destinations into the original visual components.')
+
+# Apply the same new footer to unchanged legacy offer and legal pages.
+for target in OUT.rglob('*.html'):
+ document=BeautifulSoup(target.read_text(),'html.parser')
+ if document.select_one('meta[http-equiv="refresh"]'):
+  for node in document.select('.art-prefooter,footer,link[href="/art-direction.css"]'):node.decompose()
+  target.write_text(str(document))
+  continue
+ install_footer(document,{'path':str(target.relative_to(OUT))})
+ target.write_text(str(document))
