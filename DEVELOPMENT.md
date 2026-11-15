@@ -33,3 +33,9 @@ Le générateur charge la référence graphique, y intègre les textes approuvé
 Conserver noindex,nofollow. Ne pas modifier main, fusionner PR #20 ni déployer en production sans autorisation explicite. Aucune URL publique de prévisualisation ne doit être annoncée sans avoir été obtenue et vérifiée.
 
 APPROVED_CANONICAL_ORIGIN demeure réservé à un domaine approuvé ; aucun sitemap n’est soumis automatiquement.
+
+## Étape de validation accueil/footer
+
+Le dernier brief impose de valider d’abord ces deux éléments. scripts/home_review.py applique la proposition après la génération standard, uniquement à public/index.html. home-review.css est chargé uniquement par cette page. Ne pas propager cette variante aux autres pages avant validation explicite.
+
+tests/home_review.py contrôle la structure et les interactions, puis exige les vraies photographies chargées. Un code de sortie 2 signifie que la recette photographique est bloquée, pas qu’elle est validée. Voir docs/home-review/STATUS.md pour les accès réseau et la reprise. Le brouillon réseau enregistré ne s’applique pas automatiquement à la machine.
