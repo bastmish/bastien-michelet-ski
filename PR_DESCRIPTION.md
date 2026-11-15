@@ -1,7 +1,7 @@
-Restructure l’accueil autour du hero, de l’ADN, des expériences, des destinations, des avis et de la réservation. Supprime le diptyque sans texte, replie les programmes dans les expériences et déplace la FAQ vers une page dédiée, sans réécrire les copies validées.
+Restaure le site original au commit bc9bb78 : pages, textes, navigation, interactions, styles, photographies et animations. Le nouveau footer photographique et sa navigation constituent l’unique différence sur les pages d’origine.
 
-Remplace le footer par une clôture photographique avec CTA WhatsApp et un footer fonctionnel partagé. Renforce les cadrages, la hiérarchie, les compositions asymétriques et les espacements. Les 43 destinations, leurs métadonnées, les réservations WhatsApp et noindex,nofollow sont conservés.
+Conserve les 43 fiches destinations, leurs contenus SEO et leurs CTA WhatsApp dans une extension reliée depuis le footer via un index distinct. Les sources éditoriales validées restent conservées sans réinjection automatique.
 
-Comparaison avant/après et détails : DESIGN_PASS2.md et docs/visual-pass2/index.html. La validation complète des photos et polices reste limitée par les refus du proxy. La prévisualisation Cloudflare est bloquée avant téléversement faute d’authentification active.
+Validation : 16 pages identiques littéralement hors footer, 25 ressources identiques par SHA-256, 14 comparaisons visuelles identiques avant footer, 51 pages et 153 rendus responsive contrôlés. Rapport : RESTORATION.md et docs/restoration/index.html. Les photos/polices distantes sont bloquées dans l’environnement ; cette limite est consignée.
 
-Tests et limites : QA_IMPLEMENTATION.md. Aucun changement de main, déploiement en production ou fusion.
+main inchangée, PR #20 non fusionnée, aucun déploiement en production. noindex,nofollow maintenu partout.

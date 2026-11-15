@@ -122,16 +122,12 @@
   const participantsSelect=inquiryForm.elements.namedItem('participants');
   if(experienceSelect&&participantsSelect){
    const updateParticipants=()=>{
-    const freeride=experienceSelect.value==='Freeride & milieu alpin';
-    const formatSelect=inquiryForm.elements.namedItem('format');
-    if(formatSelect){
-     for(const option of formatSelect.options){
-      if(option.value==='Demi-journée'){
-       option.disabled=freeride;
-       if(freeride&&formatSelect.value==='Demi-journée')formatSelect.value='Journée';
-      }
-     }
-    }
+    const individual=experienceSelect.value==='Performance & technique';
+    const allowed=Array.from(participantsSelect.options);
+    allowed.forEach(option=>{
+     if(option.value==='2 personnes'||option.value==='3 personnes')option.disabled=individual;
+    });
+    if(individual)participantsSelect.value='1 personne';
    };
    experienceSelect.addEventListener('change',updateParticipants);
    updateParticipants();

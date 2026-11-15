@@ -48,7 +48,6 @@
   input.value=item.name;query=item.name;selected=item;region='all';
   buttons.forEach(btn=>{const isActive=btn.dataset.filter==='all';btn.classList.toggle('is-active',isActive);btn.setAttribute('aria-pressed',String(isActive));});
   closeList();apply();
-  window.location.assign(item.element.querySelector('.ss-resort-cta').href);
   const target=item.element;
   if(target){target.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});}
  }

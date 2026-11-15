@@ -5,9 +5,268 @@
     768,
     1440
   ],
-  "axe_violations": [],
   "page_errors": [],
-  "navigation": "PASS",
-  "station_keyboard_search": "PASS",
-  "whatsapp_href": "PASS (no message sent)"
+  "accessibility_observations": [
+    {
+      "path": "index.html",
+      "original_page": true,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              ".brand-text > small"
+            ],
+            [
+              ".ss-programmes-intro-v72 > .kicker"
+            ],
+            [
+              "#formules-title"
+            ],
+            [
+              "#formules-title > em"
+            ],
+            [
+              ".ss-programmes-intro-v72 > p"
+            ],
+            [
+              ".ss-programmes-link-v72"
+            ],
+            [
+              ".ss-programmes-disclaimer-v72"
+            ],
+            [
+              ".ss-station-count-v72"
+            ],
+            [
+              ".ss-station-eyebrow-v72"
+            ],
+            [
+              ".ss-station-copy-v72 > strong"
+            ],
+            [
+              ".ss-station-copy-v72 > span:nth-child(3)"
+            ],
+            [
+              ".ss-station-action-v72 > span"
+            ],
+            [
+              "div[data-reviews-col=\"0\"] > .ss-review-track:nth-child(1) > figure:nth-child(1) > figcaption > .ss-review-person-info > strong"
+            ],
+            [
+              "div[data-reviews-col=\"0\"] > .ss-review-track:nth-child(1) > figure:nth-child(1) > figcaption > .ss-review-person-info > small"
+            ],
+            [
+              "div[data-reviews-col=\"0\"] > .ss-review-track:nth-child(1) > figure:nth-child(2) > figcaption > .ss-review-person-info > strong"
+            ],
+            [
+              "div[data-reviews-col=\"0\"] > .ss-review-track:nth-child(1) > figure:nth-child(2) > figcaption > .ss-review-person-info > small"
+            ],
+            [
+              "div[data-reviews-col=\"1\"] > .ss-review-track:nth-child(1) > figure:nth-child(1) > figcaption > .ss-review-person-info > strong"
+            ],
+            [
+              "div[data-reviews-col=\"1\"] > .ss-review-track:nth-child(1) > figure:nth-child(1) > figcaption > .ss-review-person-info > small"
+            ],
+            [
+              "div[data-reviews-col=\"1\"] > .ss-review-track:nth-child(1) > figure:nth-child(2) > figcaption > .ss-review-person-info > strong"
+            ],
+            [
+              "div[data-reviews-col=\"1\"] > .ss-review-track:nth-child(1) > figure:nth-child(2) > figcaption > .ss-review-person-info > small"
+            ],
+            [
+              "div[data-reviews-col=\"2\"] > .ss-review-track:nth-child(1) > figure:nth-child(1) > figcaption > .ss-review-person-info > strong"
+            ],
+            [
+              "div[data-reviews-col=\"2\"] > .ss-review-track:nth-child(1) > figure:nth-child(1) > figcaption > .ss-review-person-info > small"
+            ],
+            [
+              "div[data-reviews-col=\"2\"] > .ss-review-track:nth-child(1) > figure:nth-child(2) > figcaption > .ss-review-person-info > strong"
+            ],
+            [
+              "div[data-reviews-col=\"2\"] > .ss-review-track:nth-child(1) > figure:nth-child(2) > figcaption > .ss-review-person-info > small"
+            ],
+            [
+              ".ss-request-top > strong"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "manifesto.html",
+      "original_page": true,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "article:nth-child(2) > p"
+            ],
+            [
+              "article:nth-child(3) > p"
+            ],
+            [
+              ".mf-small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "offres/ski-prive.html",
+      "original_page": true,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              ".brand-text > strong"
+            ],
+            [
+              ".brand-text > small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "offres/snowboard.html",
+      "original_page": true,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              ".brand-text > strong"
+            ],
+            [
+              ".brand-text > small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations.html",
+      "original_page": true,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "button[data-filter=\"Savoie\"] > span"
+            ],
+            [
+              "button[data-filter=\"Haute-Savoie\"] > span"
+            ],
+            [
+              "button[data-filter=\"Hautes-Alpes\"] > span"
+            ],
+            [
+              "#station-results-count"
+            ],
+            [
+              "#region-0 > .ss-territory-heading > div > .ss-territory-index"
+            ],
+            [
+              "#region-0 > .ss-territory-heading > .ss-territory-total"
+            ],
+            [
+              "#region-0 > .ss-territory-heading > .ss-territory-total > .ss-territory-visible"
+            ],
+            [
+              "#region-1 > .ss-territory-heading > div > .ss-territory-index"
+            ],
+            [
+              "#region-1 > .ss-territory-heading > .ss-territory-total"
+            ],
+            [
+              "#region-1 > .ss-territory-heading > .ss-territory-total > .ss-territory-visible"
+            ],
+            [
+              "#region-2 > .ss-territory-heading > div > .ss-territory-index"
+            ],
+            [
+              "#region-2 > .ss-territory-heading > .ss-territory-total"
+            ],
+            [
+              "#region-2 > .ss-territory-heading > .ss-territory-total > .ss-territory-visible"
+            ],
+            [
+              "#region-3 > .ss-territory-heading > div > .ss-territory-index"
+            ],
+            [
+              "#region-3 > .ss-territory-heading > .ss-territory-total"
+            ],
+            [
+              ".ss-stations-disclaimer"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/val-cenis.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/chamonix.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/reallon.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "new_footer_violations": [],
+  "original_navigation_form_faq_search": "PASS",
+  "extension_search_and_whatsapp": "PASS (no message sent)"
 }
