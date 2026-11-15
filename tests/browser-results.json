@@ -1,5 +1,5 @@
 {
-  "pages": 51,
+  "pages": 52,
   "viewports": [
     375,
     768,
@@ -16,7 +16,7 @@
           "impact": "serious",
           "nodes": [
             [
-              ".brand-text > small"
+              "small"
             ],
             [
               ".ss-programmes-intro-v72 > .kicker"
@@ -52,42 +52,6 @@
               ".ss-station-action-v72 > span"
             ],
             [
-              "div[data-reviews-col=\"0\"] > .ss-review-track:nth-child(1) > figure:nth-child(1) > figcaption > .ss-review-person-info > strong"
-            ],
-            [
-              "div[data-reviews-col=\"0\"] > .ss-review-track:nth-child(1) > figure:nth-child(1) > figcaption > .ss-review-person-info > small"
-            ],
-            [
-              "div[data-reviews-col=\"0\"] > .ss-review-track:nth-child(1) > figure:nth-child(2) > figcaption > .ss-review-person-info > strong"
-            ],
-            [
-              "div[data-reviews-col=\"0\"] > .ss-review-track:nth-child(1) > figure:nth-child(2) > figcaption > .ss-review-person-info > small"
-            ],
-            [
-              "div[data-reviews-col=\"1\"] > .ss-review-track:nth-child(1) > figure:nth-child(1) > figcaption > .ss-review-person-info > strong"
-            ],
-            [
-              "div[data-reviews-col=\"1\"] > .ss-review-track:nth-child(1) > figure:nth-child(1) > figcaption > .ss-review-person-info > small"
-            ],
-            [
-              "div[data-reviews-col=\"1\"] > .ss-review-track:nth-child(1) > figure:nth-child(2) > figcaption > .ss-review-person-info > strong"
-            ],
-            [
-              "div[data-reviews-col=\"1\"] > .ss-review-track:nth-child(1) > figure:nth-child(2) > figcaption > .ss-review-person-info > small"
-            ],
-            [
-              "div[data-reviews-col=\"2\"] > .ss-review-track:nth-child(1) > figure:nth-child(1) > figcaption > .ss-review-person-info > strong"
-            ],
-            [
-              "div[data-reviews-col=\"2\"] > .ss-review-track:nth-child(1) > figure:nth-child(1) > figcaption > .ss-review-person-info > small"
-            ],
-            [
-              "div[data-reviews-col=\"2\"] > .ss-review-track:nth-child(1) > figure:nth-child(2) > figcaption > .ss-review-person-info > strong"
-            ],
-            [
-              "div[data-reviews-col=\"2\"] > .ss-review-track:nth-child(1) > figure:nth-child(2) > figcaption > .ss-review-person-info > small"
-            ],
-            [
               ".ss-request-top > strong"
             ]
           ]
@@ -107,45 +71,6 @@
             ],
             [
               "article:nth-child(3) > p"
-            ],
-            [
-              ".mf-small"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "path": "offres/ski-prive.html",
-      "original_page": true,
-      "issues": [
-        {
-          "id": "color-contrast",
-          "impact": "serious",
-          "nodes": [
-            [
-              ".brand-text > strong"
-            ],
-            [
-              ".brand-text > small"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "path": "offres/snowboard.html",
-      "original_page": true,
-      "issues": [
-        {
-          "id": "color-contrast",
-          "impact": "serious",
-          "nodes": [
-            [
-              ".brand-text > strong"
-            ],
-            [
-              ".brand-text > small"
             ]
           ]
         }
@@ -212,7 +137,7 @@
       ]
     },
     {
-      "path": "stations/val-cenis.html",
+      "path": "stations/les-menuires.html",
       "original_page": false,
       "issues": [
         {
@@ -230,7 +155,7 @@
       ]
     },
     {
-      "path": "stations/chamonix.html",
+      "path": "stations/la-plagne.html",
       "original_page": false,
       "issues": [
         {
@@ -248,7 +173,187 @@
       ]
     },
     {
-      "path": "stations/reallon.html",
+      "path": "stations/valloire.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/megeve.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/la-clusaz.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/le-grand-bornand.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/flaine.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/les-carroz.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/serre-chevalier.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/montgenevre.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/vars.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/superdevoluy.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/ancelle.html",
       "original_page": false,
       "issues": [
         {
@@ -267,6 +372,6 @@
     }
   ],
   "new_footer_violations": [],
-  "original_navigation_form_faq_search": "PASS",
+  "reference_navigation_approved_faq_and_catalogue": "PASS",
   "extension_search_and_whatsapp": "PASS (no message sent)"
 }

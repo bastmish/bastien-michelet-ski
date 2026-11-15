@@ -1,3 +1,5 @@
+> Archive de l’étape 21958de. Ce rapport ne décrit plus la version actuelle : voir INTEGRATION.md pour le design de référence avec les nouveaux textes.
+
 # Restauration exacte de Ski Society
 
 Référence : bc9bb78. Branche de travail : feat/ski-society-complete.

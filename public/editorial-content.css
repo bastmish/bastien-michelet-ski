@@ -1,0 +1,24 @@
+/* Only additions required by the approved copy in reference components.
+   No new typography, geometry, photo crop or page palette. */
+.ss-offers-heading>p,.ss-destinations-heading>p{margin-top:20px;font-size:15px;line-height:1.75;max-width:700px}
+body.ski-dark-mode .ss-offers-heading>p,body.ski-dark-mode .ss-destinations-heading>p{color:#c4c9c9}
+.ss-reviews-heading>p{margin-top:20px;font-size:15px;line-height:1.75;color:inherit}
+.ss-reviews-heading>p{color:#c4c9c9}
+body.ski-reviews-light .ss-reviews-heading>p{color:#626b6c}
+.ss-review-card>p{font-size:14px;line-height:1.75;color:#333f37;margin:15px 0}
+.ss-review-card>h3{font-size:23px;line-height:1.2;color:#17191b}
+.ss-review-card>.ss-review-demo-tag{white-space:normal}
+.ss-request-side-body h3{line-height:1.2;margin:18px 0}
+.ss-request-side-body p{margin:15px 0}
+.editorial-programmes .ss-programmes-v72{background:#030303!important;color:#f6f5f2}
+.editorial-programmes .ss-programmes-v72 .kicker,.editorial-programmes .ss-programmes-v72 p{color:#c4c9c9!important}
+.editorial-programmes .ss-programmes-v72 h2,.editorial-programmes .ss-programmes-v72 h3{color:#f6f5f2}
+.editorial-programmes .ss-programmes-v72 ul{padding-left:18px;color:#c4c9c9;font-size:14px;line-height:1.8}
+.other-offer>.kicker{margin-bottom:15px}
+.other-offer>h3{font-size:17px;line-height:1.3}
+.other-offer>p{font-size:13px;line-height:1.75;color:#617367;margin-top:12px}
+.detail-list h3{font-size:19px;line-height:1.3}
+.detail-points .kicker{margin-bottom:14px}
+.ss-questions-list ul{padding:0 22px 15px}
+.detail-inner .btn+.btn{margin-left:12px}
+@media(max-width:650px){.detail-inner .btn{margin:6px 12px 6px 0}.detail-inner .btn+.btn{margin-left:0}}

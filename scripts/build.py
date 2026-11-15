@@ -1,6 +1,4 @@
-"""Restore bc9bb78 pages literally, replace only their footer, build extensions.
-The validated copy in content/pages.json remains staged editorial source.
-"""
+"""Integrate 32 validated sections into bc9bb78 components and retain 43 destinations."""
 from pathlib import Path
 from urllib.parse import quote,urlparse
 import html,json,os,re
@@ -46,10 +44,12 @@ def base(page,body):
  for css in ['manifesto.css','integration.css']:soup.head.append(soup.new_tag('link',rel='stylesheet',href='/'+css))
  if origin:soup.head.append(soup.new_tag('link',rel='canonical',href=origin+'/'+page['path']))
  return finish_extension(soup,page['path'])
-# Original pages use the immutable snapshots, not the approved replacement copy.
+# Load the reference compositions before the explicit editorial component mapping.
 for template in (ROOT/'content/original-pages').rglob('*.html'):
  path=str(template.relative_to(ROOT/'content/original-pages'))
  (OUT/path).write_bytes(restore_original(template.read_bytes().decode(),path).encode())
+from editorial import integrate
+integrate(pages,restore_original)
 for s in stations:
  path=s['URL'].lstrip('/');m=s['Message WhatsApp']
  regionphoto={'Savoie':'417173','Haute-Savoie':'1366919','Hautes-Alpes':'12100585','Jura suisse':'20159351'}[s['region']]
@@ -60,7 +60,7 @@ for s in stations:
   body+='<a class="integrated-service-card" href="/'+p['path']+'">'+img(photos[i],'Illustration de la discipline')+'<span>'+esc(p['title'].split(' |')[0])+' ↗</span></a>'
  body+='</div></div></section><section class="integrated-booking"><div class="wrap destination-booking"><div><span class="kicker">CONTACT & RÉSERVATION</span><h2>'+esc(s['H2 — Contact'])+'</h2><p>'+esc(s['Texte contact'])+'</p>'+link(s['CTA contact'],wa(m))+'</div><aside><span class="integrated-step">01 / VOTRE PROJET</span><p>La prise de contact ne confirme pas une réservation. Tarifs et conditions communiqués avant confirmation.</p><span class="integrated-step">02 / PRÉPARER VOTRE SÉANCE</span><p>Questionnaire de préparation envoyé après confirmation.</p><p class="booking-note">Contenu local en attente de vérification factuelle et opérationnelle : ouverture, encadrement, qualifications, assurances et autorisations'+(' d’enseignement en Suisse' if s['region']=='Jura suisse' else '')+'.</p></aside></div></section>'
  target=OUT/path;target.parent.mkdir(exist_ok=True);target.write_text(base({'path':path,'title':s['Title SEO'],'description':s['Meta description']},body))
-# Extension entry point. The original stations.html and its search stay untouched.
+# Preserve the second catalogue entry point as well as the reference catalogue.
 soup=BeautifulSoup((ROOT/'content/destinations-index.html').read_text(),'html.parser')
 soup.title.string='Destinations — 43 fiches locales | Ski Society'
 soup.select_one('meta[name="description"]')['content']='Explorez les 43 fiches destinations Ski Society : informations locales et demandes de cours privés, sous réserve de confirmation.'
@@ -72,4 +72,9 @@ for node in soup.select('script[src$="stations-search.js"]'):node['src']='/desti
 if origin:
  paths=['','manifesto.html','stations.html','destinations.html']+[p['path'] for p in pages[2:]]+[s['URL'].lstrip('/') for s in stations]
  (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+esc(origin+'/'+p)+'</loc></url>' for p in paths)+'</urlset>')
-print('Restored original pages; generated 43 destinations and a separate extension index. No editorial reinjection.')
+print('Rendered 32 validated sections in bc9bb78 components and 43 destination pages.')
+
+soup=BeautifulSoup((OUT/'stations.html').read_text(),'html.parser')
+for card,station in zip(soup.select('.ss-resort'),stations):
+ card.select_one('.ss-resort-cta')['href']=station['URL']
+(OUT/'stations.html').write_text(str(soup))

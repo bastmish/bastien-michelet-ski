@@ -1,0 +1,441 @@
+[
+  {
+    "page": "index.html",
+    "section": "A01",
+    "blocks": 5,
+    "status": "PASS",
+    "components": [
+      [
+        "hero"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "index.html",
+    "section": "A02",
+    "blocks": 9,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-expertise-editorial"
+      ],
+      [
+        "ss-section",
+        "ss-adn",
+        "ss-editorial-v41"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "index.html",
+    "section": "A03",
+    "blocks": 16,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-offers",
+        "ss-offers-v46"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "index.html",
+    "section": "A04",
+    "blocks": 14,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-formules",
+        "ss-journey-v49",
+        "ss-programmes-v72"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "index.html",
+    "section": "A05",
+    "blocks": 8,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-destinations"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "index.html",
+    "section": "A06",
+    "blocks": 8,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-testimonials",
+        "ss-reviews-v26",
+        "ss-reviews-v49",
+        "ss-reviews-v52"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "index.html",
+    "section": "A07",
+    "blocks": 17,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-questions"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "index.html",
+    "section": "A08",
+    "blocks": 10,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-contact",
+        "ss-contact-v29"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "manifesto.html",
+    "section": "B01",
+    "blocks": 4,
+    "status": "PASS",
+    "components": [
+      [
+        "mf-hero"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "manifesto.html",
+    "section": "B02",
+    "blocks": 9,
+    "status": "PASS",
+    "components": [
+      [
+        "mf-origin"
+      ],
+      [
+        "mf-turning"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "manifesto.html",
+    "section": "B03",
+    "blocks": 12,
+    "status": "PASS",
+    "components": [
+      [
+        "mf-statement"
+      ],
+      [
+        "mf-translation"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "manifesto.html",
+    "section": "B04",
+    "blocks": 6,
+    "status": "PASS",
+    "components": [
+      [
+        "mf-collective"
+      ],
+      [
+        "mf-final"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/ski-prive.html",
+    "section": "C01",
+    "blocks": 5,
+    "status": "PASS",
+    "components": [
+      [
+        "detail-hero"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/ski-prive.html",
+    "section": "C02",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/ski-prive.html",
+    "section": "C03",
+    "blocks": 12,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/ski-prive.html",
+    "section": "C04",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-formules",
+        "ss-journey-v49",
+        "ss-programmes-v72"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/ski-prive.html",
+    "section": "C05",
+    "blocks": 11,
+    "status": "PASS",
+    "components": [
+      [
+        "section",
+        "steps"
+      ],
+      [
+        "final-cta"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/performance-technique.html",
+    "section": "D01",
+    "blocks": 5,
+    "status": "PASS",
+    "components": [
+      [
+        "detail-hero"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/performance-technique.html",
+    "section": "D02",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/performance-technique.html",
+    "section": "D03",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/performance-technique.html",
+    "section": "D04",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-formules",
+        "ss-journey-v49",
+        "ss-programmes-v72"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/performance-technique.html",
+    "section": "D05",
+    "blocks": 11,
+    "status": "PASS",
+    "components": [
+      [
+        "section",
+        "steps"
+      ],
+      [
+        "final-cta"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/freeride-decouverte.html",
+    "section": "E01",
+    "blocks": 5,
+    "status": "PASS",
+    "components": [
+      [
+        "detail-hero"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/freeride-decouverte.html",
+    "section": "E02",
+    "blocks": 13,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/freeride-decouverte.html",
+    "section": "E03",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/freeride-decouverte.html",
+    "section": "E04",
+    "blocks": 11,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-formules",
+        "ss-journey-v49",
+        "ss-programmes-v72"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/freeride-decouverte.html",
+    "section": "E05",
+    "blocks": 11,
+    "status": "PASS",
+    "components": [
+      [
+        "section",
+        "steps"
+      ],
+      [
+        "final-cta"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/snowboard.html",
+    "section": "F01",
+    "blocks": 5,
+    "status": "PASS",
+    "components": [
+      [
+        "detail-hero"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/snowboard.html",
+    "section": "F02",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/snowboard.html",
+    "section": "F03",
+    "blocks": 12,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/snowboard.html",
+    "section": "F04",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-formules",
+        "ss-journey-v49",
+        "ss-programmes-v72"
+      ]
+    ],
+    "missing": []
+  },
+  {
+    "page": "offres/snowboard.html",
+    "section": "F05",
+    "blocks": 11,
+    "status": "PASS",
+    "components": [
+      [
+        "section",
+        "steps"
+      ],
+      [
+        "final-cta"
+      ]
+    ],
+    "missing": []
+  }
+]

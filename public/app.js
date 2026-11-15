@@ -128,6 +128,16 @@
      if(option.value==='2 personnes'||option.value==='3 personnes')option.disabled=individual;
     });
     if(individual)participantsSelect.value='1 personne';
+    const format=inquiryForm.elements.namedItem('format');
+    if(format){
+     const freeride=experienceSelect.value==='Freeride & milieu alpin';
+     for(const option of format.options){
+      if(option.value==='Demi-journée'){
+       option.disabled=freeride;
+       if(freeride&&format.value==='Demi-journée')format.value='Journée';
+      }
+     }
+    }
    };
    experienceSelect.addEventListener('change',updateParticipants);
    updateParticipants();

@@ -1,7 +1,7 @@
-Restaure le site original au commit bc9bb78 : pages, textes, navigation, interactions, styles, photographies et animations. Le nouveau footer photographique et sa navigation constituent l’unique différence sur les pages d’origine.
+Intègre les 32 sections éditoriales validées dans les compositions de bc9bb78 : hero, photographies, galerie ADN, cartes expériences, programmes, FAQ, formulaire et compositions du collectif. Chaque offre conserve son fichier de référence et ses photos ; les sections supplémentaires réemploient les composants de main.
 
-Conserve les 43 fiches destinations, leurs contenus SEO et leurs CTA WhatsApp dans une extension reliée depuis le footer via un index distinct. Les sources éditoriales validées restent conservées sans réinjection automatique.
+Conserve les 43 destinations, leurs métadonnées et leurs CTA WhatsApp. Le catalogue et sa recherche ouvrent chaque fiche. Le nouveau footer photographique sportif est le seul composant entièrement redessiné.
 
-Validation : 16 pages identiques littéralement hors footer, 25 ressources identiques par SHA-256, 14 comparaisons visuelles identiques avant footer, 51 pages et 153 rendus responsive contrôlés. Rapport : RESTORATION.md et docs/restoration/index.html. Les photos/polices distantes sont bloquées dans l’environnement ; cette limite est consignée.
+Vérifications : tableau des 32 sections dans docs/editorial-integration/sections.md, audit préalable, tests de textes/ressources/liens et comparatifs ordinateur/mobile dans docs/editorial-integration/visual/index.html. Les ressources distantes sont bloquées dans l’environnement : limite de recette consignée dans INTEGRATION.md et QA_IMPLEMENTATION.md.
 
-main inchangée, PR #20 non fusionnée, aucun déploiement en production. noindex,nofollow maintenu partout.
+main inchangée, noindex,nofollow conservé, aucun déploiement en production ni fusion.

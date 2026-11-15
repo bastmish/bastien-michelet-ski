@@ -3,7 +3,7 @@ import json,os
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]
-originals=[p['path'] for p in json.loads((ROOT/'content/pages.json').read_text())]+['stations.html']
+originals=[p['path'] for p in json.loads((ROOT/'content/pages.json').read_text())]+['stations.html','offres/index.html']
 paths=originals+['destinations.html']+[s['URL'].lstrip('/') for s in json.loads((ROOT/'content/stations.json').read_text())]
 issues=[];errors=[];footer_issues=[]
 with sync_playwright() as p:
@@ -32,7 +32,7 @@ with sync_playwright() as p:
  page.goto('http://localhost:3000/stations.html',wait_until='networkidle')
  page.locator('#station-search').fill('Meribel')
  page.locator('#station-search').press('ArrowDown');page.locator('#station-search').press('Enter')
- assert page.url.endswith('/stations.html'),'Original search navigation changed'
+ page.wait_for_url('**/stations/meribel.html')
  page.goto('http://localhost:3000/destinations.html',wait_until='networkidle')
  page.locator('#station-search').fill('Meribel')
  page.locator('#station-search').press('ArrowDown');page.locator('#station-search').press('Enter')
@@ -40,7 +40,7 @@ with sync_playwright() as p:
  assert 'Méribel' in page.locator('h1').inner_text()
  assert 'wa.me/33763532601?text=' in page.locator('.detail-inner a[href*="wa.me"]').first.get_attribute('href')
  browser.close()
-report={'pages':len(paths),'viewports':[375,768,1440],'page_errors':errors,'accessibility_observations':issues,'new_footer_violations':footer_issues,'original_navigation_form_faq_search':'PASS','extension_search_and_whatsapp':'PASS (no message sent)'}
+report={'pages':len(paths),'viewports':[375,768,1440],'page_errors':errors,'accessibility_observations':issues,'new_footer_violations':footer_issues,'reference_navigation_approved_faq_and_catalogue':'PASS','extension_search_and_whatsapp':'PASS (no message sent)'}
 Path('/tmp/ski-browser-results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
 print(json.dumps(report,ensure_ascii=False,indent=2))
 assert not errors and not footer_issues

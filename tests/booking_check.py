@@ -11,5 +11,9 @@ with sync_playwright() as p:
  page.locator('select[name="experience"]').select_option('Leçons particulières')
  assert not page.evaluate("document.querySelector('select[name=participants]').options[2].disabled")
  assert page.locator('select[name="format"] option',has_text='Demi-journée').is_enabled()
+ page.locator('select[name="format"]').select_option('Demi-journée')
+ page.locator('select[name="experience"]').select_option('Freeride & milieu alpin')
+ page.wait_for_function("document.querySelector('select[name=format]').options[1].disabled")
+ assert page.locator('select[name="format"]').input_value()=='Journée'
  print('PASS: original visible form and selection behavior restored; no message sent.')
  browser.close()
