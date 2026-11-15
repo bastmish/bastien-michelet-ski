@@ -46,4 +46,15 @@ for s in stations:
  chats=[a['href'] for t,a in d.tags if t=='a' and 'wa.me/' in a.get('href','') and 'text=' in a['href']]
  check(sum(parse_qs(urlsplit(u).query).get('text')==[s['Message WhatsApp']] for u in chats)==2,'CTA '+s['name'])
 print('\n'.join(errors) if errors else 'PASS: HTML links, anchors, robots, H1, approved copy and 86 local WhatsApp CTAs.')
-sys.exit(bool(errors))
+if errors: sys.exit(1)
+# Exact destination inventory, distinct metadata and a link from the index.
+index=Doc((PUBLIC/'stations.html').read_text())
+inventory=[a['data-name'] for t,a in index.tags if t=='article' and a.get('class')=='ss-resort']
+assert len(inventory)==43 and len(set(inventory))==43
+links={a.get('href') for t,a in index.tags if t=='a'}
+assert all(s['URL'] in links for s in stations)
+assert len({s['Title SEO'] for s in stations})==43
+assert len({s['Meta description'] for s in stations})==43
+assert 'DEMI-JOURNÉE' not in (PUBLIC/'offres/freeride-decouverte.html').read_text()
+assert not (PUBLIC/'sitemap.xml').exists(),'Sitemap must remain pending domain approval in this checkout'
+print('PASS: 43 index links, distinct local metadata, freeride formats and deferred sitemap.')

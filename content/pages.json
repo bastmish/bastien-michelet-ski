@@ -85,8 +85,8 @@
             "text": "Du premier cours au perfectionnement technique, nos moniteurs adaptent chaque expérience à votre niveau, vos objectifs et vos envies."
           },
           {
-            "label": "",
-            "text": "**Offre 01 — Leçons particulières**"
+            "label": "Offre 01",
+            "text": "Leçons particulières"
           },
           {
             "label": "",
@@ -97,8 +97,12 @@
             "text": "CTA : Découvrir les cours privés"
           },
           {
-            "label": "",
-            "text": "**Offre 02 — Performance & technique** — badge : **NOTRE SPÉCIALITÉ**"
+            "label": "Offre 02",
+            "text": "Performance & technique"
+          },
+          {
+            "label": "Badge",
+            "text": "NOTRE SPÉCIALITÉ"
           },
           {
             "label": "",
@@ -109,8 +113,8 @@
             "text": "CTA : Découvrir le coaching technique"
           },
           {
-            "label": "",
-            "text": "**Offre 03 — Freeride & milieu alpin**"
+            "label": "Offre 03",
+            "text": "Freeride & milieu alpin"
           },
           {
             "label": "",
@@ -121,8 +125,8 @@
             "text": "CTA : Explorer le freeride"
           },
           {
-            "label": "",
-            "text": "**Offre 04 — Snowboard**"
+            "label": "Offre 04",
+            "text": "Snowboard"
           },
           {
             "label": "",

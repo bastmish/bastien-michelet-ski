@@ -1,0 +1,13 @@
+{
+  "pages": 50,
+  "viewports": [
+    375,
+    768,
+    1440
+  ],
+  "axe_violations": [],
+  "page_errors": [],
+  "navigation": "PASS",
+  "station_keyboard_search": "PASS",
+  "whatsapp_href": "PASS (no message sent)"
+}

@@ -17,3 +17,12 @@
 .ss-breadcrumb{padding-top:115px}.ss-edition .ss-local-hero{padding-top:35px}
 .ss-links{display:flex;flex-wrap:wrap;margin-top:24px}.ss-resort-graphic{background:#172a2c url('/assets/alpes-atlas-society.svg') center/contain no-repeat!important}
 @media(max-width:650px){.ss-edition .ss-copy-hero{padding-top:125px}.ss-edition .ss-copy p{font-size:16px}.ss-action{padding:12px 15px}.ss-edition .ss-edition-art{max-height:220px}.ss-edition .ss-copy-inner{width:calc(100% - 40px)}}
+.ss-edition .ss-copy .kicker{color:#b3c6c3!important}
+body .site-header .brand-text small{color:#414b4d!important}
+.ss-ridge-footer .ss-footer-col h3,.ss-ridge-footer .ss-footer-legal{color:#c3ccc5!important}
+.ss-destinations-page .ss-territory-index,.ss-destinations-page .ss-territory-total,.ss-destinations-page .ss-territory-visible,.ss-destinations-page #station-results-count,.ss-destinations-page .ss-stations-disclaimer{color:#4b5750!important}
+.ss-destinations-page .ss-territory-filter:not(.is-active) span{color:#45534b!important}
+.ss-destinations-page .ss-stations-footer,.ss-destinations-page .ss-stations-footer a,.ss-destinations-page .ss-stations-footer span{color:#4b5750!important}
+body .site-header .brand-text small{color:#30383a!important}
+.ss-ridge-footer .ss-footer-col h3,.ss-ridge-footer .ss-footer-legal{color:#4b5750!important}
+body .ss-stations-footer a,body .ss-stations-footer span{color:#4b5750!important}

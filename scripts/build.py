@@ -37,7 +37,7 @@ for page in pages:
    if label.startswith('Surtitre'):tag='div';cls='kicker'
    elif label=='H1':tag='h1';cls=''
    elif label=='H2':tag='h2';cls=''
-   elif label.startswith('Q'):tag='h3';cls=''
+   elif label.startswith(('Q','Offre')):tag='h3';cls=''
    elif 'titre' in label.lower() or label.startswith('Titre'):tag='h3';cls=''
    elif raw.startswith('**'):tag='h3';cls='';text=clean(raw.split(' — version')[0])
    else:tag='p';cls='ss-note' if label=='Note' else ''
@@ -72,3 +72,4 @@ if origin:
  urls=['' if p=='index.html' else p for p in [p['path'] for p in pages]+['stations.html']+[s['URL'].lstrip('/') for s in stations]]
  (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+esc(origin+'/'+u)+'</loc></url>' for u in urls)+'</urlset>')
 print('Rendered 6 main pages and 43 destinations; indexing remains disabled.')
+(OUT/'404.html').write_text(shell('404.html','Page introuvable | Ski Society','Cette page Ski Society est introuvable. Retrouvez nos expériences et destinations.','<section class="ss-copy ss-copy-hero"><div class="wrap"><h1>Cette piste reste à découvrir.</h1><p>La page demandée est introuvable.</p>'+link('Retour à l’accueil','/')+link('Nos destinations','/stations.html')+'</div></section>'))
