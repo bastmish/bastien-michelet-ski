@@ -58,3 +58,13 @@ assert len({s['Meta description'] for s in stations})==43
 assert 'DEMI-JOURNÉE' not in (PUBLIC/'offres/freeride-decouverte.html').read_text()
 assert not (PUBLIC/'sitemap.xml').exists(),'Sitemap must remain pending domain approval in this checkout'
 print('PASS: 43 index links, distinct local metadata, freeride formats and deferred sitemap.')
+
+for page in pages:
+ raw=(PUBLIC/page['path']).read_text()
+ assert 'edition.css' not in raw
+ assert 'integration.css' in raw
+for station in stations:
+ raw=(PUBLIC/station['URL'].lstrip('/')).read_text()
+ assert 'destination-hero' in raw and 'detail-photo' in raw
+ assert 'integrated-service-card' in raw
+print('PASS: reference integration styles and 43 photographic destination templates.')

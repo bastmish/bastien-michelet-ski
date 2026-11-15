@@ -1,38 +1,56 @@
-# Recette Ski Society
+# Recette de la correction graphique — PR #20
 
-## Périmètre
+## Référence et contenu
 
-Branche dédiée basée sur main (bc9bb78). Six pages principales (32 sections) et 43 destinations HTML statiques générées depuis les sources éditoriales versionnées ; catalogue et recherche reliés aux fiches. Navigation, logo, pied de page et illustration alpine réutilisés. Les photos d’ambiance non identifiées des cartes sont remplacées par une illustration commune.
+Référence visuelle : main au commit bc9bb78, sans modification de cette branche.
+Correction sur feat/ski-society-complete uniquement.
 
-## Contrôles reproductibles
+- Accueil : hero, diptyque photographique, galerie ADN, cartes expériences, programmes, cartes destinations, FAQ en accordéons, formulaire et animations de main réutilisés.
+- Collectif : hero photographique du manifeste et composition éditoriale ; aucun profil individuel.
+- Offres : hero photographique existant, cartes illustrées, méthode, formats en lignes éditoriales et panneau de réservation.
+- Destinations : 43 pages avec hero photographique, portrait en deux colonnes, cartes disciplines et panneau WhatsApp. Les photos d’ambiance sont identifiées comme telles, sans attribution locale non vérifiée.
+- edition.css supprimé ; les styles historiques sont conservés. integration.css contient des adaptations ciblées.
+- Copies validées, métadonnées locales et messages WhatsApp conservés ; noindex,nofollow inchangé.
 
-- `python scripts/build.py` : 6 pages principales, 43 destinations et page 404.
-- `python tests/check_site.py` : textes validés, liens internes, ancres, un H1 par page, robots, 43 liens du catalogue, métadonnées locales distinctes, 86 CTA locaux et formats freeride.
-- `git diff --check` : aucun problème.
-- Playwright + Chromium : 50 pages à 375, 768 et 1440 px, absence de débordement horizontal, HTTP 200 et un H1. Menu mobile (ouverture/Escape), recherche clavier « Meribel » vers Méribel, inspection de l’URL WhatsApp.
-- axe-core : règles WCAG 2 A/AA et 2.1 AA. Les contrastes insuffisants des composants existants ont été corrigés dans edition.css. Contrôle mobile supplémentaire sur accueil, catalogue et La Grave : aucune violation détectée.
+## Captures et comparaison
 
-Aucun message WhatsApp envoyé. Ces tests ne confirment pas la propriété du numéro ni la réception effective d’un message. Les contrôles automatisés d’accessibilité ne remplacent pas une recette humaine complète au clavier et avec lecteur d’écran.
+20 captures desktop (1440 px) et mobile (390 px), dans docs/visual :
+référence main, proposition rejetée et intégration corrigée. L’index HTML permet de les parcourir et captures.json consigne les erreurs de chargement.
 
-## Performance et limites
+**Limite majeure :** le proxy de l’environnement refuse images.pexels.com et les polices externes. Les captures montrent donc la composition réelle avec les ressources non chargées ; aucune photographie n’a été simulée ou remplacée pour masquer ce blocage. Une validation photographique et typographique complète reste nécessaire après application des autorisations réseau. Les captures ne constituent pas une validation graphique du propriétaire.
 
-Le nouveau contenu est disponible sans JavaScript. Pas de dépendance d’application ajoutée, pas d’API distante pour la recherche. HTML des pages principales : environ 9–16 ko hors compression. Les nouvelles pages utilisent un SVG local et ne nécessitent aucune photo distante. Aucun score Lighthouse ni mesure terrain n’a été établi : les feuilles de style historiques et l’animation du pied de page restent des pistes de mesure sur l’hébergement cible.
+## Contrôles
 
-La page 404 est fournie pour éviter le repli automatique vers la page d’accueil sur l’hébergement statique. Les en-têtes Cloudflare _headers doivent être vérifiés sur une prévisualisation hébergée ; le serveur Python ne les applique pas. Les meta robots protègent déjà chaque page.
+Les tests statiques vérifient les textes des 32 sections, les liens et ancres, les 43 liens de destinations, les métadonnées distinctes, les 86 CTA locaux et les formats freeride. La recherche clavier et le menu mobile sont testés par Playwright. Le formulaire ne permet plus la demi-journée en freeride et ne présume plus un nombre de participants imposé pour le coaching.
 
-## Publication et éléments en attente
+Les résultats navigateur de la correction sont dans tests/browser-results.json. Les tests automatisés ne remplacent pas la recette humaine et ne prouvent pas les droits photographiques, la propriété du numéro WhatsApp ni la disponibilité des prestations. Aucun message envoyé.
 
-Aucun déploiement ni fusion. Aucun sitemap soumis. noindex,nofollow conservé dans les pages, complété par X-Robots-Tag et robots.txt.
+## Prévisualisation HTTPS : blocage constaté
 
-Le domaine définitif doit être approuvé avant de générer les canoniques et le sitemap : voir DEVELOPMENT.md. Les titres et descriptions des six pages principales sont des propositions SEO à valider, distinctes des copies éditoriales approuvées.
+Wrangler 4.162.0 :
+- whoami : non authentifié ; aucune session locale ni variable CLOUDFLARE_API_TOKEN utilisable.
+- versions upload --preview-alias review-pr20 : échec avant téléversement, jeton requis en mode non interactif.
+- API Cloudflare : connexion refusée par le proxy (CONNECT 403).
+- Aucun lien de prévisualisation Cloudflare obtenu ; aucune URL inventée.
 
-Voir LOCAL_VERIFICATION.md pour les 43 références locales et les validations métier. Les avis restent un emplacement de réserve sans faux témoignage ; faire valider leur présentation avant publication.
+Les domaines photos/polices/Cloudflare ainsi que les champs CLOUDFLARE_API_TOKEN et CLOUDFLARE_ACCOUNT_ID sont enregistrés dans le brouillon de l’environnement. La sauvegarde du brouillon ne les applique pas à la machine. L’interface exige de sauvegarder et publier l’environnement de travail, puis de renseigner les accès dans ses paramètres sécurisés. Cela ne publie pas le site.
 
-La branche a été poussée. La création de PR via gh est bloquée par « Post https://api.github.com/graphql: Forbidden ». Le descriptif est disponible dans PR_DESCRIPTION.md. Ouvrir la PR vers main depuis :
-https://github.com/bastmish/bastien-michelet-ski/pull/new/feat/ski-society-complete
+Après application : recharger les photos, refaire les captures et les contrôles, téléverser une version de prévisualisation sans activation production, vérifier son URL HTTPS et la transmettre au propriétaire.
 
-Prévisualisation locale : http://localhost:3000 après lancement du serveur documenté. Aucun lien Cloudflare public n’a été généré.
+## Points métier
 
-## Résultat final automatisé
+Voir LOCAL_VERIFICATION.md pour les contrôles station par station, les autorisations suisses, La Grave, les qualifications/assurances, le numéro WhatsApp et la procédure du questionnaire. Domaine canonique et photos locales restent à valider.
 
-50 pages contrôlées aux trois largeurs (150 rendus), zéro violation axe-core sur les règles testées et zéro erreur JavaScript. Navigation mobile, recherche clavier et liens WhatsApp : PASS. Résultat machine : tests/browser-results.json. L’accueil a été recontrôlé après la dernière mise en forme des intitulés d’offres : PASS.
+Aucun déploiement en production ni fusion. PR #20 conservée ouverte.
+
+## Résultat final de la correction
+
+- Tests statiques : PASS, y compris absence d’edition.css et présence des 43 templates photographiques.
+- Playwright : 50 pages, 150 rendus à 375/768/1440 px, aucun débordement horizontal, aucune erreur JavaScript.
+- axe-core : aucune violation détectée pour les règles WCAG 2 A/AA et 2.1 AA testées. Résultat final dans tests/browser-results.json.
+- Formulaire : tests/booking_check.py PASS pour l’exclusion du freeride demi-journée et l’adaptation d’une sélection existante.
+- Captures : 20 vues à 390/1440 px, aucun débordement ; 266 occurrences d’images non chargées dans l’ensemble des captures (plusieurs vues réutilisent les mêmes photos).
+- Wrangler versions upload --dry-run : PASS. Ce contrôle ne téléverse rien et ne fournit aucune URL publique.
+- git diff --check : PASS.
+
+Les résultats d’accessibilité et de géométrie restent limités au rendu disponible sans les photos et polices externes. Il faut refaire la validation visuelle complète une fois l’accès appliqué.

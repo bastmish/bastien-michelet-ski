@@ -1,9 +1,5 @@
-Implémente les six pages principales avec les copies validées du dossier du 15 novembre 2026 et 43 pages destinations HTML pré-rendues depuis des sources JSON versionnées.
+Restaure la direction graphique de main et intègre les copies validées dans ses composants photographiques, cartes et interactions. Supprime edition.css. Les 43 fiches conservent leurs contenus SEO et WhatsApp et utilisent un template photographique avec panneau de réservation.
 
-Les cartes et suggestions Destinations ouvrent les fiches locales ; chaque fiche comporte ses métadonnées et deux liens WhatsApp contextualisés. Les contenus locaux restent explicitement à vérifier. Les styles, navigation, pied de page et illustrations alpines existants sont réutilisés.
+Les captures comparatives ordinateur/mobile se trouvent dans docs/visual. Le chargement des photos et polices est bloqué par le proxy de l’environnement : validation visuelle complète en attente de l’accès réseau. Les tests de contenu, liens, navigation et accessibilité sont documentés dans QA_IMPLEMENTATION.md.
 
-L’indexation reste bloquée par meta robots, X-Robots-Tag et robots.txt. La génération des canoniques et du sitemap attend un domaine définitif approuvé. Aucun déploiement, envoi de message, soumission de sitemap ni fusion.
-
-Validation : tests statiques des textes, liens, ancres, H1, robots et 86 CTA locaux ; contrôle navigateur responsive et accessibilité documenté dans QA_IMPLEMENTATION.md.
-
-À vérifier : couverture des 43 destinations, qualifications/assurances, autorisations suisses, itinéraires de La Grave, destinataire WhatsApp, procédure du questionnaire et domaine canonique.
+Aucun déploiement en production, aucune fusion ni modification de main. noindex,nofollow conservé. La prévisualisation Cloudflare est bloquée par l’absence d’authentification Wrangler et le refus réseau de l’API ; voir le rapport pour les constats et la reprise.

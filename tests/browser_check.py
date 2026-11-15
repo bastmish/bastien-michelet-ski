@@ -33,7 +33,7 @@ with sync_playwright() as p:
  page.wait_for_url('**/stations/meribel.html')
  assert 'Méribel' in page.locator('h1').inner_text()
  # Inspect WhatsApp href without sending a message.
- assert 'wa.me/33763532601?text=' in page.locator('.ss-copy a').first.get_attribute('href')
+ assert 'wa.me/33763532601?text=' in page.locator('.detail-inner a[href*="wa.me"]').first.get_attribute('href')
  page.screenshot(path='/tmp/ski-mobile.png',full_page=True)
  browser.close()
 report={'pages':len(results),'viewports':[375,768,1440],'axe_violations':violations,'page_errors':console,'navigation':'PASS','station_keyboard_search':'PASS','whatsapp_href':'PASS (no message sent)'}
