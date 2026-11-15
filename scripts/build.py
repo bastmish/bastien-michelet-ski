@@ -78,6 +78,3 @@ soup=BeautifulSoup((OUT/'stations.html').read_text(),'html.parser')
 for card,station in zip(soup.select('.ss-resort'),stations):
  card.select_one('.ss-resort-cta')['href']=station['URL']
 (OUT/'stations.html').write_text(str(soup))
-# Stage-one architecture review: do not apply unapproved visual changes to other pages.
-from home_review import apply as apply_home_review
-apply_home_review()

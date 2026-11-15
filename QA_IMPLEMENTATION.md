@@ -71,9 +71,3 @@ main inchangée, PR #20 non fusionnée, aucun déploiement en production, aucune
 ## Mise à jour Notre histoire
 
 À la demande du propriétaire, cette page adopte maintenant les composants de l’accueil plutôt que son ancienne composition manifeste. Les tests photo/styles de cette page vérifient donc ses ressources par rapport à la home. Les quatre sections validées sont intactes. tests/story_home.py passe à 375, 768 et 1440 px : aucun débordement, aucune erreur JavaScript et transitions sombre/clair confirmées. Les autres pages publiques ne sont pas modifiées par cette mise à jour. Comparatif : docs/story-home/index.html.
-
-## Nouvelle architecture — étape de validation accueil/footer
-
-Le dernier brief est conservé dans docs/ARCHITECTURE_REQUIRED.md. Son ordre de travail est appliqué : l’accueil et une nouvelle proposition de footer sont préparés seuls. Le bilan courant est docs/home-review/STATUS.md.
-
-Les tests de structure, contenus et fonctions passent. Le contrôle obligatoire de photographies chargées est **BLOCKED** : tests/home_review.py retourne 2, avec zéro image chargée sur 16 à chaque largeur. Les captures provisoires ne sont pas considérées comme une validation photographique réussie. Les autres pages et la généralisation du footer attendent l’approbation de la première étape.

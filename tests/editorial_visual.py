@@ -30,7 +30,7 @@ with sync_playwright() as p:
     records.append(record)
     if path=='index.html' and version=='new-copy':
      for part in ['art-prefooter','art-footer']:
-      page.locator('.'+part+(','+('.review-prefooter' if part=='art-prefooter' else '.review-footer'))).screenshot(path=str(OUT/f'{part}-{width}.png'),animations='disabled')
+      page.locator('.'+part).screenshot(path=str(OUT/f'{part}-{width}.png'),animations='disabled')
     if path=='index.html':
      # Capture the live reference chapter tones at each heading, not a forced page-wide theme.
      for sid in ['offres','formules','avis']:

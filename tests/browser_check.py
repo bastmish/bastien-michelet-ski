@@ -20,7 +20,7 @@ with sync_playwright() as p:
   page.add_script_tag(path=os.environ['AXE_SCRIPT'])
   results=page.evaluate("async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}})).violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>n.target)}))")
   if results:issues.append({'path':path,'original_page':path in originals,'issues':results})
-  bad_footer=page.evaluate("async()=> (await axe.run(document.querySelector('.art-footer,.review-footer'),{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}})).violations.map(v=>v.id)")
+  bad_footer=page.evaluate("async()=> (await axe.run(document.querySelector('.art-footer'),{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}})).violations.map(v=>v.id)")
   if bad_footer:footer_issues.append({'path':path,'issues':bad_footer})
  page.set_viewport_size({'width':390,'height':900})
  page.goto('http://localhost:3000/',wait_until='networkidle')

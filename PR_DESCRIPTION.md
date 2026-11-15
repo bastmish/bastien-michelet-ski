@@ -1,7 +1,7 @@
-Conserve les 32 sections validées et les 43 destinations, puis prépare l’étape de validation de l’accueil demandée par le brief d’architecture : ADN asymétrique, Performance mise en valeur, trois créneaux explicites, FAQ et contact conservés.
+Intègre les 32 sections éditoriales validées dans les compositions de bc9bb78 : hero, photographies, galerie ADN, cartes expériences, programmes, FAQ, formulaire et compositions du collectif. Chaque offre conserve son fichier de référence et ses photos ; les sections supplémentaires réemploient les composants de main.
 
-Le nouveau pré-footer photographique et le footer fonctionnel sont proposés uniquement sur l’accueil. Les autres pages ne reçoivent pas ces nouveaux composants avant validation visuelle. La généralisation du footer aux 49 pages reste donc en attente.
+Conserve les 43 destinations, leurs métadonnées et leurs CTA WhatsApp. Le catalogue et sa recherche ouvrent chaque fiche. Le nouveau footer photographique sportif est le seul composant entièrement redessiné.
 
-Les contrôles de contenu, liens, responsive, transitions et navigation passent. La validation photographique obligatoire est bloquée : 0 image chargée sur 16 à chaque largeur ; le proxy refuse les domaines distants. Les captures provisional-*.png sont des diagnostics, pas des livrables photographiques validés. Détails et reprise : docs/home-review/STATUS.md.
+Vérifications : tableau des 32 sections dans docs/editorial-integration/sections.md, audit préalable, tests de textes/ressources/liens et comparatifs ordinateur/mobile dans docs/editorial-integration/visual/index.html. Les ressources distantes sont bloquées dans l’environnement : limite de recette consignée dans INTEGRATION.md et QA_IMPLEMENTATION.md.
 
-main inchangée, PR #20 non fusionnée, noindex,nofollow maintenu, aucun déploiement en production.
+main inchangée, noindex,nofollow conservé, aucun déploiement en production ni fusion.
