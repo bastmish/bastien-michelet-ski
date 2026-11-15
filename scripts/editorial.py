@@ -142,44 +142,50 @@ def integrate(pages,finish):
  for option in section.select('select[name="experience"] option'):
   if option.get('value'):option.string=option['value']
  save(home,pages[0],finish)
- # Collective: four editorial sections inhabit the original seven visual compositions.
+ # Collective now explicitly uses the homepage components, as requested.
  page=pages[1];ss=page['sections'];m=chat('une expérience avec le collectif Ski Society')
- soup=BeautifulSoup((ROOT/'content/original-pages/manifesto.html').read_text(),'html.parser')
- node=soup.select_one('.mf-hero');mark(node,'b01')
- text(node.select_one('.mf-kicker'),value(ss[0],'Surtitre'))
- heading(node.h1,value(ss[0],'H1'),"L'envie")
- text(node.select_one('.mf-hero-copy>p'),value(ss[0],'Paragraphe'))
- last=soup.new_tag('p');last.string=value(ss[0],'Phrase finale');node.select_one('.mf-hero-copy').append(last)
- hero_link=node.select_one('.mf-hero-link')
- put(hero_link,E(value(ss[1],'Surtitre'))+' <span aria-hidden="true">↓</span>')
- # Counter contained superseded marketing text; keep its composition with approved brand copy.
- put(node.select_one('.mf-hero-counter'),'<strong>SKI SOCIETY</strong><span>'+E(value(ss[0],'Surtitre'))+'</span>')
- s=ss[1];blocks=s['blocks'];origin=soup.select_one('.mf-origin');mark(origin,'b02')
- put(origin.select_one('.mf-side-note'),'<span>'+E(value(s,'Surtitre'))+'</span><strong>'+E(value(s,'Titre 01'))+'</strong>')
- put(origin.select_one('.mf-origin-story'),'<h2 id="origine-title">'+E(value(s,'H2'))+'</h2>'+block(blocks[2])+block(blocks[3])+block(blocks[4]))
- quote_node=origin.select_one('.mf-origin-story h3')
- quote_node.name='div';quote_node['class']='mf-origin-pullquote'
- origin_title=origin.select_one('.mf-origin-story h2')
- words=value(s,'H2').rsplit(' ',1)
- put(origin_title,E(words[0])+' <em>'+E(words[1])+'</em>')
- node=soup.select_one('.mf-turning');mark(node,'b02')
- text(node.select_one('.mf-turning-photo>span'),value(s,'Surtitre'))
- put(node.select_one('.mf-turning-copy'),'<div class="mf-kicker"><span></span>'+E(value(s,'Surtitre'))+'</div><h2 id="turning-title">'+E(value(s,'Titre 02'))+'</h2>'+block(blocks[6])+block(blocks[7])+block(blocks[8]))
- s=ss[2];node=soup.select_one('.mf-statement');mark(node,'b03')
- text(node.select_one('.mf-statement-inner>span'),value(s,'Surtitre'));heading(node.h2,value(s,'H2'),'vous comprendre.');text(node.p,value(s,'Introduction'))
- node=soup.select_one('.mf-translation');mark(node,'b03')
- text(node.select_one('.mf-section-head .mf-kicker'),value(s,'Surtitre'));text(node.h2,value(s,'H2'));text(node.select_one('.mf-section-head>p'),value(s,'Introduction'))
+ soup=BeautifulSoup((ROOT/'content/original-pages/index.html').read_text(),'html.parser')
+ soup.body['class']='story-home'
+ soup.main.clear()
+ # Homepage hero, with the complete approved collective introduction.
+ node=copy.copy(home.select_one('#accueil'));mark(node,'b01')
+ put(node.select_one('.hero-copy'),'<div class="kicker">'+E(value(ss[0],'Surtitre'))+'</div><h1 id="hero-title">'+E(value(ss[0],'H1'))+'</h1><p>'+E(value(ss[0],'Paragraphe'))+'</p><p>'+E(value(ss[0],'Phrase finale'))+'</p><div class="hero-actions">'+a(value(ss[3],'CTA'),'#contact')+a(value(ss[1],'Surtitre'),'#offres','ss-hero-contact')+'</div>')
+ soup.main.append(node)
+ # The homepage photographic cards carry the three heritage points.
+ node=copy.copy(home.select_one('#offres'));mark(node,'b02')
+ s=ss[1];text(node.select_one('.kicker'),value(s,'Surtitre'));text(node.h2,value(s,'H2'))
+ text(node.select_one('.ss-offers-heading>p'),value(s,'Introduction'))
  _,cards,_=groups(s)
- for card,items in zip(node.select('.mf-values article'),cards):
-  put(card,''.join(block(b) for b in items))
-  marker=card.select_one('.kicker')
-  if marker:marker.name='span';marker.attrs.pop('class',None)
- s=ss[3];node=soup.select_one('.mf-collective');mark(node,'b04')
- put(node.select_one('.mf-collective-layout>div:first-child'),'<span class="mf-kicker">'+E(value(s,'Surtitre'))+'</span><h2 id="collective-title">'+E(value(s,'H2'))+'</h2>')
- put(node.select_one('.mf-collective-layout>div:last-child'),block(s['blocks'][2]))
- node=soup.select_one('.mf-final');mark(node,'b04')
- put(node.select_one('.mf-final-layout>div:first-child'),'<span class="mf-kicker">SKI SOCIETY</span><h2>'+E(value(s,'Sous-titre'))+'</h2>'+block(s['blocks'][4]))
- put(node.select_one('.mf-final-actions'),a(value(s,'CTA'),m))
+ for i,card in enumerate(node.select('.ss-offer-card')):
+  if i>=len(cards):card.decompose();continue
+  card.name='article';card.attrs.pop('href',None);card.attrs.pop('aria-label',None)
+  card['class']=['ss-offer-card']
+  for badge in card.select('.ss-offer-feature-tag'):badge.decompose()
+  put(card.select_one('.ss-offer-content'),'<span class="ss-offer-meta" aria-hidden="true">'+str(i+1).zfill(2)+' /</span>'+''.join(block(b) for b in cards[i]))
+ soup.main.append(node)
+ # The homepage programme layout becomes the collective's three-step philosophy.
+ node=copy.copy(home.select_one('#formules'));mark(node,'b03');s=ss[2]
+ text(node.select_one('.kicker'),value(s,'Surtitre'));text(node.h2,value(s,'H2'))
+ text(node.select_one('.ss-programmes-intro-v72>p'),value(s,'Introduction'))
+ cta=node.select_one('.ss-programmes-link-v72');svg=str(cta.svg);put(cta,E(value(ss[3],'CTA'))+svg);cta['href']=m
+ _,cards,_=groups(s)
+ for i,(card,items) in enumerate(zip(node.select('.ss-programme-v72'),cards)):
+  put(card.select_one('.ss-programme-index-v72'),str(i+1).zfill(2))
+  put(card.select_one('.ss-programme-detail-v72'),''.join(block(b) for b in items[1:])+'<div class="ss-programme-facts-v72"><span>'+E(clean(items[0]['text']))+'</span></div>')
+ node.select_one('.ss-programmes-disclaimer-v72').decompose()
+ soup.main.append(node)
+ # Same homepage contact composition, without adding a second enquiry form.
+ node=copy.copy(home.select_one('#contact'));mark(node,'b04');s=ss[3]
+ node['aria-labelledby']='reviews-title'
+ text(node.select_one('.kicker'),value(s,'Surtitre'));text(node.h2,value(s,'H2'));node.h2['id']='reviews-title'
+ text(node.select_one('.ss-contact-heading>p'),value(s,'Introduction'))
+ form=node.select_one('#ski-request-form')
+ form.name='div';form.attrs.pop('id',None);form['class']=['ss-request-form','story-summary']
+ put(form,'<div class="kicker">'+E(value(s,'Surtitre'))+'</div><h3>'+E(value(s,'Sous-titre'))+'</h3>'+block(s['blocks'][4]))
+ put(node.select_one('.ss-request-side-body'),'<span>SKI SOCIETY</span>'+a(value(s,'CTA'),m,'ss-request-direct'))
+ soup.main.append(node)
+ for script in soup.select('script[src="reviews-gallery.js"]'):script.decompose()
+ soup.head.append(soup.new_tag('link',rel='stylesheet',href='/story-home.css'))
  save(soup,page,finish)
  # Offers retain each page's own photo/head/style and existing component structures.
  home_template=BeautifulSoup((ROOT/'content/original-pages/index.html').read_text(),'html.parser')

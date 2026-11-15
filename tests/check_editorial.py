@@ -11,9 +11,13 @@ def copytext(text):return re.sub(r'\*\*(.*?)\*\*',r'\1',text).split(' — versio
 report=[];failures=[]
 for page in pages:
  raw=(ROOT/'public'/page['path']).read_text();soup=BeautifulSoup(raw,'html.parser')
- ref=BeautifulSoup((ROOT/'content/original-pages'/page['path']).read_text(),'html.parser')
+ ref=BeautifulSoup((ROOT/'content/original-pages'/('index.html' if page['path']=='manifesto.html' else page['path'])).read_text(),'html.parser')
  # Each page keeps its own source photos and linked stylesheets, not another offer's template.
- assert [n['src'] for n in soup.main.select('img')]==[n['src'] for n in ref.main.select('img')],page['path']+' photographs'
+ if page['path']=='manifesto.html':
+  assert all(n['src'] in {i['src'] for i in ref.main.select('img')} for n in soup.main.select('img'))
+  assert soup.main.get('class')==['ss-architecture']
+  assert len(soup.select('.ss-offer-card'))==3 and len(soup.select('.ss-programme-v72'))==3
+ else:assert [n['src'] for n in soup.main.select('img')]==[n['src'] for n in ref.main.select('img')],page['path']+' photographs'
  refstyles={n['href'] for n in ref.select('link[rel="stylesheet"]') if 'ridgeline-footer' not in n['href']}
  assert refstyles.issubset({n['href'] for n in soup.select('link[rel="stylesheet"]')}),page['path']+' CSS'
  assert 'integration.css' not in raw and 'art-direction.css' not in raw,page['path']+' redesign layer'

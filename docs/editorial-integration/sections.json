@@ -120,7 +120,7 @@
     "status": "PASS",
     "components": [
       [
-        "mf-hero"
+        "hero"
       ]
     ],
     "missing": []
@@ -132,10 +132,9 @@
     "status": "PASS",
     "components": [
       [
-        "mf-origin"
-      ],
-      [
-        "mf-turning"
+        "ss-section",
+        "ss-offers",
+        "ss-offers-v46"
       ]
     ],
     "missing": []
@@ -147,10 +146,10 @@
     "status": "PASS",
     "components": [
       [
-        "mf-statement"
-      ],
-      [
-        "mf-translation"
+        "ss-section",
+        "ss-formules",
+        "ss-journey-v49",
+        "ss-programmes-v72"
       ]
     ],
     "missing": []
@@ -162,10 +161,9 @@
     "status": "PASS",
     "components": [
       [
-        "mf-collective"
-      ],
-      [
-        "mf-final"
+        "ss-section",
+        "ss-contact",
+        "ss-contact-v29"
       ]
     ],
     "missing": []

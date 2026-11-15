@@ -67,3 +67,7 @@ Aucun prix, avis, score, qualification, disponibilité ou établissement local i
 Voir LOCAL_VERIFICATION.md pour la couverture réelle, les qualifications/assurances, la Suisse, La Grave, les photos, le numéro WhatsApp et l’organisation du questionnaire après confirmation.
 
 main inchangée, PR #20 non fusionnée, aucun déploiement en production, aucune soumission de sitemap et noindex,nofollow maintenu.
+
+## Mise à jour Notre histoire
+
+À la demande du propriétaire, cette page adopte maintenant les composants de l’accueil plutôt que son ancienne composition manifeste. Les tests photo/styles de cette page vérifient donc ses ressources par rapport à la home. Les quatre sections validées sont intactes. tests/story_home.py passe à 375, 768 et 1440 px : aucun débordement, aucune erreur JavaScript et transitions sombre/clair confirmées. Les autres pages publiques ne sont pas modifiées par cette mise à jour. Comparatif : docs/story-home/index.html.

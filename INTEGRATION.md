@@ -19,7 +19,7 @@ L’audit a été effectué avant modification : docs/editorial-integration/audi
 | Page | Sections éditoriales | Composition réemployée |
 |---|---:|---|
 | Accueil | A01–A08 : 8 | Hero, diptyque photographique, galerie ADN, quatre cartes expériences, programmes, galerie destinations et bandeau catalogue, coque des avis, accordéons FAQ, formulaire et contact. |
-| Le collectif | B01–B04 : 4 | mf-hero ; mf-origin et mf-turning ; mf-statement et mf-translation ; mf-collective et mf-final. Les sept compositions visuelles restent présentes. |
+| Le collectif | B01–B04 : 4 | À la demande suivante : hero, cartes photographiques, programmes éditoriaux et contact de la page d’accueil. Les quatre textes validés restent inchangés. |
 | Cours particuliers | C01–C05 : 5 | Photo et hero propres à cette page, grille de points et listes, cartes other-offers, programmes de la home de référence, étapes et final-cta photographique d’origine. |
 | Performance & technique | D01–D05 : 5 | Même méthode, à partir de son propre fichier de référence et de ses propres photos. |
 | Freeride & milieu alpin | E01–E05 : 5 | Même méthode ; seuls les formats journée et sur mesure sont présentés. |
@@ -67,3 +67,7 @@ Les textes et certains retours à la ligne changent volontairement : cette recet
 Les photos et polices distantes restent refusées par le proxy de l’environnement. Elles ne sont ni simulées ni remplacées dans les captures. Les URLs et les styles sont contrôlés, mais une recette photographique et typographique complète reste nécessaire lorsque les ressources seront accessibles.
 
 Voir QA_IMPLEMENTATION.md pour les résultats et observations d’accessibilité. Les rapports de restauration seule et de refonte antérieure sont des archives, pas les spécifications de l’état courant.
+
+## Mise à jour : style de l’accueil sur Notre histoire
+
+La page manifesto.html reprend désormais les composants, photos, typographies et transitions de l’accueil. Les trois points de l’héritage sont présentés dans ses cartes ; les trois étapes de la philosophie dans ses lignes de programme ; la conclusion dans son bloc de contact. Aucun formulaire supplémentaire n’est ajouté. L’accueil et les autres pages ne changent pas. Les tests dédiés sont dans tests/story_home.py ; captures et résultats dans docs/story-home/.

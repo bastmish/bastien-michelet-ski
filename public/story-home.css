@@ -1,0 +1,13 @@
+/* Notre histoire inherits the home components, photos, fonts and chapter motion.
+   Only adapt the three-card count and the longer collective copy. */
+.story-home .ss-architecture .ss-offers-v46 .ss-offer-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.story-home .hero-copy{max-width:900px}
+.story-home .hero-copy>p+p{margin-top:18px}
+.story-home .hero-actions{flex-wrap:wrap}
+.story-home .ss-offer-card .ss-offer-content h3{min-height:0!important}
+.story-home .story-summary{display:flex;flex-direction:column;justify-content:center}
+.story-home .story-summary h3{font-size:clamp(28px,3vw,42px);line-height:1.12;margin:20px 0}
+.story-home .story-summary p{font-size:15px;line-height:1.85;color:#536458;max-width:600px}
+.story-home .ss-request-side-body .ss-request-direct{margin-top:18px}
+@media(max-width:850px){.story-home .ss-architecture .ss-offers-v46 .ss-offer-grid{grid-template-columns:1fr!important}}
+@media(max-width:650px){.story-home .hero-inner{padding-top:135px}.story-home .hero-copy h1{font-size:clamp(35px,9vw,47px)}}

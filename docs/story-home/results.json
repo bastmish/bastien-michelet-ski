@@ -1,0 +1,20 @@
+{
+  "viewports": [
+    {
+      "width": 375,
+      "overflow": false,
+      "chapters": "PASS"
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "chapters": "PASS"
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "chapters": "PASS"
+    }
+  ],
+  "page_errors": []
+}

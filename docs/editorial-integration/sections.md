@@ -12,10 +12,10 @@ Contrôle du texte dans le HTML final de chaque section, sans modification des s
 | index.html | A06 | 8 | ss-section ss-testimonials ss-reviews-v26 ss-reviews-v49 ss-reviews-v52 | PASS |
 | index.html | A07 | 17 | ss-section ss-questions | PASS |
 | index.html | A08 | 10 | ss-section ss-contact ss-contact-v29 | PASS |
-| manifesto.html | B01 | 4 | mf-hero | PASS |
-| manifesto.html | B02 | 9 | mf-origin, mf-turning | PASS |
-| manifesto.html | B03 | 12 | mf-statement, mf-translation | PASS |
-| manifesto.html | B04 | 6 | mf-collective, mf-final | PASS |
+| manifesto.html | B01 | 4 | hero | PASS |
+| manifesto.html | B02 | 9 | ss-section ss-offers ss-offers-v46 | PASS |
+| manifesto.html | B03 | 12 | ss-section ss-formules ss-journey-v49 ss-programmes-v72 | PASS |
+| manifesto.html | B04 | 6 | ss-section ss-contact ss-contact-v29 | PASS |
 | offres/ski-prive.html | C01 | 5 | detail-hero | PASS |
 | offres/ski-prive.html | C02 | 15 | section | PASS |
 | offres/ski-prive.html | C03 | 12 | section | PASS |
