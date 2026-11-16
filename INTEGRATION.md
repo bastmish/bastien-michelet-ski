@@ -79,3 +79,7 @@ Seules les deux zones ADN de la home sont recomposées : introduction asymétriq
 ## ADN — composition alpine à une image
 
 Cette demande remplace la précédente proposition de trois cartes : une photo dominante, les textes exacts de LA COMPÉTITION à droite, puis NOTRE APPROCHE et L’EXPÉRIENCE sans photo en dessous. L’introduction empruntée au collectif et son lien sont retirés de cette zone. Aucune autre section ni page ne change. Recette à 1440/1280/1024/768/390 px, contrôle littéral des neuf textes, comparaison du HTML hors zone, liens/SEO et axe ciblé : PASS. Captures, limites réseau et détails : docs/adn-alpine/index.html et docs/adn-alpine/README.md. Les photos/polices restent refusées par le proxy ; la validation photographique complète reste à faire.
+
+## ADN — direction artistique V2
+
+La proposition V2 remplace la composition précédente : sommet photographique pleine largeur avec fondu neutre vers la zone de texte, puis bande de deux contenus avec filet vertical. Trois contenus exacts, styles isolés sous .ss-adn-editorial-v2, aucune autre zone ni page modifiée. Recette aux cinq viewports demandés, vues entières et comparaison : docs/adn-v2/index.html. Rapport : docs/adn-v2/README.md. Contrôles de texte, périmètre, responsive, liens/SEO et axe ciblé réussis. Validation photographique (silhouette/fondu/cadrage) et typographique bloquée par le proxy ; ces contrôles ne sont pas déclarés réussis. Proposition livrée pour validation avant toute autre modification.

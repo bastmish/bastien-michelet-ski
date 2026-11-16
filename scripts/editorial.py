@@ -60,17 +60,19 @@ def integrate(pages,finish):
  kicker=home.new_tag('div',attrs={'class':'kicker'});kicker.string=value(sections[0],'Surtitre');hero.h1.insert_before(kicker)
  actions=hero.select('.hero-actions a')
  for node,label,url in zip(actions,['CTA principal','CTA secondaire'],[m,'#offres']):text(node,value(sections[0],label));node['href']=url
- # ADN: one dominant competition image and exactly three approved editorial blocks.
+ # ADN V2: one photographic composition and its two editorial continuations.
  adn=sections[1]
  reference=BeautifulSoup((ROOT/'content/original-pages/index.html').read_text(),'html.parser')
  photo=copy.copy(reference.select_one('.ss-photo-panel--performance img'))
- section=home.new_tag('section',id='expertise',attrs={'class':'adn-alpine','aria-labelledby':'adn-main-title'})
+ photo['srcset']=photo['src']+' 1400w, '+photo['src'].replace('w=1400','w=2400')+' 2400w'
+ photo['sizes']='(min-width: 1280px) 75vw, 100vw'
+ section=home.new_tag('section',id='expertise',attrs={'class':'ss-adn-editorial-v2','aria-labelledby':'adn-main-title'})
  mark(section,'a02')
- principal='<div class="adn-primary"><div class="adn-section-label">NOTRE ADN</div><div class="adn-main-copy"><div class="adn-block-label">'+E(value(adn,'Surtitre 01'))+'</div><h2 id="adn-main-title">'+E(value(adn,'Titre 01'))+'</h2><p>'+E(value(adn,'Texte 01'))+'</p></div></div>'
+ principal='<div class="adn-primary"><div class="adn-main-copy"><div class="adn-block-label">'+E(value(adn,'Surtitre 01'))+'</div><h2 id="adn-main-title">'+E(value(adn,'Titre 01'))+'</h2><p>'+E(value(adn,'Texte 01'))+'</p></div></div>'
  secondary=''
  for i in [2,3]:
   secondary+='<article class="adn-secondary-block" aria-labelledby="adn-title-'+str(i)+'"><div class="adn-block-label">'+E(value(adn,f'Surtitre 0{i}'))+'</div><h3 id="adn-title-'+str(i)+'">'+E(value(adn,f'Titre 0{i}'))+'</h3><p>'+E(value(adn,f'Texte 0{i}'))+'</p></article>'
- put(section,'<div id="adn" class="adn-alpine-layout"><figure class="adn-alpine-image">'+str(photo)+'</figure>'+principal+'<div class="adn-secondary-grid">'+secondary+'</div></div>')
+ put(section,'<div id="adn" class="adn-v2-composition"><figure class="adn-v2-image">'+str(photo)+'</figure>'+principal+'</div><div class="adn-secondary-grid">'+secondary+'</div>')
  home.select_one('#adn').decompose()
  home.select_one('#expertise').replace_with(section)
  home.head.append(home.new_tag('link',rel='stylesheet',href='/adn-editorial.css'))
