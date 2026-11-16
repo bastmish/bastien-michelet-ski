@@ -1,0 +1,303 @@
+{
+  "reference": "33fb77c",
+  "scope": "PASS: only ADN HTML/CSS changed; other public HTML byte-identical",
+  "viewports": [
+    {
+      "width": 1440,
+      "copy": "PASS: nine exact labels/titles/paragraphs",
+      "layout": "PASS",
+      "overflow": false,
+      "photo_loaded": false,
+      "geometry": {
+        "label": {
+          "x": 816,
+          "y": 1207.859375,
+          "w": 560,
+          "h": 19.5,
+          "b": 1227.359375,
+          "r": 1376
+        },
+        "image": {
+          "x": 56,
+          "y": 1096,
+          "w": 704,
+          "h": 760,
+          "b": 1856,
+          "r": 760
+        },
+        "main": {
+          "x": 816,
+          "y": 1227.359375,
+          "w": 560,
+          "h": 516.765625,
+          "b": 1744.125,
+          "r": 1376
+        },
+        "secondary": [
+          {
+            "x": 56,
+            "y": 1900,
+            "b": 2220.046875
+          },
+          {
+            "x": 738,
+            "y": 1900,
+            "b": 2220.046875
+          }
+        ],
+        "background": "rgb(248, 247, 243)",
+        "columns": "704px 576px"
+      }
+    },
+    {
+      "width": 1280,
+      "copy": "PASS: nine exact labels/titles/paragraphs",
+      "layout": "PASS",
+      "overflow": false,
+      "photo_loaded": false,
+      "geometry": {
+        "label": {
+          "x": 728,
+          "y": 1152.453125,
+          "w": 488,
+          "h": 19.5,
+          "b": 1171.953125,
+          "r": 1216
+        },
+        "image": {
+          "x": 56,
+          "y": 1096,
+          "w": 616,
+          "h": 760,
+          "b": 1856,
+          "r": 672
+        },
+        "main": {
+          "x": 728,
+          "y": 1171.953125,
+          "w": 488,
+          "h": 627.59375,
+          "b": 1799.546875,
+          "r": 1216
+        },
+        "secondary": [
+          {
+            "x": 56,
+            "y": 1900,
+            "b": 2220.046875
+          },
+          {
+            "x": 658,
+            "y": 1900,
+            "b": 2220.046875
+          }
+        ],
+        "background": "rgb(248, 247, 243)",
+        "columns": "616px 504px"
+      }
+    },
+    {
+      "width": 1024,
+      "copy": "PASS: nine exact labels/titles/paragraphs",
+      "layout": "PASS",
+      "overflow": false,
+      "photo_loaded": false,
+      "geometry": {
+        "label": {
+          "x": 32,
+          "y": 1636,
+          "w": 850,
+          "h": 19.5,
+          "b": 1655.5,
+          "r": 882
+        },
+        "image": {
+          "x": 32,
+          "y": 1072,
+          "w": 960,
+          "h": 520,
+          "b": 1592,
+          "r": 992
+        },
+        "main": {
+          "x": 32,
+          "y": 1655.5,
+          "w": 850,
+          "h": 324.515625,
+          "b": 1980.015625,
+          "r": 882
+        },
+        "secondary": [
+          {
+            "x": 32,
+            "y": 2024.015625,
+            "b": 2303.46875
+          },
+          {
+            "x": 530,
+            "y": 2024.015625,
+            "b": 2303.46875
+          }
+        ],
+        "background": "rgb(248, 247, 243)",
+        "columns": "960px"
+      }
+    },
+    {
+      "width": 768,
+      "copy": "PASS: nine exact labels/titles/paragraphs",
+      "layout": "PASS",
+      "overflow": false,
+      "photo_loaded": false,
+      "geometry": {
+        "label": {
+          "x": 32,
+          "y": 1556,
+          "w": 704,
+          "h": 19.5,
+          "b": 1575.5,
+          "r": 736
+        },
+        "image": {
+          "x": 32,
+          "y": 1072,
+          "w": 704,
+          "h": 440,
+          "b": 1512,
+          "r": 736
+        },
+        "main": {
+          "x": 32,
+          "y": 1575.5,
+          "w": 704,
+          "h": 354.75,
+          "b": 1930.25,
+          "r": 736
+        },
+        "secondary": [
+          {
+            "x": 32,
+            "y": 1974.25,
+            "b": 2253.703125
+          },
+          {
+            "x": 32,
+            "y": 2281.703125,
+            "b": 2533.4375
+          }
+        ],
+        "background": "rgb(248, 247, 243)",
+        "columns": "704px"
+      }
+    },
+    {
+      "width": 390,
+      "copy": "PASS: nine exact labels/titles/paragraphs",
+      "layout": "PASS",
+      "overflow": false,
+      "photo_loaded": false,
+      "geometry": {
+        "label": {
+          "x": 20,
+          "y": 1052,
+          "w": 350,
+          "h": 18,
+          "b": 1070,
+          "r": 370
+        },
+        "image": {
+          "x": 20,
+          "y": 1098,
+          "w": 350,
+          "h": 420,
+          "b": 1518,
+          "r": 370
+        },
+        "main": {
+          "x": 20,
+          "y": 1518,
+          "w": 350,
+          "h": 432.453125,
+          "b": 1950.453125,
+          "r": 370
+        },
+        "secondary": [
+          {
+            "x": 20,
+            "y": 1986.453125,
+            "b": 2309.484375
+          },
+          {
+            "x": 20,
+            "y": 2345.484375,
+            "b": 2610.734375
+          }
+        ],
+        "background": "rgb(248, 247, 243)",
+        "columns": "minmax(0px, 1.1fr) minmax(0px, 0.9fr)"
+      }
+    }
+  ],
+  "page_errors": [],
+  "failed_hosts": [
+    {
+      "url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/31112554/pexels-photo-31112554.jpeg?auto=compress&cs=tinysrgb&w=1900",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/416805/pexels-photo-416805.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/20159351/pexels-photo-20159351.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/31112554/pexels-photo-31112554.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/12100585/pexels-photo-12100585.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/6721020/pexels-photo-6721020.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/31112551/pexels-photo-31112551.jpeg?auto=compress&cs=tinysrgb&w=950",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/4943913/pexels-photo-4943913.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/15324807/pexels-photo-15324807.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/30229138/pexels-photo-30229138.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    }
+  ],
+  "accessibility": [],
+  "functional_and_layout": "PASS",
+  "photographic_validation": "BLOCKED"
+}

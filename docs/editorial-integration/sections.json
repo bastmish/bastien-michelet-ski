@@ -18,10 +18,7 @@
     "status": "PASS",
     "components": [
       [
-        "adn-editorial-intro"
-      ],
-      [
-        "adn-editorial-cards"
+        "adn-alpine"
       ]
     ],
     "missing": []

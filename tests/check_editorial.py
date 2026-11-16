@@ -18,10 +18,12 @@ for page in pages:
   assert soup.main.get('class')==['ss-architecture']
   assert len(soup.select('.ss-offer-card'))==3 and len(soup.select('.ss-programme-v72'))==3
  elif page['path']=='index.html':
-  expected_photos=[n['src'] for n in ref.main.select('img') if n!=ref.select_one('.ss-photo-panel--transmission img')]
+  removed=ref.select('.ss-photo-panel--transmission img,.ss-adn-photo-card img')
+  expected_photos=[n['src'] for n in ref.main.select('img') if n not in removed]
   assert [n['src'] for n in soup.main.select('img')]==expected_photos
-  assert len(soup.select('.adn-editorial-card'))==3
-  assert not soup.select('#adn .ss-adn-photo-caption')
+  assert len(soup.select('#expertise img'))==1
+  assert len(soup.select('.adn-secondary-block'))==2
+  assert not soup.select('#expertise a,#expertise button,#expertise svg')
  else:assert [n['src'] for n in soup.main.select('img')]==[n['src'] for n in ref.main.select('img')],page['path']+' photographs'
  refstyles={n['href'] for n in ref.select('link[rel="stylesheet"]') if 'ridgeline-footer' not in n['href']}
  assert refstyles.issubset({n['href'] for n in soup.select('link[rel="stylesheet"]')}),page['path']+' CSS'

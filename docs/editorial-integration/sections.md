@@ -5,7 +5,7 @@ Contrôle du texte dans le HTML final de chaque section, sans modification des s
 | Page | Section | Blocs sources | Composants bc9bb78 réutilisés | Résultat |
 |---|---|---:|---|---|
 | index.html | A01 | 5 | hero | PASS |
-| index.html | A02 | 9 | adn-editorial-intro, adn-editorial-cards | PASS |
+| index.html | A02 | 9 | adn-alpine | PASS |
 | index.html | A03 | 16 | ss-section ss-offers ss-offers-v46 | PASS |
 | index.html | A04 | 14 | ss-section ss-formules ss-journey-v49 ss-programmes-v72 | PASS |
 | index.html | A05 | 8 | ss-section ss-destinations | PASS |

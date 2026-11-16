@@ -75,3 +75,7 @@ main inchangée, PR #20 non fusionnée, aucun déploiement en production, aucune
 ## Mise à jour : ADN de l’accueil
 
 Seules les deux zones ADN de la home sont recomposées : introduction asymétrique claire avec une photo, puis trois cartes avec textes sous les images. Textes validés conservés intégralement ; autres sections, pages et destinations inchangées. Comparatif ordinateur/mobile et rapport : docs/adn-redesign/index.html et docs/adn-redesign/README.md. Contrôles éditoriaux, SEO, liens, responsive 375/768/1440 et axe ciblé : PASS. Le chargement des photos et polices distantes reste bloqué par le proxy ; la validation photographique complète reste à faire.
+
+## ADN — composition alpine à une image
+
+Cette demande remplace la précédente proposition de trois cartes : une photo dominante, les textes exacts de LA COMPÉTITION à droite, puis NOTRE APPROCHE et L’EXPÉRIENCE sans photo en dessous. L’introduction empruntée au collectif et son lien sont retirés de cette zone. Aucune autre section ni page ne change. Recette à 1440/1280/1024/768/390 px, contrôle littéral des neuf textes, comparaison du HTML hors zone, liens/SEO et axe ciblé : PASS. Captures, limites réseau et détails : docs/adn-alpine/index.html et docs/adn-alpine/README.md. Les photos/polices restent refusées par le proxy ; la validation photographique complète reste à faire.

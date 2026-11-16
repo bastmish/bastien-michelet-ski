@@ -60,24 +60,19 @@ def integrate(pages,finish):
  kicker=home.new_tag('div',attrs={'class':'kicker'});kicker.string=value(sections[0],'Surtitre');hero.h1.insert_before(kicker)
  actions=hero.select('.hero-actions a')
  for node,label,url in zip(actions,['CTA principal','CTA secondaire'],[m,'#offres']):text(node,value(sections[0],label));node['href']=url
- # ADN: a photographic introduction, then three editorial cards without overlays.
+ # ADN: one dominant competition image and exactly three approved editorial blocks.
  adn=sections[1]
  reference=BeautifulSoup((ROOT/'content/original-pages/index.html').read_text(),'html.parser')
- intro_photo=copy.copy(reference.select_one('.ss-photo-panel--performance img'))
- card_photos=[copy.copy(n.img) for n in reference.select('.ss-adn-photo-card')]
- intro=home.new_tag('section',id='expertise',attrs={'class':'adn-editorial-intro','aria-labelledby':'adn-intro-title'})
- mark(intro,'a02')
- intro_title=pages[1]['sections'][1]
- intro_copy=pages[1]['sections'][0]
- put(intro,'<div class="wrap adn-intro-layout"><figure class="adn-intro-image">'+str(intro_photo)+'</figure><div class="adn-intro-copy"><span class="kicker">'+E(value(intro_copy,'Surtitre'))+'</span><h2 id="adn-intro-title">'+E(value(intro_title,'H2'))+'</h2><p>'+E(value(intro_copy,'Paragraphe'))+'</p><a class="adn-story-link" href="manifesto.html">Le collectif <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></div></div>')
- home.select_one('#expertise').replace_with(intro)
- cards=home.new_tag('section',id='adn',attrs={'class':'adn-editorial-cards','aria-label':'ADN Ski Society'})
- mark(cards,'a02')
- content=''
- for i,photo in enumerate(card_photos):
-  content+='<article class="adn-editorial-card"><figure class="adn-card-image">'+str(photo)+'</figure><div class="adn-card-copy"><div class="kicker">'+E(value(adn,f'Surtitre 0{i+1}'))+'</div><h3>'+E(value(adn,f'Titre 0{i+1}'))+'</h3><p>'+E(value(adn,f'Texte 0{i+1}'))+'</p></div></article>'
- put(cards,'<div class="wrap adn-cards-grid">'+content+'</div>')
- home.select_one('#adn').replace_with(cards)
+ photo=copy.copy(reference.select_one('.ss-photo-panel--performance img'))
+ section=home.new_tag('section',id='expertise',attrs={'class':'adn-alpine','aria-labelledby':'adn-main-title'})
+ mark(section,'a02')
+ principal='<div class="adn-primary"><div class="adn-section-label">NOTRE ADN</div><div class="adn-main-copy"><div class="adn-block-label">'+E(value(adn,'Surtitre 01'))+'</div><h2 id="adn-main-title">'+E(value(adn,'Titre 01'))+'</h2><p>'+E(value(adn,'Texte 01'))+'</p></div></div>'
+ secondary=''
+ for i in [2,3]:
+  secondary+='<article class="adn-secondary-block" aria-labelledby="adn-title-'+str(i)+'"><div class="adn-block-label">'+E(value(adn,f'Surtitre 0{i}'))+'</div><h3 id="adn-title-'+str(i)+'">'+E(value(adn,f'Titre 0{i}'))+'</h3><p>'+E(value(adn,f'Texte 0{i}'))+'</p></article>'
+ put(section,'<div id="adn" class="adn-alpine-layout"><figure class="adn-alpine-image">'+str(photo)+'</figure>'+principal+'<div class="adn-secondary-grid">'+secondary+'</div></div>')
+ home.select_one('#adn').decompose()
+ home.select_one('#expertise').replace_with(section)
  home.head.append(home.new_tag('link',rel='stylesheet',href='/adn-editorial.css'))
  # Experiences: retain the exact original anchors, photos, feature badge and ids.
  section=home.select_one('#offres');mark(section,'a03');s=sections[2]
