@@ -1,0 +1,299 @@
+{
+  "reference": "528f726",
+  "scope": "PASS: other home HTML, four featured cards, other pages, editorial sources, wizard and JS unchanged",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900,
+      "geometry": {
+        "outer": {
+          "x": 0,
+          "y": 3612.78125,
+          "w": 1440,
+          "h": 393.421875,
+          "b": 4006.203125
+        },
+        "container": {
+          "x": 60,
+          "y": 3613.78125,
+          "w": 1320,
+          "h": 392.421875,
+          "b": 4006.203125
+        },
+        "cta": {
+          "x": 108,
+          "y": 3874.203125,
+          "w": 275.390625,
+          "h": 52,
+          "b": 3926.203125
+        },
+        "padding": [
+          "64px",
+          "48px",
+          "80px",
+          "48px"
+        ],
+        "background": "rgb(17, 19, 18)",
+        "border": "rgb(66, 71, 68)",
+        "title": {
+          "size": "48px",
+          "weight": "500",
+          "lineHeight": "51.84px"
+        }
+      },
+      "transition": {
+        "end": 4006.203125,
+        "start": 4006.203125
+      },
+      "copy": "PASS",
+      "CTA": "PASS: catalogue by keyboard",
+      "overflow": false
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "geometry": {
+        "outer": {
+          "x": 0,
+          "y": 3435.671875,
+          "w": 1280,
+          "h": 393.421875,
+          "b": 3829.09375
+        },
+        "container": {
+          "x": 0,
+          "y": 3436.671875,
+          "w": 1280,
+          "h": 392.421875,
+          "b": 3829.09375
+        },
+        "cta": {
+          "x": 48,
+          "y": 3697.09375,
+          "w": 275.390625,
+          "h": 52,
+          "b": 3749.09375
+        },
+        "padding": [
+          "64px",
+          "48px",
+          "80px",
+          "48px"
+        ],
+        "background": "rgb(17, 19, 18)",
+        "border": "rgb(66, 71, 68)",
+        "title": {
+          "size": "48px",
+          "weight": "500",
+          "lineHeight": "51.84px"
+        }
+      },
+      "transition": {
+        "end": 3829.09375,
+        "start": 3829.09375
+      },
+      "copy": "PASS",
+      "CTA": "PASS: catalogue by keyboard",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "geometry": {
+        "outer": {
+          "x": 0,
+          "y": 4082.234375,
+          "w": 1024,
+          "h": 393.421875,
+          "b": 4475.65625
+        },
+        "container": {
+          "x": 0,
+          "y": 4083.234375,
+          "w": 1024,
+          "h": 392.421875,
+          "b": 4475.65625
+        },
+        "cta": {
+          "x": 32,
+          "y": 4343.65625,
+          "w": 275.390625,
+          "h": 52,
+          "b": 4395.65625
+        },
+        "padding": [
+          "64px",
+          "32px",
+          "80px",
+          "32px"
+        ],
+        "background": "rgb(17, 19, 18)",
+        "border": "rgb(66, 71, 68)",
+        "title": {
+          "size": "48px",
+          "weight": "500",
+          "lineHeight": "51.84px"
+        }
+      },
+      "transition": {
+        "end": 4475.65625,
+        "start": 4475.65625
+      },
+      "copy": "PASS",
+      "CTA": "PASS: catalogue by keyboard",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "geometry": {
+        "outer": {
+          "x": 0,
+          "y": 4219.8125,
+          "w": 768,
+          "h": 393.421875,
+          "b": 4613.234375
+        },
+        "container": {
+          "x": 0,
+          "y": 4220.8125,
+          "w": 768,
+          "h": 392.421875,
+          "b": 4613.234375
+        },
+        "cta": {
+          "x": 32,
+          "y": 4481.234375,
+          "w": 275.390625,
+          "h": 52,
+          "b": 4533.234375
+        },
+        "padding": [
+          "64px",
+          "32px",
+          "80px",
+          "32px"
+        ],
+        "background": "rgb(17, 19, 18)",
+        "border": "rgb(66, 71, 68)",
+        "title": {
+          "size": "48px",
+          "weight": "500",
+          "lineHeight": "51.84px"
+        }
+      },
+      "transition": {
+        "end": 4613.234375,
+        "start": 4613.234375
+      },
+      "copy": "PASS",
+      "CTA": "PASS: catalogue by keyboard",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "geometry": {
+        "outer": {
+          "x": 0,
+          "y": 5145.390625,
+          "w": 390,
+          "h": 416.5,
+          "b": 5561.890625
+        },
+        "container": {
+          "x": 0,
+          "y": 5146.390625,
+          "w": 390,
+          "h": 415.5,
+          "b": 5561.890625
+        },
+        "cta": {
+          "x": 20,
+          "y": 5461.890625,
+          "w": 350,
+          "h": 52,
+          "b": 5513.890625
+        },
+        "padding": [
+          "48px",
+          "20px",
+          "48px",
+          "20px"
+        ],
+        "background": "rgb(17, 19, 18)",
+        "border": "rgb(66, 71, 68)",
+        "title": {
+          "size": "34px",
+          "weight": "500",
+          "lineHeight": "36.72px"
+        }
+      },
+      "transition": {
+        "end": 5561.890625,
+        "start": 5561.890625
+      },
+      "copy": "PASS",
+      "CTA": "PASS: catalogue by keyboard",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "geometry": {
+        "outer": {
+          "x": 0,
+          "y": 5083.8125,
+          "w": 375,
+          "h": 416.5,
+          "b": 5500.3125
+        },
+        "container": {
+          "x": 0,
+          "y": 5084.8125,
+          "w": 375,
+          "h": 415.5,
+          "b": 5500.3125
+        },
+        "cta": {
+          "x": 20,
+          "y": 5400.3125,
+          "w": 335,
+          "h": 52,
+          "b": 5452.3125
+        },
+        "padding": [
+          "48px",
+          "20px",
+          "48px",
+          "20px"
+        ],
+        "background": "rgb(17, 19, 18)",
+        "border": "rgb(66, 71, 68)",
+        "title": {
+          "size": "34px",
+          "weight": "500",
+          "lineHeight": "36.72px"
+        }
+      },
+      "transition": {
+        "end": 5500.3125,
+        "start": 5500.3125
+      },
+      "copy": "PASS",
+      "CTA": "PASS: catalogue by keyboard",
+      "overflow": false
+    }
+  ],
+  "page_errors": [],
+  "accessibility": [
+    {
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "violations": []
+    }
+  ]
+}

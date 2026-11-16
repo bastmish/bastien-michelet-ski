@@ -99,3 +99,7 @@ La home utilise maintenant des fonds liés aux sections, indépendants du scroll
 ## Correction explicite des fonds pleine largeur
 
 Architecture ss-fullwidth / ss-container ajoutée aux wrappers concernés. Main transparent sans limite de largeur ni padding latéral, canvas pseudo-éléments neutralisés, thèmes sur wrappers seulement. Aucun changement de texte, image, formulaire ou JavaScript. CSS révisé avec ?v=fullwidth-2. Huit largeurs de 375 à 1920 px : géométrie et pixels PNG à gauche/centre/droite valides, trois frontières contiguës. Preuve complète et mesures : docs/fullwidth-fix/index.html et README.md. Les photos/polices bloquées ne sont pas substituées.
+
+## Bandeau final Destinations
+
+Le compteur 43. et son ancien bandeau sont remplacés par la composition éditoriale approuvée « Votre station. Notre terrain de jeu. » et le CTA « Explorer nos 43 destinations » vers stations.html. Nouvelle copie isolée dans content/destinations-closing.json ; quatre stations et tout le reste inchangés. Six viewports, dimensions, lien au clavier, fond pleine largeur et transition blanche vers Avis : PASS ; aucune violation axe ciblée. Captures desktop/mobile avant validation et rapport : docs/destinations-closing/index.html et README.md.

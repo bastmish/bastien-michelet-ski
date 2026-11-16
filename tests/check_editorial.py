@@ -4,6 +4,7 @@ import json,re,hashlib,sys
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[1]
 pages=json.loads((ROOT/'content/pages.json').read_text())
+closing=json.loads((ROOT/'content/destinations-closing.json').read_text())
 expected=[8,4,5,5,5,5]
 assert [len(p['sections']) for p in pages]==expected
 def norm(text):return ' '.join(text.split())
@@ -37,10 +38,16 @@ for page in pages:
  for section in page['sections']:
   nodes=soup.select('[data-editorial-section="'+section['id']+'"]')
   text=norm(' '.join(n.get_text(' ',strip=True) for n in nodes))
-  missing=[];condensed=[]
+  missing=[];condensed=[];revisions=[]
   # Explicit home condensation authorised in the Experiences & Formats specification.
   compact_indices={'a03':{0,4,8,11,14},'a04':{0,2,4,5,7,8,10,11}}
   for index,b in enumerate(section['blocks']):
+   revised={'Bloc de fermeture — titre':'title','Bloc de fermeture — texte':'description','CTA':'cta'}
+   if page['path']=='index.html' and section['id']=='a05' and b['label'] in revised:
+    approved=closing[revised[b['label']]]
+    if norm(approved) not in text:missing.append(approved)
+    revisions.append({'original':b['text'],'approved_replacement':approved,'source':'content/destinations-closing.json'})
+    continue
    if page['path']=='index.html' and section['id'] in compact_indices and index in compact_indices[section['id']]:
     condensed.append({'index':index,'text':b['text'],'status':'Preserved in immutable editorial source; omitted from compact home by instruction'})
     continue
@@ -50,8 +57,8 @@ for page in pages:
      parts=re.split(r' / | — ',line)[1:]
      if not all(norm(part) in text for part in parts):missing.append(line)
     elif norm(line) and norm(line) not in text:missing.append(line)
-  if not nodes or missing:failures.append({'page':page['path'],'section':section['id'],'missing':missing,'compact_source_only':condensed})
-  report.append({'page':page['path'],'section':section['id'].upper(),'blocks':len(section['blocks']),'status':'PASS' if nodes and not missing else 'FAIL','components':[n.get('class',[]) for n in nodes],'missing':missing,'compact_source_only':condensed})
+  if not nodes or missing:failures.append({'page':page['path'],'section':section['id'],'missing':missing,'compact_source_only':condensed,'approved_revisions':revisions})
+  report.append({'page':page['path'],'section':section['id'].upper(),'blocks':len(section['blocks']),'status':'PASS' if nodes and not missing else 'FAIL','components':[n.get('class',[]) for n in nodes],'missing':missing,'compact_source_only':condensed,'approved_revisions':revisions})
 aux=BeautifulSoup((ROOT/'public/offres/index.html').read_text(),'html.parser')
 auxref=BeautifulSoup((ROOT/'content/original-pages/offres/index.html').read_text(),'html.parser')
 assert [n['src'] for n in aux.main.select('img')]==[n['src'] for n in auxref.main.select('img')]
@@ -64,8 +71,8 @@ for filename,sha in manifest['sha256'].items():
  assert hashlib.sha256((ROOT/filename).read_bytes()).hexdigest()==sha,filename
 out=ROOT/'docs/editorial-integration';out.mkdir(exist_ok=True,parents=True)
 (out/'sections.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
-table='# Vérification des 32 sections\n\nContrôle du texte dans le HTML final de chaque section, sans modification des sources. Les retours à la ligne sont normalisés. Les blocs non condensés sont contrôlés mot pour mot dans le HTML. Pour A03/A04 de l’accueil, la condensation expressément autorisée est détaillée dans sections.json ; les textes complets restent dans les sources immuables.\n\n| Page | Section | Blocs sources | Composants rendus | Résultat |\n|---|---|---:|---|---|\n'
-for row in report:table+='| '+row['page']+' | '+row['section']+' | '+str(row['blocks'])+' | '+', '.join(' '.join(x) for x in row['components'])+' | '+row['status']+(' — vue compacte autorisée' if row['compact_source_only'] else '')+' |\n'
+table='# Vérification des 32 sections\n\nContrôle du texte dans le HTML final de chaque section, sans modification des sources. Les retours à la ligne sont normalisés. Les blocs non condensés sont contrôlés mot pour mot dans le HTML. Pour A03/A04 de l’accueil, la condensation expressément autorisée est détaillée dans sections.json ; les textes complets restent dans les sources immuables. Le bandeau final A05 utilise la nouvelle formulation expressément approuvée dans content/destinations-closing.json.\n\n| Page | Section | Blocs sources | Composants rendus | Résultat |\n|---|---|---:|---|---|\n'
+for row in report:table+='| '+row['page']+' | '+row['section']+' | '+str(row['blocks'])+' | '+', '.join(' '.join(x) for x in row['components'])+' | '+row['status']+(' — vue compacte autorisée' if row['compact_source_only'] else '')+(' — bandeau révisé autorisé' if row['approved_revisions'] else '')+' |\n'
 (out/'sections.md').write_text(table)
-print(json.dumps(failures,ensure_ascii=False,indent=2) if failures else 'PASS: 32 sections, all displayed approved copy and immutable sources; explicit A03/A04 home condensation recorded.')
+print(json.dumps(failures,ensure_ascii=False,indent=2) if failures else 'PASS: 32 sections, all displayed approved copy and immutable sources; explicit A03/A04 condensation and approved A05 banner revision recorded.')
 sys.exit(bool(failures))

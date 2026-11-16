@@ -9,6 +9,8 @@ REF='bf42dea'
 def old(path):return subprocess.check_output(['git','show',REF+':'+path],cwd=ROOT)
 before=BeautifulSoup(old('public/index.html'),'html.parser');after=BeautifulSoup((ROOT/'public/index.html').read_text(),'html.parser')
 for soup in [before,after]:
+ # Later approved replacement of the destination closing banner is independently tested.
+ for node in soup.select('.ss-station-index-v72,.ss-destinations-closing'):node.decompose()
  for node in soup.select('.ss-fullwidth,.ss-container'):
   node['class']=[c for c in node['class'] if c not in ['ss-fullwidth','ss-container']]
  for link in soup.select('link[href^="/home-system.css"]'):link['href']='/home-system.css'

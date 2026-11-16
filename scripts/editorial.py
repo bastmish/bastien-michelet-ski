@@ -134,11 +134,12 @@ def integrate(pages,finish):
   node.img['alt']='Photographie d’ambiance alpine ; ne représente pas nécessairement '+names[i]
   text(node.select_one('.ss-region-title'),lines[i].removeprefix('- '))
   text(node.select_one('.ss-region-kicker'),station['region'])
- banner=section.select_one('.ss-station-index-v72');banner['href']='stations.html'
- text(banner.select_one('.ss-station-eyebrow-v72'),'SKI SOCIETY')
- text(banner.select_one('.ss-station-copy-v72>strong'),value(s,'Bloc de fermeture — titre'))
- text(banner.select_one('.ss-station-copy-v72>span:last-child'),value(s,'Bloc de fermeture — texte'))
- text(banner.select_one('.ss-station-action-v72>span'),value(s,'CTA'))
+ # Explicitly approved replacement of the closing destination banner only.
+ closing=json.loads((ROOT/'content/destinations-closing.json').read_text())
+ section.select_one('.ss-station-index-v72').decompose()
+ banner=home.new_tag('div',attrs={'class':'ss-destinations-closing ss-fullwidth'})
+ put(banner,'<div class="ss-destinations-closing__inner ss-container"><span class="ss-destinations-closing__eyebrow">'+E(closing['eyebrow'])+'</span><h3>'+E(closing['title'])+'</h3><p>'+E(closing['description'])+'</p><a class="ss-destinations-closing__cta" href="'+E(closing['href'])+'">'+E(closing['cta'])+'<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>')
+ section.append(banner)
  # Reviews retain their shell and columns; only approved reserve copy is displayed.
  section=home.select_one('#avis');mark(section,'a06');s=sections[5]
  text(section.select_one('.kicker'),value(s,'Surtitre'));text(section.h2,value(s,'H2'))
@@ -186,7 +187,7 @@ def integrate(pages,finish):
  for selector in ['.ss-home-courses','#destinations','#avis','#questions','#contact']:
   outer=home.select_one(selector);outer['class'].append('ss-fullwidth')
   inner=outer.find('div',recursive=False);inner['class']=inner.get('class',[])+['ss-container']
- home.head.append(home.new_tag('link',rel='stylesheet',href='/home-system.css?v=fullwidth-2'))
+ home.head.append(home.new_tag('link',rel='stylesheet',href='/home-system.css?v=destinations-closing-3'))
  home.head.append(home.new_tag('script',src='/home-system.js',defer=''))
  save(home,pages[0],finish)
  # Collective now explicitly uses the homepage components, as requested.

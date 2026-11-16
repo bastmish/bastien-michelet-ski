@@ -112,3 +112,21 @@ body.ss-home-themed .ss-fullwidth.ss-theme-light-soft{background:#f7f6f2!importa
  body.ss-home-themed .ss-reservation__container.ss-container{max-width:900px}
 }
 @media(max-width:767px){body.ss-home-themed .ss-container{padding-inline:20px}}
+/* Destination closing banner only: editorial copy replaces the giant counter. */
+body.ss-home-themed #destinations.ss-theme-dark{padding-bottom:0!important}
+body.ss-home-themed #destinations .ss-destinations-closing{margin-top:48px!important;border-top:1px solid #424744;background:#111312;color:#fff}
+body.ss-home-themed #destinations .ss-destinations-closing__inner{padding-top:64px;padding-bottom:80px}
+body.ss-home-themed #destinations .ss-destinations-closing__eyebrow{display:block;font-size:11px;line-height:1.5;font-weight:600;letter-spacing:.16em;color:#cdd1cd;margin-bottom:20px}
+body.ss-home-themed #destinations .ss-destinations-closing h3{font:500 48px/1.08 var(--ss-accent-type,"DM Sans",sans-serif);font-family:var(--ss-accent-type,"DM Sans",sans-serif)!important;font-weight:500!important;letter-spacing:-.035em!important;color:#fff;max-width:780px;margin:0}
+body.ss-home-themed #destinations .ss-destinations-closing p{font-size:17px;line-height:1.65;color:#cdd1cd;max-width:720px;margin:20px 0 0}
+body.ss-home-themed #destinations .ss-destinations-closing__cta{display:inline-flex;align-items:center;justify-content:center;gap:18px;width:auto;min-height:52px;margin-top:32px;padding:0 24px;border-radius:4px;background:#f7f6f2;color:#171a18;text-decoration:none;font-size:14px;font-weight:600}
+body.ss-home-themed #destinations .ss-destinations-closing__cta svg{width:18px;height:18px;flex-shrink:0}
+body.ss-home-themed #destinations .ss-destinations-closing__cta:hover{background:#e8ebe5}
+body.ss-home-themed #destinations .ss-destinations-closing__cta:focus-visible{outline:2px solid #fff;outline-offset:4px}
+@media(max-width:767px){
+ body.ss-home-themed #destinations .ss-destinations-closing{margin-top:32px!important}
+ body.ss-home-themed #destinations .ss-destinations-closing__inner{padding:48px 20px}
+ body.ss-home-themed #destinations .ss-destinations-closing h3{font-size:34px}
+ body.ss-home-themed #destinations .ss-destinations-closing p{font-size:16px}
+ body.ss-home-themed #destinations .ss-destinations-closing__cta{width:100%}
+}

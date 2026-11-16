@@ -13,6 +13,9 @@ for file in (ROOT/'public').rglob('*.html'):
  assert subprocess.check_output(['git','show',REF+':public/'+str(file.relative_to(ROOT/'public'))],cwd=ROOT)==file.read_bytes(),str(file)
 before=BeautifulSoup(subprocess.check_output(['git','show',REF+':public/index.html'],cwd=ROOT),'html.parser')
 after=BeautifulSoup((ROOT/'public/index.html').read_text(),'html.parser')
+# The destination closing copy was subsequently replaced with explicit owner approval.
+for soup in [before,after]:
+ for node in soup.select('.ss-station-index-v72,.ss-destinations-closing'):node.decompose()
 for sid in ['accueil','expertise','offres','formules','destinations','avis','questions']:
  assert before.select_one('#'+sid).get_text(' ',strip=True)==after.select_one('#'+sid).get_text(' ',strip=True),sid+' editorial changes'
 assert before.select_one('.art-footer').get_text(' ',strip=True)==after.select_one('.art-footer').get_text(' ',strip=True)
