@@ -71,3 +71,7 @@ Voir QA_IMPLEMENTATION.md pour les résultats et observations d’accessibilité
 ## Mise à jour : style de l’accueil sur Notre histoire
 
 La page manifesto.html reprend désormais les composants, photos, typographies et transitions de l’accueil. Les trois points de l’héritage sont présentés dans ses cartes ; les trois étapes de la philosophie dans ses lignes de programme ; la conclusion dans son bloc de contact. Aucun formulaire supplémentaire n’est ajouté. L’accueil et les autres pages ne changent pas. Les tests dédiés sont dans tests/story_home.py ; captures et résultats dans docs/story-home/.
+
+## Mise à jour : ADN de l’accueil
+
+Seules les deux zones ADN de la home sont recomposées : introduction asymétrique claire avec une photo, puis trois cartes avec textes sous les images. Textes validés conservés intégralement ; autres sections, pages et destinations inchangées. Comparatif ordinateur/mobile et rapport : docs/adn-redesign/index.html et docs/adn-redesign/README.md. Contrôles éditoriaux, SEO, liens, responsive 375/768/1440 et axe ciblé : PASS. Le chargement des photos et polices distantes reste bloqué par le proxy ; la validation photographique complète reste à faire.

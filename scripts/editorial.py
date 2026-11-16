@@ -60,18 +60,25 @@ def integrate(pages,finish):
  kicker=home.new_tag('div',attrs={'class':'kicker'});kicker.string=value(sections[0],'Surtitre');hero.h1.insert_before(kicker)
  actions=hero.select('.hero-actions a')
  for node,label,url in zip(actions,['CTA principal','CTA secondaire'],[m,'#offres']):text(node,value(sections[0],label));node['href']=url
- # Preserve the original diptych, card gallery, images and crops.
+ # ADN: a photographic introduction, then three editorial cards without overlays.
  adn=sections[1]
- for i,panel in enumerate(home.select('.ss-photo-panel')):
-  label=panel.select_one('.ss-photo-panel-label')
-  heading(label.find(['h2','h3']),value(adn,f'Titre 0{i+1}'))
-  text(label.p,value(adn,f'Surtitre 0{i+1}'))
- story=home.select_one('.ss-photo-panel-story')
- if story:
-  svg=copy.copy(story.svg);put(story,'Le collectif '+str(svg))
- for i,card in enumerate(home.select('.ss-adn-photo-card')):
-  put(card.select_one('.ss-adn-photo-caption>div'),''.join(block(b) for b in adn['blocks'][i*3:i*3+3]))
- mark(home.select_one('#expertise'),'a02');mark(home.select_one('#adn'),'a02')
+ reference=BeautifulSoup((ROOT/'content/original-pages/index.html').read_text(),'html.parser')
+ intro_photo=copy.copy(reference.select_one('.ss-photo-panel--performance img'))
+ card_photos=[copy.copy(n.img) for n in reference.select('.ss-adn-photo-card')]
+ intro=home.new_tag('section',id='expertise',attrs={'class':'adn-editorial-intro','aria-labelledby':'adn-intro-title'})
+ mark(intro,'a02')
+ intro_title=pages[1]['sections'][1]
+ intro_copy=pages[1]['sections'][0]
+ put(intro,'<div class="wrap adn-intro-layout"><figure class="adn-intro-image">'+str(intro_photo)+'</figure><div class="adn-intro-copy"><span class="kicker">'+E(value(intro_copy,'Surtitre'))+'</span><h2 id="adn-intro-title">'+E(value(intro_title,'H2'))+'</h2><p>'+E(value(intro_copy,'Paragraphe'))+'</p><a class="adn-story-link" href="manifesto.html">Le collectif <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></div></div>')
+ home.select_one('#expertise').replace_with(intro)
+ cards=home.new_tag('section',id='adn',attrs={'class':'adn-editorial-cards','aria-label':'ADN Ski Society'})
+ mark(cards,'a02')
+ content=''
+ for i,photo in enumerate(card_photos):
+  content+='<article class="adn-editorial-card"><figure class="adn-card-image">'+str(photo)+'</figure><div class="adn-card-copy"><div class="kicker">'+E(value(adn,f'Surtitre 0{i+1}'))+'</div><h3>'+E(value(adn,f'Titre 0{i+1}'))+'</h3><p>'+E(value(adn,f'Texte 0{i+1}'))+'</p></div></article>'
+ put(cards,'<div class="wrap adn-cards-grid">'+content+'</div>')
+ home.select_one('#adn').replace_with(cards)
+ home.head.append(home.new_tag('link',rel='stylesheet',href='/adn-editorial.css'))
  # Experiences: retain the exact original anchors, photos, feature badge and ids.
  section=home.select_one('#offres');mark(section,'a03');s=sections[2]
  text(section.select_one('.kicker'),value(s,'Surtitre'));text(section.h2,value(s,'H2'))

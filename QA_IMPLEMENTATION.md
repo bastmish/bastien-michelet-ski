@@ -71,3 +71,7 @@ main inchangée, PR #20 non fusionnée, aucun déploiement en production, aucune
 ## Mise à jour Notre histoire
 
 À la demande du propriétaire, cette page adopte maintenant les composants de l’accueil plutôt que son ancienne composition manifeste. Les tests photo/styles de cette page vérifient donc ses ressources par rapport à la home. Les quatre sections validées sont intactes. tests/story_home.py passe à 375, 768 et 1440 px : aucun débordement, aucune erreur JavaScript et transitions sombre/clair confirmées. Les autres pages publiques ne sont pas modifiées par cette mise à jour. Comparatif : docs/story-home/index.html.
+
+## Mise à jour : ADN de l’accueil
+
+Seules les deux zones ADN de la home sont recomposées : introduction asymétrique claire avec une photo, puis trois cartes avec textes sous les images. Textes validés conservés intégralement ; autres sections, pages et destinations inchangées. Comparatif ordinateur/mobile et rapport : docs/adn-redesign/index.html et docs/adn-redesign/README.md. Contrôles éditoriaux, SEO, liens, responsive 375/768/1440 et axe ciblé : PASS. Le chargement des photos et polices distantes reste bloqué par le proxy ; la validation photographique complète reste à faire.

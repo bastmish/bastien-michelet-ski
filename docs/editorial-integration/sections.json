@@ -18,12 +18,10 @@
     "status": "PASS",
     "components": [
       [
-        "ss-expertise-editorial"
+        "adn-editorial-intro"
       ],
       [
-        "ss-section",
-        "ss-adn",
-        "ss-editorial-v41"
+        "adn-editorial-cards"
       ]
     ],
     "missing": []

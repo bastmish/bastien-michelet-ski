@@ -17,6 +17,11 @@ for page in pages:
   assert all(n['src'] in {i['src'] for i in ref.main.select('img')} for n in soup.main.select('img'))
   assert soup.main.get('class')==['ss-architecture']
   assert len(soup.select('.ss-offer-card'))==3 and len(soup.select('.ss-programme-v72'))==3
+ elif page['path']=='index.html':
+  expected_photos=[n['src'] for n in ref.main.select('img') if n!=ref.select_one('.ss-photo-panel--transmission img')]
+  assert [n['src'] for n in soup.main.select('img')]==expected_photos
+  assert len(soup.select('.adn-editorial-card'))==3
+  assert not soup.select('#adn .ss-adn-photo-caption')
  else:assert [n['src'] for n in soup.main.select('img')]==[n['src'] for n in ref.main.select('img')],page['path']+' photographs'
  refstyles={n['href'] for n in ref.select('link[rel="stylesheet"]') if 'ridgeline-footer' not in n['href']}
  assert refstyles.issubset({n['href'] for n in soup.select('link[rel="stylesheet"]')}),page['path']+' CSS'
