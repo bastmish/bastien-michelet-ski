@@ -182,7 +182,11 @@ def integrate(pages,finish):
  home.body['class']=home.body.get('class',[])+['ss-home-themed']
  for selector,theme in [('#accueil','ss-theme-light'),('#expertise','ss-theme-light'),('.ss-home-courses','ss-theme-light-soft'),('#destinations','ss-theme-dark'),('#avis','ss-theme-white'),('#questions','ss-theme-white')]:
   node=home.select_one(selector);node['class']=node.get('class',[])+[theme]
- home.head.append(home.new_tag('link',rel='stylesheet',href='/home-system.css'))
+ # Explicit full-width canvases and independent inner content containers.
+ for selector in ['.ss-home-courses','#destinations','#avis','#questions','#contact']:
+  outer=home.select_one(selector);outer['class'].append('ss-fullwidth')
+  inner=outer.find('div',recursive=False);inner['class']=inner.get('class',[])+['ss-container']
+ home.head.append(home.new_tag('link',rel='stylesheet',href='/home-system.css?v=fullwidth-2'))
  home.head.append(home.new_tag('script',src='/home-system.js',defer=''))
  save(home,pages[0],finish)
  # Collective now explicitly uses the homepage components, as requested.

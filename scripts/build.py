@@ -17,7 +17,8 @@ def footer(path):
  message='Bonjour Ski Society, je souhaite préparer une expérience'+(' à '+local['name'] if local else ' avec Ski Society')+'. Dates : ... Niveau : ... Nombre de participants : ...'
  markup=(ROOT/'content/premium-footer.html').read_text().strip().replace('{{WHATSAPP}}',esc(wa(message)))
  if path=='index.html':
-  markup=markup.replace('class="art-prefooter"','class="art-prefooter ss-theme-dark"').replace('class="art-footer"','class="art-footer ss-theme-dark"')
+  markup=markup.replace('class="art-prefooter"','class="art-prefooter ss-fullwidth ss-theme-dark"').replace('class="art-footer"','class="art-footer ss-fullwidth ss-theme-dark"')
+  markup=markup.replace('class="wrap art-prefooter-inner"','class="wrap ss-container art-prefooter-inner"').replace('class="wrap"','class="wrap ss-container"')
  return markup
 FOOTER_CSS='<link rel="stylesheet" href="/premium-footer.css">'
 def restore_original(source,path):

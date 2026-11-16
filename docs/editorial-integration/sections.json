@@ -129,7 +129,8 @@
       [
         "ss-section",
         "ss-destinations",
-        "ss-theme-dark"
+        "ss-theme-dark",
+        "ss-fullwidth"
       ]
     ],
     "missing": [],
@@ -147,7 +148,8 @@
         "ss-reviews-v26",
         "ss-reviews-v49",
         "ss-reviews-v52",
-        "ss-theme-white"
+        "ss-theme-white",
+        "ss-fullwidth"
       ]
     ],
     "missing": [],
@@ -162,7 +164,8 @@
       [
         "ss-section",
         "ss-questions",
-        "ss-theme-white"
+        "ss-theme-white",
+        "ss-fullwidth"
       ]
     ],
     "missing": [],
@@ -176,7 +179,8 @@
     "components": [
       [
         "ss-reservation",
-        "ss-theme-dark"
+        "ss-theme-dark",
+        "ss-fullwidth"
       ]
     ],
     "missing": [],

@@ -8,10 +8,10 @@ Contrôle du texte dans le HTML final de chaque section, sans modification des s
 | index.html | A02 | 9 | ss-adn-editorial-v2 ss-theme-light | PASS |
 | index.html | A03 | 16 | ss-experiences-compact | PASS — vue compacte autorisée |
 | index.html | A04 | 14 | ss-formats-compact | PASS — vue compacte autorisée |
-| index.html | A05 | 8 | ss-section ss-destinations ss-theme-dark | PASS |
-| index.html | A06 | 8 | ss-section ss-testimonials ss-reviews-v26 ss-reviews-v49 ss-reviews-v52 ss-theme-white | PASS |
-| index.html | A07 | 17 | ss-section ss-questions ss-theme-white | PASS |
-| index.html | A08 | 10 | ss-reservation ss-theme-dark | PASS |
+| index.html | A05 | 8 | ss-section ss-destinations ss-theme-dark ss-fullwidth | PASS |
+| index.html | A06 | 8 | ss-section ss-testimonials ss-reviews-v26 ss-reviews-v49 ss-reviews-v52 ss-theme-white ss-fullwidth | PASS |
+| index.html | A07 | 17 | ss-section ss-questions ss-theme-white ss-fullwidth | PASS |
+| index.html | A08 | 10 | ss-reservation ss-theme-dark ss-fullwidth | PASS |
 | manifesto.html | B01 | 4 | hero | PASS |
 | manifesto.html | B02 | 9 | ss-section ss-offers ss-offers-v46 | PASS |
 | manifesto.html | B03 | 12 | ss-section ss-formules ss-journey-v49 ss-programmes-v72 | PASS |

@@ -95,3 +95,7 @@ Les sections 03/04 forment désormais un ensemble minéral unique de 849,5 px à
 ## Fonds de l’accueil et réservation en deux étapes
 
 La home utilise maintenant des fonds liés aux sections, indépendants du scroll : Hero/ADN clairs, Expériences/Formats minéraux, Destinations #111312, Avis/FAQ #FFFFFF, Réservation et footer #111312. Le header suit le thème situé sous sa capsule. Nouveau formulaire en deux étapes, 43 stations + Autre station, dates libres, erreurs par champ, données conservées, participants sans plafond arbitraire et retrait réel de la demi-journée en freeride. Les textes A08 sont intacts. Les autres pages restent identiques ; app.js conserve ses anciens comportements hors .ss-home-themed. Contrôles sept viewports, frontières et pixels aux bords, header stable, validation, encodage du brouillon WhatsApp, axe ciblé : PASS. Aucun envoi réel. Galerie et rapport : docs/home-system/index.html et README.md. Photos/polices toujours bloquées.
+
+## Correction explicite des fonds pleine largeur
+
+Architecture ss-fullwidth / ss-container ajoutée aux wrappers concernés. Main transparent sans limite de largeur ni padding latéral, canvas pseudo-éléments neutralisés, thèmes sur wrappers seulement. Aucun changement de texte, image, formulaire ou JavaScript. CSS révisé avec ?v=fullwidth-2. Huit largeurs de 375 à 1920 px : géométrie et pixels PNG à gauche/centre/droite valides, trois frontières contiguës. Preuve complète et mesures : docs/fullwidth-fix/index.html et README.md. Les photos/polices bloquées ne sont pas substituées.
