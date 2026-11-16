@@ -6,8 +6,8 @@ Contrôle du texte dans le HTML final de chaque section, sans modification des s
 |---|---|---:|---|---|
 | index.html | A01 | 5 | hero | PASS |
 | index.html | A02 | 9 | ss-adn-editorial-v2 | PASS |
-| index.html | A03 | 16 | ss-section ss-offers ss-offers-v46 | PASS |
-| index.html | A04 | 14 | ss-section ss-formules ss-journey-v49 ss-programmes-v72 | PASS |
+| index.html | A03 | 16 | ss-section ss-offers ss-offers-v46 ss-formats-transition | PASS |
+| index.html | A04 | 14 | ss-course-formats | PASS |
 | index.html | A05 | 8 | ss-section ss-destinations | PASS |
 | index.html | A06 | 8 | ss-section ss-testimonials ss-reviews-v26 ss-reviews-v49 ss-reviews-v52 | PASS |
 | index.html | A07 | 17 | ss-section ss-questions | PASS |

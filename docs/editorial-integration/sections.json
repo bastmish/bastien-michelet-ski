@@ -32,7 +32,8 @@
       [
         "ss-section",
         "ss-offers",
-        "ss-offers-v46"
+        "ss-offers-v46",
+        "ss-formats-transition"
       ]
     ],
     "missing": []
@@ -44,10 +45,7 @@
     "status": "PASS",
     "components": [
       [
-        "ss-section",
-        "ss-formules",
-        "ss-journey-v49",
-        "ss-programmes-v72"
+        "ss-course-formats"
       ]
     ],
     "missing": []

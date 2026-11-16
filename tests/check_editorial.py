@@ -41,7 +41,10 @@ for page in pages:
   for b in section['blocks']:
    for line in copytext(b['text']).splitlines():
     line=line.removeprefix('- ')
-    if norm(line) and norm(line) not in text:missing.append(line)
+    if section['id']=='a04' and re.match(r'^0[123] / ',line):
+     parts=re.split(r' / | — ',line)
+     if not all(norm(part) in text for part in parts):missing.append(line)
+    elif norm(line) and norm(line) not in text:missing.append(line)
   if not nodes or missing:failures.append({'page':page['path'],'section':section['id'],'missing':missing})
   report.append({'page':page['path'],'section':section['id'].upper(),'blocks':len(section['blocks']),'status':'PASS' if nodes and not missing else 'FAIL','components':[n.get('class',[]) for n in nodes],'missing':missing})
 aux=BeautifulSoup((ROOT/'public/offres/index.html').read_text(),'html.parser')

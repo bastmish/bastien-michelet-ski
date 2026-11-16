@@ -83,3 +83,7 @@ Cette demande remplace la précédente proposition de trois cartes : une photo d
 ## ADN — direction artistique V2
 
 La proposition V2 remplace la composition précédente : sommet photographique pleine largeur avec fondu neutre vers la zone de texte, puis bande de deux contenus avec filet vertical. Trois contenus exacts, styles isolés sous .ss-adn-editorial-v2, aucune autre zone ni page modifiée. Recette aux cinq viewports demandés, vues entières et comparaison : docs/adn-v2/index.html. Rapport : docs/adn-v2/README.md. Contrôles de texte, périmètre, responsive, liens/SEO et axe ciblé réussis. Validation photographique (silhouette/fondu/cadrage) et typographique bloquée par le proxy ; ces contrôles ne sont pas déclarés réussis. Proposition livrée pour validation avant toute autre modification.
+
+## UI SPEC 04 — Formats des cours privés
+
+La section 04 devient une liste éditoriale de trois formats sur fond minéral. Catégories et durées immédiatement visibles, textes validés intégraux, créneaux indicatifs, note et CTA vers #contact. Transition section 03 limitée au fond, aux textes de son en-tête et à son espacement ; quatre cartes inchangées. Les autres pages, le footer et les destinations sont identiques. Recette sept viewports, textes, liens, CTA clavier, axe ciblé et comparaison des cartes : PASS. Numéros assombris pour le contraste ; hauteur naturelle supérieure à la cible indicative afin de préserver tous les contenus. Captures et rapport : docs/course-formats/index.html et docs/course-formats/README.md. Photos/polices distantes toujours bloquées.

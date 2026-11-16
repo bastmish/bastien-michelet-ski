@@ -23,7 +23,7 @@ def restore_original(source,path):
  source=re.sub(r'<link\b[^>]*ridgeline-footer\.css[^>]*>','',source)
  source=re.sub(r'<script\b[^>]*ridgeline-footer\.js[^>]*>\s*</script>','',source)
  source=source.replace('</head>',FOOTER_CSS+'</head>',1)
- return re.sub(r'<footer\b[^>]*>.*?</footer>',lambda _:footer(path),source,count=1,flags=re.S)
+ return re.sub(r'<footer\b(?![^>]*\bss-course-formats__footer\b)[^>]*>.*?</footer>',lambda _:footer(path),source,count=1,flags=re.S)
 def finish_extension(soup,path):
  for node in soup.select('footer,.art-prefooter'):node.decompose()
  for node in soup.select('link[href$="art-direction.css"],link[href$="premium-footer.css"],link[href$="ridgeline-footer.css"],script[src$="ridgeline-footer.js"]'):node.decompose()

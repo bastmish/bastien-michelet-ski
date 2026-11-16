@@ -95,6 +95,21 @@ def integrate(pages,finish):
   put(node.select_one('.ss-programme-index-v72'),str(i+1).zfill(2))
   put(node.select_one('.ss-programme-detail-v72'),''.join(block(b) for b in cards[i][1:])+'<div class="ss-programme-facts-v72"><span>'+E(clean(cards[i][0]['text']))+'</span></div>')
  text(section.select_one('.ss-programmes-disclaimer-v72'),value(s,'Note'))
+ # Keep the collective's existing programme component independent of the home redesign.
+ story_programmes=copy.copy(section)
+ formats=home.new_tag('section',id='formules',attrs={'class':'ss-course-formats','aria-labelledby':'formats-title'})
+ mark(formats,'a04')
+ rows=''
+ for i,items in enumerate(cards):
+  number,rest=clean(items[0]['text']).split(' / ',1)
+  category,duration=rest.split(' — ',1)
+  slots='<p class="ss-course-format__slots">Créneaux indicatifs : 09h30 – 12h00 · 12h00 – 14h30 · 14h30 – 17h00</p>' if i==0 else ''
+  rows+='<article class="ss-course-format" aria-labelledby="format-'+str(i+1)+'"><span class="ss-course-format__number" aria-hidden="true">'+E(number)+'</span><div class="ss-course-format__copy"><h3 id="format-'+str(i+1)+'">'+E(category)+'</h3><h4>'+E(items[1]['text'])+'</h4><p class="ss-course-format__description">'+E(items[2]['text'])+'</p>'+slots+'</div><div class="ss-course-format__duration">'+E(duration)+'</div></article>'
+ put(formats,'<div class="ss-course-formats__container"><header class="ss-course-formats__header"><span class="ss-course-formats__eyebrow">04 / NOS FORMATS DE COURS PRIVÉS</span><h2 id="formats-title">'+E(value(s,'H2'))+'</h2><p>'+E(value(s,'Introduction'))+'</p></header><div class="ss-course-formats__list">'+rows+'</div><footer class="ss-course-formats__footer"><div class="ss-course-formats__notes"><span class="ss-course-formats__source-label">'+E(value(s,'Surtitre'))+'</span><p>'+E(value(s,'Note'))+'</p><p>Freeride : journée complète ou sur mesure.</p></div>'+a(value(s,'CTA'),'#contact','ss-course-formats__cta')+'</footer></div>')
+ section.replace_with(formats)
+ home.select_one('#offres')['class'].append('ss-formats-transition')
+ home.head.append(home.new_tag('link',rel='stylesheet',href='/course-formats.css'))
+
  # Destinations keep the original four photographic cards and station-index banner.
  section=home.select_one('#destinations');mark(section,'a05');s=sections[4]
  text(section.select_one('.kicker'),value(s,'Surtitre'));text(section.h2,value(s,'H2'))
@@ -156,7 +171,7 @@ def integrate(pages,finish):
  put(node.select_one('.hero-copy'),'<div class="kicker">'+E(value(ss[0],'Surtitre'))+'</div><h1 id="hero-title">'+E(value(ss[0],'H1'))+'</h1><p>'+E(value(ss[0],'Paragraphe'))+'</p><p>'+E(value(ss[0],'Phrase finale'))+'</p><div class="hero-actions">'+a(value(ss[3],'CTA'),'#contact')+a(value(ss[1],'Surtitre'),'#offres','ss-hero-contact')+'</div>')
  soup.main.append(node)
  # The homepage photographic cards carry the three heritage points.
- node=copy.copy(home.select_one('#offres'));mark(node,'b02')
+ node=copy.copy(home.select_one('#offres'));node['class'].remove('ss-formats-transition');mark(node,'b02')
  s=ss[1];text(node.select_one('.kicker'),value(s,'Surtitre'));text(node.h2,value(s,'H2'))
  text(node.select_one('.ss-offers-heading>p'),value(s,'Introduction'))
  _,cards,_=groups(s)
@@ -168,7 +183,7 @@ def integrate(pages,finish):
   put(card.select_one('.ss-offer-content'),'<span class="ss-offer-meta" aria-hidden="true">'+str(i+1).zfill(2)+' /</span>'+''.join(block(b) for b in cards[i]))
  soup.main.append(node)
  # The homepage programme layout becomes the collective's three-step philosophy.
- node=copy.copy(home.select_one('#formules'));mark(node,'b03');s=ss[2]
+ node=copy.copy(story_programmes);mark(node,'b03');s=ss[2]
  text(node.select_one('.kicker'),value(s,'Surtitre'));text(node.h2,value(s,'H2'))
  text(node.select_one('.ss-programmes-intro-v72>p'),value(s,'Introduction'))
  cta=node.select_one('.ss-programmes-link-v72');svg=str(cta.svg);put(cta,E(value(ss[3],'CTA'))+svg);cta['href']=m
