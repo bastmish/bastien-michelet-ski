@@ -103,3 +103,7 @@ Architecture ss-fullwidth / ss-container ajoutée aux wrappers concernés. Main 
 ## Bandeau final Destinations
 
 Le compteur 43. et son ancien bandeau sont remplacés par la composition éditoriale approuvée « Votre station. Notre terrain de jeu. » et le CTA « Explorer nos 43 destinations » vers stations.html. Nouvelle copie isolée dans content/destinations-closing.json ; quatre stations et tout le reste inchangés. Six viewports, dimensions, lien au clavier, fond pleine largeur et transition blanche vers Avis : PASS ; aucune violation axe ciblée. Captures desktop/mobile avant validation et rapport : docs/destinations-closing/index.html et README.md.
+
+## Réservation et transitions immersives V3
+
+Colonne gauche limitée au titre, à l’introduction validée et à une note rassurante. Textes A08 secondaires conservés en source, affichage allégé avec autorisation. Panneau WhatsApp explicite, progression nommée, CTA vert « Ouvrir mon message dans WhatsApp », aides regroupées. Six viewports, données conservées, 43 stations, validations, freeride et URL encodée : PASS ; aucune violation axe ciblée. Trois calques photographiques de transition codés, activés uniquement après chargement réel de la photo du projet. Actuellement BLOQUÉS et masqués : proxy 403, aucune simulation. La validation photographique demandée n’est pas terminée. Galerie, avant/après et rapport : docs/booking-v3/index.html et README.md.

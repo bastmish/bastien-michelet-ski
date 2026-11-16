@@ -133,6 +133,7 @@
       [
         "ss-section",
         "ss-destinations",
+        "ss-immersive-destinations",
         "ss-theme-dark",
         "ss-fullwidth"
       ]
@@ -203,11 +204,48 @@
       [
         "ss-reservation",
         "ss-theme-dark",
+        "ss-booking-v3",
         "ss-fullwidth"
       ]
     ],
     "missing": [],
-    "compact_source_only": [],
+    "compact_source_only": [
+      {
+        "index": 3,
+        "text": "Votre prochaine expérience commence ici.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 4,
+        "text": "Indiquez-nous votre destination, vos dates, le nombre de participants et votre niveau. Nous revenons vers vous pour organiser une expérience adaptée à votre demande.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 5,
+        "text": "Nous contacter sur WhatsApp",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 6,
+        "text": "Comment ça se passe ?",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 7,
+        "text": "01 — Vous nous expliquez votre projet, votre station et vos dates.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 8,
+        "text": "02 — Nous vérifions les disponibilités des moniteurs du collectif.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 9,
+        "text": "03 — Nous vous proposons un moniteur et les modalités de votre cours. La réservation est confirmée après votre accord.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      }
+    ],
     "approved_revisions": []
   },
   {

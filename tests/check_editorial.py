@@ -21,7 +21,7 @@ for page in pages:
  elif page['path']=='index.html':
   removed=ref.select('.ss-photo-panel--transmission img,.ss-adn-photo-card img,#contact img')
   expected_photos=[n['src'] for n in ref.main.select('img') if n not in removed]
-  assert [n['src'] for n in soup.main.select('img')]==expected_photos
+  assert [n['src'] for n in soup.main.select('img') if not n.find_parent(attrs={'data-immersive-photo':True})]==expected_photos
   assert len(soup.select('#expertise img'))==1
   assert len(soup.select('.adn-secondary-block'))==2
   assert not soup.select('#expertise a,#expertise button,#expertise svg')
@@ -40,7 +40,7 @@ for page in pages:
   text=norm(' '.join(n.get_text(' ',strip=True) for n in nodes))
   missing=[];condensed=[];revisions=[]
   # Explicit home condensation authorised in the Experiences & Formats specification.
-  compact_indices={'a03':{0,4,8,11,14},'a04':{0,2,4,5,7,8,10,11}}
+  compact_indices={'a03':{0,4,8,11,14},'a04':{0,2,4,5,7,8,10,11},'a08':{3,4,5,6,7,8,9}}
   for index,b in enumerate(section['blocks']):
    revised={'Bloc de fermeture — titre':'title','Bloc de fermeture — texte':'description','CTA':'cta'}
    if page['path']=='index.html' and section['id']=='a05' and b['label'] in revised:
@@ -71,8 +71,8 @@ for filename,sha in manifest['sha256'].items():
  assert hashlib.sha256((ROOT/filename).read_bytes()).hexdigest()==sha,filename
 out=ROOT/'docs/editorial-integration';out.mkdir(exist_ok=True,parents=True)
 (out/'sections.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
-table='# Vérification des 32 sections\n\nContrôle du texte dans le HTML final de chaque section, sans modification des sources. Les retours à la ligne sont normalisés. Les blocs non condensés sont contrôlés mot pour mot dans le HTML. Pour A03/A04 de l’accueil, la condensation expressément autorisée est détaillée dans sections.json ; les textes complets restent dans les sources immuables. Le bandeau final A05 utilise la nouvelle formulation expressément approuvée dans content/destinations-closing.json.\n\n| Page | Section | Blocs sources | Composants rendus | Résultat |\n|---|---|---:|---|---|\n'
+table='# Vérification des 32 sections\n\nContrôle du texte dans le HTML final de chaque section, sans modification des sources. Les retours à la ligne sont normalisés. Les blocs non condensés sont contrôlés mot pour mot dans le HTML. Pour A03/A04/A08 de l’accueil, la condensation expressément autorisée est détaillée dans sections.json ; les textes complets restent dans les sources immuables. Le bandeau final A05 utilise la nouvelle formulation expressément approuvée dans content/destinations-closing.json.\n\n| Page | Section | Blocs sources | Composants rendus | Résultat |\n|---|---|---:|---|---|\n'
 for row in report:table+='| '+row['page']+' | '+row['section']+' | '+str(row['blocks'])+' | '+', '.join(' '.join(x) for x in row['components'])+' | '+row['status']+(' — vue compacte autorisée' if row['compact_source_only'] else '')+(' — bandeau révisé autorisé' if row['approved_revisions'] else '')+' |\n'
 (out/'sections.md').write_text(table)
-print(json.dumps(failures,ensure_ascii=False,indent=2) if failures else 'PASS: 32 sections, all displayed approved copy and immutable sources; explicit A03/A04 condensation and approved A05 banner revision recorded.')
+print(json.dumps(failures,ensure_ascii=False,indent=2) if failures else 'PASS: 32 sections, all displayed approved copy and immutable sources; explicit A03/A04/A08 condensation and approved A05 banner revision recorded.')
 sys.exit(bool(failures))

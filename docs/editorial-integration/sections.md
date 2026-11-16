@@ -1,6 +1,6 @@
 # Vérification des 32 sections
 
-Contrôle du texte dans le HTML final de chaque section, sans modification des sources. Les retours à la ligne sont normalisés. Les blocs non condensés sont contrôlés mot pour mot dans le HTML. Pour A03/A04 de l’accueil, la condensation expressément autorisée est détaillée dans sections.json ; les textes complets restent dans les sources immuables. Le bandeau final A05 utilise la nouvelle formulation expressément approuvée dans content/destinations-closing.json.
+Contrôle du texte dans le HTML final de chaque section, sans modification des sources. Les retours à la ligne sont normalisés. Les blocs non condensés sont contrôlés mot pour mot dans le HTML. Pour A03/A04/A08 de l’accueil, la condensation expressément autorisée est détaillée dans sections.json ; les textes complets restent dans les sources immuables. Le bandeau final A05 utilise la nouvelle formulation expressément approuvée dans content/destinations-closing.json.
 
 | Page | Section | Blocs sources | Composants rendus | Résultat |
 |---|---|---:|---|---|
@@ -8,10 +8,10 @@ Contrôle du texte dans le HTML final de chaque section, sans modification des s
 | index.html | A02 | 9 | ss-adn-editorial-v2 ss-theme-light | PASS |
 | index.html | A03 | 16 | ss-experiences-compact | PASS — vue compacte autorisée |
 | index.html | A04 | 14 | ss-formats-compact | PASS — vue compacte autorisée |
-| index.html | A05 | 8 | ss-section ss-destinations ss-theme-dark ss-fullwidth | PASS — bandeau révisé autorisé |
+| index.html | A05 | 8 | ss-section ss-destinations ss-immersive-destinations ss-theme-dark ss-fullwidth | PASS — bandeau révisé autorisé |
 | index.html | A06 | 8 | ss-section ss-testimonials ss-reviews-v26 ss-reviews-v49 ss-reviews-v52 ss-theme-white ss-fullwidth | PASS |
 | index.html | A07 | 17 | ss-section ss-questions ss-theme-white ss-fullwidth | PASS |
-| index.html | A08 | 10 | ss-reservation ss-theme-dark ss-fullwidth | PASS |
+| index.html | A08 | 10 | ss-reservation ss-theme-dark ss-booking-v3 ss-fullwidth | PASS — vue compacte autorisée |
 | manifesto.html | B01 | 4 | hero | PASS |
 | manifesto.html | B02 | 9 | ss-section ss-offers ss-offers-v46 | PASS |
 | manifesto.html | B03 | 12 | ss-section ss-formules ss-journey-v49 ss-programmes-v72 | PASS |

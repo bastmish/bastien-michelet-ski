@@ -175,20 +175,35 @@ def integrate(pages,finish):
  # Home-specific reservation and section-owned themes. Keep the story contact intact.
  story_contact=copy.copy(section)
  reservation=BeautifulSoup((ROOT/'content/home-reservation.html').read_text(),'html.parser').section
- editorial='<span class="ss-reservation__eyebrow">'+E(value(s,'Surtitre'))+'</span><h2 id="contact-title">'+E(value(s,'H2'))+'</h2><p class="ss-reservation__intro">'+E(value(s,'Introduction'))+'</p><div class="ss-reservation__process"><h3>'+E(value(s,'Étapes — sous-titre'))+'</h3>'+''.join(block(b) for b in s['blocks'][7:])+'</div><div class="ss-reservation__invitation"><h3>'+E(value(s,'Sous-titre'))+'</h3>'+block(s['blocks'][4])+a(value(s,'CTA'),m,'ss-reservation__direct')+'</div>'
+ editorial='<span class="ss-reservation__eyebrow">'+E(value(s,'Surtitre'))+'</span><h2 id="contact-title">'+E(value(s,'H2'))+'</h2><p class="ss-reservation__intro">'+E(value(s,'Introduction'))+'</p>'
+ ui=json.loads((ROOT/'content/booking-ui.json').read_text())
+ wa_path='M16.01 3.2a12.73 12.73 0 0 0-11 19.14L3.2 29l6.82-1.79A12.8 12.8 0 1 0 16.01 3.2Zm0 23.24c-2.06 0-4.07-.56-5.83-1.61l-.42-.25-4.05 1.06 1.08-3.94-.27-.44a10.48 10.48 0 1 1 9.49 5.18Zm5.75-7.8c-.32-.16-1.88-.92-2.17-1.03-.29-.1-.5-.16-.71.16-.21.31-.82 1.03-1.01 1.24-.18.21-.37.24-.68.08-.32-.16-1.33-.49-2.54-1.56-.94-.84-1.57-1.87-1.75-2.18-.18-.32-.02-.49.14-.65.14-.14.32-.37.47-.55.16-.18.21-.32.32-.53.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.98-2.34-.25-.61-.51-.53-.71-.54h-.61c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.21 3.38 5.36 4.74.75.32 1.34.52 1.8.66.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.14-1.52.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.61-.37Z'
+ icon=lambda size,attrs:'<svg width="'+str(size)+'" height="'+str(size)+'" viewBox="0 0 32 32" '+attrs+'><path fill="currentColor" d="'+wa_path+'"/></svg>'
+ replacements={'REASSURANCE':E(ui['reassurance']),'WHATSAPP_TITLE':E(ui['title']),'WHATSAPP_SUBTITLE':E(ui['subtitle']),'STEP_ONE':E(ui['steps'][0]),'WHATSAPP_BUTTON':E(ui['button']),'WHATSAPP_NOTICE':E(ui['notice']),'WA_HEADER_ICON':icon(28,'role="img" aria-label="WhatsApp"'),'WA_BUTTON_ICON':icon(20,'aria-hidden="true" focusable="false"')}
+ for key,replacement in replacements.items():
+  reservation=BeautifulSoup(str(reservation).replace('{{'+key+'}}',replacement),'html.parser').section
  choices=''.join('<label class="ss-private-request__choice"><input type="radio" name="experience" value="'+E(label)+'" required aria-describedby="private-experience-error"><span>'+E(label)+'</span></label>' for label in ['Leçons particulières','Performance & technique','Freeride & milieu alpin','Snowboard'])
  stations=''.join('<option value="'+E(station['name'])+'"></option>' for station in stationdata)
  reservation=BeautifulSoup(str(reservation).replace('{{EDITORIAL}}',editorial).replace('{{EXPERIENCES}}',choices).replace('{{STATIONS}}',stations),'html.parser').section
  section.replace_with(reservation)
+ media=json.loads((ROOT/'content/home-immersive-media.json').read_text())
+ def photograph(cls):
+  return BeautifulSoup('<div class="'+cls+'" data-immersive-photo data-media-state="loading" aria-hidden="true" hidden><img src="'+E(media['url'])+'" alt="" decoding="async" loading="eager"/></div>','html.parser').div
+ destinations=home.select_one('#destinations')
+ destinations['class'].append('ss-immersive-destinations')
+ destinations.insert(0,photograph('ss-photo-transition ss-photo-transition--entry'))
+ destinations.append(photograph('ss-photo-transition ss-photo-transition--exit'))
+ reservation.insert(0,photograph('ss-booking-atmosphere'))
  home.body['class']=home.body.get('class',[])+['ss-home-themed']
  for selector,theme in [('#accueil','ss-theme-light'),('#expertise','ss-theme-light'),('.ss-home-courses','ss-theme-light-soft'),('#destinations','ss-theme-dark'),('#avis','ss-theme-white'),('#questions','ss-theme-white')]:
   node=home.select_one(selector);node['class']=node.get('class',[])+[theme]
  # Explicit full-width canvases and independent inner content containers.
  for selector in ['.ss-home-courses','#destinations','#avis','#questions','#contact']:
   outer=home.select_one(selector);outer['class'].append('ss-fullwidth')
-  inner=outer.find('div',recursive=False);inner['class']=inner.get('class',[])+['ss-container']
- home.head.append(home.new_tag('link',rel='stylesheet',href='/home-system.css?v=destinations-closing-3'))
- home.head.append(home.new_tag('script',src='/home-system.js',defer=''))
+  inner=outer.select_one(':scope>.wrap,:scope>.ss-home-courses__container,:scope>.ss-reservation__container');inner['class']=inner.get('class',[])+['ss-container']
+ home.head.append(home.new_tag('link',rel='stylesheet',href='/home-system.css?v=booking-v3'))
+ home.head.append(home.new_tag('link',rel='stylesheet',href='/booking-v3.css'))
+ home.head.append(home.new_tag('script',src='/home-system.js?v=booking-v3',defer=''))
  save(home,pages[0],finish)
  # Collective now explicitly uses the homepage components, as requested.
  page=pages[1];ss=page['sections'];m=chat('une expérience avec le collectif Ski Society')

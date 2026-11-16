@@ -27,6 +27,21 @@
  // ResizeObserver tracks menu expansion without changing the header's own dimensions.
  if(header&&'ResizeObserver'in window)new ResizeObserver(scheduleHeader).observe(header);
  updateHeader();
+ // A real loaded photograph is required before any photographic fade is painted.
+ document.querySelectorAll('[data-immersive-photo]').forEach(layer=>{
+  const image=layer.querySelector('img');
+  const ready=()=>{
+   if(!image.naturalWidth)return;
+   layer.hidden=false;layer.dataset.mediaState='ready';
+   const host=layer.closest('#destinations,#contact');
+   if(layer.classList.contains('ss-photo-transition--entry'))host.classList.add('ss-entry-photo-ready');
+   if(layer.classList.contains('ss-booking-atmosphere'))host.classList.add('ss-booking-photo-ready');
+   scheduleHeader();
+  };
+  image.addEventListener('load',ready,{once:true});
+  image.addEventListener('error',()=>{layer.hidden=true;layer.dataset.mediaState='unavailable';},{once:true});
+  if(image.complete){if(image.naturalWidth)ready();else layer.dataset.mediaState='unavailable';}
+ });
  const form=document.getElementById('private-request-form');
  if(!form)return;
  const step1=form.querySelector('#private-step-1'),step2=form.querySelector('#private-step-2');
@@ -43,10 +58,10 @@
   step=number;form.dataset.step=String(step);
   step1.hidden=step!==1;step1.disabled=step!==1;
   step2.hidden=step!==2;step2.disabled=step!==2;
-  indicator.textContent=step===1?'01 / 02':'02 / 02';
+  indicator.textContent=step===1?'Étape 1 sur 2 — Votre projet':'Étape 2 sur 2 — Votre profil';
   progress.setAttribute('aria-valuenow',String(step));progress.setAttribute('aria-valuetext','Étape '+step+' sur 2');
   syncStation();
-  (step===1?step1:step2).querySelector('legend').focus();
+  indicator.focus();
  };
  const error=(name,message)=>{
   const node=form.querySelector('#private-'+name+'-error');
@@ -63,7 +78,8 @@
   const freeride=value('experience')==='Freeride & milieu alpin';
   if(freeride){if(format.value.startsWith('Demi-journée'))format.value='';halfOption.remove();}
   else if(!halfOption.isConnected)format.insertBefore(halfOption,format.options[1]);
-  formatHelp.textContent=freeride?'Le freeride est proposé uniquement à la journée ou sur mesure.':'Horaires indicatifs, à confirmer selon la station, le moniteur et les disponibilités.';
+  formatHelp.textContent=freeride?'Le freeride est proposé uniquement à la journée ou sur mesure.':'';
+  formatHelp.hidden=!freeride;
  };
  const validate=number=>{
   const problems=number===1?{
@@ -111,7 +127,7 @@
   const url='https://wa.me/33763532601?text='+encodeURIComponent(message);
   // Only open the draft on this explicit submit action. WhatsApp owns the Send action.
   window.open(url,'_blank','noopener,noreferrer');
-  form.querySelector('#private-request-notice').textContent='Votre message est prêt dans WhatsApp. Relisez-le avant de choisir de l’envoyer. Aucune réservation n’est confirmée par ce formulaire.';
+  // The notice always explains that the visitor reviews and sends the draft personally.
  });
  const selected=new URLSearchParams(location.search).get('station')?.trim().slice(0,100);
  if(selected){const match=stations.find(n=>n.toLocaleLowerCase('fr')===selected.toLocaleLowerCase('fr'));station.value=match||'Autre station';if(!match)otherStation.value=selected;}
