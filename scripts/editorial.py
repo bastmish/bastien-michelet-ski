@@ -95,19 +95,30 @@ def integrate(pages,finish):
   put(node.select_one('.ss-programme-index-v72'),str(i+1).zfill(2))
   put(node.select_one('.ss-programme-detail-v72'),''.join(block(b) for b in cards[i][1:])+'<div class="ss-programme-facts-v72"><span>'+E(clean(cards[i][0]['text']))+'</span></div>')
  text(section.select_one('.ss-programmes-disclaimer-v72'),value(s,'Note'))
- # Keep the collective's existing programme component independent of the home redesign.
+ # Home-only compact chapter. Preserve legacy components for the collective page.
  story_programmes=copy.copy(section)
- formats=home.new_tag('section',id='formules',attrs={'class':'ss-course-formats','aria-labelledby':'formats-title'})
+ story_offers=copy.copy(home.select_one('#offres'))
+ chapter=home.new_tag('div',attrs={'class':'ss-home-courses'})
+ experiences=home.new_tag('section',id='offres',attrs={'class':'ss-experiences-compact','aria-labelledby':'tiles-title'})
+ mark(experiences,'a03')
+ experience_cards=''
+ for i,card in enumerate(story_offers.select('.ss-offer-card')):
+  photo=copy.copy(card.img)
+  badge='<span class="ss-experiences-compact__badge">NOTRE SPÉCIALITÉ</span>' if i==1 else ''
+  experience_cards+='<a class="ss-experiences-compact__item" href="'+E(card['href'])+'" aria-label="'+E(card['aria-label'])+'"><div class="ss-experiences-compact__image">'+str(photo)+badge+'</div><div class="ss-experiences-compact__caption"><div class="ss-experiences-compact__name"><span aria-hidden="true">'+str(i+1).zfill(2)+' /</span><h3>'+E(card.h3.get_text())+'</h3></div><span class="ss-experiences-compact__link">'+E(card.select_one('.ss-offer-cta').get_text())+' <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span></div></a>'
+ put(experiences,'<header class="ss-experiences-compact__header"><span class="ss-home-courses__eyebrow">03 / NOS EXPÉRIENCES</span><h2 id="tiles-title">'+E(value(sections[2],'H2'))+'</h2><p>'+E(value(sections[2],'Introduction'))+'</p></header><div class="ss-experiences-compact__grid">'+experience_cards+'</div>')
+ formats=home.new_tag('section',id='formules',attrs={'class':'ss-formats-compact','aria-labelledby':'formats-title'})
  mark(formats,'a04')
  rows=''
  for i,items in enumerate(cards):
   number,rest=clean(items[0]['text']).split(' / ',1)
   category,duration=rest.split(' — ',1)
-  slots='<p class="ss-course-format__slots">Créneaux indicatifs : 09h30 – 12h00 · 12h00 – 14h30 · 14h30 – 17h00</p>' if i==0 else ''
-  rows+='<article class="ss-course-format" aria-labelledby="format-'+str(i+1)+'"><span class="ss-course-format__number" aria-hidden="true">'+E(number)+'</span><div class="ss-course-format__copy"><h3 id="format-'+str(i+1)+'">'+E(category)+'</h3><h4>'+E(items[1]['text'])+'</h4><p class="ss-course-format__description">'+E(items[2]['text'])+'</p>'+slots+'</div><div class="ss-course-format__duration">'+E(duration)+'</div></article>'
- put(formats,'<div class="ss-course-formats__container"><header class="ss-course-formats__header"><span class="ss-course-formats__eyebrow">04 / NOS FORMATS DE COURS PRIVÉS</span><h2 id="formats-title">'+E(value(s,'H2'))+'</h2><p>'+E(value(s,'Introduction'))+'</p></header><div class="ss-course-formats__list">'+rows+'</div><footer class="ss-course-formats__footer"><div class="ss-course-formats__notes"><span class="ss-course-formats__source-label">'+E(value(s,'Surtitre'))+'</span><p>'+E(value(s,'Note'))+'</p><p>Freeride : journée complète ou sur mesure.</p></div>'+a(value(s,'CTA'),'#contact','ss-course-formats__cta')+'</footer></div>')
- section.replace_with(formats)
- home.select_one('#offres')['class'].append('ss-formats-transition')
+  rows+='<article class="ss-formats-compact__item" aria-labelledby="format-'+str(i+1)+'"><h3 id="format-'+str(i+1)+'">'+E(category)+'</h3><p>'+E(duration)+'</p></article>'
+ put(formats,'<header><span class="ss-home-courses__eyebrow">04 / FORMATS DE COURS PRIVÉS</span><h2 id="formats-title">'+E(value(s,'H2'))+'</h2></header><div class="ss-formats-compact__grid">'+rows+'</div><div class="ss-formats-compact__action"><div class="ss-formats-compact__notes"><p>'+E(value(s,'Note'))+'</p><p>Freeride : journée complète ou sur mesure.</p></div>'+a(value(s,'CTA'),'#contact','ss-formats-compact__cta')+'</div>')
+ inner=home.new_tag('div',attrs={'class':'ss-home-courses__container'})
+ inner.append(experiences);inner.append(formats);chapter.append(inner)
+ home.select_one('#formules').decompose()
+ home.select_one('#offres').replace_with(chapter)
  home.head.append(home.new_tag('link',rel='stylesheet',href='/course-formats.css'))
 
  # Destinations keep the original four photographic cards and station-index banner.
@@ -171,7 +182,7 @@ def integrate(pages,finish):
  put(node.select_one('.hero-copy'),'<div class="kicker">'+E(value(ss[0],'Surtitre'))+'</div><h1 id="hero-title">'+E(value(ss[0],'H1'))+'</h1><p>'+E(value(ss[0],'Paragraphe'))+'</p><p>'+E(value(ss[0],'Phrase finale'))+'</p><div class="hero-actions">'+a(value(ss[3],'CTA'),'#contact')+a(value(ss[1],'Surtitre'),'#offres','ss-hero-contact')+'</div>')
  soup.main.append(node)
  # The homepage photographic cards carry the three heritage points.
- node=copy.copy(home.select_one('#offres'));node['class'].remove('ss-formats-transition');mark(node,'b02')
+ node=copy.copy(story_offers);mark(node,'b02')
  s=ss[1];text(node.select_one('.kicker'),value(s,'Surtitre'));text(node.h2,value(s,'H2'))
  text(node.select_one('.ss-offers-heading>p'),value(s,'Introduction'))
  _,cards,_=groups(s)

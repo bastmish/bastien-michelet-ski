@@ -5,16 +5,16 @@ from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'docs/adn-v2';OUT.mkdir(parents=True,exist_ok=True)
-# Original ADN guard, allowing the later authorised Formats/transition update.
+# Original ADN guard, allowing the later authorised compact Experiences/Formats update.
 # Course Formats has its own stricter scope guard in tests/course_formats.py.
 before=BeautifulSoup(subprocess.check_output(['git','show','0c1bfaf:public/index.html'],cwd=ROOT),'html.parser')
 after=BeautifulSoup((ROOT/'public/index.html').read_text(),'html.parser')
 for soup in [before,after]:
- for node in list(soup.select('#expertise,#adn,#formules,link[href="/course-formats.css"]')):
+ for node in list(soup.select('#expertise,#adn,#formules,#offres,.ss-home-courses,link[href="/course-formats.css"]')):
   if node.parent:node.decompose()
 for soup in [before,after]:
  node=soup.select_one('#offres')
- if 'ss-formats-transition' in node.get('class',[]):node['class'].remove('ss-formats-transition')
+ if node and 'ss-formats-transition' in node.get('class',[]):node['class'].remove('ss-formats-transition')
 assert [l for l in str(before).splitlines() if l.strip()]==[l for l in str(after).splitlines() if l.strip()],'Change outside ADN'
 for file in (ROOT/'public').rglob('*.html'):
  if file.name=='index.html' and file.parent==ROOT/'public':continue

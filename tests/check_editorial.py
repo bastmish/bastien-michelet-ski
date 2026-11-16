@@ -37,16 +37,21 @@ for page in pages:
  for section in page['sections']:
   nodes=soup.select('[data-editorial-section="'+section['id']+'"]')
   text=norm(' '.join(n.get_text(' ',strip=True) for n in nodes))
-  missing=[]
-  for b in section['blocks']:
+  missing=[];condensed=[]
+  # Explicit home condensation authorised in the Experiences & Formats specification.
+  compact_indices={'a03':{0,4,8,11,14},'a04':{0,2,4,5,7,8,10,11}}
+  for index,b in enumerate(section['blocks']):
+   if page['path']=='index.html' and section['id'] in compact_indices and index in compact_indices[section['id']]:
+    condensed.append({'index':index,'text':b['text'],'status':'Preserved in immutable editorial source; omitted from compact home by instruction'})
+    continue
    for line in copytext(b['text']).splitlines():
     line=line.removeprefix('- ')
     if section['id']=='a04' and re.match(r'^0[123] / ',line):
-     parts=re.split(r' / | — ',line)
+     parts=re.split(r' / | — ',line)[1:]
      if not all(norm(part) in text for part in parts):missing.append(line)
     elif norm(line) and norm(line) not in text:missing.append(line)
-  if not nodes or missing:failures.append({'page':page['path'],'section':section['id'],'missing':missing})
-  report.append({'page':page['path'],'section':section['id'].upper(),'blocks':len(section['blocks']),'status':'PASS' if nodes and not missing else 'FAIL','components':[n.get('class',[]) for n in nodes],'missing':missing})
+  if not nodes or missing:failures.append({'page':page['path'],'section':section['id'],'missing':missing,'compact_source_only':condensed})
+  report.append({'page':page['path'],'section':section['id'].upper(),'blocks':len(section['blocks']),'status':'PASS' if nodes and not missing else 'FAIL','components':[n.get('class',[]) for n in nodes],'missing':missing,'compact_source_only':condensed})
 aux=BeautifulSoup((ROOT/'public/offres/index.html').read_text(),'html.parser')
 auxref=BeautifulSoup((ROOT/'content/original-pages/offres/index.html').read_text(),'html.parser')
 assert [n['src'] for n in aux.main.select('img')]==[n['src'] for n in auxref.main.select('img')]
@@ -59,8 +64,8 @@ for filename,sha in manifest['sha256'].items():
  assert hashlib.sha256((ROOT/filename).read_bytes()).hexdigest()==sha,filename
 out=ROOT/'docs/editorial-integration';out.mkdir(exist_ok=True,parents=True)
 (out/'sections.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
-table='# Vérification des 32 sections\n\nContrôle du texte dans le HTML final de chaque section, sans modification des sources. Les retours à la ligne de présentation sont normalisés ; les mots et la ponctuation sont conservés.\n\n| Page | Section | Blocs sources | Composants bc9bb78 réutilisés | Résultat |\n|---|---|---:|---|---|\n'
-for row in report:table+='| '+row['page']+' | '+row['section']+' | '+str(row['blocks'])+' | '+', '.join(' '.join(x) for x in row['components'])+' | '+row['status']+' |\n'
+table='# Vérification des 32 sections\n\nContrôle du texte dans le HTML final de chaque section, sans modification des sources. Les retours à la ligne sont normalisés. Les blocs non condensés sont contrôlés mot pour mot dans le HTML. Pour A03/A04 de l’accueil, la condensation expressément autorisée est détaillée dans sections.json ; les textes complets restent dans les sources immuables.\n\n| Page | Section | Blocs sources | Composants rendus | Résultat |\n|---|---|---:|---|---|\n'
+for row in report:table+='| '+row['page']+' | '+row['section']+' | '+str(row['blocks'])+' | '+', '.join(' '.join(x) for x in row['components'])+' | '+row['status']+(' — vue compacte autorisée' if row['compact_source_only'] else '')+' |\n'
 (out/'sections.md').write_text(table)
-print(json.dumps(failures,ensure_ascii=False,indent=2) if failures else 'PASS: all 32 sections, every approved block, original photographs/styles and immutable sources.')
+print(json.dumps(failures,ensure_ascii=False,indent=2) if failures else 'PASS: 32 sections, all displayed approved copy and immutable sources; explicit A03/A04 home condensation recorded.')
 sys.exit(bool(failures))
