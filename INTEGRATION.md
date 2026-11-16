@@ -107,3 +107,7 @@ Le compteur 43. et son ancien bandeau sont remplacés par la composition éditor
 ## Réservation et transitions immersives V3
 
 Colonne gauche limitée au titre, à l’introduction validée et à une note rassurante. Textes A08 secondaires conservés en source, affichage allégé avec autorisation. Panneau WhatsApp explicite, progression nommée, CTA vert « Ouvrir mon message dans WhatsApp », aides regroupées. Six viewports, données conservées, 43 stations, validations, freeride et URL encodée : PASS ; aucune violation axe ciblée. Trois calques photographiques de transition codés, activés uniquement après chargement réel de la photo du projet. Actuellement BLOQUÉS et masqués : proxy 403, aucune simulation. La validation photographique demandée n’est pas terminée. Galerie, avant/après et rapport : docs/booking-v3/index.html et README.md.
+
+## Correction Destinations → Avis : couleur seule
+
+La transition photographique B est supprimée avec son image et ses styles. Un div vide séparé peint uniquement le gradient demandé, 120 px desktop et 72 px mobile. Padding bas du bandeau réduit à 56/40 px, sans interstice sous le CTA. Captures inspectées montrant ensemble bandeau, transition complète et Avis : docs/destinations-reviews-color/index.html. Six largeurs, pixels aux deux bords et au centre, limites contiguës, absence de photo/pseudo/blur/texte et protection du reste du DOM : PASS. Les autres transitions, cartes, textes et liens sont inchangés.

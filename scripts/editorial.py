@@ -192,7 +192,8 @@ def integrate(pages,finish):
  destinations=home.select_one('#destinations')
  destinations['class'].append('ss-immersive-destinations')
  destinations.insert(0,photograph('ss-photo-transition ss-photo-transition--entry'))
- destinations.append(photograph('ss-photo-transition ss-photo-transition--exit'))
+ transition=home.new_tag('div',attrs={'class':'ss-destinations-to-reviews','aria-hidden':'true'})
+ destinations.insert_after(transition)
  reservation.insert(0,photograph('ss-booking-atmosphere'))
  home.body['class']=home.body.get('class',[])+['ss-home-themed']
  for selector,theme in [('#accueil','ss-theme-light'),('#expertise','ss-theme-light'),('.ss-home-courses','ss-theme-light-soft'),('#destinations','ss-theme-dark'),('#avis','ss-theme-white'),('#questions','ss-theme-white')]:
@@ -201,8 +202,8 @@ def integrate(pages,finish):
  for selector in ['.ss-home-courses','#destinations','#avis','#questions','#contact']:
   outer=home.select_one(selector);outer['class'].append('ss-fullwidth')
   inner=outer.select_one(':scope>.wrap,:scope>.ss-home-courses__container,:scope>.ss-reservation__container');inner['class']=inner.get('class',[])+['ss-container']
- home.head.append(home.new_tag('link',rel='stylesheet',href='/home-system.css?v=booking-v3'))
- home.head.append(home.new_tag('link',rel='stylesheet',href='/booking-v3.css'))
+ home.head.append(home.new_tag('link',rel='stylesheet',href='/home-system.css?v=dest-reviews-color'))
+ home.head.append(home.new_tag('link',rel='stylesheet',href='/booking-v3.css?v=dest-reviews-color'))
  home.head.append(home.new_tag('script',src='/home-system.js?v=booking-v3',defer=''))
  save(home,pages[0],finish)
  # Collective now explicitly uses the homepage components, as requested.
