@@ -171,6 +171,19 @@ def integrate(pages,finish):
  put(side,''.join(block(b) if b['label']!='CTA' else a(b['text'],m,'ss-request-direct') for b in s['blocks'][3:]))
  for option in section.select('select[name="experience"] option'):
   if option.get('value'):option.string=option['value']
+ # Home-specific reservation and section-owned themes. Keep the story contact intact.
+ story_contact=copy.copy(section)
+ reservation=BeautifulSoup((ROOT/'content/home-reservation.html').read_text(),'html.parser').section
+ editorial='<span class="ss-reservation__eyebrow">'+E(value(s,'Surtitre'))+'</span><h2 id="contact-title">'+E(value(s,'H2'))+'</h2><p class="ss-reservation__intro">'+E(value(s,'Introduction'))+'</p><div class="ss-reservation__process"><h3>'+E(value(s,'Étapes — sous-titre'))+'</h3>'+''.join(block(b) for b in s['blocks'][7:])+'</div><div class="ss-reservation__invitation"><h3>'+E(value(s,'Sous-titre'))+'</h3>'+block(s['blocks'][4])+a(value(s,'CTA'),m,'ss-reservation__direct')+'</div>'
+ choices=''.join('<label class="ss-private-request__choice"><input type="radio" name="experience" value="'+E(label)+'" required aria-describedby="private-experience-error"><span>'+E(label)+'</span></label>' for label in ['Leçons particulières','Performance & technique','Freeride & milieu alpin','Snowboard'])
+ stations=''.join('<option value="'+E(station['name'])+'"></option>' for station in stationdata)
+ reservation=BeautifulSoup(str(reservation).replace('{{EDITORIAL}}',editorial).replace('{{EXPERIENCES}}',choices).replace('{{STATIONS}}',stations),'html.parser').section
+ section.replace_with(reservation)
+ home.body['class']=home.body.get('class',[])+['ss-home-themed']
+ for selector,theme in [('#accueil','ss-theme-light'),('#expertise','ss-theme-light'),('.ss-home-courses','ss-theme-light-soft'),('#destinations','ss-theme-dark'),('#avis','ss-theme-white'),('#questions','ss-theme-white')]:
+  node=home.select_one(selector);node['class']=node.get('class',[])+[theme]
+ home.head.append(home.new_tag('link',rel='stylesheet',href='/home-system.css'))
+ home.head.append(home.new_tag('script',src='/home-system.js',defer=''))
  save(home,pages[0],finish)
  # Collective now explicitly uses the homepage components, as requested.
  page=pages[1];ss=page['sections'];m=chat('une expérience avec le collectif Ski Society')
@@ -178,7 +191,7 @@ def integrate(pages,finish):
  soup.body['class']='story-home'
  soup.main.clear()
  # Homepage hero, with the complete approved collective introduction.
- node=copy.copy(home.select_one('#accueil'));mark(node,'b01')
+ node=copy.copy(home.select_one('#accueil'));node['class']=[c for c in node['class'] if c!='ss-theme-light'];mark(node,'b01')
  put(node.select_one('.hero-copy'),'<div class="kicker">'+E(value(ss[0],'Surtitre'))+'</div><h1 id="hero-title">'+E(value(ss[0],'H1'))+'</h1><p>'+E(value(ss[0],'Paragraphe'))+'</p><p>'+E(value(ss[0],'Phrase finale'))+'</p><div class="hero-actions">'+a(value(ss[3],'CTA'),'#contact')+a(value(ss[1],'Surtitre'),'#offres','ss-hero-contact')+'</div>')
  soup.main.append(node)
  # The homepage photographic cards carry the three heritage points.
@@ -205,7 +218,7 @@ def integrate(pages,finish):
  node.select_one('.ss-programmes-disclaimer-v72').decompose()
  soup.main.append(node)
  # Same homepage contact composition, without adding a second enquiry form.
- node=copy.copy(home.select_one('#contact'));mark(node,'b04');s=ss[3]
+ node=copy.copy(story_contact);mark(node,'b04');s=ss[3]
  node['aria-labelledby']='reviews-title'
  text(node.select_one('.kicker'),value(s,'Surtitre'));text(node.h2,value(s,'H2'));node.h2['id']='reviews-title'
  text(node.select_one('.ss-contact-heading>p'),value(s,'Introduction'))

@@ -1,0 +1,587 @@
+{
+  "reference": "23821ca",
+  "scope": "PASS: home themes and reservation only; other public HTML byte-identical",
+  "viewports": [
+    {
+      "width": 1536,
+      "height": 960,
+      "geometry": {
+        ".ss-home-courses": {
+          "x": 0,
+          "y": 1948.078125,
+          "w": 1536,
+          "h": 849.5,
+          "b": 2797.578125,
+          "color": "rgb(247, 246, 242)"
+        },
+        "#destinations": {
+          "x": 0,
+          "y": 2797.578125,
+          "w": 1536,
+          "h": 1282.4375,
+          "b": 4080.015625,
+          "color": "rgb(17, 19, 18)"
+        },
+        "#avis": {
+          "x": 0,
+          "y": 4080.015625,
+          "w": 1536,
+          "h": 1134.171875,
+          "b": 5214.1875,
+          "color": "rgb(255, 255, 255)"
+        },
+        "#questions": {
+          "x": 0,
+          "y": 5214.1875,
+          "w": 1536,
+          "h": 607,
+          "b": 5821.1875,
+          "color": "rgb(255, 255, 255)"
+        },
+        "#contact": {
+          "x": 0,
+          "y": 5821.1875,
+          "w": 1536,
+          "h": 1036.375,
+          "b": 6857.5625,
+          "color": "rgb(17, 19, 18)"
+        },
+        ".art-prefooter": {
+          "x": 0,
+          "y": 6857.5625,
+          "w": 1536,
+          "h": 480,
+          "b": 7337.5625,
+          "color": "rgb(17, 19, 18)"
+        },
+        ".art-footer": {
+          "x": 0,
+          "y": 7337.5625,
+          "w": 1536,
+          "h": 764.578125,
+          "b": 8102.140625,
+          "color": "rgb(17, 19, 18)"
+        }
+      },
+      "header": "PASS: correct themes and constant height",
+      "wizard": "PASS: steps, progress, preserved data, no overflow"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "geometry": {
+        ".ss-home-courses": {
+          "x": 0,
+          "y": 1842.21875,
+          "w": 1440,
+          "h": 849.5,
+          "b": 2691.71875,
+          "color": "rgb(247, 246, 242)"
+        },
+        "#destinations": {
+          "x": 0,
+          "y": 2691.71875,
+          "w": 1440,
+          "h": 1259.078125,
+          "b": 3950.796875,
+          "color": "rgb(17, 19, 18)"
+        },
+        "#avis": {
+          "x": 0,
+          "y": 3950.796875,
+          "w": 1440,
+          "h": 1133.015625,
+          "b": 5083.8125,
+          "color": "rgb(255, 255, 255)"
+        },
+        "#questions": {
+          "x": 0,
+          "y": 5083.8125,
+          "w": 1440,
+          "h": 601.0625,
+          "b": 5684.875,
+          "color": "rgb(255, 255, 255)"
+        },
+        "#contact": {
+          "x": 0,
+          "y": 5684.875,
+          "w": 1440,
+          "h": 1031.546875,
+          "b": 6716.421875,
+          "color": "rgb(17, 19, 18)"
+        },
+        ".art-prefooter": {
+          "x": 0,
+          "y": 6716.421875,
+          "w": 1440,
+          "h": 480,
+          "b": 7196.421875,
+          "color": "rgb(17, 19, 18)"
+        },
+        ".art-footer": {
+          "x": 0,
+          "y": 7196.421875,
+          "w": 1440,
+          "h": 754.40625,
+          "b": 7950.828125,
+          "color": "rgb(17, 19, 18)"
+        }
+      },
+      "header": "PASS: correct themes and constant height",
+      "wizard": "PASS: steps, progress, preserved data, no overflow"
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "geometry": {
+        ".ss-home-courses": {
+          "x": 0,
+          "y": 1682.515625,
+          "w": 1280,
+          "h": 849.5,
+          "b": 2532.015625,
+          "color": "rgb(247, 246, 242)"
+        },
+        "#destinations": {
+          "x": 0,
+          "y": 2532.015625,
+          "w": 1280,
+          "h": 1209.296875,
+          "b": 3741.3125,
+          "color": "rgb(17, 19, 18)"
+        },
+        "#avis": {
+          "x": 0,
+          "y": 3741.3125,
+          "w": 1280,
+          "h": 1022.71875,
+          "b": 4764.03125,
+          "color": "rgb(255, 255, 255)"
+        },
+        "#questions": {
+          "x": 0,
+          "y": 4764.03125,
+          "w": 1280,
+          "h": 579.9375,
+          "b": 5343.96875,
+          "color": "rgb(255, 255, 255)"
+        },
+        "#contact": {
+          "x": 0,
+          "y": 5343.96875,
+          "w": 1280,
+          "h": 1010.171875,
+          "b": 6354.140625,
+          "color": "rgb(17, 19, 18)"
+        },
+        ".art-prefooter": {
+          "x": 0,
+          "y": 6354.140625,
+          "w": 1280,
+          "h": 480,
+          "b": 6834.140625,
+          "color": "rgb(17, 19, 18)"
+        },
+        ".art-footer": {
+          "x": 0,
+          "y": 6834.140625,
+          "w": 1280,
+          "h": 737.484375,
+          "b": 7571.625,
+          "color": "rgb(17, 19, 18)"
+        }
+      },
+      "header": "PASS: correct themes and constant height",
+      "wizard": "PASS: steps, progress, preserved data, no overflow"
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "geometry": {
+        ".ss-home-courses": {
+          "x": 0,
+          "y": 1943.328125,
+          "w": 1024,
+          "h": 1359.15625,
+          "b": 3302.484375,
+          "color": "rgb(247, 246, 242)"
+        },
+        "#destinations": {
+          "x": 0,
+          "y": 3302.484375,
+          "w": 1024,
+          "h": 1114.953125,
+          "b": 4417.4375,
+          "color": "rgb(17, 19, 18)"
+        },
+        "#avis": {
+          "x": 0,
+          "y": 4417.4375,
+          "w": 1024,
+          "h": 857.09375,
+          "b": 5274.53125,
+          "color": "rgb(255, 255, 255)"
+        },
+        "#questions": {
+          "x": 0,
+          "y": 5274.53125,
+          "w": 1024,
+          "h": 568,
+          "b": 5842.53125,
+          "color": "rgb(255, 255, 255)"
+        },
+        "#contact": {
+          "x": 0,
+          "y": 5842.53125,
+          "w": 1024,
+          "h": 1653.4375,
+          "b": 7495.96875,
+          "color": "rgb(17, 19, 18)"
+        },
+        ".art-prefooter": {
+          "x": 0,
+          "y": 7495.96875,
+          "w": 1024,
+          "h": 480,
+          "b": 7975.96875,
+          "color": "rgb(17, 19, 18)"
+        },
+        ".art-footer": {
+          "x": 0,
+          "y": 7975.96875,
+          "w": 1024,
+          "h": 922.890625,
+          "b": 8898.859375,
+          "color": "rgb(17, 19, 18)"
+        }
+      },
+      "header": "PASS: correct themes and constant height",
+      "wizard": "PASS: steps, progress, preserved data, no overflow"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "geometry": {
+        ".ss-home-courses": {
+          "x": 0,
+          "y": 2280.203125,
+          "w": 768,
+          "h": 1167.15625,
+          "b": 3447.359375,
+          "color": "rgb(247, 246, 242)"
+        },
+        "#destinations": {
+          "x": 0,
+          "y": 3447.359375,
+          "w": 768,
+          "h": 1089.0625,
+          "b": 4536.421875,
+          "color": "rgb(17, 19, 18)"
+        },
+        "#avis": {
+          "x": 0,
+          "y": 4536.421875,
+          "w": 768,
+          "h": 817.734375,
+          "b": 5354.15625,
+          "color": "rgb(255, 255, 255)"
+        },
+        "#questions": {
+          "x": 0,
+          "y": 5354.15625,
+          "w": 768,
+          "h": 639.953125,
+          "b": 5994.109375,
+          "color": "rgb(255, 255, 255)"
+        },
+        "#contact": {
+          "x": 0,
+          "y": 5994.109375,
+          "w": 768,
+          "h": 1677.234375,
+          "b": 7671.34375,
+          "color": "rgb(17, 19, 18)"
+        },
+        ".art-prefooter": {
+          "x": 0,
+          "y": 7671.34375,
+          "w": 768,
+          "h": 410,
+          "b": 8081.34375,
+          "color": "rgb(17, 19, 18)"
+        },
+        ".art-footer": {
+          "x": 0,
+          "y": 8081.34375,
+          "w": 768,
+          "h": 1118.09375,
+          "b": 9199.4375,
+          "color": "rgb(17, 19, 18)"
+        }
+      },
+      "header": "PASS: correct themes and constant height",
+      "wizard": "PASS: steps, progress, preserved data, no overflow"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "geometry": {
+        ".ss-home-courses": {
+          "x": 0,
+          "y": 2309.78125,
+          "w": 390,
+          "h": 2012.953125,
+          "b": 4322.734375,
+          "color": "rgb(247, 246, 242)"
+        },
+        "#destinations": {
+          "x": 0,
+          "y": 4322.734375,
+          "w": 390,
+          "h": 1251.234375,
+          "b": 5573.96875,
+          "color": "rgb(17, 19, 18)"
+        },
+        "#avis": {
+          "x": 0,
+          "y": 5573.96875,
+          "w": 390,
+          "h": 950.171875,
+          "b": 6524.140625,
+          "color": "rgb(255, 255, 255)"
+        },
+        "#questions": {
+          "x": 0,
+          "y": 6524.140625,
+          "w": 390,
+          "h": 773.90625,
+          "b": 7298.046875,
+          "color": "rgb(255, 255, 255)"
+        },
+        "#contact": {
+          "x": 0,
+          "y": 7298.046875,
+          "w": 390,
+          "h": 1760.109375,
+          "b": 9058.15625,
+          "color": "rgb(17, 19, 18)"
+        },
+        ".art-prefooter": {
+          "x": 0,
+          "y": 9058.15625,
+          "w": 390,
+          "h": 435.71875,
+          "b": 9493.875,
+          "color": "rgb(17, 19, 18)"
+        },
+        ".art-footer": {
+          "x": 0,
+          "y": 9493.875,
+          "w": 390,
+          "h": 1168.078125,
+          "b": 10661.953125,
+          "color": "rgb(17, 19, 18)"
+        }
+      },
+      "header": "PASS: correct themes and constant height",
+      "wizard": "PASS: steps, progress, preserved data, no overflow"
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "geometry": {
+        ".ss-home-courses": {
+          "x": 0,
+          "y": 2285.703125,
+          "w": 375,
+          "h": 1975.453125,
+          "b": 4261.15625,
+          "color": "rgb(247, 246, 242)"
+        },
+        "#destinations": {
+          "x": 0,
+          "y": 4261.15625,
+          "w": 375,
+          "h": 1251.234375,
+          "b": 5512.390625,
+          "color": "rgb(17, 19, 18)"
+        },
+        "#avis": {
+          "x": 0,
+          "y": 5512.390625,
+          "w": 375,
+          "h": 950.171875,
+          "b": 6462.5625,
+          "color": "rgb(255, 255, 255)"
+        },
+        "#questions": {
+          "x": 0,
+          "y": 6462.5625,
+          "w": 375,
+          "h": 773.90625,
+          "b": 7236.46875,
+          "color": "rgb(255, 255, 255)"
+        },
+        "#contact": {
+          "x": 0,
+          "y": 7236.46875,
+          "w": 375,
+          "h": 1760.109375,
+          "b": 8996.578125,
+          "color": "rgb(17, 19, 18)"
+        },
+        ".art-prefooter": {
+          "x": 0,
+          "y": 8996.578125,
+          "w": 375,
+          "h": 435.71875,
+          "b": 9432.296875,
+          "color": "rgb(17, 19, 18)"
+        },
+        ".art-footer": {
+          "x": 0,
+          "y": 9432.296875,
+          "w": 375,
+          "h": 1166.5625,
+          "b": 10598.859375,
+          "color": "rgb(17, 19, 18)"
+        }
+      },
+      "header": "PASS: correct themes and constant height",
+      "wizard": "PASS: steps, progress, preserved data, no overflow"
+    }
+  ],
+  "functional": {
+    "encoding": "PASS: accents, ampersands, plus signs, angle brackets and newlines round-trip; 27 participants accepted",
+    "stations": "PASS: all 43 stations advance; Other station requires free text",
+    "freeride": "PASS: actual option removal, explanation, stale half-day cleared, option restored for other experiences",
+    "validation": "PASS: required fields and positive integer participants; first name and notes optional; no arbitrary group maximum",
+    "navigation": "PASS: values retained between steps, no reload, no draft before explicit valid submit"
+  },
+  "page_errors": [],
+  "failed_requests": [
+    {
+      "url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/31112554/pexels-photo-31112554.jpeg?auto=compress&cs=tinysrgb&w=1900",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/416805/pexels-photo-416805.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/20159351/pexels-photo-20159351.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/31112554/pexels-photo-31112554.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/12100585/pexels-photo-12100585.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/6721020/pexels-photo-6721020.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/416805/pexels-photo-416805.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1800",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/20159351/pexels-photo-20159351.jpeg?auto=compress&cs=tinysrgb&w=1500",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/31112551/pexels-photo-31112551.jpeg?auto=compress&cs=tinysrgb&w=1900",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=850",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=850",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/31112554/pexels-photo-31112554.jpeg?auto=compress&cs=tinysrgb&w=850",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/12100585/pexels-photo-12100585.jpeg?auto=compress&cs=tinysrgb&w=850",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/31293431/pexels-photo-31293431.jpeg?auto=compress&cs=tinysrgb&w=850",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/31112551/pexels-photo-31112551.jpeg?auto=compress&cs=tinysrgb&w=850",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    }
+  ],
+  "accessibility": [
+    {
+      "width": 1440,
+      "stage": 1,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "stage": 2,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "headerAt": "#destinations",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "headerAt": "#questions",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "stage": 1,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "stage": 2,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "headerAt": "#destinations",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "headerAt": "#questions",
+      "violations": []
+    }
+  ],
+  "remote_resources": "BLOCKED"
+}

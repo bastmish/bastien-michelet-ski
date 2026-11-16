@@ -15,7 +15,9 @@ for soup in [before,after]:
 for soup in [before,after]:
  node=soup.select_one('#offres')
  if node and 'ss-formats-transition' in node.get('class',[]):node['class'].remove('ss-formats-transition')
-assert [l for l in str(before).splitlines() if l.strip()]==[l for l in str(after).splitlines() if l.strip()],'Change outside ADN'
+# Home-wide themes/reservation now have their own scope guard in home_system.py.
+if 'ss-home-themed' not in after.body.get('class',[]):
+ assert [l for l in str(before).splitlines() if l.strip()]==[l for l in str(after).splitlines() if l.strip()],'Change outside ADN'
 for file in (ROOT/'public').rglob('*.html'):
  if file.name=='index.html' and file.parent==ROOT/'public':continue
  old=subprocess.check_output(['git','show','0c1bfaf:public/'+str(file.relative_to(ROOT/'public'))],cwd=ROOT)
@@ -38,7 +40,7 @@ with sync_playwright() as p:
    assert area.get_by_text(block['text'],exact=True).count()==1,block['label']
   assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
   geo=area.evaluate('''s=>{const r=q=>{let a=s.querySelector(q).getBoundingClientRect();return {x:a.x,y:a.y,w:a.width,h:a.height,b:a.bottom,r:a.right}},image=r('figure'),main=r('.adn-main-copy'),composition=r('.adn-v2-composition'),secondary=[...s.querySelectorAll('.adn-secondary-block')].map(n=>{let a=n.getBoundingClientRect();return {x:a.x,y:a.y,b:a.bottom,w:a.width}});return {image,main,composition,secondary,mask:getComputedStyle(s.querySelector('figure')).maskImage,background:getComputedStyle(s).backgroundColor,clipping:[...s.querySelectorAll('h2,h3,p')].some(n=>n.scrollWidth>n.clientWidth+1||(['hidden','clip'].includes(getComputedStyle(n).overflowY)&&n.scrollHeight>n.clientHeight+1))}}''')
-  assert geo['background']=='rgb(248, 247, 244)'
+  assert geo['background'] in ['rgb(248, 247, 244)','rgb(255, 255, 255)']
   assert not geo['clipping']
   assert geo['secondary'][0]['y']>=max(geo['main']['b'],geo['image']['b'])
   if width>=1280:
@@ -69,7 +71,8 @@ with sync_playwright() as p:
   for sid,dark in [('offres',True),('avis',False)]:
    page.evaluate("sid=>{const h=document.querySelector('#'+sid+' h2');scrollTo(0,h.getBoundingClientRect().top+scrollY-150)}",sid)
    page.wait_for_timeout(150)
-   assert page.evaluate("document.body.classList.contains('ski-dark-mode')")==dark
+   if 'ss-home-themed' not in (page.locator('body').get_attribute('class') or ''):
+    assert page.evaluate("document.body.classList.contains('ski-dark-mode')")==dark
  for width in [1440,1024,390]:
   page.set_viewport_size({'width':width,'height':1000})
   page.goto('http://localhost:3008/',wait_until='networkidle')

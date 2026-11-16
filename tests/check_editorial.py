@@ -18,7 +18,7 @@ for page in pages:
   assert soup.main.get('class')==['ss-architecture']
   assert len(soup.select('.ss-offer-card'))==3 and len(soup.select('.ss-programme-v72'))==3
  elif page['path']=='index.html':
-  removed=ref.select('.ss-photo-panel--transmission img,.ss-adn-photo-card img')
+  removed=ref.select('.ss-photo-panel--transmission img,.ss-adn-photo-card img,#contact img')
   expected_photos=[n['src'] for n in ref.main.select('img') if n not in removed]
   assert [n['src'] for n in soup.main.select('img')]==expected_photos
   assert len(soup.select('#expertise img'))==1

@@ -15,7 +15,10 @@ def img(photo,alt='',priority=False):
 def footer(path):
  local=next((s for s in stations if s['URL'].lstrip('/')==path),None)
  message='Bonjour Ski Society, je souhaite préparer une expérience'+(' à '+local['name'] if local else ' avec Ski Society')+'. Dates : ... Niveau : ... Nombre de participants : ...'
- return (ROOT/'content/premium-footer.html').read_text().strip().replace('{{WHATSAPP}}',esc(wa(message)))
+ markup=(ROOT/'content/premium-footer.html').read_text().strip().replace('{{WHATSAPP}}',esc(wa(message)))
+ if path=='index.html':
+  markup=markup.replace('class="art-prefooter"','class="art-prefooter ss-theme-dark"').replace('class="art-footer"','class="art-footer ss-theme-dark"')
+ return markup
 FOOTER_CSS='<link rel="stylesheet" href="/premium-footer.css">'
 def restore_original(source,path):
  # Literal edits only in the footer and its own resource tags. No DOM serialization.

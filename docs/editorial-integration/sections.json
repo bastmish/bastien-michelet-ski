@@ -6,7 +6,8 @@
     "status": "PASS",
     "components": [
       [
-        "hero"
+        "hero",
+        "ss-theme-light"
       ]
     ],
     "missing": [],
@@ -19,7 +20,8 @@
     "status": "PASS",
     "components": [
       [
-        "ss-adn-editorial-v2"
+        "ss-adn-editorial-v2",
+        "ss-theme-light"
       ]
     ],
     "missing": [],
@@ -126,7 +128,8 @@
     "components": [
       [
         "ss-section",
-        "ss-destinations"
+        "ss-destinations",
+        "ss-theme-dark"
       ]
     ],
     "missing": [],
@@ -143,7 +146,8 @@
         "ss-testimonials",
         "ss-reviews-v26",
         "ss-reviews-v49",
-        "ss-reviews-v52"
+        "ss-reviews-v52",
+        "ss-theme-white"
       ]
     ],
     "missing": [],
@@ -157,7 +161,8 @@
     "components": [
       [
         "ss-section",
-        "ss-questions"
+        "ss-questions",
+        "ss-theme-white"
       ]
     ],
     "missing": [],
@@ -170,9 +175,8 @@
     "status": "PASS",
     "components": [
       [
-        "ss-section",
-        "ss-contact",
-        "ss-contact-v29"
+        "ss-reservation",
+        "ss-theme-dark"
       ]
     ],
     "missing": [],

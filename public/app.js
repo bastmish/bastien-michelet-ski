@@ -196,6 +196,7 @@
  const offersTitle=homepage?main.querySelector('#tiles-title'):null;
  const reviewsTitle=homepage?main.querySelector('#reviews-title'):null;
  function updatePageTheme(){
+  if(document.body.classList.contains('ss-home-themed'))return;
   if(!homepage||!offersTitle||!reviewsTitle)return;
   const threshold=window.innerHeight*.58;
   const pastOffers=offersTitle.getBoundingClientRect().top<=threshold;
@@ -208,6 +209,7 @@
  updatePageTheme();
  let toneScheduled=false;
  function updateEditorialTone(){
+  if(document.body.classList.contains('ss-home-themed'))return;
   toneScheduled=false;
   const focus=window.innerHeight*.43;
   let active=null;
