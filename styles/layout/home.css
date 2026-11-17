@@ -1,0 +1,21 @@
+/* Authored lot 1 source; values: styles/design-tokens.json. */
+/* Full-width correction: only outer canvases paint the page backgrounds. */
+body.ss-home-themed{margin:0!important;padding:0!important;width:100%;max-width:none}
+body.ss-home-themed>main.ss-architecture{width:100%!important;max-width:none!important;margin:0!important;padding-inline:0!important;background:var(--ss-color-compat-009)!important;border-inline:0!important;box-sizing:border-box}
+body.ss-home-themed .ss-fullwidth{position:relative;width:100%!important;max-width:none!important;margin:0!important;padding-inline:0!important;border-inline:0!important;box-sizing:border-box}
+body.ss-home-themed .ss-container{width:100%;max-width:var(--ss-container-content);margin-inline:auto;padding-inline:var(--ss-space-48);box-sizing:border-box;background:var(--ss-color-compat-009)!important}
+/* No inherited section-sized decorative layers may cover these canvases.
+   Image wrappers, photograph overlays and form-panel backgrounds are untouched. */
+body.ss-home-themed>main.ss-architecture::before,body.ss-home-themed>main.ss-architecture::after,
+body.ss-home-themed :is(.ss-home-courses,#destinations,#avis,#questions,#contact,.art-footer)::before,
+body.ss-home-themed :is(.ss-home-courses,#destinations,#avis,#questions,#contact,.art-footer)::after{content:none!important;background:none!important;box-shadow:none!important}
+body.ss-home-themed .ss-fullwidth.ss-theme-dark{background:var(--ss-color-dark)!important;color:var(--ss-color-mineral)!important}
+body.ss-home-themed .ss-fullwidth.ss-theme-white,body.ss-home-themed .ss-fullwidth.ss-theme-light{background:var(--ss-color-light)!important;color:var(--ss-color-on-light)!important}
+body.ss-home-themed .ss-fullwidth.ss-theme-light-soft{background:var(--ss-color-mineral)!important;color:var(--ss-color-on-light)!important}
+@media (--query-027){
+body.ss-home-themed .ss-container{padding-inline:var(--ss-space-32)}
+body.ss-home-themed .ss-reservation__container.ss-container{max-width:900px}
+}
+@media (--query-003){
+body.ss-home-themed .ss-container{padding-inline:var(--ss-space-20)}
+}

@@ -1,0 +1,30 @@
+/* Authored lot 1 source; values: styles/design-tokens.json. */
+body.ss-home-themed .art-prefooter.ss-theme-dark,body.ss-home-themed .art-footer.ss-theme-dark{background:var(--ss-color-dark)!important}
+body.ss-home-themed .art-footer{border-top:1px solid var(--ss-color-border-dark)}
+@media (--query-027){
+.ss-home-themed .ss-reservation__container{max-width:900px;padding-inline:var(--ss-space-32);grid-template-columns:minmax(0,1fr);gap:var(--ss-space-48)}
+.ss-home-themed .ss-reservation__copy h2{font-size:var(--ss-type-48)}
+.ss-home-themed .ss-private-request{max-width:720px}
+.ss-home-themed #destinations>.wrap,.ss-home-themed #avis>.wrap,.ss-home-themed #questions>.wrap,.ss-home-themed .art-footer>.wrap,.ss-home-themed .art-prefooter>.wrap{padding-inline:var(--ss-space-32)}
+}
+@media (--query-003){
+.ss-home-themed #destinations>.wrap,.ss-home-themed #avis>.wrap,.ss-home-themed #questions>.wrap,.ss-home-themed .art-footer>.wrap,.ss-home-themed .art-prefooter>.wrap{padding-inline:var(--ss-space-20)}
+.ss-home-themed .ss-reservation{padding:var(--ss-space-64) 0 var(--ss-space-72)}
+.ss-home-themed .ss-reservation__container{grid-template-columns:minmax(0,1fr);padding-inline:var(--ss-space-20);gap:var(--ss-space-36)}
+.ss-home-themed .ss-reservation__copy h2{font-size:var(--ss-type-36);line-height:1.1}
+.ss-home-themed .ss-private-request{padding:var(--ss-space-24);border-radius:8px}
+.ss-home-themed .ss-private-request__heading h3{font-size:var(--ss-type-22)}
+.ss-home-themed .ss-private-request__choice>span{padding:var(--ss-space-12);font-size:var(--ss-type-12)}
+.ss-home-themed .ss-private-request__choice input:checked+span{padding:var(--ss-space-11p5)}
+.ss-home-themed .ss-private-request__profile-grid{grid-template-columns:minmax(0,1fr);gap:var(--ss-space-20)}
+.ss-home-themed .ss-private-request__actions{flex-direction:column-reverse}
+.ss-home-themed .ss-private-request__back{width:100%}
+}
+@media (--query-029){
+.ss-home-themed .ss-private-request__choices{grid-template-columns:minmax(0,1fr)}
+}
+@media (--query-007){
+body.ss-home-themed .site-header .nav-shell,body.ss-home-themed .site-header .nav-links.is-open,body.ss-home-themed .site-header .brand-text strong,body.ss-home-themed .site-header .brand-text small,body.ss-home-themed .site-header .nav-links>a,body.ss-home-themed .site-header .nav-toggle,.ss-home-themed .ss-private-request__progress>span{transition:none!important}
+}
+/* Neutral photographic veil: no blue cast or transition gradient at the footer seam. */
+body.ss-home-themed .art-prefooter.ss-theme-dark::after{background:var(--ss-color-compat-322)}

@@ -1,0 +1,15 @@
+/* Authored lot 1 source; values: styles/design-tokens.json. */
+/* Home-only tokens and section-owned themes. Never tint the viewport on scroll. */
+body.ss-home-themed{--ss-light:var(--ss-color-light);--ss-light-soft:var(--ss-color-mineral);--ss-dark:var(--ss-color-dark);--ss-dark-soft:var(--ss-color-compat-313);--ss-on-light:var(--ss-color-on-light);--ss-on-light-muted:var(--ss-color-on-light-muted);--ss-on-dark:var(--ss-color-mineral);--ss-on-dark-muted:var(--ss-color-on-dark-muted);--ss-border-light:var(--ss-color-border-light);--ss-border-dark:var(--ss-color-border-dark);background:var(--ss-light)!important}
+.ss-home-themed .ss-theme-light,.ss-home-themed .ss-theme-light-soft,.ss-home-themed .ss-theme-white,.ss-home-themed .ss-theme-dark{width:100%;margin:0;box-sizing:border-box;background-image:none!important;transition:none!important}
+body.ss-home-themed :is(.ss-home-courses,#destinations,#avis,#questions,#contact,.art-footer){display:flow-root}
+body.ss-home-themed .ss-theme-light,body.ss-home-themed .ss-theme-white{background:var(--ss-light)!important;color:var(--ss-on-light)!important}
+body.ss-home-themed .ss-theme-light-soft{background:var(--ss-light-soft)!important;color:var(--ss-on-light)!important}
+body.ss-home-themed .ss-theme-dark{background:var(--ss-dark)!important;color:var(--ss-on-dark)!important}
+.ss-home-themed #destinations>.wrap,.ss-home-themed #avis>.wrap,.ss-home-themed #questions>.wrap,.ss-home-themed .art-footer>.wrap,.ss-home-themed .art-prefooter>.wrap{box-sizing:border-box;width:100%;max-width:var(--ss-container-content);margin-inline:auto;padding-inline:var(--ss-space-48)}
+body.ss-home-themed #destinations.ss-theme-dark h2,body.ss-home-themed #destinations.ss-theme-dark .ss-region-after-v48 h3{color:var(--ss-on-dark)!important}
+body.ss-home-themed #destinations.ss-theme-dark .kicker,body.ss-home-themed #destinations.ss-theme-dark .ss-destinations-heading>p,body.ss-home-themed #destinations.ss-theme-dark .ss-region-after-v48 p,body.ss-home-themed #destinations.ss-theme-dark .ss-region-soon{color:var(--ss-on-dark-muted)!important}
+body.ss-home-themed #destinations .ss-region-after-v48{background:var(--ss-dark-soft)!important;border-color:var(--ss-border-dark)!important}
+body.ss-home-themed #avis.ss-theme-white h2,body.ss-home-themed #questions.ss-theme-white h2,body.ss-home-themed #questions.ss-theme-white summary{color:var(--ss-on-light)!important}
+body.ss-home-themed #avis.ss-theme-white .ss-reviews-heading>p,body.ss-home-themed #avis.ss-theme-white .kicker,body.ss-home-themed #questions.ss-theme-white p,body.ss-home-themed #questions.ss-theme-white .kicker{color:var(--ss-on-light-muted)!important}
+body.ss-home-themed #avis .ss-reviews-v52-bottom{border-color:var(--ss-border-light)!important}

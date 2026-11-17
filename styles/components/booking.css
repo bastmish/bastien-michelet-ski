@@ -1,0 +1,57 @@
+/* Authored lot 1 source; values: styles/design-tokens.json. */
+body.ss-home-themed #contact.ss-booking-photo-ready{padding-top:var(--ss-space-312)}
+.ss-home-themed .ss-booking-v3>.ss-reservation__container{position:relative;z-index:1;grid-template-columns:minmax(0,.42fr) minmax(0,.58fr);grid-template-rows:min-content 1fr;column-gap:var(--ss-space-72);row-gap:var(--ss-space-32)}
+.ss-home-themed .ss-booking-v3 .ss-reservation__copy{grid-column:1;grid-row:1}
+.ss-home-themed .ss-booking-v3 .ss-reservation__copy h2{font-size:clamp(var(--ss-type-42),4vw,var(--ss-type-58));line-height:1.07;letter-spacing:-.04em!important;max-width:510px;margin-top:var(--ss-space-26)}
+.ss-home-themed .ss-booking-v3 .ss-reservation__intro{font-size:var(--ss-type-16);line-height:1.7;max-width:450px;color:var(--ss-color-compat-286);margin-top:var(--ss-space-28)}
+.ss-home-themed .ss-booking-v3 .ss-reservation__reassurance{grid-column:1;grid-row:2;font-size:var(--ss-type-13);line-height:1.6;color:var(--ss-color-compat-287);margin:0}
+.ss-home-themed .ss-booking-v3 .ss-private-request{grid-column:2;grid-row:1/3;padding:var(--ss-space-36);max-width:700px}
+.ss-home-themed .ss-booking-v3 .ss-private-request__heading{display:block}
+.ss-home-themed .ss-booking-v3 .ss-private-request__brand{display:flex;align-items:center;gap:var(--ss-space-12)}
+.ss-home-themed .ss-booking-v3 .ss-private-request__brand>svg{width:28px;height:28px;flex-shrink:0;color:var(--ss-color-on-light)}
+.ss-home-themed .ss-booking-v3 .ss-private-request__heading h3{font-size:var(--ss-type-23);line-height:1.2;color:var(--ss-color-on-light);min-width:0}
+.ss-home-themed .ss-booking-v3 .ss-private-request__subtitle{font-size:var(--ss-type-14);line-height:1.5;color:var(--ss-color-compat-023);margin-top:var(--ss-space-8)}
+.ss-home-themed .ss-booking-v3 #private-step-indicator{font-size:var(--ss-type-13);line-height:1.5;color:var(--ss-color-compat-289);font-weight:var(--ss-weight-semibold);margin:var(--ss-space-20) 0 0}
+.ss-home-themed .ss-booking-v3 .ss-private-request__progress{height:3px;background:var(--ss-color-compat-290);border-radius:3px;margin-top:var(--ss-space-20);margin-bottom:var(--ss-space-28);overflow:hidden}
+.ss-home-themed .ss-booking-v3 .ss-private-request__progress>span{background:var(--ss-color-whatsapp);border-radius:3px}
+.ss-home-themed .ss-booking-v3 .ss-private-request__step>legend{position:absolute;width:1px;height:1px;padding:0;margin:var(--ss-space-n1);overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.ss-home-themed .ss-booking-v3 .ss-private-request__experiences>legend,.ss-home-themed .ss-booking-v3 .ss-private-request__field>label{font-size:var(--ss-type-14);font-weight:var(--ss-weight-semibold);color:var(--ss-color-compat-289);margin-bottom:var(--ss-space-8)}
+.ss-home-themed .ss-booking-v3 .ss-private-request__field{margin-top:var(--ss-space-22)}
+.ss-home-themed .ss-booking-v3 .ss-private-request__profile-grid .ss-private-request__field{margin-top:0}
+.ss-home-themed .ss-booking-v3 .ss-private-request__field input,.ss-home-themed .ss-booking-v3 .ss-private-request__field select{min-height:54px;height:54px;padding-inline:var(--ss-space-16);border-color:var(--ss-color-compat-292)}
+.ss-home-themed .ss-booking-v3 .ss-private-request__field textarea{padding-inline:var(--ss-space-16);border-color:var(--ss-color-compat-292)}
+.ss-home-themed .ss-booking-v3 .ss-private-request__hint{font-size:var(--ss-type-12);line-height:1.5;color:var(--ss-color-compat-293);margin-top:var(--ss-space-6)}
+.ss-home-themed .ss-booking-v3 #private-profile-note{margin-top:var(--ss-space-22)}
+.ss-home-themed .ss-booking-v3 .ss-private-request :is(input,select,textarea,button):focus-visible,.ss-home-themed .ss-booking-v3 #private-step-indicator:focus-visible{outline:2px solid var(--ss-color-whatsapp);outline-offset:var(--ss-space-2)}
+.ss-home-themed .ss-booking-v3 .ss-private-request__choice input:focus-visible+span{outline:2px solid var(--ss-color-whatsapp);outline-offset:var(--ss-space-2)}
+.ss-home-themed .ss-booking-v3 .ss-private-request__actions{display:flex;flex-direction:column;gap:var(--ss-space-12)}
+.ss-home-themed .ss-booking-v3 .ss-private-request__whatsapp{display:flex;align-items:center;justify-content:space-between;gap:var(--ss-space-8);width:100%;min-height:56px;padding:var(--ss-space-8) var(--ss-space-12);background:var(--ss-color-whatsapp);color:var(--ss-color-light);border-color:var(--ss-color-whatsapp);border-radius:6px;font-size:var(--ss-type-15);font-weight:var(--ss-weight-semibold);line-height:1.25;transition:background 180ms}
+.ss-home-themed .ss-booking-v3 .ss-private-request__whatsapp>svg{display:block;flex-shrink:0}
+.ss-home-themed .ss-booking-v3 .ss-private-request__whatsapp>span{flex:1}
+.ss-home-themed .ss-booking-v3 .ss-private-request__whatsapp:hover{background:var(--ss-color-whatsapp-hover);border-color:var(--ss-color-whatsapp-hover)}
+.ss-home-themed .ss-booking-v3 .ss-private-request__whatsapp:focus-visible{outline:3px solid var(--ss-color-whatsapp);outline-offset:var(--ss-space-3)}
+.ss-home-themed .ss-booking-v3 .ss-private-request__back{align-self:flex-start;width:auto;min-height:44px;padding:var(--ss-space-8) 0;border:0;text-decoration:underline;text-underline-offset:4px}
+.ss-home-themed .ss-booking-v3 .ss-private-request__notice{font-size:var(--ss-type-12);line-height:1.55;color:var(--ss-color-compat-295);text-align:center;margin-top:var(--ss-space-14)}
+@media (--query-027){
+.ss-home-themed .ss-booking-v3>.ss-reservation__container{grid-template-columns:minmax(0,1fr);grid-template-rows:auto;row-gap:var(--ss-space-32)}
+.ss-home-themed .ss-booking-v3 .ss-reservation__copy{grid-column:1;grid-row:1}
+.ss-home-themed .ss-booking-v3 .ss-private-request{grid-column:1;grid-row:2}
+.ss-home-themed .ss-booking-v3 .ss-reservation__reassurance{grid-column:1;grid-row:3}
+}
+@media (--query-003){
+.ss-home-themed .ss-photo-transition{height:96px}
+body.ss-home-themed #destinations.ss-entry-photo-ready{padding-top:var(--ss-space-144)!important}
+.ss-home-themed .ss-booking-atmosphere{height:320px;--booking-entry:110px}
+.ss-home-themed .ss-booking-atmosphere::after{background:linear-gradient(to bottom,var(--ss-color-light) 0,var(--ss-color-compat-284) 26px,var(--ss-color-compat-009) var(--booking-entry)),linear-gradient(to bottom,var(--ss-color-compat-282) 0,var(--ss-color-compat-285) var(--booking-entry),var(--ss-color-dark) 100%)}
+body.ss-home-themed #contact.ss-booking-v3{padding:var(--ss-space-72) 0}
+body.ss-home-themed #contact.ss-booking-photo-ready{padding-top:var(--ss-space-182)}
+.ss-home-themed .ss-booking-v3>.ss-reservation__container{grid-template-columns:minmax(0,1fr);grid-template-rows:auto;row-gap:var(--ss-space-32)}
+.ss-home-themed .ss-booking-v3 .ss-reservation__copy{grid-column:1;grid-row:1}
+.ss-home-themed .ss-booking-v3 .ss-reservation__copy h2{font-size:var(--ss-type-36);line-height:1.1}
+.ss-home-themed .ss-booking-v3 .ss-reservation__intro{font-size:var(--ss-type-15)}
+.ss-home-themed .ss-booking-v3 .ss-private-request{grid-column:1;grid-row:2;padding:var(--ss-space-22)}
+.ss-home-themed .ss-booking-v3 .ss-reservation__reassurance{grid-column:1;grid-row:3}
+}
+@media (--query-007){
+.ss-home-themed .ss-booking-v3 .ss-private-request__whatsapp{transition:none}
+}

@@ -1,0 +1,19 @@
+/* Authored lot 1 source; values: styles/design-tokens.json. */
+/* Notre histoire inherits the home components, photos, fonts and chapter motion.
+   Only adapt the three-card count and the longer collective copy. */
+.story-home .ss-architecture .ss-offers-v46 .ss-offer-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.story-home .hero-copy{max-width:900px}
+.story-home .hero-copy>p+p{margin-top:var(--ss-space-18)}
+.story-home .hero-actions{flex-wrap:wrap}
+.story-home .ss-offer-card .ss-offer-content h3{min-height:0!important}
+.story-home .story-summary{display:flex;flex-direction:column;justify-content:center}
+.story-home .story-summary h3{font-size:clamp(var(--ss-type-28),3vw,var(--ss-type-42));line-height:1.12;margin:var(--ss-space-20) 0}
+.story-home .story-summary p{font-size:var(--ss-type-15);line-height:1.85;color:var(--ss-color-compat-413);max-width:600px}
+.story-home .ss-request-side-body .ss-request-direct{margin-top:var(--ss-space-18)}
+@media (--query-013){
+.story-home .ss-architecture .ss-offers-v46 .ss-offer-grid{grid-template-columns:1fr!important}
+}
+@media (--query-011){
+.story-home .hero-inner{padding-top:var(--ss-space-135)}
+.story-home .hero-copy h1{font-size:clamp(var(--ss-type-35),9vw,var(--ss-type-47))}
+}

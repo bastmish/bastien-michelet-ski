@@ -1,0 +1,6 @@
+/* Authored lot 1 source; values: styles/design-tokens.json. */
+/* Destinations → Reviews: color only, no media, pseudo-element or blur. */
+.ss-home-themed .ss-destinations-to-reviews{display:block;width:100%;max-width:none;height:120px;margin:0;padding:0;border:0;box-sizing:border-box;background:linear-gradient(to bottom,var(--ss-color-dark) 0%,var(--ss-color-compat-296) 25%,var(--ss-color-compat-297) 55%,var(--ss-color-compat-298) 80%,var(--ss-color-light) 100%)}
+@media (--query-003){
+.ss-home-themed .ss-destinations-to-reviews{height:72px}
+}

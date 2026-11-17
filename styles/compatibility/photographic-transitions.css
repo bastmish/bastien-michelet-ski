@@ -1,0 +1,14 @@
+/* Authored lot 1 source; values: styles/design-tokens.json. */
+/* V3: photographic fades activate only after a real project photograph loads. */
+.ss-home-themed [data-immersive-photo][hidden]{display:none!important}
+.ss-home-themed #destinations.ss-immersive-destinations,.ss-home-themed #contact.ss-booking-v3{position:relative;isolation:isolate;overflow:clip}
+.ss-home-themed .ss-photo-transition{width:100%;height:160px;pointer-events:none;z-index:0;overflow:hidden}
+.ss-home-themed .ss-photo-transition img,.ss-home-themed .ss-booking-atmosphere img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 42%;filter:brightness(.78)}
+.ss-home-themed .ss-photo-transition::after,.ss-home-themed .ss-booking-atmosphere::after{content:"";position:absolute;inset:0;pointer-events:none}
+.ss-home-themed .ss-photo-transition--entry{position:absolute;inset:0 0 auto}
+.ss-home-themed .ss-photo-transition--entry::after{background:linear-gradient(to bottom,var(--ss-color-mineral) 0%,var(--ss-color-compat-281) 20%,var(--ss-color-compat-282) 58%,var(--ss-color-dark) 100%)}
+body.ss-home-themed #destinations.ss-entry-photo-ready{padding-top:var(--ss-space-224)!important}
+.ss-home-themed #destinations>.ss-container,.ss-home-themed #destinations>.ss-destinations-closing{position:relative;z-index:1}
+.ss-home-themed .ss-booking-atmosphere{position:absolute;inset:0 0 auto;height:460px;width:100%;pointer-events:none;z-index:0;--booking-entry:200px;overflow:hidden}
+.ss-home-themed .ss-booking-atmosphere::after{background:linear-gradient(to bottom,var(--ss-color-light) 0,var(--ss-color-compat-284) 48px,var(--ss-color-compat-009) var(--booking-entry)),linear-gradient(to bottom,var(--ss-color-compat-282) 0,var(--ss-color-compat-285) var(--booking-entry),var(--ss-color-dark) 100%)}
+body.ss-home-themed #contact.ss-booking-v3{padding:var(--ss-space-112) 0}

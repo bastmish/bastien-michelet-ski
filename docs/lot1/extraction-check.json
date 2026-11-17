@@ -1,0 +1,222 @@
+{
+  "baseline": "5bd9206",
+  "stage": "extraction before optimization",
+  "cases": [
+    {
+      "path": "index.html",
+      "width": 1440,
+      "pixel_identical": true,
+      "before_size": [
+        1440,
+        8028
+      ],
+      "after_size": [
+        1440,
+        8028
+      ],
+      "diff_box": null,
+      "computed_changes": 0
+    },
+    {
+      "path": "index.html",
+      "width": 390,
+      "pixel_identical": true,
+      "before_size": [
+        390,
+        10296
+      ],
+      "after_size": [
+        390,
+        10296
+      ],
+      "diff_box": null,
+      "computed_changes": 0
+    },
+    {
+      "path": "manifesto.html",
+      "width": 1440,
+      "pixel_identical": true,
+      "before_size": [
+        1440,
+        5433
+      ],
+      "after_size": [
+        1440,
+        5433
+      ],
+      "diff_box": null,
+      "computed_changes": 0
+    },
+    {
+      "path": "manifesto.html",
+      "width": 390,
+      "pixel_identical": true,
+      "before_size": [
+        390,
+        6882
+      ],
+      "after_size": [
+        390,
+        6882
+      ],
+      "diff_box": null,
+      "computed_changes": 0
+    },
+    {
+      "path": "offres/ski-prive.html",
+      "width": 1440,
+      "pixel_identical": true,
+      "before_size": [
+        1440,
+        5574
+      ],
+      "after_size": [
+        1440,
+        5574
+      ],
+      "diff_box": null,
+      "computed_changes": 0
+    },
+    {
+      "path": "offres/ski-prive.html",
+      "width": 390,
+      "pixel_identical": true,
+      "before_size": [
+        390,
+        7723
+      ],
+      "after_size": [
+        390,
+        7723
+      ],
+      "diff_box": null,
+      "computed_changes": 0
+    },
+    {
+      "path": "offres/performance-technique.html",
+      "width": 1440,
+      "pixel_identical": true,
+      "before_size": [
+        1440,
+        5657
+      ],
+      "after_size": [
+        1440,
+        5657
+      ],
+      "diff_box": null,
+      "computed_changes": 0
+    },
+    {
+      "path": "offres/performance-technique.html",
+      "width": 390,
+      "pixel_identical": true,
+      "before_size": [
+        390,
+        7781
+      ],
+      "after_size": [
+        390,
+        7781
+      ],
+      "diff_box": null,
+      "computed_changes": 0
+    },
+    {
+      "path": "offres/freeride-decouverte.html",
+      "width": 1440,
+      "pixel_identical": true,
+      "before_size": [
+        1440,
+        5537
+      ],
+      "after_size": [
+        1440,
+        5537
+      ],
+      "diff_box": null,
+      "computed_changes": 0
+    },
+    {
+      "path": "offres/freeride-decouverte.html",
+      "width": 390,
+      "pixel_identical": true,
+      "before_size": [
+        390,
+        7880
+      ],
+      "after_size": [
+        390,
+        7880
+      ],
+      "diff_box": null,
+      "computed_changes": 0
+    },
+    {
+      "path": "offres/snowboard.html",
+      "width": 1440,
+      "pixel_identical": true,
+      "before_size": [
+        1440,
+        5591
+      ],
+      "after_size": [
+        1440,
+        5591
+      ],
+      "diff_box": null,
+      "computed_changes": 0
+    },
+    {
+      "path": "offres/snowboard.html",
+      "width": 390,
+      "pixel_identical": true,
+      "before_size": [
+        390,
+        7807
+      ],
+      "after_size": [
+        390,
+        7807
+      ],
+      "diff_box": null,
+      "computed_changes": 0
+    },
+    {
+      "path": "stations/courchevel.html",
+      "width": 1440,
+      "pixel_identical": true,
+      "before_size": [
+        1440,
+        4297
+      ],
+      "after_size": [
+        1440,
+        4297
+      ],
+      "diff_box": null,
+      "computed_changes": 0
+    },
+    {
+      "path": "stations/courchevel.html",
+      "width": 390,
+      "pixel_identical": true,
+      "before_size": [
+        390,
+        5659
+      ],
+      "after_size": [
+        390,
+        5659
+      ],
+      "diff_box": null,
+      "computed_changes": 0
+    }
+  ],
+  "page_errors": [],
+  "external_hosts_unavailable": [
+    "api.fontshare.com",
+    "fonts.googleapis.com",
+    "images.pexels.com"
+  ]
+}

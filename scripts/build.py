@@ -82,3 +82,8 @@ soup=BeautifulSoup((OUT/'stations.html').read_text(),'html.parser')
 for card,station in zip(soup.select('.ss-resort'),stations):
  card.select_one('.ss-resort-cta')['href']=station['URL']
 (OUT/'stations.html').write_text(str(soup))
+
+# CSS is compiled from route manifests and authored modules after HTML rendering.
+from css_build import compile_css
+css_report=compile_css(OUT)
+print(f"Compiled CSS for {len(css_report['routes'])} routes from styles/entries.json")

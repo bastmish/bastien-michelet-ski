@@ -8,6 +8,8 @@ class Doc(HTMLParser):
  def __init__(self,text):super().__init__();self.tags=[];self.feed(text)
  def handle_starttag(self,t,a):self.tags.append((t,dict(a)))
 def without_footer(text):
+ # Lot 1 changes stylesheet packaging, never the content of protected pages.
+ text=re.sub(r'<link\b(?=[^>]*\brel=[\"\']stylesheet[\"\'])[^>]*>','',text)
  text=re.sub(r'<section\b[^>]*class="art-prefooter"[^>]*>.*?</section>','',text,flags=re.S)
  text=re.sub(r'<section\b[^>]*class="art-prefooter"[^>]*>.*?</section>','',text,flags=re.S)
  text=re.sub(r'<footer\b[^>]*>.*?</footer>','',text,flags=re.S)
@@ -55,7 +57,11 @@ for s in stations:
   assert s[field] in unescape(raw),s['name']+' '+field
  chats=[a['href'] for t,a in d.tags if t=='a' and 'wa.me/' in a.get('href','') and 'text=' in a['href']]
  assert sum(parse_qs(urlsplit(u).query).get('text')==[s['Message WhatsApp']] for u in chats)==2,s['name']
- assert 'destination-hero' in raw and 'premium-footer.css' in raw
+ assert 'destination-hero' in raw and 'art-footer' in raw
+ compiled_manifest=PUBLIC/'assets/css/manifest.json'
+ if compiled_manifest.exists():
+  css=json.loads(compiled_manifest.read_text());assert 'styles/components/footer.css' in css['entries'][css['routes'][s['URL'].lstrip('/')]['family']]['sources']
+ else:assert 'premium-footer.css' in raw
 assert not (PUBLIC/'sitemap.xml').exists()
 assert not (PUBLIC/'questions.html').exists()
 print('PASS: all links, robots, H1, 43 destination copies/metadata, extension index and 86 contextual CTAs.')

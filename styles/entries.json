@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "optimize": false,
+  "runtime_classes": [
+    "is-open",
+    "is-scrolled",
+    "is-hidden",
+    "is-visible",
+    "is-tone-active",
+    "is-inview",
+    "is-active",
+    "ski-dark-mode",
+    "ski-reviews-light",
+    "ss-story-visual",
+    "ss-whatsapp-float",
+    "ss-entry-photo-ready",
+    "ss-booking-photo-ready",
+    "ss-suggestion",
+    "review-quote",
+    "ss-review-card",
+    "ss-review-demo-tag",
+    "ss-review-sample-stars",
+    "ss-review-person",
+    "ss-review-avatar",
+    "ss-review-person-info",
+    "ss-review-source",
+    "ss-review-track",
+    "ss-reviews-animate"
+  ],
+  "legacy_assets": [
+    "public/architecture-v21.css",
+    "public/manifesto.css",
+    "public/site-nav.css",
+    "public/stations.css",
+    "public/styles.css",
+    "public/white-theme.css"
+  ],
+  "entries": {
+    "home": [
+      "public/styles.css",
+      "public/white-theme.css",
+      "public/architecture-v21.css",
+      "public/site-nav.css",
+      "styles/components/adn.css",
+      "styles/components/courses.css",
+      "styles/themes/home.css",
+      "styles/components/header-home.css",
+      "styles/components/booking-base.css",
+      "styles/compatibility/home-responsive.css",
+      "styles/layout/home.css",
+      "styles/components/destinations-closing.css",
+      "styles/compatibility/photographic-transitions.css",
+      "styles/components/booking.css",
+      "styles/compatibility/destinations-reviews-color.css",
+      "styles/compatibility/editorial.css",
+      "styles/components/footer.css"
+    ],
+    "collective": [
+      "public/styles.css",
+      "public/white-theme.css",
+      "public/architecture-v21.css",
+      "public/site-nav.css",
+      "styles/pages/collective.css",
+      "styles/compatibility/editorial.css",
+      "styles/components/footer.css"
+    ],
+    "offer": [
+      "public/styles.css",
+      "public/white-theme.css",
+      "public/architecture-v21.css",
+      "public/site-nav.css",
+      "styles/compatibility/editorial.css",
+      "styles/components/footer.css"
+    ],
+    "offer-index": [
+      "public/styles.css",
+      "public/white-theme.css",
+      "public/architecture-v21.css",
+      "public/site-nav.css",
+      "styles/components/footer.css"
+    ],
+    "catalogue": [
+      "public/styles.css",
+      "public/white-theme.css",
+      "public/stations.css",
+      "public/site-nav.css",
+      "styles/components/footer.css"
+    ],
+    "directory": [
+      "public/styles.css",
+      "public/white-theme.css",
+      "public/stations.css",
+      "public/site-nav.css",
+      "styles/pages/destinations-legacy.css",
+      "styles/components/footer.css"
+    ],
+    "destination": [
+      "public/styles.css",
+      "public/white-theme.css",
+      "public/architecture-v21.css",
+      "public/site-nav.css",
+      "public/manifesto.css",
+      "styles/pages/destinations-legacy.css",
+      "styles/components/footer.css"
+    ],
+    "error": [
+      "public/styles.css",
+      "public/white-theme.css",
+      "public/architecture-v21.css",
+      "public/site-nav.css",
+      "public/manifesto.css",
+      "styles/pages/destinations-legacy.css",
+      "styles/components/footer.css"
+    ],
+    "legal": [
+      "public/styles.css",
+      "public/white-theme.css",
+      "public/site-nav.css",
+      "styles/components/footer.css"
+    ]
+  }
+}

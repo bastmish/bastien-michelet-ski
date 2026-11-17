@@ -1,0 +1,11 @@
+/* Authored lot 1 source; values: styles/design-tokens.json. */
+body.ss-home-themed #avis .ss-reviews-v52-bottom>span,body.ss-home-themed #avis .ss-reviews-v52-bottom>a{color:var(--ss-on-light-muted)!important;border-color:var(--ss-border-light)!important}
+/* Header theme is measured at the actual floating pill, not a heading threshold. */
+body.ss-home-themed .site-header{--home-nav-bg:var(--ss-color-compat-316);--home-nav-ink:var(--ss-color-on-light);--home-nav-cta:var(--ss-color-on-light);--home-nav-on-cta:var(--ss-color-light)}
+body.ss-home-themed .site-header[data-home-theme="dark"]{--home-nav-bg:var(--ss-color-compat-317);--home-nav-ink:var(--ss-color-light);--home-nav-cta:var(--ss-color-light);--home-nav-on-cta:var(--ss-color-on-light)}
+body.ss-home-themed .site-header .nav-shell,body.ss-home-themed .site-header .nav-links.is-open{background:var(--home-nav-bg)!important;color:var(--home-nav-ink)!important;transition:background-color 200ms,color 200ms!important}
+body.ss-home-themed .site-header .brand-text strong,body.ss-home-themed .site-header .brand-text small,body.ss-home-themed .site-header .nav-links>a:not(.nav-cta),body.ss-home-themed .site-header .nav-toggle{color:var(--home-nav-ink)!important;transition:color 200ms!important}
+body.ss-home-themed .site-header .brand-mark path{stroke:var(--home-nav-ink)!important}
+body.ss-home-themed .site-header .nav-links>.nav-cta{background:var(--home-nav-cta)!important;color:var(--home-nav-on-cta)!important;border-color:var(--home-nav-cta)!important;transition:background-color 200ms,color 200ms!important}
+body.ss-home-themed .site-header .nav-toggle{background:var(--ss-color-compat-009)!important;border-color:var(--home-nav-ink)!important}
+body.ss-home-themed .site-header :is(a,button):focus-visible{outline:2px solid var(--home-nav-ink)!important;outline-offset:var(--ss-space-4)}

@@ -1,5 +1,6 @@
 """Literal editorial checks and proof that reference resources/components are reused."""
 from pathlib import Path
+from urllib.parse import urlsplit
 import json,re,hashlib,sys
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[1]
@@ -27,7 +28,13 @@ for page in pages:
   assert not soup.select('#expertise a,#expertise button,#expertise svg')
  else:assert [n['src'] for n in soup.main.select('img')]==[n['src'] for n in ref.main.select('img')],page['path']+' photographs'
  refstyles={n['href'] for n in ref.select('link[rel="stylesheet"]') if 'ridgeline-footer' not in n['href']}
- assert refstyles.issubset({n['href'] for n in soup.select('link[rel="stylesheet"]')}),page['path']+' CSS'
+ css_manifest=ROOT/'public/assets/css/manifest.json'
+ if css_manifest.exists():
+  compiled=json.loads(css_manifest.read_text());route=compiled['routes'][page['path']]
+  sources={Path(p).name for p in compiled['entries'][route['family']]['sources']}
+  assert {p for p in refstyles if urlsplit(p).netloc}.issubset({n['href'] for n in soup.select('link[rel="stylesheet"]')}),page['path']+' external font CSS'
+  assert {Path(p).name for p in refstyles if not urlsplit(p).netloc}.issubset(sources),page['path']+' CSS source coverage'
+ else:assert refstyles.issubset({n['href'] for n in soup.select('link[rel="stylesheet"]')}),page['path']+' CSS'
  assert 'integration.css' not in raw and 'art-direction.css' not in raw,page['path']+' redesign layer'
  for oldnode in ref.main.find_all(['p','h1','h2','h3']):
   oldtext=norm(oldnode.get_text(' ',strip=True))
