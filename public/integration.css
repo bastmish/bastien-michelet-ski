@@ -1,0 +1,137 @@
+/* Content integration only: preserve the reference palette, photos and motion.
+   New rules are scoped to new components or necessary long-copy adaptations. */
+.hero .hero-copy{max-width:850px}
+.hero .hero-copy h1{font-size:clamp(38px,4.8vw,72px);max-width:850px;line-height:1.08}
+.hero .hero-copy>.kicker{color:inherit;margin-bottom:20px}
+.ss-architecture .ss-photo-diptych{min-height:620px}
+.ss-architecture .ss-adn-photo-caption h3{font-size:clamp(24px,2.4vw,37px)!important;line-height:1.12!important}
+.ss-architecture .ss-adn-photo-caption p{font-size:14px!important;line-height:1.75!important;max-width:580px!important}
+.ss-architecture .ss-adn-photo-caption .kicker{color:#eee!important;margin-bottom:15px}
+.ss-architecture .ss-adn-photo-card{min-height:590px!important}
+.ss-architecture .ss-adn-photo-card--feature{min-height:900px!important}
+.ss-architecture .ss-offers-heading p,.ss-architecture .ss-destinations-heading p{max-width:690px;margin-top:24px;line-height:1.8;color:inherit}
+.ss-architecture .ss-offer-card p{min-height:0!important}
+.ss-architecture .ss-programme-index-v72{line-height:1.8;overflow-wrap:anywhere}
+.ss-architecture .ss-programme-detail-v72 h3{font-size:clamp(23px,2.1vw,33px)!important}
+.ss-architecture .ss-destinations .ss-region-title{font-size:clamp(22px,2.4vw,36px)!important}
+.ss-destination-close{margin-top:48px;padding:38px 0;border-top:1px solid #6a6a6a;display:grid;grid-template-columns:1fr 1.2fr;gap:22px 60px}
+.ss-destination-close h3{font-size:clamp(28px,3vw,44px);line-height:1.1}
+.ss-destination-close p{font-size:16px;line-height:1.8}
+.ss-destination-close .btn{justify-self:start;white-space:normal}
+#avis>.wrap>h2{font-size:clamp(35px,4.5vw,64px);line-height:1.1;margin:18px 0 28px}
+#avis>.wrap>h3{font-size:clamp(24px,3vw,38px);margin:38px 0 18px}
+#avis>.wrap>p{max-width:720px;font-size:16px;line-height:1.85;margin:16px 0}
+#avis .ss-text-link{display:inline-block;margin-top:24px}
+.ss-request-side-body h3{font-size:27px;line-height:1.2;margin:20px 0}
+.ss-request-side-body p{margin:18px 0;line-height:1.8}
+.ss-request-side-body .btn{white-space:normal}
+.ss-questions-list p,.ss-questions-list ul{padding:12px 0 14px!important}
+.ss-questions-list ul{padding-left:22px!important}
+.ss-integrated-page{background:#fff}
+.integrated-hero{min-height:780px;background:#f7f7f3}
+.integrated-hero .detail-photo{inset:0 0 0 32%}
+.integrated-hero .detail-photo:after{background:linear-gradient(90deg,#f7f7f3 0%,#f7f7f3ed 19%,#f7f7f355 54%,transparent 80%)}
+.integrated-hero .detail-inner{padding-top:175px;padding-bottom:95px}
+.integrated-hero h1{max-width:820px;font-size:clamp(40px,5.3vw,77px);line-height:1.06;letter-spacing:-.055em}
+.integrated-hero p{max-width:650px;font-size:17px;line-height:1.85;margin:24px 0}
+.integrated-hero .btn{margin:12px 12px 0 0;white-space:normal;max-width:100%}
+.integrated-section,.ss-integrated .mf-origin{padding:clamp(72px,8vw,130px) 0;background:#fff}
+.ss-integrated h2{font-size:clamp(34px,4vw,58px);line-height:1.12;letter-spacing:-.045em;margin:18px 0 26px}
+.ss-integrated h3{font-size:clamp(23px,2.2vw,32px);line-height:1.2;margin:18px 0}
+.ss-integrated p{font-size:16px;line-height:1.85;margin-bottom:20px;max-width:750px}
+.ss-integrated .booking-note{font-size:13px;line-height:1.8;color:#53605a}
+.integrated-editorial{display:grid;grid-template-columns:minmax(250px,.8fr) minmax(0,1.4fr);gap:clamp(40px,6vw,100px)}
+.integrated-intro{align-self:start}
+.integrated-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.integrated-card{border-top:1px solid #ccd2cb}
+.integrated-card figure{height:270px;overflow:hidden;margin:0}
+.integrated-card figure img{transition:transform .7s ease}
+.integrated-card:hover figure img{transform:scale(1.035)}
+.integrated-card-body{padding:24px 0}
+.integrated-card-body .kicker{font-size:10px;line-height:1.7}
+.integrated-notes{padding-top:25px}
+.integrated-notes .btn{white-space:normal}
+.integrated-formats{background:#101314;color:#f5f4ef;padding:110px 0}
+.integrated-formats .kicker,.integrated-formats .booking-note{color:#c2cbc7}
+.integrated-formats h3,.integrated-formats h2{color:#f5f4ef}
+.integrated-formats .integrated-intro>p{color:#bbc4c1}
+.integrated-formats ul{padding-left:18px;color:#c4ceca;line-height:1.9}
+.integrated-booking{padding:100px 0;background:#edf1ec;color:#17251f}
+.integrated-booking-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:70px}
+.integrated-booking .integrated-card-grid{grid-template-columns:1fr}
+.integrated-booking .integrated-card-body{padding:10px 0}
+.integrated-related{padding-top:42px;padding-bottom:42px;display:flex;gap:25px;flex-wrap:wrap;border-top:1px solid #d7ddd6}
+.ss-text-link{display:inline-flex;min-height:44px;align-items:center;text-underline-offset:7px;line-height:1.6}
+.photo-caption{display:block;font-size:10px;letter-spacing:.08em;color:#4a5650;margin-top:35px}
+.destination-portrait{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(40px,8vw,130px)}
+.destination-portrait figure{height:580px;position:relative;margin:0}
+.destination-portrait figcaption{position:absolute;bottom:15px;left:20px;color:white;background:#000a;padding:7px 10px;font-size:11px}
+.integrated-services{padding:100px 0;background:#f4f4f0}
+.integrated-section-head{max-width:850px}
+.integrated-service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:35px}
+.integrated-service-card{text-decoration:none;background:#fff;overflow:hidden}
+.integrated-service-card img{height:300px;transition:transform .6s}
+.integrated-service-card:hover img{transform:scale(1.04)}
+.integrated-service-card span{display:block;font-size:19px;line-height:1.3;font-weight:600;padding:25px}
+.destination-booking{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(40px,8vw,130px)}
+.destination-booking aside{border-left:1px solid #b8c4b9;padding-left:45px}
+.integrated-step{display:block;font-size:11px;letter-spacing:.12em;margin:20px 0}
+body .site-header .brand-text small{color:#30383a!important}
+.ss-ridge-footer .ss-footer-col h3,.ss-ridge-footer .ss-footer-legal{color:#4b5750!important}
+@media(max-width:1000px){
+ .integrated-editorial,.integrated-booking-layout,.destination-booking{grid-template-columns:1fr}
+ .integrated-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .integrated-hero h1{max-width:700px}
+ .integrated-hero .detail-photo{inset:0}
+ .integrated-hero .detail-photo:after{background:linear-gradient(90deg,#f7f7f3f2,#f7f7f3b8 55%,#f7f7f330)}
+ .destination-booking aside{padding:25px 0 0;border-left:0;border-top:1px solid #b8c4b9}
+}
+@media(max-width:650px){
+ .hero .hero-copy h1{font-size:38px;line-height:1.13}
+ .ss-architecture .ss-photo-diptych{min-height:0}
+ .ss-architecture .ss-adn-photo-card,.ss-architecture .ss-adn-photo-card--feature{min-height:680px!important}
+ .ss-architecture .ss-adn-photo-caption{padding:28px!important}
+ .ss-destination-close,.destination-portrait{grid-template-columns:1fr}
+ .ss-destination-close{gap:22px}
+ .integrated-hero{min-height:850px}
+ .integrated-hero .detail-inner{padding-top:145px;padding-bottom:55px}
+ .integrated-hero .detail-photo:after{background:linear-gradient(0deg,#f7f7f3 0%,#f7f7f3e0 65%,#f7f7f370)}
+ .integrated-hero h1{font-size:42px}
+ .integrated-hero p{font-size:16px;line-height:1.8}
+ .integrated-card-grid{grid-template-columns:1fr}
+ .integrated-card figure{height:330px}
+ .integrated-formats,.integrated-booking,.integrated-services{padding:70px 0}
+ .integrated-service-grid{gap:15px}
+ .integrated-service-card img{height:230px}
+ .integrated-service-card span{font-size:17px;padding:18px 12px}
+ .destination-portrait figure{height:440px}
+ .ss-integrated .wrap{width:calc(100% - 40px)}
+ .ss-programme-v72{grid-template-columns:1fr!important}
+}
+@media(prefers-reduced-motion:reduce){.integrated-card img,.integrated-service-card img{transition:none}}
+/* The reference's programme and review themes rely on specific child markup.
+   Keep their intended dark/light contrast after integrating the longer copy. */
+.ss-architecture .ss-programmes-v72{background:#101314!important;color:#f5f4ef!important}
+.ss-architecture .ss-programmes-v72 .kicker{color:#c5ceca!important}
+.ss-architecture .ss-programmes-v72 h2,.ss-architecture .ss-programmes-v72 h3,.ss-architecture .ss-programmes-v72 .ss-programme-index-v72{color:#f5f4ef!important}
+.ss-architecture .ss-programmes-v72 p{color:#c5ceca!important}
+.ss-architecture #avis{background:#f9faf7!important;color:#19251f!important}
+.ss-architecture #avis h2,.ss-architecture #avis h3,.ss-architecture #avis p,.ss-architecture #avis a{color:#19251f!important}
+.ss-architecture #avis .kicker{color:#52625c!important}
+.ss-architecture .ss-request-side-body .btn{background:#f4f6f1;color:#17251f}
+.ss-architecture .ss-request-top>strong{color:#526158!important}
+.ss-integrated .integrated-formats .kicker,.ss-integrated .integrated-formats p{color:#c5ceca!important}
+body .ss-territory-index,body .ss-territory-total,body .ss-territory-visible,body #station-results-count,body .ss-stations-disclaimer{color:#4c5a51!important}
+body .ss-territory-filter:not(.is-active) span{color:#4c5a51!important}
+body .ss-stations-footer a,body .ss-stations-footer span{color:#4c5a51!important}
+.ss-integrated .integrated-collective-hero .mf-hero-copy{max-width:880px}
+.ss-integrated .integrated-collective-hero h1{font-size:clamp(40px,5.2vw,75px);line-height:1.07;max-width:880px}
+.ss-integrated .integrated-collective-hero p{color:#e6ece6;max-width:750px}
+.ss-integrated .integrated-collective-hero .kicker{color:#d2dfd8!important}
+.ss-architecture #avis>.wrap{width:min(1340px,calc(100% - 92px))!important;display:grid!important;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.ss-architecture #avis .ss-reviews-heading h2{font-size:clamp(34px,4vw,58px);line-height:1.1;margin:20px 0 28px}
+.ss-architecture #avis .ss-reviews-heading p,.ss-architecture #avis .integrated-review-reserve p{font-size:16px;line-height:1.85;margin-bottom:20px}
+.integrated-review-reserve{border:1px solid #d4ddd4;padding:40px;background:#fff}
+.integrated-review-reserve h3{font-size:28px;line-height:1.2;margin:0 0 24px}
+@media(max-width:800px){.ss-architecture #avis>.wrap{grid-template-columns:1fr;gap:35px;width:calc(100% - 40px)!important}.integrated-review-reserve{padding:26px}}
+html body #ss-region-results .ss-territory-index{color:#4c5a51!important}

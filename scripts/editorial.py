@@ -1,0 +1,321 @@
+"""Explicit mapping from validated copy to bc9bb78 components, without a design system."""
+from pathlib import Path
+import copy,json,re,html
+from urllib.parse import quote
+from bs4 import BeautifulSoup
+ROOT=Path(__file__).resolve().parents[1]
+E=lambda s:html.escape(s,quote=True)
+def clean(s):return re.sub(r'\*\*(.*?)\*\*',r'\1',s).split(' — version')[0].strip()
+def put(node,markup):
+ assert node is not None
+ node.clear();node.append(BeautifulSoup(markup,'html.parser'))
+def text(node,s):
+ decorations=[str(child) for child in node.find_all('span',recursive=False) if not child.get_text(strip=True)]
+ put(node,''.join(decorations)+E(s))
+def value(section,label):return next((b['text'] for b in section['blocks'] if b['label']==label),'')
+def a(label,url,cls='btn btn-primary'):return f'<a class="{cls}" href="{E(url)}">{E(label)}</a>'
+def chat(name):return 'https://wa.me/33763532601?text='+quote('Bonjour Ski Society, je souhaite organiser '+name+'. Station : ... Dates : ... Niveau : ... Nombre de participants : ... Format : ...')
+def block(b):
+ label=b['label'];s=clean(b['text'])
+ if not s:return ''
+ if s.startswith('- '):return '<ul>'+''.join('<li>'+E(line.removeprefix('- '))+'</li>' for line in s.splitlines())+'</ul>'
+ if label.startswith('Surtitre') or b['text'].startswith('**'):tag='div';cls='kicker'
+ elif label in ['H1','H2']:tag=label.lower();cls=''
+ elif 'titre' in label.lower() or label.startswith(('Titre','Offre')):tag='h3';cls=''
+ else:tag='p';cls='booking-note' if label=='Note' else ''
+ return f'<{tag} class="{cls}">{E(s)}</{tag}>'
+def groups(section):
+ lead=[];cards=[];tail=[];current=None
+ for b in section['blocks']:
+  start=(not b['label'] and b['text'].startswith('**')) or b['label'].startswith(('Titre 0','Offre','Surtitre 0')) or bool(re.match(r'\d+ — Titre',b['label']))
+  if start:current=[];cards.append(current)
+  if b['label'] in ['Note','CTA']:tail.append(b)
+  elif current is None:lead.append(b)
+  else:current.append(b)
+ return lead,cards,tail
+def mark(node,sid):node['data-editorial-section']=sid
+def heading(node,s,split=None):
+ # Keep the original element, id and italic treatment when it exists.
+ if node.find('em') and split and split in s:
+  left,right=s.split(split,1);put(node,E(left)+'<br/><em>'+E(split+right)+'</em>')
+ else:text(node,s)
+def save(soup,page,finish):
+ soup.title.string=page['title']
+ hero=page['sections'][0]
+ description=value(hero,'Introduction') or value(hero,'Texte') or value(hero,'Paragraphe')
+ soup.select_one('meta[name="description"]')['content']=description
+ soup.head.append(soup.new_tag('link',rel='stylesheet',href='/editorial-content.css'))
+ # Guarantee all original aria references still point to an element.
+ for node in soup.select('[aria-labelledby]'):
+  if not soup.find(id=node['aria-labelledby']):
+   h=node.find(['h1','h2','h3'])
+   if h:h['id']=node['aria-labelledby']
+ (ROOT/'public'/page['path']).write_text(finish(str(soup),page['path']))
+def integrate(pages,finish):
+ home=BeautifulSoup((ROOT/'content/original-pages/index.html').read_text(),'html.parser')
+ sections=pages[0]['sections'];m=chat('une expérience avec Ski Society')
+ hero=home.select_one('#accueil');mark(hero,'a01')
+ heading(hero.h1,value(sections[0],'H1'),'avec des moniteurs')
+ text(hero.select_one('.hero-copy>p'),value(sections[0],'Texte'))
+ kicker=home.new_tag('div',attrs={'class':'kicker'});kicker.string=value(sections[0],'Surtitre');hero.h1.insert_before(kicker)
+ actions=hero.select('.hero-actions a')
+ for node,label,url in zip(actions,['CTA principal','CTA secondaire'],[m,'#offres']):text(node,value(sections[0],label));node['href']=url
+ # ADN V2: one photographic composition and its two editorial continuations.
+ adn=sections[1]
+ reference=BeautifulSoup((ROOT/'content/original-pages/index.html').read_text(),'html.parser')
+ photo=copy.copy(reference.select_one('.ss-photo-panel--performance img'))
+ photo['srcset']=photo['src']+' 1400w, '+photo['src'].replace('w=1400','w=2400')+' 2400w'
+ photo['sizes']='(min-width: 1280px) 75vw, 100vw'
+ section=home.new_tag('section',id='expertise',attrs={'class':'ss-adn-editorial-v2','aria-labelledby':'adn-main-title'})
+ mark(section,'a02')
+ principal='<div class="adn-primary"><div class="adn-main-copy"><div class="adn-block-label">'+E(value(adn,'Surtitre 01'))+'</div><h2 id="adn-main-title">'+E(value(adn,'Titre 01'))+'</h2><p>'+E(value(adn,'Texte 01'))+'</p></div></div>'
+ secondary=''
+ for i in [2,3]:
+  secondary+='<article class="adn-secondary-block" aria-labelledby="adn-title-'+str(i)+'"><div class="adn-block-label">'+E(value(adn,f'Surtitre 0{i}'))+'</div><h3 id="adn-title-'+str(i)+'">'+E(value(adn,f'Titre 0{i}'))+'</h3><p>'+E(value(adn,f'Texte 0{i}'))+'</p></article>'
+ put(section,'<div id="adn" class="adn-v2-composition"><figure class="adn-v2-image">'+str(photo)+'</figure>'+principal+'</div><div class="adn-secondary-grid">'+secondary+'</div>')
+ home.select_one('#adn').decompose()
+ home.select_one('#expertise').replace_with(section)
+ home.head.append(home.new_tag('link',rel='stylesheet',href='/adn-editorial.css'))
+ # Experiences: retain the exact original anchors, photos, feature badge and ids.
+ section=home.select_one('#offres');mark(section,'a03');s=sections[2]
+ text(section.select_one('.kicker'),value(s,'Surtitre'));text(section.h2,value(s,'H2'))
+ intro=home.new_tag('p');intro.string=value(s,'Introduction');section.select_one('.ss-offers-heading').append(intro)
+ _,cards,_=groups(s)
+ for i,card in enumerate(section.select('.ss-offer-card')):
+  content=card.select_one('.ss-offer-content')
+  # Remove the superseded group-size/level promises, preserving the metadata slot.
+  put(content,'<span class="ss-offer-meta" aria-hidden="true">'+str(i+1).zfill(2)+' /</span><h3>'+E(cards[i][0]['text'])+'</h3>'+''.join(block(b) if not b['text'].startswith('CTA :') else '<span class="ss-offer-cta">'+E(b['text'][6:])+'</span>' for b in cards[i][1:] if b['label']!='Badge'))
+ # Programmes stay in their original full section.
+ section=home.select_one('#formules');mark(section,'a04');s=sections[3]
+ text(section.select_one('.kicker'),value(s,'Surtitre'));heading(section.h2,value(s,'H2'),'son rythme.')
+ text(section.select_one('.ss-programmes-intro-v72>p'),value(s,'Introduction'))
+ cta=section.select_one('.ss-programmes-link-v72');svg=str(cta.svg);put(cta,E(value(s,'CTA'))+svg);cta['href']=m
+ _,cards,_=groups(s)
+ for i,node in enumerate(section.select('.ss-programme-v72')):
+  put(node.select_one('.ss-programme-index-v72'),str(i+1).zfill(2))
+  put(node.select_one('.ss-programme-detail-v72'),''.join(block(b) for b in cards[i][1:])+'<div class="ss-programme-facts-v72"><span>'+E(clean(cards[i][0]['text']))+'</span></div>')
+ text(section.select_one('.ss-programmes-disclaimer-v72'),value(s,'Note'))
+ # Home-only compact chapter. Preserve legacy components for the collective page.
+ story_programmes=copy.copy(section)
+ story_offers=copy.copy(home.select_one('#offres'))
+ chapter=home.new_tag('div',attrs={'class':'ss-home-courses'})
+ experiences=home.new_tag('section',id='offres',attrs={'class':'ss-experiences-compact','aria-labelledby':'tiles-title'})
+ mark(experiences,'a03')
+ experience_cards=''
+ for i,card in enumerate(story_offers.select('.ss-offer-card')):
+  photo=copy.copy(card.img)
+  badge='<span class="ss-experiences-compact__badge">NOTRE SPÉCIALITÉ</span>' if i==1 else ''
+  experience_cards+='<a class="ss-experiences-compact__item" href="'+E(card['href'])+'" aria-label="'+E(card['aria-label'])+'"><div class="ss-experiences-compact__image">'+str(photo)+badge+'</div><div class="ss-experiences-compact__caption"><div class="ss-experiences-compact__name"><span aria-hidden="true">'+str(i+1).zfill(2)+' /</span><h3>'+E(card.h3.get_text())+'</h3></div><span class="ss-experiences-compact__link">'+E(card.select_one('.ss-offer-cta').get_text())+' <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span></div></a>'
+ put(experiences,'<header class="ss-experiences-compact__header"><span class="ss-home-courses__eyebrow">03 / NOS EXPÉRIENCES</span><h2 id="tiles-title">'+E(value(sections[2],'H2'))+'</h2><p>'+E(value(sections[2],'Introduction'))+'</p></header><div class="ss-experiences-compact__grid">'+experience_cards+'</div>')
+ formats=home.new_tag('section',id='formules',attrs={'class':'ss-formats-compact','aria-labelledby':'formats-title'})
+ mark(formats,'a04')
+ rows=''
+ for i,items in enumerate(cards):
+  number,rest=clean(items[0]['text']).split(' / ',1)
+  category,duration=rest.split(' — ',1)
+  rows+='<article class="ss-formats-compact__item" aria-labelledby="format-'+str(i+1)+'"><h3 id="format-'+str(i+1)+'">'+E(category)+'</h3><p>'+E(duration)+'</p></article>'
+ put(formats,'<header><span class="ss-home-courses__eyebrow">04 / FORMATS DE COURS PRIVÉS</span><h2 id="formats-title">'+E(value(s,'H2'))+'</h2></header><div class="ss-formats-compact__grid">'+rows+'</div><div class="ss-formats-compact__action"><div class="ss-formats-compact__notes"><p>'+E(value(s,'Note'))+'</p><p>Freeride : journée complète ou sur mesure.</p></div>'+a(value(s,'CTA'),'#contact','ss-formats-compact__cta')+'</div>')
+ inner=home.new_tag('div',attrs={'class':'ss-home-courses__container'})
+ inner.append(experiences);inner.append(formats);chapter.append(inner)
+ home.select_one('#formules').decompose()
+ home.select_one('#offres').replace_with(chapter)
+ home.head.append(home.new_tag('link',rel='stylesheet',href='/course-formats.css'))
+
+ # Destinations keep the original four photographic cards and station-index banner.
+ section=home.select_one('#destinations');mark(section,'a05');s=sections[4]
+ text(section.select_one('.kicker'),value(s,'Surtitre'));text(section.h2,value(s,'H2'))
+ intro=home.new_tag('p');intro.string=value(s,'Introduction');section.select_one('.ss-destinations-heading').append(intro)
+ stationdata=json.loads((ROOT/'content/stations.json').read_text())
+ section.select_one('.ss-region-gallery')['aria-label']='Stations à la une'
+ names=['Courchevel','Megève','Val d’Isère','Serre Chevalier']
+ lines=s['blocks'][4]['text'].splitlines()
+ for i,node in enumerate(section.select('.ss-region-card')):
+  station=next(x for x in stationdata if x['name']==names[i]);node['href']=station['URL'];node['aria-label']='Découvrir '+names[i]
+  node.img['alt']='Photographie d’ambiance alpine ; ne représente pas nécessairement '+names[i]
+  text(node.select_one('.ss-region-title'),lines[i].removeprefix('- '))
+  text(node.select_one('.ss-region-kicker'),station['region'])
+ # Explicitly approved replacement of the closing destination banner only.
+ closing=json.loads((ROOT/'content/destinations-closing.json').read_text())
+ section.select_one('.ss-station-index-v72').decompose()
+ banner=home.new_tag('div',attrs={'class':'ss-destinations-closing ss-fullwidth'})
+ put(banner,'<div class="ss-destinations-closing__inner ss-container"><span class="ss-destinations-closing__eyebrow">'+E(closing['eyebrow'])+'</span><h3>'+E(closing['title'])+'</h3><p>'+E(closing['description'])+'</p><a class="ss-destinations-closing__cta" href="'+E(closing['href'])+'">'+E(closing['cta'])+'<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>')
+ section.append(banner)
+ # Reviews retain their shell and columns; only approved reserve copy is displayed.
+ section=home.select_one('#avis');mark(section,'a06');s=sections[5]
+ text(section.select_one('.kicker'),value(s,'Surtitre'));text(section.h2,value(s,'H2'))
+ intro=home.new_tag('p');intro.string=value(s,'Introduction');section.select_one('.ss-reviews-heading').append(intro)
+ cols=section.select('.ss-reviews-col')
+ put(cols[0],'<figure class="ss-review-card"><h3>'+E(value(s,'Titre de la zone avis'))+'</h3><p>'+E(value(s,'Présentation'))+'</p></figure>')
+ put(cols[1],'<figure class="ss-review-card"><span class="ss-review-demo-tag">'+E(value(s,'Libellé de réserve'))+'</span><p>'+E(value(s,'Texte de réserve'))+'</p></figure>')
+ put(cols[2],'<div aria-hidden="true" class="ss-review-card">SKI SOCIETY</div>')
+ for col in cols:
+  approved_card='<figure class="ss-review-card"><h3>'+E(value(s,'Titre de la zone avis'))+'</h3><p>'+E(value(s,'Présentation'))+'</p><span class="ss-review-demo-tag">'+E(value(s,'Libellé de réserve'))+'</span><p>'+E(value(s,'Texte de réserve'))+'</p></figure>'
+  put(col,'<div class="ss-review-track">'+approved_card+'</div><div class="ss-review-track" aria-hidden="true">'+approved_card+'</div>')
+  col['class']=col.get('class',[])+['ss-reviews-animate']
+ section.select_one('.ss-reviews-marquee')['data-reviews-state']='ready'
+ bottom=section.select_one('.ss-reviews-v52-bottom');text(bottom.span,value(s,'Libellé de réserve'));text(bottom.a,value(s,'CTA'));bottom.a['href']='#avis';bottom.a.attrs.pop('target',None)
+ for script in home.select('script[src="reviews-gallery.js"]'):script.decompose()
+ # All six approved questions replace the eight superseded ones; the section stays.
+ section=home.select_one('#questions');mark(section,'a07');s=sections[6]
+ text(section.select_one('.kicker'),value(s,'Surtitre'));text(section.h2,value(s,'H2'))
+ result=[];item=None
+ for b in s['blocks'][2:]:
+  if b['label'].startswith('Q'):
+   if item:result.append(item+'</details>')
+   item='<details><summary>'+E(b['text'])+'</summary>'
+  else:item+=block(b)
+ result.append(item+'</details>');put(section.select_one('.ss-questions-list'),''.join(result))
+ # Preserve the original inquiry form and photograph; integrate the approved copy beside it.
+ section=home.select_one('#contact');mark(section,'a08');s=sections[7]
+ text(section.select_one('.kicker'),value(s,'Surtitre'));text(section.h2,value(s,'H2'));text(section.select_one('.ss-contact-heading>p'),value(s,'Introduction'))
+ side=section.select_one('.ss-request-side-body')
+ put(side,''.join(block(b) if b['label']!='CTA' else a(b['text'],m,'ss-request-direct') for b in s['blocks'][3:]))
+ for option in section.select('select[name="experience"] option'):
+  if option.get('value'):option.string=option['value']
+ # Home-specific reservation and section-owned themes. Keep the story contact intact.
+ story_contact=copy.copy(section)
+ reservation=BeautifulSoup((ROOT/'content/home-reservation.html').read_text(),'html.parser').section
+ editorial='<span class="ss-reservation__eyebrow">'+E(value(s,'Surtitre'))+'</span><h2 id="contact-title">'+E(value(s,'H2'))+'</h2><p class="ss-reservation__intro">'+E(value(s,'Introduction'))+'</p>'
+ ui=json.loads((ROOT/'content/booking-ui.json').read_text())
+ wa_path='M16.01 3.2a12.73 12.73 0 0 0-11 19.14L3.2 29l6.82-1.79A12.8 12.8 0 1 0 16.01 3.2Zm0 23.24c-2.06 0-4.07-.56-5.83-1.61l-.42-.25-4.05 1.06 1.08-3.94-.27-.44a10.48 10.48 0 1 1 9.49 5.18Zm5.75-7.8c-.32-.16-1.88-.92-2.17-1.03-.29-.1-.5-.16-.71.16-.21.31-.82 1.03-1.01 1.24-.18.21-.37.24-.68.08-.32-.16-1.33-.49-2.54-1.56-.94-.84-1.57-1.87-1.75-2.18-.18-.32-.02-.49.14-.65.14-.14.32-.37.47-.55.16-.18.21-.32.32-.53.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.98-2.34-.25-.61-.51-.53-.71-.54h-.61c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.21 3.38 5.36 4.74.75.32 1.34.52 1.8.66.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.14-1.52.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.61-.37Z'
+ icon=lambda size,attrs:'<svg width="'+str(size)+'" height="'+str(size)+'" viewBox="0 0 32 32" '+attrs+'><path fill="currentColor" d="'+wa_path+'"/></svg>'
+ replacements={'REASSURANCE':E(ui['reassurance']),'WHATSAPP_TITLE':E(ui['title']),'WHATSAPP_SUBTITLE':E(ui['subtitle']),'STEP_ONE':E(ui['steps'][0]),'WHATSAPP_BUTTON':E(ui['button']),'WHATSAPP_NOTICE':E(ui['notice']),'WA_HEADER_ICON':icon(28,'role="img" aria-label="WhatsApp"'),'WA_BUTTON_ICON':icon(20,'aria-hidden="true" focusable="false"')}
+ for key,replacement in replacements.items():
+  reservation=BeautifulSoup(str(reservation).replace('{{'+key+'}}',replacement),'html.parser').section
+ choices=''.join('<label class="ss-private-request__choice"><input type="radio" name="experience" value="'+E(label)+'" required aria-describedby="private-experience-error"><span>'+E(label)+'</span></label>' for label in ['Leçons particulières','Performance & technique','Freeride & milieu alpin','Snowboard'])
+ stations=''.join('<option value="'+E(station['name'])+'"></option>' for station in stationdata)
+ reservation=BeautifulSoup(str(reservation).replace('{{EDITORIAL}}',editorial).replace('{{EXPERIENCES}}',choices).replace('{{STATIONS}}',stations),'html.parser').section
+ section.replace_with(reservation)
+ media=json.loads((ROOT/'content/home-immersive-media.json').read_text())
+ def photograph(cls):
+  return BeautifulSoup('<div class="'+cls+'" data-immersive-photo data-media-state="loading" aria-hidden="true" hidden><img src="'+E(media['url'])+'" alt="" decoding="async" loading="eager"/></div>','html.parser').div
+ destinations=home.select_one('#destinations')
+ destinations['class'].append('ss-immersive-destinations')
+ destinations.insert(0,photograph('ss-photo-transition ss-photo-transition--entry'))
+ transition=home.new_tag('div',attrs={'class':'ss-destinations-to-reviews','aria-hidden':'true'})
+ destinations.insert_after(transition)
+ reservation.insert(0,photograph('ss-booking-atmosphere'))
+ home.body['class']=home.body.get('class',[])+['ss-home-themed']
+ for selector,theme in [('#accueil','ss-theme-light'),('#expertise','ss-theme-light'),('.ss-home-courses','ss-theme-light-soft'),('#destinations','ss-theme-dark'),('#avis','ss-theme-white'),('#questions','ss-theme-white')]:
+  node=home.select_one(selector);node['class']=node.get('class',[])+[theme]
+ # Explicit full-width canvases and independent inner content containers.
+ for selector in ['.ss-home-courses','#destinations','#avis','#questions','#contact']:
+  outer=home.select_one(selector);outer['class'].append('ss-fullwidth')
+  inner=outer.select_one(':scope>.wrap,:scope>.ss-home-courses__container,:scope>.ss-reservation__container');inner['class']=inner.get('class',[])+['ss-container']
+ home.head.append(home.new_tag('link',rel='stylesheet',href='/home-system.css?v=dest-reviews-color'))
+ home.head.append(home.new_tag('link',rel='stylesheet',href='/booking-v3.css?v=dest-reviews-color'))
+ home.head.append(home.new_tag('script',src='/home-system.js?v=booking-v3',defer=''))
+ save(home,pages[0],finish)
+ # Collective now explicitly uses the homepage components, as requested.
+ page=pages[1];ss=page['sections'];m=chat('une expérience avec le collectif Ski Society')
+ soup=BeautifulSoup((ROOT/'content/original-pages/index.html').read_text(),'html.parser')
+ soup.body['class']='story-home'
+ soup.main.clear()
+ # Homepage hero, with the complete approved collective introduction.
+ node=copy.copy(home.select_one('#accueil'));node['class']=[c for c in node['class'] if c!='ss-theme-light'];mark(node,'b01')
+ put(node.select_one('.hero-copy'),'<div class="kicker">'+E(value(ss[0],'Surtitre'))+'</div><h1 id="hero-title">'+E(value(ss[0],'H1'))+'</h1><p>'+E(value(ss[0],'Paragraphe'))+'</p><p>'+E(value(ss[0],'Phrase finale'))+'</p><div class="hero-actions">'+a(value(ss[3],'CTA'),'#contact')+a(value(ss[1],'Surtitre'),'#offres','ss-hero-contact')+'</div>')
+ soup.main.append(node)
+ # The homepage photographic cards carry the three heritage points.
+ node=copy.copy(story_offers);mark(node,'b02')
+ s=ss[1];text(node.select_one('.kicker'),value(s,'Surtitre'));text(node.h2,value(s,'H2'))
+ text(node.select_one('.ss-offers-heading>p'),value(s,'Introduction'))
+ _,cards,_=groups(s)
+ for i,card in enumerate(node.select('.ss-offer-card')):
+  if i>=len(cards):card.decompose();continue
+  card.name='article';card.attrs.pop('href',None);card.attrs.pop('aria-label',None)
+  card['class']=['ss-offer-card']
+  for badge in card.select('.ss-offer-feature-tag'):badge.decompose()
+  put(card.select_one('.ss-offer-content'),'<span class="ss-offer-meta" aria-hidden="true">'+str(i+1).zfill(2)+' /</span>'+''.join(block(b) for b in cards[i]))
+ soup.main.append(node)
+ # The homepage programme layout becomes the collective's three-step philosophy.
+ node=copy.copy(story_programmes);mark(node,'b03');s=ss[2]
+ text(node.select_one('.kicker'),value(s,'Surtitre'));text(node.h2,value(s,'H2'))
+ text(node.select_one('.ss-programmes-intro-v72>p'),value(s,'Introduction'))
+ cta=node.select_one('.ss-programmes-link-v72');svg=str(cta.svg);put(cta,E(value(ss[3],'CTA'))+svg);cta['href']=m
+ _,cards,_=groups(s)
+ for i,(card,items) in enumerate(zip(node.select('.ss-programme-v72'),cards)):
+  put(card.select_one('.ss-programme-index-v72'),str(i+1).zfill(2))
+  put(card.select_one('.ss-programme-detail-v72'),''.join(block(b) for b in items[1:])+'<div class="ss-programme-facts-v72"><span>'+E(clean(items[0]['text']))+'</span></div>')
+ node.select_one('.ss-programmes-disclaimer-v72').decompose()
+ soup.main.append(node)
+ # Same homepage contact composition, without adding a second enquiry form.
+ node=copy.copy(story_contact);mark(node,'b04');s=ss[3]
+ node['aria-labelledby']='reviews-title'
+ text(node.select_one('.kicker'),value(s,'Surtitre'));text(node.h2,value(s,'H2'));node.h2['id']='reviews-title'
+ text(node.select_one('.ss-contact-heading>p'),value(s,'Introduction'))
+ form=node.select_one('#ski-request-form')
+ form.name='div';form.attrs.pop('id',None);form['class']=['ss-request-form','story-summary']
+ put(form,'<div class="kicker">'+E(value(s,'Surtitre'))+'</div><h3>'+E(value(s,'Sous-titre'))+'</h3>'+block(s['blocks'][4]))
+ put(node.select_one('.ss-request-side-body'),'<span>SKI SOCIETY</span>'+a(value(s,'CTA'),m,'ss-request-direct'))
+ soup.main.append(node)
+ for script in soup.select('script[src="reviews-gallery.js"]'):script.decompose()
+ soup.head.append(soup.new_tag('link',rel='stylesheet',href='/story-home.css'))
+ save(soup,page,finish)
+ # Offers retain each page's own photo/head/style and existing component structures.
+ home_template=BeautifulSoup((ROOT/'content/original-pages/index.html').read_text(),'html.parser')
+ for page in pages[2:]:
+  ss=page['sections'];m=chat(page['title'].split(' |')[0])
+  soup=BeautifulSoup((ROOT/'content/original-pages'/page['path']).read_text(),'html.parser')
+  hero=soup.select_one('.detail-hero');mark(hero,ss[0]['id'])
+  text(hero.select_one('.kicker'),value(ss[0],'Surtitre'));text(hero.h1,value(ss[0],'H1'));text(hero.select_one('.detail-inner>p'),value(ss[0],'Introduction'))
+  actions=hero.select_one('.detail-inner>div:last-child')
+  second='#'+ss[3 if ss[0]['id']=='c01' else 1]['id']
+  put(actions,a(value(ss[0],'CTA 1'),m)+a(value(ss[0],'CTA 2'),second,'btn btn-secondary'))
+  original_sections=soup.main.find_all('section',recursive=False)
+  # 02: the original split description / practical list.
+  node=original_sections[1];node['id']=ss[1]['id'];mark(node,ss[1]['id'])
+  lead,cards,tail=groups(ss[1]);columns=node.select('.detail-points>div')
+  put(columns[0],''.join(block(b) for b in lead))
+  put(columns[1],'<ul class="detail-list">'+''.join('<li>'+''.join(block(b) for b in items)+'</li>' for items in cards)+'</ul>'+''.join(block(b) for b in tail))
+  # 03: the original three other-offer cards, now carrying the validated method.
+  node=original_sections[2];node['id']=ss[2]['id'];mark(node,ss[2]['id']);original_heading_attrs=copy.copy(node.h2.attrs)
+  lead,cards,tail=groups(ss[2])
+  put(node.select_one('.wrap'),''.join(block(b) for b in lead)+'<div class="other-offers">'+''.join('<article class="other-offer">'+''.join(block(b) for b in items)+'</article>' for items in cards)+'</div>'+''.join(block(b) for b in tail))
+  node.h2.attrs.update(original_heading_attrs)
+  for card_title in node.select('.other-offer h3'):card_title.name='strong'
+  # 04: exact programme component from the original homepage, not a new template.
+  programme=copy.copy(home_template.select_one('#formules'));programme['id']=ss[3]['id'];mark(programme,ss[3]['id'])
+  programme.attrs.pop('aria-labelledby',None)
+  s=ss[3];text(programme.select_one('.kicker'),value(s,'Surtitre'));text(programme.h2,value(s,'H2'))
+  programme.h2.attrs.pop('id',None);text(programme.select_one('.ss-programmes-intro-v72>p'),value(s,'Introduction'))
+  cta=programme.select_one('.ss-programmes-link-v72');svg=str(cta.svg);put(cta,E(value(s,'CTA'))+svg);cta['href']=m
+  _,cards,tail=groups(s);nodes=programme.select('.ss-programme-v72')
+  for i,node in enumerate(nodes):
+   if i>=len(cards):node.decompose();continue
+   put(node.select_one('.ss-programme-index-v72'),str(i+1).zfill(2))
+   put(node.select_one('.ss-programme-detail-v72'),''.join(block(b) for b in cards[i]))
+  text(programme.select_one('.ss-programmes-disclaimer-v72'),value(s,'Note'))
+  wrapper=soup.new_tag('div',attrs={'class':'ss-architecture editorial-programmes'});wrapper.append(programme)
+  original_sections[3].insert_before(wrapper)
+  # 05: keep the original full photographic final CTA, followed by the original steps component.
+  node=original_sections[3];node['id']=ss[4]['id'];mark(node,ss[4]['id']);s=ss[4]
+  inner=node.select_one('.wrap');text(inner.select_one('.kicker'),value(s,'Surtitre'));text(inner.h2,value(s,'H2'));text(inner.select_one('p'),value(s,'Introduction'))
+  text(inner.a,value(s,'CTA'));inner.a['href']=m
+  text(inner.select_one('.booking-note'),value(s,'Note'))
+  _,cards,_=groups(s)
+  steps='<div class="wrap"><div class="steps-grid">'+''.join('<article class="step"><div class="step-number">'+str(i+1).zfill(2)+'</div>'+''.join(block(b) for b in items)+'</article>' for i,items in enumerate(cards))+'</div></div>'
+  steps_node=BeautifulSoup('<section class="section steps" data-editorial-section="'+s['id']+'">'+steps+'</section>','html.parser')
+  node.insert_before(steps_node)
+  save(soup,page,finish)
+ # The original offer catalogue is linked from the retained back buttons.
+ # Keep its four compositions, but do not leave obsolete availability promises there.
+ soup=BeautifulSoup((ROOT/'content/original-pages/offres/index.html').read_text(),'html.parser')
+ experience=pages[0]['sections'][2];contact=pages[0]['sections'][7];m=chat('une expérience avec Ski Society')
+ text(soup.select_one('.detail-hero .kicker'),value(experience,'Surtitre'))
+ text(soup.h1,value(experience,'H2'))
+ text(soup.select_one('.detail-inner>p'),value(experience,'Introduction'))
+ _,cards,_=groups(experience)
+ for node,items in zip(soup.select('.offer-index-card'),cards):
+  text(node.strong,items[0]['text'])
+  cta=next(b['text'][6:] for b in items if b['text'].startswith('CTA :'))
+  text(node.small,cta)
+ catalogue_sections=soup.main.find_all('section',recursive=False)
+ text(catalogue_sections[1].select_one('.kicker'),value(experience,'Surtitre'))
+ details=catalogue_sections[2].select('.detail-points>div')
+ put(details[0],'<div class="kicker">'+E(value(contact,'Surtitre'))+'</div><h2>'+E(value(contact,'Sous-titre'))+'</h2>')
+ put(details[1],block(contact['blocks'][4])+block(contact['blocks'][2]))
+ cta=catalogue_sections[3]
+ text(cta.select_one('.kicker'),value(contact,'Surtitre'));text(cta.h2,value(contact,'H2'));text(cta.p,value(contact,'Introduction'));text(cta.a,value(contact,'CTA'));cta.a['href']=m
+ soup.title.string='Nos expériences | Ski Society'
+ soup.select_one('meta[name="description"]')['content']=value(experience,'Introduction')
+ (ROOT/'public/offres/index.html').write_text(finish(str(soup),'offres/index.html'))

@@ -1,0 +1,54 @@
+# Fichiers modifiés ou ajoutés
+
+Liste de cette livraison, hors fichiers temporaires et serveurs locaux.
+
+- `INTEGRATION.md`
+- `QA_IMPLEMENTATION.md`
+- `content/home-reservation.html`
+- `docs/editorial-integration/sections.json`
+- `docs/editorial-integration/sections.md`
+- `docs/home-system/FILES.md`
+- `docs/home-system/README.md`
+- `docs/home-system/destinations-reviews-1440.png`
+- `docs/home-system/destinations-reviews-390.png`
+- `docs/home-system/faq-reservation-1440.png`
+- `docs/home-system/faq-reservation-390.png`
+- `docs/home-system/form-step1-1024.png`
+- `docs/home-system/form-step1-1280.png`
+- `docs/home-system/form-step1-1440.png`
+- `docs/home-system/form-step1-1536.png`
+- `docs/home-system/form-step1-375.png`
+- `docs/home-system/form-step1-390.png`
+- `docs/home-system/form-step1-768.png`
+- `docs/home-system/form-step2-1024.png`
+- `docs/home-system/form-step2-1280.png`
+- `docs/home-system/form-step2-1440.png`
+- `docs/home-system/form-step2-1536.png`
+- `docs/home-system/form-step2-375.png`
+- `docs/home-system/form-step2-390.png`
+- `docs/home-system/form-step2-768.png`
+- `docs/home-system/formats-destinations-1440.png`
+- `docs/home-system/formats-destinations-390.png`
+- `docs/home-system/home-full-1440.png`
+- `docs/home-system/home-full-390.png`
+- `docs/home-system/index.html`
+- `docs/home-system/reservation-step1-1024.png`
+- `docs/home-system/reservation-step1-1280.png`
+- `docs/home-system/reservation-step1-1440.png`
+- `docs/home-system/reservation-step1-1536.png`
+- `docs/home-system/reservation-step1-375.png`
+- `docs/home-system/reservation-step1-390.png`
+- `docs/home-system/reservation-step1-768.png`
+- `docs/home-system/results.json`
+- `docs/home-system/specification.md`
+- `docs/home-system/theme-accessibility.json`
+- `public/app.js`
+- `public/home-system.css`
+- `public/home-system.js`
+- `public/index.html`
+- `scripts/build.py`
+- `scripts/editorial.py`
+- `tests/adn_redesign.py`
+- `tests/check_editorial.py`
+- `tests/course_formats.py`
+- `tests/home_system.py`

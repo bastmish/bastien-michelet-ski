@@ -1,0 +1,9 @@
+{
+  "source_section": "a04",
+  "status": "Horaires indicatifs, à confirmer selon la station, le moniteur et les disponibilités.",
+  "half_day_duration": "2 h 30",
+  "half_day_slots": ["09h30 – 12h00", "12h00 – 14h30", "14h30 – 17h00"],
+  "full_day_hours": "09h30 – 17h00",
+  "custom": "Sur demande",
+  "freeride": "Journée complète ou sur mesure uniquement"
+}

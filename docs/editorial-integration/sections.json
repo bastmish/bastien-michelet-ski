@@ -1,0 +1,622 @@
+[
+  {
+    "page": "index.html",
+    "section": "A01",
+    "blocks": 5,
+    "status": "PASS",
+    "components": [
+      [
+        "hero",
+        "ss-theme-light"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "index.html",
+    "section": "A02",
+    "blocks": 9,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-adn-editorial-v2",
+        "ss-theme-light"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "index.html",
+    "section": "A03",
+    "blocks": 16,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-experiences-compact"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [
+      {
+        "index": 0,
+        "text": "03 / LES EXPÉRIENCES",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 4,
+        "text": "Apprendre à skier, reprendre confiance ou simplement profiter pleinement de la montagne. Nos moniteurs vous accompagnent à votre rythme, avec un enseignement adapté à votre niveau et à vos envies.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 8,
+        "text": "Vous skiez déjà bien et souhaitez aller plus loin ? Affinez vos appuis, gagnez en précision et travaillez votre technique avec des moniteurs qui connaissent les exigences de la compétition.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 11,
+        "text": "Quittez les pistes balisées pour découvrir une autre facette de la montagne. Des sorties adaptées à votre niveau et aux conditions du jour, avec des moniteurs disposant des qualifications nécessaires à l'itinéraire envisagé.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 14,
+        "text": "Vos premières courbes, une technique à perfectionner ou l'envie de découvrir de nouveaux terrains. Profitez de cours privés de snowboard conçus autour de votre niveau et de votre pratique.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      }
+    ],
+    "approved_revisions": []
+  },
+  {
+    "page": "index.html",
+    "section": "A04",
+    "blocks": 14,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-formats-compact"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [
+      {
+        "index": 0,
+        "text": "04 / VOTRE PROGRAMME",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 2,
+        "text": "Quelques heures pour progresser, une journée entière pour profiter de la montagne ou une expérience imaginée sur mesure. Choisissez le format qui vous correspond, nous nous occupons du reste.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 4,
+        "text": "Quelques heures pour faire la différence.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 5,
+        "text": "Un cours privé pour découvrir le ski, retrouver des sensations ou travailler un point technique précis. Un format idéal pour progresser à votre rythme, sans mobiliser toute votre journée.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 7,
+        "text": "Une journée, entièrement à vous.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 8,
+        "text": "Prenez le temps de skier, de progresser et de découvrir la montagne avec votre moniteur. Le programme s'adapte à votre niveau, à vos envies et aux conditions du jour.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 10,
+        "text": "Votre montagne, vos envies.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 11,
+        "text": "Une sortie particulière, une expérience en groupe ou un projet qui sort des formats habituels ? Parlez-nous de ce que vous imaginez. Nous étudions ensemble les possibilités avec les moniteurs du collectif.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      }
+    ],
+    "approved_revisions": []
+  },
+  {
+    "page": "index.html",
+    "section": "A05",
+    "blocks": 8,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-destinations",
+        "ss-immersive-destinations",
+        "ss-theme-dark",
+        "ss-fullwidth"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": [
+      {
+        "original": "Vous avez une station en tête ?",
+        "approved_replacement": "Votre station. Notre terrain de jeu.",
+        "source": "content/destinations-closing.json"
+      },
+      {
+        "original": "Notre collectif intervient dans les Alpes du Nord, les Alpes du Sud et les stations suisses. Indiquez-nous votre destination et vos dates : nous recherchons parmi nos moniteurs celui qui pourra vous accompagner.",
+        "approved_replacement": "De la Savoie aux Alpes du Sud, en passant par la Haute-Savoie et les stations suisses, découvrez les destinations où organiser votre prochaine expérience avec Ski Society.",
+        "source": "content/destinations-closing.json"
+      },
+      {
+        "original": "Voir toutes nos destinations",
+        "approved_replacement": "Explorer nos 43 destinations",
+        "source": "content/destinations-closing.json"
+      }
+    ]
+  },
+  {
+    "page": "index.html",
+    "section": "A06",
+    "blocks": 8,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-testimonials",
+        "ss-reviews-v26",
+        "ss-reviews-v49",
+        "ss-reviews-v52",
+        "ss-theme-white",
+        "ss-fullwidth"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "index.html",
+    "section": "A07",
+    "blocks": 17,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-questions",
+        "ss-theme-white",
+        "ss-fullwidth"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "index.html",
+    "section": "A08",
+    "blocks": 10,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-reservation",
+        "ss-theme-dark",
+        "ss-booking-v3",
+        "ss-fullwidth"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [
+      {
+        "index": 3,
+        "text": "Votre prochaine expérience commence ici.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 4,
+        "text": "Indiquez-nous votre destination, vos dates, le nombre de participants et votre niveau. Nous revenons vers vous pour organiser une expérience adaptée à votre demande.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 5,
+        "text": "Nous contacter sur WhatsApp",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 6,
+        "text": "Comment ça se passe ?",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 7,
+        "text": "01 — Vous nous expliquez votre projet, votre station et vos dates.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 8,
+        "text": "02 — Nous vérifions les disponibilités des moniteurs du collectif.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      },
+      {
+        "index": 9,
+        "text": "03 — Nous vous proposons un moniteur et les modalités de votre cours. La réservation est confirmée après votre accord.",
+        "status": "Preserved in immutable editorial source; omitted from compact home by instruction"
+      }
+    ],
+    "approved_revisions": []
+  },
+  {
+    "page": "manifesto.html",
+    "section": "B01",
+    "blocks": 4,
+    "status": "PASS",
+    "components": [
+      [
+        "hero"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "manifesto.html",
+    "section": "B02",
+    "blocks": 9,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-offers",
+        "ss-offers-v46"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "manifesto.html",
+    "section": "B03",
+    "blocks": 12,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-formules",
+        "ss-journey-v49",
+        "ss-programmes-v72"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "manifesto.html",
+    "section": "B04",
+    "blocks": 6,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-contact",
+        "ss-contact-v29"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/ski-prive.html",
+    "section": "C01",
+    "blocks": 5,
+    "status": "PASS",
+    "components": [
+      [
+        "detail-hero"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/ski-prive.html",
+    "section": "C02",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/ski-prive.html",
+    "section": "C03",
+    "blocks": 12,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/ski-prive.html",
+    "section": "C04",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-formules",
+        "ss-journey-v49",
+        "ss-programmes-v72"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/ski-prive.html",
+    "section": "C05",
+    "blocks": 11,
+    "status": "PASS",
+    "components": [
+      [
+        "section",
+        "steps"
+      ],
+      [
+        "final-cta"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/performance-technique.html",
+    "section": "D01",
+    "blocks": 5,
+    "status": "PASS",
+    "components": [
+      [
+        "detail-hero"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/performance-technique.html",
+    "section": "D02",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/performance-technique.html",
+    "section": "D03",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/performance-technique.html",
+    "section": "D04",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-formules",
+        "ss-journey-v49",
+        "ss-programmes-v72"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/performance-technique.html",
+    "section": "D05",
+    "blocks": 11,
+    "status": "PASS",
+    "components": [
+      [
+        "section",
+        "steps"
+      ],
+      [
+        "final-cta"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/freeride-decouverte.html",
+    "section": "E01",
+    "blocks": 5,
+    "status": "PASS",
+    "components": [
+      [
+        "detail-hero"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/freeride-decouverte.html",
+    "section": "E02",
+    "blocks": 13,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/freeride-decouverte.html",
+    "section": "E03",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/freeride-decouverte.html",
+    "section": "E04",
+    "blocks": 11,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-formules",
+        "ss-journey-v49",
+        "ss-programmes-v72"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/freeride-decouverte.html",
+    "section": "E05",
+    "blocks": 11,
+    "status": "PASS",
+    "components": [
+      [
+        "section",
+        "steps"
+      ],
+      [
+        "final-cta"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/snowboard.html",
+    "section": "F01",
+    "blocks": 5,
+    "status": "PASS",
+    "components": [
+      [
+        "detail-hero"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/snowboard.html",
+    "section": "F02",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/snowboard.html",
+    "section": "F03",
+    "blocks": 12,
+    "status": "PASS",
+    "components": [
+      [
+        "section"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/snowboard.html",
+    "section": "F04",
+    "blocks": 15,
+    "status": "PASS",
+    "components": [
+      [
+        "ss-section",
+        "ss-formules",
+        "ss-journey-v49",
+        "ss-programmes-v72"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  },
+  {
+    "page": "offres/snowboard.html",
+    "section": "F05",
+    "blocks": 11,
+    "status": "PASS",
+    "components": [
+      [
+        "section",
+        "steps"
+      ],
+      [
+        "final-cta"
+      ]
+    ],
+    "missing": [],
+    "compact_source_only": [],
+    "approved_revisions": []
+  }
+]

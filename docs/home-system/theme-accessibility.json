@@ -1,0 +1,42 @@
+[
+  {
+    "width": 1440,
+    "section": "#destinations",
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "section": "#avis",
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "section": "#questions",
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "section": ".art-footer",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "section": "#destinations",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "section": "#avis",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "section": "#questions",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "section": ".art-footer",
+    "violations": []
+  }
+]

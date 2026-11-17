@@ -1,0 +1,51 @@
+<section id="contact" class="ss-reservation ss-theme-dark ss-booking-v3" data-editorial-section="a08" aria-labelledby="contact-title">
+  <div class="ss-reservation__container">
+    <div class="ss-reservation__copy">{{EDITORIAL}}</div>
+    <form id="private-request-form" class="ss-private-request" data-private-wizard novalidate>
+      <div class="ss-private-request__heading"><div class="ss-private-request__brand">{{WA_HEADER_ICON}}<h3>{{WHATSAPP_TITLE}}</h3></div><p class="ss-private-request__subtitle">{{WHATSAPP_SUBTITLE}}</p></div>
+      <p id="private-step-indicator" tabindex="-1" aria-live="polite">{{STEP_ONE}}</p>
+      <div class="ss-private-request__progress" role="progressbar" aria-label="Progression de votre demande" aria-valuemin="0" aria-valuemax="2" aria-valuenow="1"><span></span></div>
+      <fieldset id="private-step-1" class="ss-private-request__step">
+        <legend tabindex="-1">Votre projet</legend>
+        <fieldset class="ss-private-request__experiences" aria-describedby="private-experience-error">
+          <legend>Expérience</legend>
+          <div class="ss-private-request__choices">{{EXPERIENCES}}</div>
+          <p class="ss-private-request__error" id="private-experience-error" hidden></p>
+        </fieldset>
+        <div class="ss-private-request__field">
+          <label for="private-station">Station</label>
+          <input id="private-station" name="station" list="private-stations" autocomplete="off" maxlength="100" required aria-describedby="private-station-help private-station-error" placeholder="Rechercher une station">
+          <datalist id="private-stations">{{STATIONS}}<option value="Autre station"></option></datalist>
+          <p class="ss-private-request__hint" id="private-station-help">43 destinations ou Autre station.</p>
+          <p class="ss-private-request__error" id="private-station-error" hidden></p>
+        </div>
+        <div class="ss-private-request__field" id="private-other-field" hidden>
+          <label for="private-other-station">Votre autre station</label>
+          <input id="private-other-station" name="otherStation" maxlength="100" aria-describedby="private-otherStation-error" disabled>
+          <p class="ss-private-request__error" id="private-otherStation-error" hidden></p>
+        </div>
+        <div class="ss-private-request__field">
+          <label for="private-period">Date ou période</label>
+          <input id="private-period" name="period" maxlength="120" required placeholder="Une date ou une période, même approximative" aria-describedby="private-period-error">
+          <p class="ss-private-request__error" id="private-period-error" hidden></p>
+        </div>
+        <button type="button" class="ss-private-request__primary" data-next>Continuer</button>
+      </fieldset>
+      <fieldset id="private-step-2" class="ss-private-request__step" hidden disabled>
+        <legend tabindex="-1">Votre profil et votre format</legend>
+        <div class="ss-private-request__profile-grid">
+          <div class="ss-private-request__field"><label for="private-level">Niveau</label><select id="private-level" name="level" required aria-describedby="private-level-error"><option value="">Choisir votre niveau</option><option>Débutant</option><option>Intermédiaire</option><option>Confirmé (classe 3)</option><option>Confirmé (classe 4)</option><option>Compétition / expert</option><option>Niveaux différents dans le groupe</option></select><p class="ss-private-request__error" id="private-level-error" hidden></p></div>
+          <div class="ss-private-request__field"><label for="private-participants">Nombre de participants</label><input id="private-participants" name="participants" type="number" min="1" step="1" inputmode="numeric" required aria-describedby="private-profile-note private-participants-error"><p class="ss-private-request__error" id="private-participants-error" hidden></p></div>
+        </div>
+        <div class="ss-private-request__field"><label for="private-format">Format souhaité</label><select id="private-format" name="format" required aria-describedby="private-format-help private-profile-note private-format-error"><option value="">Choisir votre format</option><option>Demi-journée — 2 h 30</option><option>Journée complète — 09h30 à 17h00</option><option>Sur mesure</option></select><p class="ss-private-request__hint" id="private-format-help" aria-live="polite" hidden></p><p class="ss-private-request__error" id="private-format-error" hidden></p></div>
+        <div class="ss-private-request__field"><label for="private-firstName">Prénom <span>(facultatif)</span></label><input id="private-firstName" name="firstName" autocomplete="given-name" maxlength="80"></div>
+        <div class="ss-private-request__field"><label for="private-notes">Informations complémentaires <span>(facultatives)</span></label><textarea id="private-notes" name="notes" rows="3" maxlength="900"></textarea></div>
+        <p class="ss-private-request__hint" id="private-profile-note">Horaires et encadrement à confirmer selon la station, le moniteur et la composition du groupe.</p>
+        <div class="ss-private-request__actions"><button type="submit" class="ss-private-request__primary ss-private-request__whatsapp">{{WA_BUTTON_ICON}}<span>{{WHATSAPP_BUTTON}}</span><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><button type="button" class="ss-private-request__back" data-back>Retour</button></div>
+      </fieldset>
+      <p class="ss-private-request__notice" id="private-request-notice" role="status">{{WHATSAPP_NOTICE}}</p>
+      <noscript><p>Sans JavaScript, vous pouvez <a href="https://wa.me/33763532601">préparer votre demande directement sur WhatsApp</a>.</p></noscript>
+    </form>
+    <p class="ss-reservation__reassurance">{{REASSURANCE}}</p>
+  </div>
+</section>

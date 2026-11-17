@@ -1,0 +1,377 @@
+{
+  "pages": 52,
+  "viewports": [
+    375,
+    768,
+    1440
+  ],
+  "page_errors": [],
+  "accessibility_observations": [
+    {
+      "path": "index.html",
+      "original_page": true,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "small"
+            ],
+            [
+              ".ss-programmes-intro-v72 > .kicker"
+            ],
+            [
+              "#formules-title"
+            ],
+            [
+              "#formules-title > em"
+            ],
+            [
+              ".ss-programmes-intro-v72 > p"
+            ],
+            [
+              ".ss-programmes-link-v72"
+            ],
+            [
+              ".ss-programmes-disclaimer-v72"
+            ],
+            [
+              ".ss-station-count-v72"
+            ],
+            [
+              ".ss-station-eyebrow-v72"
+            ],
+            [
+              ".ss-station-copy-v72 > strong"
+            ],
+            [
+              ".ss-station-copy-v72 > span:nth-child(3)"
+            ],
+            [
+              ".ss-station-action-v72 > span"
+            ],
+            [
+              ".ss-request-top > strong"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "manifesto.html",
+      "original_page": true,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "article:nth-child(2) > p"
+            ],
+            [
+              "article:nth-child(3) > p"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations.html",
+      "original_page": true,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "button[data-filter=\"Savoie\"] > span"
+            ],
+            [
+              "button[data-filter=\"Haute-Savoie\"] > span"
+            ],
+            [
+              "button[data-filter=\"Hautes-Alpes\"] > span"
+            ],
+            [
+              "#station-results-count"
+            ],
+            [
+              "#region-0 > .ss-territory-heading > div > .ss-territory-index"
+            ],
+            [
+              "#region-0 > .ss-territory-heading > .ss-territory-total"
+            ],
+            [
+              "#region-0 > .ss-territory-heading > .ss-territory-total > .ss-territory-visible"
+            ],
+            [
+              "#region-1 > .ss-territory-heading > div > .ss-territory-index"
+            ],
+            [
+              "#region-1 > .ss-territory-heading > .ss-territory-total"
+            ],
+            [
+              "#region-1 > .ss-territory-heading > .ss-territory-total > .ss-territory-visible"
+            ],
+            [
+              "#region-2 > .ss-territory-heading > div > .ss-territory-index"
+            ],
+            [
+              "#region-2 > .ss-territory-heading > .ss-territory-total"
+            ],
+            [
+              "#region-2 > .ss-territory-heading > .ss-territory-total > .ss-territory-visible"
+            ],
+            [
+              "#region-3 > .ss-territory-heading > div > .ss-territory-index"
+            ],
+            [
+              "#region-3 > .ss-territory-heading > .ss-territory-total"
+            ],
+            [
+              ".ss-stations-disclaimer"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/les-menuires.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/la-plagne.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/valloire.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/megeve.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/la-clusaz.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/le-grand-bornand.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/flaine.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/les-carroz.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/serre-chevalier.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/montgenevre.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/vars.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/superdevoluy.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "stations/ancelle.html",
+      "original_page": false,
+      "issues": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "strong"
+            ],
+            [
+              "small"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "new_footer_violations": [],
+  "reference_navigation_approved_faq_and_catalogue": "PASS",
+  "extension_search_and_whatsapp": "PASS (no message sent)"
+}

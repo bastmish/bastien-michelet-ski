@@ -128,6 +128,16 @@
      if(option.value==='2 personnes'||option.value==='3 personnes')option.disabled=individual;
     });
     if(individual)participantsSelect.value='1 personne';
+    const format=inquiryForm.elements.namedItem('format');
+    if(format){
+     const freeride=experienceSelect.value==='Freeride & milieu alpin';
+     for(const option of format.options){
+      if(option.value==='Demi-journée'){
+       option.disabled=freeride;
+       if(freeride&&format.value==='Demi-journée')format.value='Journée';
+      }
+     }
+    }
    };
    experienceSelect.addEventListener('change',updateParticipants);
    updateParticipants();
@@ -186,6 +196,7 @@
  const offersTitle=homepage?main.querySelector('#tiles-title'):null;
  const reviewsTitle=homepage?main.querySelector('#reviews-title'):null;
  function updatePageTheme(){
+  if(document.body.classList.contains('ss-home-themed'))return;
   if(!homepage||!offersTitle||!reviewsTitle)return;
   const threshold=window.innerHeight*.58;
   const pastOffers=offersTitle.getBoundingClientRect().top<=threshold;
@@ -198,6 +209,7 @@
  updatePageTheme();
  let toneScheduled=false;
  function updateEditorialTone(){
+  if(document.body.classList.contains('ss-home-themed'))return;
   toneScheduled=false;
   const focus=window.innerHeight*.43;
   let active=null;

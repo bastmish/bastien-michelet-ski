@@ -1,0 +1,1598 @@
+[
+  {
+    "path": "index.html",
+    "title": "Ski Society — Cours privés de ski et snowboard",
+    "sections": [
+      {
+        "id": "a01",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "SKI SOCIETY — PRIVATE SKI & SNOWBOARD"
+          },
+          {
+            "label": "H1",
+            "text": "Des cours de ski privés avec des moniteurs issus du haut niveau."
+          },
+          {
+            "label": "Texte",
+            "text": "Un collectif d'anciens compétiteurs qui mettent leur expérience au service de votre ski. Cours particuliers de ski et snowboard, du débutant au confirmé, partout dans les Alpes."
+          },
+          {
+            "label": "CTA principal",
+            "text": "Trouver un moniteur"
+          },
+          {
+            "label": "CTA secondaire",
+            "text": "Découvrir nos expériences"
+          }
+        ]
+      },
+      {
+        "id": "a02",
+        "blocks": [
+          {
+            "label": "Surtitre 01",
+            "text": "01 / LA COMPÉTITION"
+          },
+          {
+            "label": "Titre 01",
+            "text": "Le ski de haut niveau fait partie de notre histoire."
+          },
+          {
+            "label": "Texte 01",
+            "text": "Des années sur les circuits de compétition, à s'entraîner, à chercher le geste juste et à repousser ses limites. C'est dans cet environnement que nos moniteurs ont construit leur expérience du ski. Une culture sportive qui nous réunit aujourd'hui au sein de Ski Society."
+          },
+          {
+            "label": "Surtitre 02",
+            "text": "02 / NOTRE APPROCHE"
+          },
+          {
+            "label": "Titre 02",
+            "text": "Rien ne remplace l'expérience."
+          },
+          {
+            "label": "Texte 02",
+            "text": "Des milliers d'heures passées sur les skis changent la façon de voir une piste, de lire un mouvement et de comprendre un skieur. Nos moniteurs s'appuient sur cette expérience pour vous apporter des conseils précis, adaptés à votre manière de skier."
+          },
+          {
+            "label": "Surtitre 03",
+            "text": "03 / L'EXPÉRIENCE"
+          },
+          {
+            "label": "Titre 03",
+            "text": "Votre niveau. Vos envies. Notre engagement."
+          },
+          {
+            "label": "Texte 03",
+            "text": "Un premier virage, un cap à franchir ou une journée pour le plaisir : nous construisons chaque cours autour de vous, sans programme imposé."
+          }
+        ]
+      },
+      {
+        "id": "a03",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "03 / LES EXPÉRIENCES"
+          },
+          {
+            "label": "H2",
+            "text": "La montagne se vit à votre manière."
+          },
+          {
+            "label": "Introduction",
+            "text": "Du premier cours au perfectionnement technique, nos moniteurs adaptent chaque expérience à votre niveau, vos objectifs et vos envies."
+          },
+          {
+            "label": "Offre 01",
+            "text": "Leçons particulières"
+          },
+          {
+            "label": "",
+            "text": "Apprendre à skier, reprendre confiance ou simplement profiter pleinement de la montagne. Nos moniteurs vous accompagnent à votre rythme, avec un enseignement adapté à votre niveau et à vos envies."
+          },
+          {
+            "label": "",
+            "text": "CTA : Découvrir les cours privés"
+          },
+          {
+            "label": "Offre 02",
+            "text": "Performance & technique"
+          },
+          {
+            "label": "Badge",
+            "text": "NOTRE SPÉCIALITÉ"
+          },
+          {
+            "label": "",
+            "text": "Vous skiez déjà bien et souhaitez aller plus loin ? Affinez vos appuis, gagnez en précision et travaillez votre technique avec des moniteurs qui connaissent les exigences de la compétition."
+          },
+          {
+            "label": "",
+            "text": "CTA : Découvrir le coaching technique"
+          },
+          {
+            "label": "Offre 03",
+            "text": "Freeride & milieu alpin"
+          },
+          {
+            "label": "",
+            "text": "Quittez les pistes balisées pour découvrir une autre facette de la montagne. Des sorties adaptées à votre niveau et aux conditions du jour, avec des moniteurs disposant des qualifications nécessaires à l'itinéraire envisagé."
+          },
+          {
+            "label": "",
+            "text": "CTA : Explorer le freeride"
+          },
+          {
+            "label": "Offre 04",
+            "text": "Snowboard"
+          },
+          {
+            "label": "",
+            "text": "Vos premières courbes, une technique à perfectionner ou l'envie de découvrir de nouveaux terrains. Profitez de cours privés de snowboard conçus autour de votre niveau et de votre pratique."
+          },
+          {
+            "label": "",
+            "text": "CTA : Découvrir les cours de snowboard"
+          }
+        ]
+      },
+      {
+        "id": "a04",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "04 / VOTRE PROGRAMME"
+          },
+          {
+            "label": "H2",
+            "text": "À chacun son rythme."
+          },
+          {
+            "label": "Introduction",
+            "text": "Quelques heures pour progresser, une journée entière pour profiter de la montagne ou une expérience imaginée sur mesure. Choisissez le format qui vous correspond, nous nous occupons du reste."
+          },
+          {
+            "label": "",
+            "text": "**01 / DEMI-JOURNÉE** — 2 h 30"
+          },
+          {
+            "label": "Titre",
+            "text": "Quelques heures pour faire la différence."
+          },
+          {
+            "label": "",
+            "text": "Un cours privé pour découvrir le ski, retrouver des sensations ou travailler un point technique précis. Un format idéal pour progresser à votre rythme, sans mobiliser toute votre journée."
+          },
+          {
+            "label": "",
+            "text": "**02 / JOURNÉE COMPLÈTE** — 09h30 – 17h00"
+          },
+          {
+            "label": "Titre",
+            "text": "Une journée, entièrement à vous."
+          },
+          {
+            "label": "",
+            "text": "Prenez le temps de skier, de progresser et de découvrir la montagne avec votre moniteur. Le programme s'adapte à votre niveau, à vos envies et aux conditions du jour."
+          },
+          {
+            "label": "",
+            "text": "**03 / SUR MESURE** — Sur demande"
+          },
+          {
+            "label": "Titre",
+            "text": "Votre montagne, vos envies."
+          },
+          {
+            "label": "",
+            "text": "Une sortie particulière, une expérience en groupe ou un projet qui sort des formats habituels ? Parlez-nous de ce que vous imaginez. Nous étudions ensemble les possibilités avec les moniteurs du collectif."
+          },
+          {
+            "label": "CTA",
+            "text": "Parlons de votre projet"
+          },
+          {
+            "label": "Note",
+            "text": "Horaires indicatifs, à confirmer selon la station, le moniteur et les disponibilités."
+          }
+        ]
+      },
+      {
+        "id": "a05",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "05 / NOS DESTINATIONS"
+          },
+          {
+            "label": "H2",
+            "text": "Les Alpes, notre terrain de jeu."
+          },
+          {
+            "label": "Introduction",
+            "text": "Des grandes stations de Savoie aux domaines des Alpes du Sud, Ski Society vous accompagne là où vous choisissez de skier. Notre collectif réunit des moniteurs issus du haut niveau, pour vous faire vivre une expérience privée à la hauteur de vos envies, quelle que soit votre destination."
+          },
+          {
+            "label": "Stations à la une",
+            "text": ""
+          },
+          {
+            "label": "",
+            "text": "- Courchevel — Les 3 Vallées · Savoie\n- Megève — Pays du Mont-Blanc · Haute-Savoie\n- Val d'Isère — Haute-Tarentaise · Savoie\n- Serre Chevalier — Alpes du Sud · Hautes-Alpes"
+          },
+          {
+            "label": "Bloc de fermeture — titre",
+            "text": "Vous avez une station en tête ?"
+          },
+          {
+            "label": "Bloc de fermeture — texte",
+            "text": "Notre collectif intervient dans les Alpes du Nord, les Alpes du Sud et les stations suisses. Indiquez-nous votre destination et vos dates : nous recherchons parmi nos moniteurs celui qui pourra vous accompagner."
+          },
+          {
+            "label": "CTA",
+            "text": "Voir toutes nos destinations"
+          }
+        ]
+      },
+      {
+        "id": "a06",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "06 / VOS AVIS"
+          },
+          {
+            "label": "H2",
+            "text": "C'est vous qui en parlez le mieux."
+          },
+          {
+            "label": "Introduction",
+            "text": "Une progression, une nouvelle confiance sur les skis, une journée dont on se souvient. Découvrez les retours de ceux qui ont partagé la montagne avec nos moniteurs."
+          },
+          {
+            "label": "Titre de la zone avis",
+            "text": "Des expériences racontées par nos clients."
+          },
+          {
+            "label": "Présentation",
+            "text": "Cet espace accueillera une sélection d'avis authentiques et vérifiables, accompagnés de leur source lorsque nous disposerons des autorisations nécessaires."
+          },
+          {
+            "label": "Libellé de réserve",
+            "text": "EMPLACEMENT POUR UN AVIS VÉRIFIÉ"
+          },
+          {
+            "label": "Texte de réserve",
+            "text": "Aucun faux témoignage ni citation inventée ne sera publié."
+          },
+          {
+            "label": "CTA",
+            "text": "Lire les avis de nos clients"
+          }
+        ]
+      },
+      {
+        "id": "a07",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "07 / QUESTIONS FRÉQUENTES"
+          },
+          {
+            "label": "H2",
+            "text": "Avant de chausser les skis."
+          },
+          {
+            "label": "Q1",
+            "text": "Faut-il avoir un bon niveau pour skier avec Ski Society ?"
+          },
+          {
+            "label": "",
+            "text": "Pas du tout. Nos moniteurs sont issus du ski de haut niveau, mais nos cours s’adressent à tous : débutants, enfants, familles et skieurs confirmés. L’enseignement s’adapte à votre niveau et à vos objectifs."
+          },
+          {
+            "label": "Q2",
+            "text": "Dans quelles stations peut-on réserver un moniteur ?"
+          },
+          {
+            "label": "",
+            "text": "Ski Society intervient dans les Alpes du Nord, les Alpes du Sud et les stations suisses grâce à son collectif de moniteurs. Indiquez-nous votre destination et vos dates : nous rechercherons un moniteur disponible dans votre station."
+          },
+          {
+            "label": "Q3",
+            "text": "Peut-on réserver un cours de ski pour plusieurs personnes ?"
+          },
+          {
+            "label": "",
+            "text": "Oui. Nos cours privés peuvent être organisés pour une personne ou un petit groupe. Précisez le nombre de participants et leurs niveaux lors de votre demande pour que nous puissions vous proposer une formule adaptée."
+          },
+          {
+            "label": "Q4",
+            "text": "Quelle est la différence entre une demi-journée et une journée complète ?"
+          },
+          {
+            "label": "",
+            "text": "La demi-journée dure 2 h 30 et permet de se concentrer sur un apprentissage ou un objectif précis. Trois créneaux sont proposés :"
+          },
+          {
+            "label": "",
+            "text": "- Matin — 09h30 – 12h00\n- Midi — 12h00 – 14h30\n- Après-midi — 14h30 – 17h00"
+          },
+          {
+            "label": "",
+            "text": "La journée complète, de 09h30 à 17h00, offre davantage de temps pour progresser, explorer le domaine skiable et profiter de la montagne avec votre moniteur."
+          },
+          {
+            "label": "",
+            "text": "Ces horaires sont indicatifs et confirmés lors de la réservation."
+          },
+          {
+            "label": "Q5",
+            "text": "Combien coûte un cours privé avec Ski Society ?"
+          },
+          {
+            "label": "",
+            "text": "Le tarif dépend de la durée du cours, de la période et du nombre de participants. Nos tarifs ne varient pas selon la station. Contactez-nous en précisant vos dates, le nombre de skieurs et le format souhaité : nous vous communiquerons le prix et les conditions avant toute confirmation."
+          },
+          {
+            "label": "Q6",
+            "text": "Comment réserver un moniteur Ski Society ?"
+          },
+          {
+            "label": "",
+            "text": "Contactez-nous sur WhatsApp en indiquant votre station, vos dates, le nombre de participants et votre niveau. Nous vérifions les disponibilités au sein du collectif, puis vous proposons une prestation adaptée à votre demande."
+          }
+        ]
+      },
+      {
+        "id": "a08",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "08 / CONTACT & RÉSERVATION"
+          },
+          {
+            "label": "H2",
+            "text": "Parlons de votre prochaine journée de ski."
+          },
+          {
+            "label": "Introduction",
+            "text": "Vous avez une station en tête, des dates ou simplement une envie particulière ? Parlez-nous de votre projet. Nous recherchons au sein du collectif le moniteur qui correspond à vos attentes et à vos disponibilités."
+          },
+          {
+            "label": "Sous-titre",
+            "text": "Votre prochaine expérience commence ici."
+          },
+          {
+            "label": "",
+            "text": "Indiquez-nous votre destination, vos dates, le nombre de participants et votre niveau. Nous revenons vers vous pour organiser une expérience adaptée à votre demande."
+          },
+          {
+            "label": "CTA",
+            "text": "Nous contacter sur WhatsApp"
+          },
+          {
+            "label": "Étapes — sous-titre",
+            "text": "Comment ça se passe ?"
+          },
+          {
+            "label": "",
+            "text": "01 — Vous nous expliquez votre projet, votre station et vos dates."
+          },
+          {
+            "label": "",
+            "text": "02 — Nous vérifions les disponibilités des moniteurs du collectif."
+          },
+          {
+            "label": "",
+            "text": "03 — Nous vous proposons un moniteur et les modalités de votre cours. La réservation est confirmée après votre accord."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "manifesto.html",
+    "title": "Le collectif | Ski Society",
+    "sections": [
+      {
+        "id": "b01",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "SKI SOCIETY / LE COLLECTIF"
+          },
+          {
+            "label": "H1",
+            "text": "Le ski de haut niveau nous a réunis. L'envie de transmettre nous anime."
+          },
+          {
+            "label": "Paragraphe",
+            "text": "Ski Society réunit des moniteurs de ski et snowboard qui ont tous évolué sur la scène internationale de la compétition. Chacun apporte son parcours, sa maîtrise technique et son expérience du haut niveau, avec une même ambition : transmettre ce que des années de compétition leur ont appris."
+          },
+          {
+            "label": "Phrase finale",
+            "text": "Aujourd'hui, nous partageons cette expertise à travers des cours privés et des expériences personnalisées, partout dans les Alpes."
+          }
+        ]
+      },
+      {
+        "id": "b02",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "02 / NOTRE HÉRITAGE SPORTIF"
+          },
+          {
+            "label": "H2",
+            "text": "Le haut niveau laisse une empreinte."
+          },
+          {
+            "label": "Introduction",
+            "text": "Derrière chaque moniteur Ski Society, il y a des années d'entraînement, des départs de course, des réussites et des remises en question. La compétition internationale nous a appris à observer chaque détail, à comprendre le mouvement et à ne jamais cesser de progresser."
+          },
+          {
+            "label": "Titre 01",
+            "text": "La précision du geste."
+          },
+          {
+            "label": "",
+            "text": "Au plus haut niveau, chaque appui, chaque trajectoire et chaque mouvement compte. Cette connaissance du ski guide aujourd'hui notre façon d'observer et de comprendre votre technique."
+          },
+          {
+            "label": "Titre 02",
+            "text": "L'exigence de progresser."
+          },
+          {
+            "label": "",
+            "text": "La compétition nous a appris qu'on ne progresse pas tous de la même façon. Écouter, analyser, ajuster : nous mettons cette méthode au service de chaque skieur, quel que soit son niveau."
+          },
+          {
+            "label": "Titre 03",
+            "text": "Le plaisir de skier."
+          },
+          {
+            "label": "",
+            "text": "Le haut niveau nous a donné une connaissance profonde de notre sport. Mais ce qui nous réunit encore aujourd'hui, c'est avant tout le plaisir d'être sur les skis et l'envie de le partager."
+          }
+        ]
+      },
+      {
+        "id": "b03",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "03 / NOTRE PHILOSOPHIE"
+          },
+          {
+            "label": "H2",
+            "text": "Un bon cours commence par vous comprendre."
+          },
+          {
+            "label": "Introduction",
+            "text": "Nous ne croyons pas aux cours qui se ressemblent tous. Chaque skieur arrive avec son niveau, ses habitudes, ses envies et parfois ses appréhensions. Notre rôle est de comprendre ce dont vous avez besoin pour construire un enseignement qui vous correspond vraiment."
+          },
+          {
+            "label": "",
+            "text": "**01 / PRÉPARER**"
+          },
+          {
+            "label": "Titre",
+            "text": "Chaque expérience commence avant les pistes."
+          },
+          {
+            "label": "",
+            "text": "Avant votre cours, nous prenons le temps de mieux vous connaître grâce à un questionnaire : votre niveau, vos habitudes, vos objectifs et vos envies. Ces informations sont transmises à votre moniteur pour qu'il puisse préparer une séance adaptée à votre profil, dès les premiers instants sur les skis."
+          },
+          {
+            "label": "",
+            "text": "**02 / ACCOMPAGNER**"
+          },
+          {
+            "label": "Titre",
+            "text": "Avancer à votre rythme."
+          },
+          {
+            "label": "",
+            "text": "Certains veulent gagner en technique, d'autres retrouver confiance ou simplement profiter de leur journée. Nous adaptons les exercices, le terrain et le rythme à vos objectifs, sans jamais vous imposer ceux d'un autre."
+          },
+          {
+            "label": "",
+            "text": "**03 / PARTAGER**"
+          },
+          {
+            "label": "Titre",
+            "text": "Plus qu'un cours, un moment sur les skis."
+          },
+          {
+            "label": "",
+            "text": "Nous aimons transmettre, échanger et partager notre connaissance de la montagne. Parce qu'une belle journée de ski ne se résume pas à une succession d'exercices, mais aussi au plaisir de skier ensemble."
+          }
+        ]
+      },
+      {
+        "id": "b04",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "04 / SKI SOCIETY"
+          },
+          {
+            "label": "H2",
+            "text": "Des parcours différents. Une même vision du ski."
+          },
+          {
+            "label": "Introduction",
+            "text": "Nous avons chacun notre histoire avec la compétition, nos spécialités et notre façon d'aborder la montagne. Ce qui nous réunit, c'est cette expérience du haut niveau et l'envie de la partager avec tous les skieurs, quel que soit leur niveau."
+          },
+          {
+            "label": "Sous-titre",
+            "text": "Une expérience pensée pour vous."
+          },
+          {
+            "label": "",
+            "text": "Vous nous parlez de votre projet, de vos envies et de votre niveau. Nous nous chargeons de trouver au sein du collectif le moniteur qui pourra vous accompagner et préparer une expérience adaptée à vos attentes."
+          },
+          {
+            "label": "CTA",
+            "text": "Organiser mon expérience"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "offres/ski-prive.html",
+    "title": "Cours particuliers de ski | Ski Society",
+    "sections": [
+      {
+        "id": "c01",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "SKI SOCIETY / COURS PARTICULIERS"
+          },
+          {
+            "label": "H1",
+            "text": "Apprenez le ski avec ceux qui l'ont vécu au plus haut niveau."
+          },
+          {
+            "label": "Introduction",
+            "text": "Débuter, reprendre confiance ou simplement retrouver le plaisir de skier. Profitez d'un cours particulier avec un moniteur issu de la compétition internationale, entièrement adapté à votre niveau, à votre rythme et à vos envies."
+          },
+          {
+            "label": "CTA 1",
+            "text": "Réserver mon cours privé"
+          },
+          {
+            "label": "CTA 2",
+            "text": "Découvrir nos formats"
+          }
+        ]
+      },
+      {
+        "id": "c02",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "02 / POUR TOUS LES SKIEURS"
+          },
+          {
+            "label": "H2",
+            "text": "Il n'y a pas de niveau pour aimer skier."
+          },
+          {
+            "label": "Introduction",
+            "text": "Premières glisses, retour sur les skis ou envie de progresser : nos cours particuliers s'adressent à tous les skieurs. Nous adaptons notre enseignement à votre expérience, à vos attentes et à votre manière d'apprendre."
+          },
+          {
+            "label": "",
+            "text": "**01 / DÉBUTANTS**"
+          },
+          {
+            "label": "Titre",
+            "text": "Vos premiers virages, en confiance."
+          },
+          {
+            "label": "",
+            "text": "Découvrez les sensations du ski avec un moniteur qui prend le temps de vous accompagner. Des premières glissades aux premiers virages, vous apprenez à votre rythme, dans un cadre rassurant."
+          },
+          {
+            "label": "",
+            "text": "**02 / ENFANTS & FAMILLES**"
+          },
+          {
+            "label": "Titre",
+            "text": "Le plaisir de skier dès les premières années."
+          },
+          {
+            "label": "",
+            "text": "Pour découvrir le ski, prendre confiance ou progresser en famille, nous adaptons les séances à l'âge, au niveau et aux envies de chacun. L'objectif : apprendre dans de bonnes conditions et garder le plaisir de skier."
+          },
+          {
+            "label": "",
+            "text": "**03 / REPRISE & CONFIANCE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Retrouvez vos sensations."
+          },
+          {
+            "label": "",
+            "text": "Après une longue pause ou une expérience difficile, reprendre le ski peut demander du temps. Nous vous accompagnons progressivement pour retrouver vos repères, votre assurance et le plaisir de descendre les pistes."
+          },
+          {
+            "label": "",
+            "text": "**04 / SKIEURS CONFIRMÉS**"
+          },
+          {
+            "label": "Titre",
+            "text": "Toujours quelque chose à apprendre."
+          },
+          {
+            "label": "",
+            "text": "Vous êtes déjà à l'aise sur les pistes, mais souhaitez affiner certains aspects de votre ski ? Profitez d'un regard expérimenté pour identifier les points à travailler et continuer à progresser."
+          }
+        ]
+      },
+      {
+        "id": "c03",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "03 / VOTRE EXPÉRIENCE"
+          },
+          {
+            "label": "H2",
+            "text": "Tout commence avant les premières pistes."
+          },
+          {
+            "label": "Introduction",
+            "text": "Un cours particulier ne devrait jamais être improvisé. Chez Ski Society, nous prenons le temps de comprendre votre niveau, vos attentes et vos objectifs pour préparer un accompagnement qui vous correspond."
+          },
+          {
+            "label": "",
+            "text": "**01 / AVANT VOTRE COURS**"
+          },
+          {
+            "label": "Titre",
+            "text": "Nous préparons votre séance."
+          },
+          {
+            "label": "",
+            "text": "Avant votre arrivée, vous recevez un court questionnaire pour nous présenter votre niveau, vos habitudes et vos envies. Votre moniteur utilise ces informations pour préparer votre cours et choisir une approche adaptée."
+          },
+          {
+            "label": "",
+            "text": "**02 / SUR LES PISTES**"
+          },
+          {
+            "label": "Titre",
+            "text": "Un accompagnement qui évolue avec vous."
+          },
+          {
+            "label": "",
+            "text": "Dès les premières descentes, votre moniteur prend le temps de vous observer et d'échanger sur vos sensations. Le contenu du cours évolue selon votre progression, votre confiance et les conditions du jour."
+          },
+          {
+            "label": "",
+            "text": "**03 / APRÈS VOTRE COURS**"
+          },
+          {
+            "label": "Titre",
+            "text": "Des conseils pour continuer à progresser."
+          },
+          {
+            "label": "",
+            "text": "À la fin de votre séance, votre moniteur prend le temps de revenir sur les points travaillés, vos progrès et les conseils à retenir pour vos prochaines journées de ski."
+          }
+        ]
+      },
+      {
+        "id": "c04",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "04 / LES FORMATS"
+          },
+          {
+            "label": "H2",
+            "text": "Choisissez le temps qui vous ressemble."
+          },
+          {
+            "label": "Introduction",
+            "text": "Quelques heures pour découvrir ou progresser, une journée entière pour prendre le temps de skier. Nos cours particuliers s'organisent autour de votre emploi du temps et de vos objectifs."
+          },
+          {
+            "label": "",
+            "text": "**01 / DEMI-JOURNÉE**"
+          },
+          {
+            "label": "Titre",
+            "text": "2 h 30 de ski, rien que pour vous."
+          },
+          {
+            "label": "",
+            "text": "Un format idéal pour une première découverte, une reprise en douceur ou une séance consacrée à un objectif précis. Profitez d'un accompagnement privé pour progresser à votre rythme."
+          },
+          {
+            "label": "",
+            "text": "- Matin — 09h30 – 12h00\n- Midi — 12h00 – 14h30\n- Après-midi — 14h30 – 17h00"
+          },
+          {
+            "label": "",
+            "text": "**02 / JOURNÉE COMPLÈTE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Toute une journée pour profiter de la montagne."
+          },
+          {
+            "label": "",
+            "text": "De 09h30 à 17h00, votre moniteur vous accompagne pour découvrir le domaine skiable, améliorer votre technique ou simplement profiter pleinement de votre journée. Le programme évolue selon votre niveau, vos envies et les conditions."
+          },
+          {
+            "label": "",
+            "text": "**03 / SUR MESURE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Vous avez quelque chose de particulier en tête ?"
+          },
+          {
+            "label": "",
+            "text": "Un format différent, une sortie entre proches ou un projet qui ne rentre pas dans les horaires habituels ? Contactez-nous pour imaginer ensemble une prestation adaptée à votre demande."
+          },
+          {
+            "label": "Note",
+            "text": "Les horaires sont indicatifs et confirmés selon les disponibilités du moniteur."
+          },
+          {
+            "label": "CTA",
+            "text": "Réserver mon cours privé"
+          }
+        ]
+      },
+      {
+        "id": "c05",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "05 / RÉSERVER VOTRE COURS"
+          },
+          {
+            "label": "H2",
+            "text": "On se retrouve sur les pistes ?"
+          },
+          {
+            "label": "Introduction",
+            "text": "Dites-nous où et quand vous souhaitez skier, votre niveau et le nombre de participants. Nous recherchons au sein du collectif le moniteur disponible qui correspond le mieux à votre demande."
+          },
+          {
+            "label": "CTA",
+            "text": "Réserver mon cours sur WhatsApp"
+          },
+          {
+            "label": "01 — Titre",
+            "text": "Parlez-nous de votre projet."
+          },
+          {
+            "label": "",
+            "text": "Station, dates, format souhaité et nombre de skieurs : quelques informations suffisent pour commencer."
+          },
+          {
+            "label": "02 — Titre",
+            "text": "Nous vérifions les disponibilités."
+          },
+          {
+            "label": "",
+            "text": "Nous recherchons le moniteur du collectif le plus adapté à votre niveau, vos envies et votre destination."
+          },
+          {
+            "label": "03 — Titre",
+            "text": "Nous préparons votre expérience."
+          },
+          {
+            "label": "",
+            "text": "Une fois votre réservation confirmée, vous recevez un questionnaire pour permettre à votre moniteur de préparer votre séance."
+          },
+          {
+            "label": "Note",
+            "text": "Chaque demande est étudiée selon les disponibilités des moniteurs du collectif. La prise de contact ne constitue pas une réservation confirmée."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "offres/performance-technique.html",
+    "title": "Performance & technique | Ski Society",
+    "sections": [
+      {
+        "id": "d01",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "SKI SOCIETY / PERFORMANCE & TECHNIQUE"
+          },
+          {
+            "label": "H1",
+            "text": "La technique fait toute la différence."
+          },
+          {
+            "label": "Introduction",
+            "text": "Vous skiez déjà avec aisance, mais vous savez que vous pouvez aller plus loin. Travaillez vos appuis, affinez vos trajectoires et gagnez en précision aux côtés de moniteurs qui ont connu les exigences de la compétition internationale."
+          },
+          {
+            "label": "CTA 1",
+            "text": "Réserver mon coaching"
+          },
+          {
+            "label": "CTA 2",
+            "text": "Découvrir notre approche"
+          }
+        ]
+      },
+      {
+        "id": "d02",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "02 / LES AXES DE PROGRESSION"
+          },
+          {
+            "label": "H2",
+            "text": "Chaque détail compte."
+          },
+          {
+            "label": "Introduction",
+            "text": "À un certain niveau, progresser ne signifie plus simplement skier davantage. Il faut comprendre ce qui se passe sous les skis, affiner ses mouvements et travailler avec précision. Nos moniteurs vous accompagnent sur les aspects techniques qui feront évoluer votre ski."
+          },
+          {
+            "label": "",
+            "text": "**01 / APPUIS & ÉQUILIBRE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Des appuis plus justes, un ski plus efficace."
+          },
+          {
+            "label": "",
+            "text": "Travaillez votre position, vos transferts d'appuis et votre équilibre pour gagner en stabilité, en précision et en efficacité à chaque virage."
+          },
+          {
+            "label": "",
+            "text": "**02 / TRAJECTOIRES & CONDUITE DE COURBE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Maîtrisez vos trajectoires."
+          },
+          {
+            "label": "",
+            "text": "Apprenez à mieux construire vos virages, à maîtriser la conduite de vos skis et à adapter vos trajectoires au terrain, à la pente et à votre vitesse."
+          },
+          {
+            "label": "",
+            "text": "**03 / RYTHME & COORDINATION**"
+          },
+          {
+            "label": "Titre",
+            "text": "Trouvez le bon rythme."
+          },
+          {
+            "label": "",
+            "text": "Affinez l'enchaînement de vos mouvements, la coordination entre le haut et le bas du corps et votre capacité à maintenir un ski fluide et maîtrisé."
+          },
+          {
+            "label": "",
+            "text": "**04 / ADAPTATION AU TERRAIN**"
+          },
+          {
+            "label": "Titre",
+            "text": "Soyez à l'aise sur tous les terrains."
+          },
+          {
+            "label": "",
+            "text": "Pentes soutenues, neige changeante, pistes exigeantes : développez votre capacité à adapter votre technique aux différentes situations rencontrées en montagne."
+          }
+        ]
+      },
+      {
+        "id": "d03",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "03 / NOTRE MÉTHODE"
+          },
+          {
+            "label": "H2",
+            "text": "Observer. Comprendre. Progresser."
+          },
+          {
+            "label": "Introduction",
+            "text": "Notre expérience de la compétition nous a appris qu'une progression efficace repose sur une analyse précise et un travail adapté. Nous appliquons cette approche à votre ski, avec un coaching construit autour de vos besoins et de vos objectifs."
+          },
+          {
+            "label": "",
+            "text": "**01 / PRÉPARATION**"
+          },
+          {
+            "label": "Titre",
+            "text": "Un coaching préparé en amont."
+          },
+          {
+            "label": "",
+            "text": "Avant votre séance, un questionnaire nous permet de connaître votre expérience, vos sensations et les points que vous souhaitez améliorer. Votre moniteur s'appuie sur ces informations pour préparer un programme de travail adapté."
+          },
+          {
+            "label": "",
+            "text": "**02 / ANALYSE TECHNIQUE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Identifier ce qui fera la différence."
+          },
+          {
+            "label": "",
+            "text": "Sur les premières descentes, votre moniteur observe votre gestuelle, vos appuis et vos trajectoires. Il identifie les points prioritaires à travailler et vous explique concrètement comment faire évoluer votre technique."
+          },
+          {
+            "label": "",
+            "text": "**03 / TRAVAIL CIBLÉ**"
+          },
+          {
+            "label": "Titre",
+            "text": "Des exercices qui ont du sens."
+          },
+          {
+            "label": "",
+            "text": "À travers des situations et des exercices choisis pour vous, nous travaillons les ajustements techniques qui comptent réellement. Chaque exercice répond à un objectif précis, avec des conseils directement applicables sur les pistes."
+          },
+          {
+            "label": "",
+            "text": "**04 / BILAN**"
+          },
+          {
+            "label": "Titre",
+            "text": "Comprendre ses progrès pour aller plus loin."
+          },
+          {
+            "label": "",
+            "text": "En fin de séance, votre moniteur revient avec vous sur les points travaillés, les sensations développées et les éléments à retenir pour continuer à progresser lors de vos prochaines sorties."
+          }
+        ]
+      },
+      {
+        "id": "d04",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "04 / LES FORMATS DE COACHING"
+          },
+          {
+            "label": "H2",
+            "text": "Le temps de travailler ce qui compte."
+          },
+          {
+            "label": "Introduction",
+            "text": "Une séance ciblée pour améliorer un point technique, une journée pour approfondir votre travail ou un accompagnement sur mesure. Choisissez le format qui correspond à vos objectifs."
+          },
+          {
+            "label": "",
+            "text": "**01 / DEMI-JOURNÉE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Une séance, un objectif précis."
+          },
+          {
+            "label": "",
+            "text": "En 2 h 30, concentrez-vous sur les aspects de votre technique que vous souhaitez améliorer. Un format idéal pour analyser votre ski, travailler des ajustements ciblés et repartir avec des conseils concrets."
+          },
+          {
+            "label": "",
+            "text": "- Matin — 09h30 – 12h00\n- Midi — 12h00 – 14h30\n- Après-midi — 14h30 – 17h00"
+          },
+          {
+            "label": "",
+            "text": "**02 / JOURNÉE COMPLÈTE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Prenez le temps d'aller plus loin."
+          },
+          {
+            "label": "",
+            "text": "De 09h30 à 17h00, approfondissez votre travail technique avec votre moniteur. Une journée pour analyser, expérimenter et consolider de nouvelles sensations sur différents terrains, à votre rythme."
+          },
+          {
+            "label": "",
+            "text": "**03 / SUR MESURE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Un coaching construit autour de vos ambitions."
+          },
+          {
+            "label": "",
+            "text": "Plusieurs séances, un programme de progression ou un objectif sportif particulier ? Nous étudions votre projet pour construire un accompagnement adapté avec les moniteurs du collectif."
+          },
+          {
+            "label": "Note",
+            "text": "Les horaires sont indicatifs et confirmés selon les disponibilités du moniteur."
+          },
+          {
+            "label": "CTA",
+            "text": "Réserver mon coaching"
+          }
+        ]
+      },
+      {
+        "id": "d05",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "05 / RÉSERVER VOTRE COACHING"
+          },
+          {
+            "label": "H2",
+            "text": "Prêt à passer un nouveau cap ?"
+          },
+          {
+            "label": "Introduction",
+            "text": "Vous avez un objectif technique précis ou simplement l'envie de faire évoluer votre ski ? Parlez-nous de votre niveau, de vos attentes et de vos disponibilités. Nous recherchons au sein du collectif le moniteur qui pourra vous accompagner."
+          },
+          {
+            "label": "CTA",
+            "text": "Réserver mon coaching sur WhatsApp"
+          },
+          {
+            "label": "01 — Titre",
+            "text": "Parlez-nous de vos objectifs."
+          },
+          {
+            "label": "",
+            "text": "Indiquez votre station, vos dates, votre niveau et les aspects techniques que vous souhaitez travailler."
+          },
+          {
+            "label": "02 — Titre",
+            "text": "Nous trouvons le bon accompagnement."
+          },
+          {
+            "label": "",
+            "text": "Nous vérifions les disponibilités des moniteurs du collectif et recherchons celui dont l'expérience correspond à votre projet."
+          },
+          {
+            "label": "03 — Titre",
+            "text": "Votre coaching se prépare."
+          },
+          {
+            "label": "",
+            "text": "Après confirmation de votre réservation, vous recevez un questionnaire pour permettre à votre moniteur de préparer votre séance et vos premiers axes de travail."
+          },
+          {
+            "label": "Note",
+            "text": "Chaque demande est étudiée selon les disponibilités des moniteurs du collectif. Les tarifs et les conditions sont communiqués avant toute confirmation de réservation."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "offres/freeride-decouverte.html",
+    "title": "Freeride & milieu alpin | Ski Society",
+    "sections": [
+      {
+        "id": "e01",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "SKI SOCIETY / FREERIDE & MILIEU ALPIN"
+          },
+          {
+            "label": "H1",
+            "text": "La montagne ne s'arrête pas aux pistes."
+          },
+          {
+            "label": "Introduction",
+            "text": "Découvrez une autre façon de skier, loin des itinéraires balisés. Des premières expériences hors-piste aux sorties plus engagées, nos moniteurs vous accompagnent sur des itinéraires adaptés à votre niveau, aux conditions du jour et à leurs qualifications professionnelles."
+          },
+          {
+            "label": "CTA 1",
+            "text": "Organiser ma sortie"
+          },
+          {
+            "label": "CTA 2",
+            "text": "Découvrir nos expériences"
+          }
+        ]
+      },
+      {
+        "id": "e02",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "02 / NOS EXPÉRIENCES FREERIDE"
+          },
+          {
+            "label": "H2",
+            "text": "À chacun sa façon de découvrir la montagne."
+          },
+          {
+            "label": "Introduction",
+            "text": "Une première sortie loin des pistes, l'envie de découvrir de nouveaux terrains ou de perfectionner votre ski en neige naturelle. Nous adaptons chaque expérience à votre niveau, aux conditions et à ce que vous recherchez en montagne."
+          },
+          {
+            "label": "",
+            "text": "**01 / DÉCOUVERTE HORS-PISTE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Vos premières traces hors des pistes."
+          },
+          {
+            "label": "",
+            "text": "Vous êtes à l'aise sur les pistes et souhaitez découvrir le ski hors-piste ? Apprenez à évoluer sur une neige différente, à adapter votre technique et à découvrir de nouvelles sensations, sur un terrain choisi pour votre niveau et les conditions du jour."
+          },
+          {
+            "label": "",
+            "text": "**02 / PROGRESSION FREERIDE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Prenez confiance sur tous les types de neige."
+          },
+          {
+            "label": "",
+            "text": "Poudreuse, neige transformée ou terrain irrégulier : travaillez votre équilibre, vos appuis et votre lecture du terrain pour gagner en aisance et en maîtrise hors des pistes balisées."
+          },
+          {
+            "label": "",
+            "text": "**03 / ITINÉRAIRES & EXPLORATION** — version V2 approuvée"
+          },
+          {
+            "label": "Titre",
+            "text": "Des lignes plus engagées. De nouvelles sensations."
+          },
+          {
+            "label": "",
+            "text": "Pour les skieurs expérimentés qui veulent aller plus loin : explorer des pentes plus soutenues, tracer des lignes plus audacieuses et découvrir les sensations d'un ski plus rapide et engagé. Nous recherchons les itinéraires adaptés à votre expérience, aux conditions de montagne et aux qualifications de votre encadrant."
+          },
+          {
+            "label": "Note",
+            "text": "Toute sortie hors-piste est soumise à une évaluation des conditions, du niveau des participants et des possibilités d'encadrement. Un itinéraire peut être adapté, reporté ou annulé pour des raisons de sécurité."
+          }
+        ]
+      },
+      {
+        "id": "e03",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "03 / PRÉPARATION & SÉCURITÉ"
+          },
+          {
+            "label": "H2",
+            "text": "L'engagement commence par la préparation."
+          },
+          {
+            "label": "Introduction",
+            "text": "En dehors des pistes balisées, chaque décision compte. Conditions de neige, météo, terrain et niveau des participants : nous préparons nos sorties en tenant compte de l'ensemble de ces paramètres, pour choisir des itinéraires adaptés et maîtriser au mieux les risques."
+          },
+          {
+            "label": "",
+            "text": "**01 / AVANT LA SORTIE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Anticiper pour mieux profiter."
+          },
+          {
+            "label": "",
+            "text": "Avant votre sortie, nous recueillons les informations nécessaires sur votre expérience hors-piste, votre niveau et vos attentes. Votre encadrant étudie les conditions météorologiques, le manteau neigeux et les possibilités d'itinéraires pour préparer une sortie adaptée."
+          },
+          {
+            "label": "",
+            "text": "**02 / ÉQUIPEMENT & SÉCURITÉ**"
+          },
+          {
+            "label": "Titre",
+            "text": "Le bon équipement, les bons réflexes."
+          },
+          {
+            "label": "",
+            "text": "Selon l'itinéraire et les conditions, un équipement de sécurité adapté est nécessaire, notamment DVA, pelle et sonde en terrain avalancheux. Votre encadrant précise le matériel requis et les consignes à respecter avant le départ."
+          },
+          {
+            "label": "",
+            "text": "**03 / SUR LE TERRAIN**"
+          },
+          {
+            "label": "Titre",
+            "text": "Savoir adapter ses choix."
+          },
+          {
+            "label": "",
+            "text": "En montagne, les conditions évoluent. Votre encadrant adapte l'itinéraire, le rythme et les décisions de progression à la réalité du terrain. Une sortie peut être modifiée, interrompue ou annulée lorsque les conditions ne permettent pas de poursuivre dans un cadre acceptable."
+          },
+          {
+            "label": "",
+            "text": "**04 / ENCADREMENT PROFESSIONNEL**"
+          },
+          {
+            "label": "Titre",
+            "text": "Chaque itinéraire, le professionnel adapté."
+          },
+          {
+            "label": "",
+            "text": "Les sorties sont organisées dans les limites des qualifications professionnelles de l'encadrant et de la réglementation applicable. Les itinéraires nécessitant des compétences ou des qualifications spécifiques ne sont proposés qu'avec un professionnel habilité à les encadrer."
+          }
+        ]
+      },
+      {
+        "id": "e04",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "04 / LES FORMATS FREERIDE"
+          },
+          {
+            "label": "H2",
+            "text": "Choisissez votre terrain d'exploration."
+          },
+          {
+            "label": "Introduction",
+            "text": "Une journée pour découvrir le hors-piste, explorer de nouveaux terrains ou travailler votre technique en neige naturelle. Pour les projets plus particuliers, nous imaginons également des sorties sur mesure, adaptées à votre niveau et aux conditions de montagne."
+          },
+          {
+            "label": "",
+            "text": "**01 / JOURNÉE COMPLÈTE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Une journée pour explorer plus loin."
+          },
+          {
+            "label": "",
+            "text": "De 09h30 à 17h00, prenez le temps de découvrir différents terrains, d'affiner votre technique et de profiter pleinement de la montagne. Votre encadrant construit le programme selon votre niveau, les conditions et les itinéraires accessibles."
+          },
+          {
+            "label": "",
+            "text": "**02 / SUR MESURE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Votre projet, notre connaissance de la montagne."
+          },
+          {
+            "label": "",
+            "text": "Une sortie plus technique, un itinéraire particulier ou plusieurs journées pour découvrir de nouveaux secteurs ? Parlez-nous de votre projet. Nous étudions les possibilités avec un professionnel disposant des qualifications adaptées."
+          },
+          {
+            "label": "Note",
+            "text": "Les horaires sont indicatifs. Les itinéraires, la durée effective sur le terrain et la réalisation de chaque sortie dépendent des conditions, des possibilités d'encadrement et des décisions du professionnel responsable."
+          },
+          {
+            "label": "CTA",
+            "text": "Organiser ma sortie"
+          }
+        ]
+      },
+      {
+        "id": "e05",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "05 / ORGANISER VOTRE SORTIE"
+          },
+          {
+            "label": "H2",
+            "text": "Vos prochaines traces commencent ici."
+          },
+          {
+            "label": "Introduction",
+            "text": "Une première expérience hors-piste, une journée de freeride ou l'envie de découvrir des lignes plus engagées ? Parlez-nous de votre niveau, de votre destination et de vos envies. Nous étudions votre projet pour vous proposer un accompagnement adapté."
+          },
+          {
+            "label": "CTA",
+            "text": "Organiser ma sortie sur WhatsApp"
+          },
+          {
+            "label": "01 — Titre",
+            "text": "Parlez-nous de votre projet."
+          },
+          {
+            "label": "",
+            "text": "Indiquez votre station, vos dates, votre expérience du hors-piste et le type de sortie que vous recherchez."
+          },
+          {
+            "label": "02 — Titre",
+            "text": "Nous étudions les possibilités."
+          },
+          {
+            "label": "",
+            "text": "Nous vérifions les disponibilités, les qualifications nécessaires et les possibilités d'encadrement selon votre destination et votre projet."
+          },
+          {
+            "label": "03 — Titre",
+            "text": "Nous préparons votre sortie."
+          },
+          {
+            "label": "",
+            "text": "Après confirmation, un questionnaire permet à votre encadrant de mieux connaître votre niveau et votre expérience. L'itinéraire et le matériel nécessaire sont définis selon les conditions de montagne."
+          },
+          {
+            "label": "Note",
+            "text": "Sorties proposées uniquement à la journée ou sur mesure. La réalisation et le choix de l'itinéraire restent soumis aux conditions de montagne et à l'appréciation du professionnel responsable. Les tarifs et conditions sont communiqués avant confirmation."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "offres/snowboard.html",
+    "title": "Cours privés de snowboard | Ski Society",
+    "sections": [
+      {
+        "id": "f01",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "SKI SOCIETY / SNOWBOARD"
+          },
+          {
+            "label": "H1",
+            "text": "Le snowboard, du premier virage à la maîtrise."
+          },
+          {
+            "label": "Introduction",
+            "text": "Vos premières descentes, des virages à maîtriser ou l'envie de gagner en aisance sur de nouveaux terrains. Profitez d'un cours particulier de snowboard adapté à votre niveau, à votre rythme et à vos objectifs, avec un moniteur du collectif Ski Society."
+          },
+          {
+            "label": "CTA 1",
+            "text": "Réserver mon cours de snowboard"
+          },
+          {
+            "label": "CTA 2",
+            "text": "Découvrir nos cours"
+          }
+        ]
+      },
+      {
+        "id": "f02",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "02 / POUR TOUS LES NIVEAUX"
+          },
+          {
+            "label": "H2",
+            "text": "À chaque rider sa progression."
+          },
+          {
+            "label": "Introduction",
+            "text": "Premiers virages, reprise après une pause ou envie de découvrir de nouvelles sensations : nos cours particuliers de snowboard s'adaptent à votre niveau et à vos objectifs. L'essentiel est de progresser à votre rythme, avec le plaisir de rider."
+          },
+          {
+            "label": "",
+            "text": "**01 / DÉBUTANTS**"
+          },
+          {
+            "label": "Titre",
+            "text": "Les bonnes bases dès le départ."
+          },
+          {
+            "label": "",
+            "text": "Découvrez le snowboard avec un enseignement progressif. Position sur la planche, équilibre, premières glisses et premiers virages : votre moniteur vous accompagne étape par étape pour acquérir de bonnes bases et prendre confiance."
+          },
+          {
+            "label": "",
+            "text": "**02 / ENFANTS & ADOLESCENTS**"
+          },
+          {
+            "label": "Titre",
+            "text": "Découvrir le snowboard en prenant du plaisir."
+          },
+          {
+            "label": "",
+            "text": "Une première expérience ou l'envie de progresser davantage ? Nous adaptons les exercices, le terrain et le rythme à l'âge et à l'expérience de chaque jeune snowboardeur, pour apprendre dans de bonnes conditions."
+          },
+          {
+            "label": "",
+            "text": "**03 / INTERMÉDIAIRES**"
+          },
+          {
+            "label": "Titre",
+            "text": "Gagnez en fluidité et en assurance."
+          },
+          {
+            "label": "",
+            "text": "Vous savez déjà enchaîner les virages et souhaitez améliorer votre technique ? Travaillez votre conduite de courbe, vos changements de carre et votre équilibre pour devenir plus à l'aise sur différents types de pistes."
+          },
+          {
+            "label": "",
+            "text": "**04 / CONFIRMÉS**"
+          },
+          {
+            "label": "Titre",
+            "text": "Affinez votre technique. Explorez de nouvelles possibilités."
+          },
+          {
+            "label": "",
+            "text": "Carving, maîtrise de la vitesse, précision des trajectoires ou adaptation à des terrains plus exigeants : bénéficiez d'un accompagnement ciblé pour faire évoluer votre snowboard et travailler les aspects qui vous intéressent."
+          }
+        ]
+      },
+      {
+        "id": "f03",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "03 / VOTRE EXPÉRIENCE SNOWBOARD"
+          },
+          {
+            "label": "H2",
+            "text": "Un cours pensé pour votre progression."
+          },
+          {
+            "label": "Introduction",
+            "text": "Chaque snowboardeur a ses habitudes, ses sensations et ses objectifs. Nous prenons le temps de comprendre votre pratique pour construire une séance adaptée, que vous découvriez la discipline ou cherchiez à perfectionner votre technique."
+          },
+          {
+            "label": "",
+            "text": "**01 / AVANT VOTRE COURS**"
+          },
+          {
+            "label": "Titre",
+            "text": "Nous préparons votre séance."
+          },
+          {
+            "label": "",
+            "text": "Avant votre cours, vous recevez un questionnaire pour nous présenter votre niveau, votre expérience et vos attentes. Votre moniteur utilise ces informations pour préparer une séance adaptée à vos objectifs."
+          },
+          {
+            "label": "",
+            "text": "**02 / SUR LES PISTES**"
+          },
+          {
+            "label": "Titre",
+            "text": "Une progression adaptée à vos sensations."
+          },
+          {
+            "label": "",
+            "text": "Votre moniteur observe votre position, votre équilibre et votre manière de conduire la planche. Il adapte les exercices et le terrain à votre niveau, tout en tenant compte de votre confiance et de votre progression au fil du cours."
+          },
+          {
+            "label": "",
+            "text": "**03 / APRÈS VOTRE COURS**"
+          },
+          {
+            "label": "Titre",
+            "text": "Repartez avec les bons repères."
+          },
+          {
+            "label": "",
+            "text": "À la fin de la séance, votre moniteur revient avec vous sur les points travaillés, les sensations à retenir et les conseils qui vous aideront à continuer à progresser lors de vos prochaines sorties."
+          }
+        ]
+      },
+      {
+        "id": "f04",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "04 / LES FORMATS SNOWBOARD"
+          },
+          {
+            "label": "H2",
+            "text": "Le bon format pour progresser à votre rythme."
+          },
+          {
+            "label": "Introduction",
+            "text": "Quelques heures pour découvrir le snowboard, une journée pour prendre confiance et progresser, ou un accompagnement imaginé autour de vos envies. Choisissez le format qui vous correspond."
+          },
+          {
+            "label": "",
+            "text": "**01 / DEMI-JOURNÉE**"
+          },
+          {
+            "label": "Titre",
+            "text": "2 h 30 pour trouver vos sensations."
+          },
+          {
+            "label": "",
+            "text": "Un format idéal pour découvrir le snowboard, reprendre après une pause ou travailler un point technique particulier. Votre moniteur adapte la séance à votre niveau et à ce que vous souhaitez améliorer."
+          },
+          {
+            "label": "",
+            "text": "- Matin — 09h30 – 12h00\n- Midi — 12h00 – 14h30\n- Après-midi — 14h30 – 17h00"
+          },
+          {
+            "label": "",
+            "text": "**02 / JOURNÉE COMPLÈTE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Une journée pour aller plus loin."
+          },
+          {
+            "label": "",
+            "text": "De 09h30 à 17h00, prenez le temps de travailler votre technique, d'enchaîner les descentes et de découvrir différents terrains. Votre moniteur construit la journée autour de votre niveau, de vos objectifs et des conditions."
+          },
+          {
+            "label": "",
+            "text": "**03 / SUR MESURE**"
+          },
+          {
+            "label": "Titre",
+            "text": "Une expérience qui vous ressemble."
+          },
+          {
+            "label": "",
+            "text": "Plusieurs séances pour progresser, un accompagnement en petit groupe ou un projet particulier ? Parlez-nous de vos envies. Nous étudions les possibilités pour organiser des cours de snowboard adaptés à votre demande."
+          },
+          {
+            "label": "Note",
+            "text": "Les horaires sont indicatifs et confirmés selon la station, le moniteur et les disponibilités."
+          },
+          {
+            "label": "CTA",
+            "text": "Réserver mon cours de snowboard"
+          }
+        ]
+      },
+      {
+        "id": "f05",
+        "blocks": [
+          {
+            "label": "Surtitre",
+            "text": "05 / RÉSERVER VOTRE COURS"
+          },
+          {
+            "label": "H2",
+            "text": "Votre prochaine session commence ici."
+          },
+          {
+            "label": "Introduction",
+            "text": "Envie de découvrir le snowboard, de reprendre confiance ou de perfectionner votre technique ? Dites-nous où et quand vous souhaitez rider, votre niveau et le nombre de participants. Nous recherchons au sein du collectif le moniteur disponible qui correspond à votre demande."
+          },
+          {
+            "label": "CTA",
+            "text": "Réserver mon cours de snowboard sur WhatsApp"
+          },
+          {
+            "label": "01 — Titre",
+            "text": "Parlez-nous de votre projet."
+          },
+          {
+            "label": "",
+            "text": "Indiquez votre station, vos dates, votre niveau, le nombre de participants et le format souhaité."
+          },
+          {
+            "label": "02 — Titre",
+            "text": "Nous vérifions les disponibilités."
+          },
+          {
+            "label": "",
+            "text": "Nous recherchons un moniteur du collectif qualifié pour enseigner le snowboard et disponible pour votre demande."
+          },
+          {
+            "label": "03 — Titre",
+            "text": "Nous préparons votre séance."
+          },
+          {
+            "label": "",
+            "text": "Après confirmation de votre réservation, vous recevez un questionnaire pour permettre à votre moniteur de préparer un cours adapté à votre niveau et à vos objectifs."
+          },
+          {
+            "label": "Note",
+            "text": "Chaque demande est étudiée selon les disponibilités des moniteurs du collectif. Les tarifs et les conditions sont communiqués avant toute confirmation de réservation."
+          }
+        ]
+      }
+    ]
+  }
+]

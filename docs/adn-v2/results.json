@@ -1,0 +1,315 @@
+{
+  "reference": "0c1bfaf",
+  "scope": "PASS: only ADN HTML/CSS changed; other public HTML byte-identical",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900,
+      "copy": "PASS: nine exact labels/titles/paragraphs",
+      "layout": "PASS",
+      "overflow": false,
+      "photo_loaded": false,
+      "geometry": {
+        "image": {
+          "x": 0,
+          "y": 900,
+          "w": 1080,
+          "h": 620,
+          "b": 1520,
+          "r": 1080
+        },
+        "main": {
+          "x": 907.1875,
+          "y": 1000.203125,
+          "w": 468.796875,
+          "h": 399.59375,
+          "b": 1399.796875,
+          "r": 1375.984375
+        },
+        "composition": {
+          "x": 0,
+          "y": 900,
+          "w": 1440,
+          "h": 620,
+          "b": 1520,
+          "r": 1440
+        },
+        "secondary": [
+          {
+            "x": 64,
+            "y": 1576,
+            "b": 1770.21875,
+            "w": 608
+          },
+          {
+            "x": 768,
+            "y": 1576,
+            "b": 1770.21875,
+            "w": 608
+          }
+        ],
+        "mask": "linear-gradient(to right, rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0) 84%)",
+        "background": "rgb(248, 247, 244)",
+        "clipping": false
+      }
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "copy": "PASS: nine exact labels/titles/paragraphs",
+      "layout": "PASS",
+      "overflow": false,
+      "photo_loaded": false,
+      "geometry": {
+        "image": {
+          "x": 0,
+          "y": 800,
+          "w": 960,
+          "h": 551.109375,
+          "b": 1351.109375,
+          "r": 960
+        },
+        "main": {
+          "x": 806.390625,
+          "y": 861.546875,
+          "w": 409.609375,
+          "h": 408,
+          "b": 1269.546875,
+          "r": 1216
+        },
+        "composition": {
+          "x": 0,
+          "y": 800,
+          "w": 1280,
+          "h": 551.109375,
+          "b": 1351.109375,
+          "r": 1280
+        },
+        "secondary": [
+          {
+            "x": 64,
+            "y": 1407.109375,
+            "b": 1610.515625,
+            "w": 528
+          },
+          {
+            "x": 688,
+            "y": 1407.109375,
+            "b": 1610.515625,
+            "w": 528
+          }
+        ],
+        "mask": "linear-gradient(to right, rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0) 84%)",
+        "background": "rgb(248, 247, 244)",
+        "clipping": false
+      }
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "copy": "PASS: nine exact labels/titles/paragraphs",
+      "layout": "PASS",
+      "overflow": false,
+      "photo_loaded": false,
+      "geometry": {
+        "image": {
+          "x": 0,
+          "y": 768,
+          "w": 1024,
+          "h": 520,
+          "b": 1288,
+          "r": 1024
+        },
+        "main": {
+          "x": 40,
+          "y": 1328,
+          "w": 944,
+          "h": 261.265625,
+          "b": 1589.265625,
+          "r": 984
+        },
+        "composition": {
+          "x": 0,
+          "y": 768,
+          "w": 1024,
+          "h": 861.265625,
+          "b": 1629.265625,
+          "r": 1024
+        },
+        "secondary": [
+          {
+            "x": 40,
+            "y": 1645.265625,
+            "b": 1871.328125,
+            "w": 424
+          },
+          {
+            "x": 560,
+            "y": 1645.265625,
+            "b": 1871.328125,
+            "w": 424
+          }
+        ],
+        "mask": "none",
+        "background": "rgb(248, 247, 244)",
+        "clipping": false
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "copy": "PASS: nine exact labels/titles/paragraphs",
+      "layout": "PASS",
+      "overflow": false,
+      "photo_loaded": false,
+      "geometry": {
+        "image": {
+          "x": 0,
+          "y": 1024,
+          "w": 768,
+          "h": 432,
+          "b": 1456,
+          "r": 768
+        },
+        "main": {
+          "x": 40,
+          "y": 1496,
+          "w": 688,
+          "h": 259.015625,
+          "b": 1755.015625,
+          "r": 728
+        },
+        "composition": {
+          "x": 0,
+          "y": 1024,
+          "w": 768,
+          "h": 771.015625,
+          "b": 1795.015625,
+          "r": 768
+        },
+        "secondary": [
+          {
+            "x": 40,
+            "y": 1811.015625,
+            "b": 1982.703125,
+            "w": 688
+          },
+          {
+            "x": 40,
+            "y": 2030.703125,
+            "b": 2208.203125,
+            "w": 688
+          }
+        ],
+        "mask": "none",
+        "background": "rgb(248, 247, 244)",
+        "clipping": false
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "copy": "PASS: nine exact labels/titles/paragraphs",
+      "layout": "PASS",
+      "overflow": false,
+      "photo_loaded": false,
+      "geometry": {
+        "image": {
+          "x": 0,
+          "y": 844,
+          "w": 390,
+          "h": 390,
+          "b": 1234,
+          "r": 390
+        },
+        "main": {
+          "x": 24,
+          "y": 1266,
+          "w": 342,
+          "h": 351.375,
+          "b": 1617.375,
+          "r": 366
+        },
+        "composition": {
+          "x": 0,
+          "y": 844,
+          "w": 390,
+          "h": 773.375,
+          "b": 1617.375,
+          "r": 390
+        },
+        "secondary": [
+          {
+            "x": 24,
+            "y": 1665.375,
+            "b": 1945.46875,
+            "w": 342
+          },
+          {
+            "x": 24,
+            "y": 1993.46875,
+            "b": 2253.78125,
+            "w": 342
+          }
+        ],
+        "mask": "none",
+        "background": "rgb(248, 247, 244)",
+        "clipping": false
+      }
+    }
+  ],
+  "page_errors": [],
+  "failed_hosts": [
+    {
+      "url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/31112554/pexels-photo-31112554.jpeg?auto=compress&cs=tinysrgb&w=1900",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/416805/pexels-photo-416805.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/20159351/pexels-photo-20159351.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/31112554/pexels-photo-31112554.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/12100585/pexels-photo-12100585.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/6721020/pexels-photo-6721020.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1100",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/31112551/pexels-photo-31112551.jpeg?auto=compress&cs=tinysrgb&w=950",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    },
+    {
+      "url": "https://images.pexels.com/photos/416805/pexels-photo-416805.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    }
+  ],
+  "accessibility": [],
+  "functional_and_layout": "PASS",
+  "photographic_validation": "BLOCKED"
+}
