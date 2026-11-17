@@ -867,7 +867,11 @@
     "compat-864": "#e6e6e4",
     "compat-865": "#faf9f7",
     "compat-866": "#ffffffad",
-    "compat-867": "#ffffffdc"
+    "compat-867": "#ffffffdc",
+    "compat-fff5f2": "#fff5f2",
+    "compat-74433b": "#74433b",
+    "compat-d8e5da": "#d8e5da",
+    "compat-56655b": "#56655b"
   },
   "space": {
     "space-40": "40px",
@@ -2060,7 +2064,11 @@
     "#e6e6e4": "compat-864",
     "#faf9f7": "compat-865",
     "#ffffffad": "compat-866",
-    "#ffffffdc": "compat-867"
+    "#ffffffdc": "compat-867",
+    "#fff5f2": "compat-fff5f2",
+    "#74433b": "compat-74433b",
+    "#d8e5da": "compat-d8e5da",
+    "#56655b": "compat-56655b"
   },
   "space_aliases": {
     "40px": "space-40",

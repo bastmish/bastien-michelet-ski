@@ -8,6 +8,8 @@ class Doc(HTMLParser):
  def __init__(self,text):super().__init__();self.tags=[];self.feed(text)
  def handle_starttag(self,t,a):self.tags.append((t,dict(a)))
 def without_footer(text):
+ # The identical legal-page style block is extracted into styles/pages/legal.css.
+ text=re.sub(r'<style\b[^>]*>.*?</style>','',text,flags=re.S)
  # Lot 1 changes stylesheet packaging, never the content of protected pages.
  text=re.sub(r'<link\b(?=[^>]*\brel=[\"\']stylesheet[\"\'])[^>]*>','',text)
  text=re.sub(r'<section\b[^>]*class="art-prefooter"[^>]*>.*?</section>','',text,flags=re.S)

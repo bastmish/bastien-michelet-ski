@@ -1,4 +1,4 @@
-"""Deterministic route CSS compilation, with a bounded legacy compatibility bridge.
+"""Deterministic route CSS compilation, with frozen legacy compatibility inputs.
 No browser is required for the build. Legacy source assets are never edited/deleted.
 """
 from __future__ import annotations
@@ -110,36 +110,23 @@ def impossible(selector,classes):
         return bool(parsed) and all(required_classes(p.parsed_tree)-classes for p in parsed)
     except Exception:return False  # Unknown/vendor selectors are retained, never guessed away.
 
-def property_group(name):
-    if name.startswith('--'):return name
-    for prefix in ['background','margin','padding','border','font','animation','transition','grid','flex','outline','text-decoration','list-style','columns','column-rule','inset']:
-        if name==prefix or name.startswith(prefix+'-'):return prefix
-    return name
-
 def wrap(text,context):
     for name,query in reversed(context):text='@'+name+' '+query+'{'+text+'}'
     return text
 
-def render(rules,registry,optimize,inline_groups):
-    base=[];priority=[];retained=0;converted=0
+def render(rules,registry):
+    # Preserve the original cascade and priority in one ordered stream. Moving
+    # priorities into separate cascade layers caused 1px border paint changes in
+    # Chromium, even where computed values matched. No priority is invented.
+    output=[];important=0
     for r in rules:
-        if r.raw:base.append(wrap(r.raw,r.context));continue
-        normal=[];compat=[]
+        if r.raw:output.append(wrap(r.raw,r.context));continue
+        ds=[]
         for d in r.declarations:
-            text=d['name']+':'+token_value(d['value'],d['name'],registry)
-            if d['important']:
-                if not optimize:normal.append(text+'!important');retained+=1
-                elif property_group(d['name']) in inline_groups:compat.append(text+'!important');retained+=1
-                else:compat.append(text);converted+=1
-            else:normal.append(text)
-        if normal:base.append(wrap(r.selector+'{'+ ';'.join(normal)+'}',r.context))
-        if compat:priority.append(wrap(r.selector+'{'+ ';'.join(compat)+'}',r.context))
-    if optimize:
-        # This reproduces author importance without new !important. Inline-sensitive
-        # property groups retain their original importance; no new priorities are added.
-        text='@layer ss-legacy-base,ss-legacy-priority;\n@layer ss-legacy-base{\n'+'\n'.join(base)+'\n}\n@layer ss-legacy-priority{\n'+'\n'.join(priority)+'\n}\n'
-    else:text='\n'.join(base)+'\n'
-    return text,retained,converted
+            ds.append(d['name']+':'+token_value(d['value'],d['name'],registry)+('!important' if d['important'] else ''))
+            important+=d['important']
+        if ds:output.append(wrap(r.selector+'{'+ ';'.join(ds)+'}',r.context))
+    return '\n'.join(output)+'\n',important
 
 def tokens_css(registry):
     out=[]
@@ -164,13 +151,10 @@ def compile_css(public=ROOT/'public'):
     common=tokens_css(registry);common_name='tokens.'+hashlib.sha256(common.encode()).hexdigest()[:12]+'.css';(output/common_name).write_text(common)
     result={'schema':1,'optimized':optimize,'generated':[common_name],'routes':{},'entries':{}}
     for group,files in sorted(routes.items()):
-        classes=set(config['runtime_classes']);inline_groups=set()
+        classes=set(config['runtime_classes'])
         for file in files:
             soup=BeautifulSoup(file.read_text(),'html.parser')
             for n in soup.select('[class]'):classes.update(n.get('class',[]))
-            for n in soup.select('[style]'):
-                for d in tinycss2.parse_declaration_list(n['style'],skip_comments=True,skip_whitespace=True):
-                    if d.type=='declaration':inline_groups.add(property_group(d.lower_name))
         rules=[];imports=[]
         for source in config['entries'][group]:
             rr,ii=parse_rules((ROOT/source).read_text(),source,registry);rules+=rr;imports+=ii
@@ -192,12 +176,14 @@ def compile_css(public=ROOT/'public'):
                     if later is not None and (later or not d['important']):duplicates.append({'source':r.source,'line':r.line,'selector':r.selector,'property':d['name']})
                     else:ds.append(d);seen[key]=d['important']
                 r.declarations=list(reversed(ds))
-        text,important,converted=render(rules,registry,optimize,inline_groups)
+        text,important=render(rules,registry)
         text='/* Generated: '+group+'; sources: styles/entries.json. */\n'+'\n'.join(dict.fromkeys(imports))+'\n'+text
         name=group+'.'+hashlib.sha256(text.encode()).hexdigest()[:12]+'.css';(output/name).write_text(text);result['generated'].append(name)
-        result['entries'][group]={'sources':config['entries'][group],'before':before,'after':{'declarations':sum(len(r.declarations) for r in rules),'important':important,'priority_bridge_declarations':converted},'removed_unreachable':removed,'removed_superseded':duplicates,'inline_sensitive_groups':sorted(inline_groups),'css':name}
+        result['entries'][group]={'sources':config['entries'][group],'before':before,'after':{'declarations':sum(len(r.declarations) for r in rules),'important':important},'removed_unreachable':removed,'removed_superseded':duplicates,'css':name}
         for file in files:
             path=str(file.relative_to(public));raw=file.read_text();inserted=False
+            # Identical legal-page source block is now authored once in styles/pages/legal.css.
+            if group=='legal':raw=re.sub(r'<style\b[^>]*>.*?</style>', '', raw, flags=re.S)
             def replace(match):
                 nonlocal inserted
                 tag=match.group(0);soup=BeautifulSoup(tag,'html.parser');n=soup.find('link')

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "optimize": false,
+  "optimize": true,
   "runtime_classes": [
     "is-open",
     "is-scrolled",
@@ -116,6 +116,7 @@
       "public/styles.css",
       "public/white-theme.css",
       "public/site-nav.css",
+      "styles/pages/legal.css",
       "styles/components/footer.css"
     ]
   }
