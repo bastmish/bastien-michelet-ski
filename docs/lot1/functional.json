@@ -1,0 +1,54 @@
+{
+  "functional": {
+    "encoding": "PASS: accents, ampersands, plus signs, angle brackets and newlines round-trip; 27 participants accepted",
+    "stations": "PASS: all 43 stations advance; Other station requires free text",
+    "freeride": "PASS: actual option removal, explanation, stale half-day cleared, option restored for other experiences",
+    "validation": "PASS: required fields and positive integer participants; first name and notes optional; no arbitrary group maximum",
+    "navigation": "PASS: values retained between steps, no reload, no draft before explicit valid submit"
+  },
+  "page_errors": [],
+  "accessibility": [
+    {
+      "width": 1440,
+      "stage": 1,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "stage": 2,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "stage": 1,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "stage": 2,
+      "violations": []
+    }
+  ],
+  "navigation": [
+    {
+      "width": 1440,
+      "catalogue": "stations.html",
+      "search_reset_filters_and_destination_navigation": "PASS"
+    },
+    {
+      "width": 1440,
+      "catalogue": "destinations.html",
+      "search_reset_filters_and_destination_navigation": "PASS"
+    },
+    {
+      "width": 390,
+      "catalogue": "stations.html",
+      "search_reset_filters_and_destination_navigation": "PASS"
+    },
+    {
+      "width": 390,
+      "catalogue": "destinations.html",
+      "search_reset_filters_and_destination_navigation": "PASS"
+    }
+  ]
+}

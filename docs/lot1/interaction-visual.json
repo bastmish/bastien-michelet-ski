@@ -1,0 +1,32 @@
+[
+  {
+    "capture": "booking-stage2-1440.png",
+    "pixel_identical": true,
+    "max_channel_delta": 0
+  },
+  {
+    "capture": "booking-stage1-390.png",
+    "pixel_identical": true,
+    "max_channel_delta": 0
+  },
+  {
+    "capture": "booking-stage2-390.png",
+    "pixel_identical": true,
+    "max_channel_delta": 0
+  },
+  {
+    "capture": "faq-open-390.png",
+    "pixel_identical": true,
+    "max_channel_delta": 0
+  },
+  {
+    "capture": "booking-stage1-1440.png",
+    "pixel_identical": true,
+    "max_channel_delta": 0
+  },
+  {
+    "capture": "faq-open-1440.png",
+    "pixel_identical": true,
+    "max_channel_delta": 0
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "status": "contract-only; visual activation requires lot 2 approval",
+  "chapters": [
+    {"selectors": ["#accueil", "#expertise"], "surface": "light"},
+    {"selectors": [".ss-home-courses"], "surface": "mineral"},
+    {"selectors": ["#destinations"], "surface": "dark"},
+    {"selectors": ["#avis", "#questions"], "surface": "light"},
+    {"selectors": ["#contact", ".art-prefooter", ".art-footer"], "surface": "dark"}
+  ],
+  "transition_contract": {
+    "owner": "outer full-width section; never inner content container",
+    "content_width_token": "--ss-container-content",
+    "photographic_layer": false,
+    "extra_flow_height": 0,
+    "depends_on_image_load": false,
+    "changes_geometry_when_media_loads": false,
+    "rendering": "deferred to lot 2; no new gradient activated in lot 1"
+  }
+}

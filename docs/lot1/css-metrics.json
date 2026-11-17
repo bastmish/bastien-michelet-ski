@@ -1,0 +1,92 @@
+{
+  "catalogue": {
+    "declarations_before": 3655,
+    "declarations_after": 1175,
+    "important_before": 1024,
+    "important_after": 275,
+    "repeated_selector_property_before": 369,
+    "repeated_selector_property_after": 0,
+    "unreachable_selectors_removed": 886,
+    "superseded_declarations_removed": 207
+  },
+  "collective": {
+    "declarations_before": 5693,
+    "declarations_after": 1485,
+    "important_before": 1241,
+    "important_after": 478,
+    "repeated_selector_property_before": 538,
+    "repeated_selector_property_after": 0,
+    "unreachable_selectors_removed": 1438,
+    "superseded_declarations_removed": 254
+  },
+  "destination": {
+    "declarations_before": 6350,
+    "declarations_after": 855,
+    "important_before": 1288,
+    "important_after": 201,
+    "repeated_selector_property_before": 544,
+    "repeated_selector_property_after": 0,
+    "unreachable_selectors_removed": 2033,
+    "superseded_declarations_removed": 122
+  },
+  "directory": {
+    "declarations_before": 3948,
+    "declarations_after": 1192,
+    "important_before": 1075,
+    "important_after": 283,
+    "repeated_selector_property_before": 370,
+    "repeated_selector_property_after": 0,
+    "unreachable_selectors_removed": 1030,
+    "superseded_declarations_removed": 207
+  },
+  "error": {
+    "declarations_before": 6350,
+    "declarations_after": 711,
+    "important_before": 1288,
+    "important_after": 197,
+    "repeated_selector_property_before": 544,
+    "repeated_selector_property_after": 0,
+    "unreachable_selectors_removed": 2097,
+    "superseded_declarations_removed": 118
+  },
+  "home": {
+    "declarations_before": 6654,
+    "declarations_after": 2390,
+    "important_before": 1372,
+    "important_after": 563,
+    "repeated_selector_property_before": 542,
+    "repeated_selector_property_after": 0,
+    "unreachable_selectors_removed": 1494,
+    "superseded_declarations_removed": 219
+  },
+  "legal": {
+    "declarations_before": 2981,
+    "declarations_after": 643,
+    "important_before": 951,
+    "important_after": 195,
+    "repeated_selector_property_before": 269,
+    "repeated_selector_property_after": 3,
+    "unreachable_selectors_removed": 878,
+    "superseded_declarations_removed": 107
+  },
+  "offer": {
+    "declarations_before": 5674,
+    "declarations_after": 1024,
+    "important_before": 1238,
+    "important_after": 259,
+    "repeated_selector_property_before": 538,
+    "repeated_selector_property_after": 0,
+    "unreachable_selectors_removed": 1658,
+    "superseded_declarations_removed": 146
+  },
+  "offer-index": {
+    "declarations_before": 5623,
+    "declarations_after": 804,
+    "important_before": 1235,
+    "important_after": 203,
+    "repeated_selector_property_before": 533,
+    "repeated_selector_property_after": 0,
+    "unreachable_selectors_removed": 1739,
+    "superseded_declarations_removed": 123
+  }
+}

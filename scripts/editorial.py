@@ -4,6 +4,7 @@ import copy,json,re,html
 from urllib.parse import quote
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[1]
+OUTPUT=ROOT/'public'
 E=lambda s:html.escape(s,quote=True)
 def clean(s):return re.sub(r'\*\*(.*?)\*\*',r'\1',s).split(' — version')[0].strip()
 def put(node,markup):
@@ -50,8 +51,10 @@ def save(soup,page,finish):
   if not soup.find(id=node['aria-labelledby']):
    h=node.find(['h1','h2','h3'])
    if h:h['id']=node['aria-labelledby']
- (ROOT/'public'/page['path']).write_text(finish(str(soup),page['path']))
-def integrate(pages,finish):
+ (OUTPUT/page['path']).write_text(finish(str(soup),page['path']))
+def integrate(pages,finish,output=None):
+ global OUTPUT
+ OUTPUT=Path(output) if output is not None else ROOT/'public'
  home=BeautifulSoup((ROOT/'content/original-pages/index.html').read_text(),'html.parser')
  sections=pages[0]['sections'];m=chat('une expérience avec Ski Society')
  hero=home.select_one('#accueil');mark(hero,'a01')
@@ -318,4 +321,4 @@ def integrate(pages,finish):
  text(cta.select_one('.kicker'),value(contact,'Surtitre'));text(cta.h2,value(contact,'H2'));text(cta.p,value(contact,'Introduction'));text(cta.a,value(contact,'CTA'));cta.a['href']=m
  soup.title.string='Nos expériences | Ski Society'
  soup.select_one('meta[name="description"]')['content']=value(experience,'Introduction')
- (ROOT/'public/offres/index.html').write_text(finish(str(soup),'offres/index.html'))
+ (OUTPUT/'offres/index.html').write_text(finish(str(soup),'offres/index.html'))

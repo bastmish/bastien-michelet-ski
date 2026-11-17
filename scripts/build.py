@@ -1,9 +1,20 @@
 """Integrate 32 validated sections into bc9bb78 components and retain 43 destinations."""
 from pathlib import Path
 from urllib.parse import quote,urlparse
-import html,json,os,re
+import argparse,html,json,os,re,shutil
 from bs4 import BeautifulSoup
-ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'public'
+ROOT=Path(__file__).resolve().parents[1]
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--output-dir',type=Path,default=ROOT/'public')
+OUT=parser.parse_args().output_dir.resolve()
+OUT.mkdir(parents=True,exist_ok=True)
+if OUT!=ROOT/'public':
+ if (ROOT/'public') in OUT.parents:raise ValueError('Output must be outside public/')
+ # Frozen static inputs are retained until their dependencies are fully migrated.
+ for source in (ROOT/'public').rglob('*'):
+  rel=source.relative_to(ROOT/'public')
+  if not source.is_file() or source.suffix=='.html' or rel.parts[:2]==('assets','css') or str(rel)=='sitemap.xml':continue
+  target=OUT/rel;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(source,target)
 pages=json.loads((ROOT/'content/pages.json').read_text())
 stations=json.loads((ROOT/'content/stations.json').read_text())
 esc=lambda s:html.escape(s,quote=True)
@@ -51,9 +62,10 @@ def base(page,body):
 # Load the reference compositions before the explicit editorial component mapping.
 for template in (ROOT/'content/original-pages').rglob('*.html'):
  path=str(template.relative_to(ROOT/'content/original-pages'))
- (OUT/path).write_bytes(restore_original(template.read_bytes().decode(),path).encode())
+ target=OUT/path;target.parent.mkdir(parents=True,exist_ok=True)
+ target.write_bytes(restore_original(template.read_bytes().decode(),path).encode())
 from editorial import integrate
-integrate(pages,restore_original)
+integrate(pages,restore_original,OUT)
 for s in stations:
  path=s['URL'].lstrip('/');m=s['Message WhatsApp']
  regionphoto={'Savoie':'417173','Haute-Savoie':'1366919','Hautes-Alpes':'12100585','Jura suisse':'20159351'}[s['region']]
